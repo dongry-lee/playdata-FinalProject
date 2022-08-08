@@ -20,7 +20,7 @@ public class MemService {
         return dao.findById(id).orElse(null); //findById():primary key 기준 검색. orElse(null): 검색결과 없으면 null 반환
     }
 
-    //내정보수정(pwd, addr, tel 수정)
+    //내정보수정(pwd, name, email, tel 수정)
     public Member editMember(Member m){
         return dao.save(m);//primary key값을 기준으로 동일한 게 있으면 수정, 없으면 추가
     }

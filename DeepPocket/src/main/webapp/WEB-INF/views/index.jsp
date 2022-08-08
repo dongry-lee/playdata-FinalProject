@@ -13,7 +13,6 @@
 </head>
 <body>
 <h3>shop</h3>
-<a href="/member/list">멤버목록</a><br/>
 <c:if test="${empty sessionScope.id}">
     <a href="/member/login">로그인</a>
     <a href="/member/join">회원가입</a>

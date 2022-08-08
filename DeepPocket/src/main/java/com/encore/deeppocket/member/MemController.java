@@ -96,14 +96,6 @@ public class MemController {
         return "redirect:/member/logout";
     }
 
-    @GetMapping("/list")
-    public String list(Model m){
-        ArrayList<Member> list = service.getAll();
-        m.addAttribute("list", list);
-        return "member/list";
-
-    }
-
     @GetMapping("/idcheck")
 
     public void idcheck(String id, Model model){
@@ -116,11 +108,6 @@ public class MemController {
         model.addAttribute("flag", flag);
     }
 
-    @ResponseBody //뷰 페이지 경로가 아니라 뷰 페이지를 반환
-    @GetMapping("/test")
-    public String test() {
-        return  "hello response body!!";
-    }
 
     @ResponseBody
     @GetMapping("/idcheck2")

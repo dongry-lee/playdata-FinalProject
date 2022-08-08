@@ -44,14 +44,9 @@
 <tr><th>id</th><td><input type="text" name="id"><input type="button" value="중복체크" onclick="idcheck()">
     <span id="res"></span></td></tr>
 <tr><th>pwd</th><td><input type="text" name="pwd"></td></tr>
+<tr><th>name</th><td><input type="text" name="name"></td></tr>
+<tr><th>email</th><td><input type="text" name="email"></td></tr>
 <tr><th>tel</th><td><input type="text" name="tel"></td></tr>
-<tr><th>addr</th><td><input type="text" name="addr"></td></tr>
-    <tr><th>가입종류</th>
-        <td>
-            <input type="radio" name="mem_type" value="false">구매자
-            <input type="radio" name="mem_type" value="true">판매자
-        </td>
-    </tr>
 <tr><th>가입</th><td><input type="submit" value="가입"></td></tr>
 </table>
 </form>
