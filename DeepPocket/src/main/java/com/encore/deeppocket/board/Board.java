@@ -5,8 +5,10 @@ import com.encore.deeppocket.member.Member;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -24,10 +26,16 @@ public class Board {
     @JoinColumn(nullable = false)
     private Member writer; //member 테이블 id컬럼에 join
 
-
     private Date w_date;
     private String title;
     private String content;
+    private String hash; //해쉬,태그,이걸,나눠서,써야하네
+
+    private String img1;
+
+    @Transient
+    private MultipartFile f;
+
 
     @PrePersist  //insert전 미리 실행해야할 메소드
     public void beforeCreate(){

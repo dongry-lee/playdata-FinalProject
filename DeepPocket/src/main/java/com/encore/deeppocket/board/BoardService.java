@@ -17,7 +17,6 @@ public class BoardService {
     }
     public Board getByNum(int num){
         return dao.findById(num).orElse(null);
-
     }
 
     public ArrayList<Board> getAll(){
@@ -30,6 +29,14 @@ public class BoardService {
 
     public ArrayList<Board> getByWriter(Member writer){
         return dao.findByWriter(writer);
+    }
+
+    public ArrayList<Board> getByContent(String content) {
+        return dao.findByContentLike("%"+content+"%");
+    }
+
+    public ArrayList<Board> getByHash(String hash) {
+        return dao.findByContentLike("%"+hash+"%");
     }
 
     public Board editBoard(Board b){

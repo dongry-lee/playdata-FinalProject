@@ -3,13 +3,17 @@ package com.encore.deeppocket.board;
 
 import com.encore.deeppocket.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -22,12 +26,45 @@ public class BoardController {
     @Autowired
     private BoardService service;
 
+    @Value("${spring.servlet.multipart.location}")
+    private String img_path;
+
     @GetMapping("/add")
     public void addForm(){}
 
     @PostMapping("/add")
     public String add(Board b){
-        service.addBoard(b);
+        Board b2 = service.addBoard(b);
+        if (b.getF()!=null) {
+            MultipartFile file = b.getF();
+
+            File dir = new File(img_path + b2.getNum());
+
+            if (!dir.exists()) {
+                dir.mkdir();
+                System.out.println(dir.getPath());
+            }
+
+
+
+            String fname = file.getOriginalFilename();// ���� ���ϸ�.
+            File f2 = new File(dir.getPath() + "/" + fname);// ������ ������ ������ ������ ����
+            try {
+                file.transferTo(f2);
+                String path = fname;
+
+            } catch (IllegalStateException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            
+
+            // ������ �߰��ߴ� ��ǰ�� �̹��� ��θ� �߰��� ����
+            service.editBoard(b2);
+        }
         return "redirect:/board/";
     }
 
