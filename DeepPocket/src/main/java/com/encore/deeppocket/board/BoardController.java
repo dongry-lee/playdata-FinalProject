@@ -60,7 +60,7 @@ public class BoardController {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            
+
 
             // ������ �߰��ߴ� ��ǰ�� �̹��� ��θ� �߰��� ����
             service.editBoard(b2);
