@@ -44,14 +44,10 @@ public class BoardController {
                 dir.mkdir();
                 System.out.println(dir.getPath());
             }
-
-<<<<<<< Updated upstream
+            
             String fname = file.getOriginalFilename();
             File f2 = new File(dir.getPath() + "/" + fname);
-=======
-            String fname = file.getOriginalFilename();// ���� ���ϸ�.
-            File f2 = new File(dir.getPath() + "/" + fname);// ������ ������ ������ ������ ����
->>>>>>> Stashed changes
+
             try {
                 file.transferTo(f2);
                 b2.setImg1(fname);
