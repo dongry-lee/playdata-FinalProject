@@ -16,6 +16,7 @@ public class BoardService {
         return dao.save(b);
     }
     public Board getByNum(int num){
+
         return dao.findById(num).orElse(null);
     }
 

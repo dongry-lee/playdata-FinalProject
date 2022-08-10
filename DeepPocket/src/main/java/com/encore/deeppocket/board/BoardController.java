@@ -45,10 +45,8 @@ public class BoardController {
                 System.out.println(dir.getPath());
             }
 
-
-
-            String fname = file.getOriginalFilename();// ���� ���ϸ�.
-            File f2 = new File(dir.getPath() + "/" + fname);// ������ ������ ������ ������ ����
+            String fname = file.getOriginalFilename();
+            File f2 = new File(dir.getPath() + "/" + fname);
             try {
                 file.transferTo(f2);
                 String path = fname;
@@ -61,8 +59,6 @@ public class BoardController {
                 e.printStackTrace();
             }
 
-
-            // ������ �߰��ߴ� ��ǰ�� �̹��� ��θ� �߰��� ����
             service.editBoard(b2);
         }
         return "redirect:/board/";
