@@ -45,11 +45,16 @@ public class BoardController {
                 System.out.println(dir.getPath());
             }
 
+<<<<<<< Updated upstream
             String fname = file.getOriginalFilename();
             File f2 = new File(dir.getPath() + "/" + fname);
+=======
+            String fname = file.getOriginalFilename();// ���� ���ϸ�.
+            File f2 = new File(dir.getPath() + "/" + fname);// ������ ������ ������ ������ ����
+>>>>>>> Stashed changes
             try {
                 file.transferTo(f2);
-                String path = fname;
+                b2.setImg1(fname);
 
             } catch (IllegalStateException e) {
                 // TODO Auto-generated catch block
