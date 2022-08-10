@@ -1,6 +1,6 @@
 # playdata-FinalProject
 encore-playdata Final Project 
-
+https://gitmind.com/app/doc/11a3b92a0afdaef1694ba6653c240ccd
 스프링, 깃헙
 
 소규모 아이디어 공모전 개개인이 공모전을 열수있게
