@@ -37,7 +37,7 @@ public class BoardService {
     }
 
     public ArrayList<Board> getByHash(String hash) {
-        return dao.findByContentLike("%"+hash+"%");
+        return dao.findByHashLike("%"+hash+"%");
     }
 
     public Board editBoard(Board b){
