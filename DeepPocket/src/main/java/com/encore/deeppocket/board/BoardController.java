@@ -4,8 +4,12 @@ package com.encore.deeppocket.board;
 import com.encore.deeppocket.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,7 +49,7 @@ public class BoardController {
                 dir.mkdir();
                 System.out.println(dir.getPath());
             }
-            
+
             String fname = file.getOriginalFilename();
             File f2 = new File(dir.getPath() + "/" + fname);
 
@@ -63,6 +68,22 @@ public class BoardController {
             service.editBoard(b2);
         }
         return "redirect:/board/";
+    }
+
+    @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ
+    public ResponseEntity<byte[]> read_img(String fname, int num) {
+        File f = new File(img_path + num + "/" + fname);
+        HttpHeaders header = new HttpHeaders();// http ��� ����
+        ResponseEntity<byte[]> result = null;
+        try {
+            // ��� ���� �߰�. ���� ���� Ÿ�� ����.
+            header.add("Content-Type", Files.probeContentType(f.toPath()));
+            result = new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(f), header, HttpStatus.OK);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @RequestMapping("/")
@@ -88,18 +109,47 @@ public class BoardController {
     @GetMapping("/detail")
     public String detailForm(int num, Map m){
         Board b = service.getByNum(num);
-        m.put("num", b.getNum());
-        m.put("writer", b.getWriter());
-        m.put("w_date", b.getW_date());
-        m.put("title", b.getTitle());
-        m.put("content", b.getContent());
+        m.put("b", b);
         return "board/detailForm";
     }
 
     @PostMapping("/edit")
     public String edit(Board b){
-        b.setW_date(new Date());
-        service.editBoard(b);
+
+        Board b3 = service.getByNum(b.getNum());
+        b3.setW_date(new Date());
+
+        if (b.getF()!=null) {
+
+            MultipartFile file = b.getF();
+            File dir = new File(img_path + b3.getNum());
+
+            File uploaded = new File(img_path + b3.getNum()+"/"+b3.getImg1());
+            uploaded.delete();
+            if (!dir.exists()) {
+                dir.mkdir();
+                System.out.println(dir.getPath());
+            }
+
+            String fname = file.getOriginalFilename();
+            File f2 = new File(dir.getPath() + "/" + fname);
+
+            try {
+                file.transferTo(f2);
+                b3.setImg1(fname);
+
+            } catch (IllegalStateException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            service.editBoard(b3);
+        }
+
+
         return "redirect:/board/";
     }
 
