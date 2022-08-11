@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### properties ###
-src/main/resources/application.properties
+application.properties
 
 .DS_Store

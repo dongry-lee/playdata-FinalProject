@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link href="/bootstrap/layout/member/join.css" rel="stylesheet">
 
@@ -39,22 +41,66 @@
             xhttp.open("GET", "/member/idcheck2?id="+id, true);
             xhttp.send();
         }
+
+
+        //비밀번호 유효성 검사
+        var compare_result = false;
+        function passwordcheck(){
+            var password1 = $('#pwd1').val();
+            var password2 = $('#pwd2').val();
+            var s_relult2 = $('#s_relult2');
+            if (password1 == password2) {
+                if (password2 == 0) {
+                    s_relult2.text("");
+                }
+                else {
+                    compare_result = true;
+                    s_relult2.text('비밀번호가 일치합니다.');
+                    $("#sub").attr("disabled",false);
+                }
+            }
+            else {
+                compare_result = false;
+                s_relult2.text('비밀번호가 일치하지 않습니다.');
+                $("#sub").attr("disabled",true);
+            }
+        }
+
+        function chkpw(){
+            var pw = $("#pwd1").val();
+            var num = pw.search(/[0-9]/g);
+            var eng = pw.search(/[A-z]/ig);
+            var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+            var s_relult1 = $('#s_relult1');
+
+            if(pw.length < 8 || pw.length > 20){
+                if(pw.length == 0){
+                    s_relult1.text("영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.");
+
+                }
+                else{
+                    s_relult1.text("8자리 ~ 20자리 이내로 입력해주세요.");
+                    $("#sub").attr("disabled",true);
+                }
+            }
+            else if(pw.search(/\s/) != -1){
+                s_relult1.text("비밀번호는 공백 없이 입력해주세요.");
+
+            }
+            else if(num < 0 || eng < 0 || spe < 0 ){
+                s_relult1.text("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+
+            }
+            else {
+                s_relult1.text("");
+
+            }
+
+        }
     </script>
 
 </head>
 <body>
-<h5>${msg }</h5>
-<%--<form action="/member/join" method="post" name="f1">--%>
-<%--<table style="border:solid 1px black">--%>
-<%--<tr><th>id</th><td><input type="text" name="id"><input type="button" value="중복체크" onclick="idcheck()">--%>
-<%--    <span id="res"></span></td></tr>--%>
-<%--<tr><th>pwd</th><td><input type="text" name="pwd"></td></tr>--%>
-<%--<tr><th>name</th><td><input type="text" name="name"></td></tr>--%>
-<%--<tr><th>email</th><td><input type="text" name="email"></td></tr>--%>
-<%--<tr><th>tel</th><td><input type="text" name="tel"></td></tr>--%>
-<%--</table>--%>
-<%--</form>--%>
-
 <div class="sign_up">
     <div class="sign_form">
         <form action="/member/join" method="post" type="submit" name="f1">
@@ -71,48 +117,24 @@
                 </label>
             </li>
 
-            <li>
-                <label><strong>비밀번호</strong><br>
-                    <input type="password" name="pwd" id="pwd1" onKeyup="chkpw()" class="form-control" required>
+                <li>
+                    <label><strong>비밀번호</strong><br>
+                        <input type="password" name="userPwd" id="pwd1" onKeyup="chkpw()" class="form-control" required>
 
-                </label>
-                <p><spen id=s_relult1>영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.</spen></p>
-            </li>
-            <li>
-                <label><strong>비밀번호 확인</strong><br>
-                    <input type="password" name="reuserPwd" id="pwd2"  onKeyup="passwordcheck()" class="form-control" required>
-                </label>
-                <p><spen id= "s_relult2"></spen></p>
-            </li>
+                    </label>
+                    <p><spen id=s_relult1>영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.</spen></p>
+                </li>
+                <li>
+                    <label><strong>비밀번호 확인</strong><br>
+                        <input type="password" name="reuserPwd" id="pwd2"  onKeyup="passwordcheck()" class="form-control" required>
+                    </label>
+                    <p><spen id= "s_relult2"></spen></p>
+                </li>
             <li>
                 <label>
                     <strong>이름</strong><br>
                     <input type="text" name="name" id="new_name" required>
                 </label>
-            </li>
-
-            <li>
-                <label>
-                    <strong>생년월일</strong><br>
-                    <input type="date" id="birthday" name="birthday"
-                           value="1985-01-01"
-                           min="1930-01-01" max="2050-12-31" required>
-                </label>
-            </li>
-
-            <li>
-                <label><strong>성별</strong><br>
-                    <select name="gender" id = "gender" required="required">
-                        <option value="m">남자</option>
-                        <option value="w">여자</option>
-                    </select>
-                </label>
-            </li>
-            <li>
-                <label><strong>이메일</strong></label><br>
-                <div class="emailcontent">
-                    <input type="text" name="email" id="email" required="required">
-                </div>
             </li>
             <li>
                 <label><strong>전화번호 입력</strong></label><br>
