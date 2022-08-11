@@ -18,7 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="templates/makecss/layout/main/main.scss" rel="stylesheet">
+    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
 
 
     <title>화수분입니다.</title>
