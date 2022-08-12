@@ -1,0 +1,23 @@
+.sg-button{
+
+}
+
+.sg-button {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    width: 100px;
+    margin-left: 20px;
+    height: 40px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #0a53be;
+    z-index: 5;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* FADE */
+.btnFade.btnLight:hover {
+    background: #6d9cd0;
+}

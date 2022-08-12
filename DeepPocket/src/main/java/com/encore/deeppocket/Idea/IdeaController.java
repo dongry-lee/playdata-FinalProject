@@ -24,8 +24,9 @@ public class IdeaController {
     @Autowired
     private IdeaService service;
 
-    @GetMapping("/addIdea") //Idea 등록 창 이동
-    public void addForm(){}
+    @GetMapping("/list") //Idea 등록 창 이동
+    public void list(){}
+
 
 
     @RequestMapping("/")

@@ -8,10 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>AddIdea</title>
+
+    <!-- Custom styles for this template-->
+    <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
+
+    <title>아이디어 보기</title>
 </head>
 
 <body>
-<h1>test</h1>
+
 </body>
 </html>
