@@ -132,6 +132,9 @@
 
             </nav>
             <%--  real content  --%>
+            <c:if test="${sessionScope.id!=null}">
+            <a href="/board/add">글작성</a>
+            </c:if>
             <section class="pt-4">
 
                 <div class="container px-lg-5">
@@ -152,8 +155,8 @@
                                     </div>
                                 </div>
                             </div>
-                        <hr>
                         </c:forEach>
+                        <hr>
                             <h1>제목으로 검색</h1>
                         <c:forEach var="b" items="${titleList}">
                             <div class="col-lg-6 col-xxl-4 mb-5">
@@ -224,8 +227,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
                         </c:forEach>
+                            <hr>
                         <hr>
 
                     </div>

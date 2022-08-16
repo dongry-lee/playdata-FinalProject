@@ -105,39 +105,48 @@ public class BoardController {
     public String edit(Board b){
 
         Board b3 = service.getByNum(b.getNum());
+        b3.setTitle(b.getTitle());
         b3.setW_date(new Date());
+        b3.setContent(b.getContent());
+        b3.setHash(b.getHash());
 
         if (b.getF()!=null) {
 
             MultipartFile file = b.getF();
-            File dir = new File(img_path + b3.getNum());
-
-            File uploaded = new File(img_path + b3.getNum()+"/"+b3.getImg1());
-            uploaded.delete();
-            if (!dir.exists()) {
-                dir.mkdir();
-                System.out.println(dir.getPath());
-            }
-
             String fname = file.getOriginalFilename();
-            File f2 = new File(dir.getPath() + "/" + fname);
+            if (fname != null && !fname.equals("")) {
+                File dir = new File(img_path + b3.getNum());
 
-            try {
-                file.transferTo(f2);
-                b3.setImg1(fname);
+                File uploaded = new File(img_path + b3.getNum() + "/" + b3.getImg1());
+                uploaded.delete();
+                if (!dir.exists()) {
+                    dir.mkdir();
+                    System.out.println(dir.getPath());
+                }
 
-            } catch (IllegalStateException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                File f2 = new File(dir.getPath() + "/" + fname);
+
+                try {
+                    file.transferTo(f2);
+                    b3.setImg1(fname);
+
+                } catch (IllegalStateException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                service.editBoard(b3);
+
+            } else {
+                b.setW_date(new Date());
+                Board b2 = service.getByNum(b.getNum());
+                b.setF(b2.getF());
+                b.setImg1(b2.getImg1());
+                service.editBoard(b);
             }
-
-            service.editBoard(b3);
         }
-
-
         return "redirect:/board/";
     }
 

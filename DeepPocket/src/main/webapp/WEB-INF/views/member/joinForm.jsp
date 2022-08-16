@@ -119,7 +119,7 @@
 
                 <li>
                     <label><strong>비밀번호</strong><br>
-                        <input type="password" name="userPwd" id="pwd1" onKeyup="chkpw()" class="form-control" required>
+                        <input type="password" name="pwd" id="pwd1" class="form-control" required>
 
                     </label>
                     <p><spen id=s_relult1>영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.</spen></p>
@@ -142,6 +142,13 @@
                     <input type="text" name="tel" id="phone" required="required">
                 </div>
             </li>
+            <li>
+                <label><strong>email</strong></label><br>
+                <div class="str_phonecan">
+                    <input type="eamil" name="email" id="email" required="required">
+                </div>
+            </li>
+
             <li>
                 <button type="submit" class="sand"  id="sub" >
                     <b>가입하기</b>
