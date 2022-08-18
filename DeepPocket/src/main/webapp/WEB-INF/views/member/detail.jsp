@@ -8,8 +8,41 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link href="/bootstrap/layout/member/join.css" rel="stylesheet">
-
     <title>내 정보확인</title>
+<script>
+
+    function chkpw(){
+    var pw = $("#pwd1").val();
+    var num = pw.search(/[0-9]/g);
+    var eng = pw.search(/[A-z]/ig);
+    var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+    var s_relult1 = $('#s_relult1');
+
+    if(pw.length < 8 || pw.length > 20){
+    if(pw.length == 0){
+    s_relult1.text("영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.");
+
+    }
+    else{
+    s_relult1.text("8자리 ~ 20자리 이내로 입력해주세요.");
+    $("#sub").attr("disabled",true);
+    }
+    }
+    else if(pw.search(/\s/) != -1){
+    s_relult1.text("비밀번호는 공백 없이 입력해주세요.");
+
+    }
+    else if(num < 0 || eng < 0 || spe < 0 ){
+    s_relult1.text("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+
+    }
+    else {
+    s_relult1.text("사용가능한 비밀번호입니다!");
+
+    }
+
+    }
+    </script>
 </head>
 <body>
 <h3>내 정보</h3>
@@ -30,7 +63,7 @@
 
                 <li>
                     <label><strong>비밀번호</strong><br>
-                        <input type="text" name="pwd" id="pwd1" value="${m.pwd}"  class="form-control" required>
+                        <input type="text" name="pwd" id="pwd1" value="${m.pwd}"  onkeyup="chkpw()" class="form-control" required>
 
                     </label>
                     <p><spen id=s_relult1>영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.</spen></p>
