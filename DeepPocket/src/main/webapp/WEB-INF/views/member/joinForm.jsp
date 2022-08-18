@@ -92,7 +92,7 @@
 
             }
             else {
-                s_relult1.text("");
+                s_relult1.text("사용가능한 비밀번호입니다!");
 
             }
 
@@ -119,7 +119,7 @@
 
                 <li>
                     <label><strong>비밀번호</strong><br>
-                        <input type="password" name="pwd" id="pwd1" class="form-control" required>
+                        <input type="password" name="pwd" id="pwd1" class="form-control" onkeyup="chkpw()" required>
 
                     </label>
                     <p><spen id=s_relult1>영문, 숫자, 특수문자를 포함한 8자리 이상 입력하세요.</spen></p>

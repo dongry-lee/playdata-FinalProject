@@ -1,27 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: idong-geun
-  Date: 2022/07/20
-  Time: 3:37 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-
-    <!-- Custom fonts for this template-->
-    <link href="/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
     <link href="/bootstrap/css/custom.css" rel="stylesheet">
 
-    <title>화수분입니다.</title>
+    <%-- JS  --%>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>DeePocket</title>
 </head>
 
 <body id="page-top">
@@ -77,103 +66,77 @@
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
+    <%-- header bar --%>
+        <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 
-        <!-- Main Content -->
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
 
-        <!-- End of Main Content -->
+            <!-- Topbar Search -->
+            <form action="/board/getbyall" method="post"
+                  class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input name="val" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                           aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">
+                            search
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Topbar Navbar -->
+            <c:if test="${empty sessionScope.id}">
+                <a class="sg-button btnFade btnLight" href="/member/login">로그인</a>
+                <a class="sg-button btnFade btnLight" href="/member/join">회원가입</a>
+            </c:if>
+            <c:if test="${not empty sessionScope.id}">
+                ${sessionScope.id }님 로그인중 /
+                <c:if test="${sessionScope.mem_type==false}">당신은 일반회원입니다</c:if>
+                <c:if test="${sessionScope.mem_type==true}">당신은 관리자입니다</c:if>
+                <a class="sg-button" href="/member/detail">내정보확인</a><br/>
+                <a class="sg-button" href="/member/logout">로그아웃</a><br/>
+                <a class="sg-button" href="/member/out">탈퇴</a><br/>
+            </c:if>
+
+        </nav>
+    <!-- header bar -->
         <div id="content">
-
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-
-                <!-- Topbar Search -->
-                <form action="/board/getbyall" method="post"
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input name="val" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                search
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-                <!-- Topbar Navbar -->
-                <c:if test="${empty sessionScope.id}">
-                    <a class="sg-button btnFade btnLight" href="/member/login">로그인</a>
-                    <a class="sg-button btnFade btnLight" href="/member/join">회원가입</a>
-                </c:if>
-                <c:if test="${not empty sessionScope.id}">
-                    ${sessionScope.id }님 로그인중 /
-                    <c:if test="${sessionScope.mem_type==false}">당신은 일반회원입니다</c:if>
-                    <c:if test="${sessionScope.mem_type==true}">당신은 관리자입니다</c:if>
-                    <a class="sg-button" href="/member/detail">내정보확인</a><br/>
-                    <a class="sg-button" href="/member/logout">로그아웃</a><br/>
-                    <a class="sg-button" href="/member/out">탈퇴</a><br/>
-                </c:if>
-
-            </nav>
-            <%--  real content  --%>
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>tes1</h1>
-                                <p>page 1</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">link1 </a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="50%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>test2</h1>
-                                <p>page 2</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">link 2</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-                        <div class="container">
-                            <div class="carousel-caption text-end">
-                                <h1>test 3</h1>
-                                <p>page 3</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">link 3</a></p>
-                            </div>
-                        </div>
+        <%--  real content  --%>
+            <%--  slide banner  --%>
+                <div class="banner-container22">
+                    <div class="banner22">
+                        <div data-index=1></div>
+                        <div data-index=2></div>
+                        <div data-index=3></div>
+                        <div data-index=4></div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden"><</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">></span>
-                </button>
+                <div class="list-button22">
+                    <span class="list-button-item22 active"></span>
+                    <span class="list-button-item22"></span>
+                    <span class="list-button-item22"></span>
+                    <span class="list-button-item22"></span>
+                </div>
+            <%--  slide banner  --%>
+            <%--  main content   --%>
+            <div class="main-content">
+                <div class="totalbox">
+                <div class="hot-idea">
+                    <div class="ideabox"></div>
+
+                </div>
+                <div class="hot-vote">
+                    <div class="vote-box"></div>
+                </div>
+                </div>
             </div>
-            <%--  real content end  --%>
-            <h3>Deepocket</h3>
+        <%--  real content end  --%>
+
 
 
         </div>
@@ -181,21 +144,23 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<%--<script src="vendor/jquery/jquery.min.js"></script>--%>
+<%--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--%>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<%--<!-- Core plugin JavaScript-->--%>
+<%--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>--%>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<%--<!-- Custom scripts for all pages-->--%>
+<%--<script src="js/sb-admin-2.min.js"></script>--%>
 
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
+<%--<!-- Page level plugins -->--%>
+<%--<script src="vendor/chart.js/Chart.min.js"></script>--%>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<%--<script src="js/demo/chart-area-demo.js"></script>--%>
+<%--<script src="js/demo/chart-pie-demo.js"></script>--%>
+<%-- JS   --%>
+<script src="/bootstrap/js/main.js"></script>
 
 </body>
 
