@@ -36,3 +36,5 @@ build/
 application.properties
 
 .DS_Store
+
+application-oauth.properties
