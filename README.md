@@ -10,7 +10,7 @@
 
 ## 개발 인원
 
-- [](https://github.com/)
+- [yjs6156](https://github.com/yjs6156)
 - [dongry-lee](https://github.com/dongry-lee)
 - [](https://github.com/)
 - [](https://github.com/)
