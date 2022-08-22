@@ -13,7 +13,7 @@
 - [](https://github.com/)
 - [dongry-lee](https://github.com/dongry-lee)
 - [MINSEOMIA](https://github.com/MINSEOMIA)
-- [](https://github.com/)
+- [dorumamu](https://github.com/dorumamu)
 
 ## 개발 환경
 
