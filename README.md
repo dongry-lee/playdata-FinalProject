@@ -10,7 +10,7 @@
 
 ## 개발 인원
 
-- [yjs6156](https://github.com/yjs6156)
+- [](https://github.com/)
 - [dongry-lee](https://github.com/dongry-lee)
 - [](https://github.com/)
 - [](https://github.com/)
@@ -28,6 +28,9 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 ## 시스템 구성도
 ![OIS (1)](https://user-images.githubusercontent.com/89010847/185848161-021c2a11-d450-4045-aab4-9c8a43b40cf6.png)
+
+## 스프린트
+https://github.com/users/dongry-lee/projects/1
 
 
 
