@@ -33,7 +33,7 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item">
-            <a class="nav-link" href="/idea/list">
+            <a class="nav-link" href="/idea/">
                 <span>진행중인 아이디어</span></a>
         </li>
 
