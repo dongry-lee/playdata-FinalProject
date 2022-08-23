@@ -40,12 +40,12 @@ https://github.com/users/dongry-lee/projects/1
 
 8/23
 
-Erd 게시판부분 다시 만들기
-
-
-아이디어 게시판 개발 시작
-
-투표게시판 기능 개발 시작
+Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
+header 만들기, 아이디어게시판 view html - 민서
+sidebar 만들기, 투표게시판 view html - 진웅
+아이디어 게시판 기능 개발 시작 - 동근<br>
+투표게시판 기능 개발 시작 - 진수<br>
+member table 다듬기  - 동근<br>
 
 
 
