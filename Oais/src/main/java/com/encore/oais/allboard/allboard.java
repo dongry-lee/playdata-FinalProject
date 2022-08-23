@@ -1,4 +1,4 @@
-package com.encore.oais.board;
+package com.encore.oais.allboard;
 
 
 import com.encore.oais.member.Member;
@@ -15,11 +15,11 @@ import java.util.Date;
 @Setter
 @Getter
 @ToString
-public class Board {
+public class allboard {
 
     @Id //primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
-    private int num;
+    private int w_num;
 
     @ManyToOne//(다대일)   //@OneToOne(일대일), @OneToMany(일대다), @ManyToMany(다대다)
     @JoinColumn(nullable = false)

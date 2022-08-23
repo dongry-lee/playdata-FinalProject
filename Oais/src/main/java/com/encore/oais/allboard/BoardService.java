@@ -1,4 +1,4 @@
-package com.encore.oais.board;
+package com.encore.oais.allboard;
 
 
 import com.encore.oais.member.Member;
@@ -12,35 +12,35 @@ public class BoardService {
     @Autowired
     private BoardDao dao;
 
-    public Board addBoard(Board b){
+    public allboard addBoard(allboard b){
         return dao.save(b);
     }
-    public Board getByNum(int num){
+    public allboard getByNum(int num){
 
         return dao.findById(num).orElse(null);
     }
 
-    public ArrayList<Board> getAll(){
-        return (ArrayList<Board>) dao.findAll();
+    public ArrayList<allboard> getAll(){
+        return (ArrayList<allboard>) dao.findAll();
     }
 
-    public ArrayList<Board> getByTitle(String title){
+    public ArrayList<allboard> getByTitle(String title){
         return dao.findByTitleLike("%"+title+"%");
     }
 
-    public ArrayList<Board> getByWriter(Member writer){
+    public ArrayList<allboard> getByWriter(Member writer){
         return dao.findByWriter(writer);
     }
 
-    public ArrayList<Board> getByContent(String content) {
+    public ArrayList<allboard> getByContent(String content) {
         return dao.findByContentLike("%"+content+"%");
     }
 
-    public ArrayList<Board> getByHash(String hash) {
+    public ArrayList<allboard> getByHash(String hash) {
         return dao.findByHashLike("%"+hash+"%");
     }
 
-    public Board editBoard(Board b){
+    public allboard editBoard(allboard b){
         return dao.save(b);
     }
 

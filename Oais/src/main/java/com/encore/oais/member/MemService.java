@@ -16,8 +16,8 @@ public class MemService {
     }
 
     //로그인, 내정보확인
-    public Member getMember(String id){
-        return dao.findById(id).orElse(null); //findById():primary key 기준 검색. orElse(null): 검색결과 없으면 null 반환
+    public ArrayList<Member> getMember(String id){
+        return dao.findByMid(id);
     }
 
     //내정보수정(pwd, name, email, tel 수정)
@@ -26,8 +26,8 @@ public class MemService {
     }
 
     //탈퇴
-    public void delMember(String id){
-        dao.deleteById(id); //primary key 값을 기준으로 삭제
+    public void delMember(String mid){
+        dao.deleteByMid(mid);
     }
 
     //전체검색
