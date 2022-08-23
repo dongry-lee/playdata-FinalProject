@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity //테이블
@@ -19,15 +17,24 @@ import javax.persistence.Id;
 public class Member {
 
     @Id//primary key 설정
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
+    private int num;
 
+    @Column(nullable = false, unique = true)
+    private String mid;
+
+    @Column(nullable = false)
     private String pwd;
 
     @Column(nullable = false) //@Column: 컬럼설정. 컬렴명, 제약조건 등. nullable=false:not null;
     private String name;
 
-    @Column(columnDefinition = "boolean default false")
-    private boolean mem_type; //관리자, 일반회원
-    private String email;
     private String tel;
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean domtype; //관리자, 일반회원(false)
+
+    @Column(columnDefinition = "boolean default false")
+    private boolean socialtype; //소셜, 일반회원(false)
+
 }

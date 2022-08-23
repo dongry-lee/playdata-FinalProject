@@ -114,9 +114,27 @@
 
             </nav>
             <%--  real content  --%>
+            <c:forEach var="b" items="${list}">
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <h2 class="fs-4 fw-bold"><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
+                            <p class="mb-0">${b.num.name}</p>
+                            <p class="mb-0">${b.content}</p>
+                            <p class="mb-0">${b.hash}</p>
+                            <p class="mb-0">${b.wdate}</p>
+                            <p class="mb-0">${b.ddate}</p>
+                            <p class="mb-0">${b.views}</p>
+                            <p class="mb-0">${b.part}</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
 
             <%--  real content end  --%>
-            <h3>Deepocket</h3>
+            <h3>Oais</h3>
         </div>
     </div>
 </div>

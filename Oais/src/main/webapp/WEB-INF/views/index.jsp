@@ -33,7 +33,7 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item">
-            <a class="nav-link" href="/idea/list">
+            <a class="nav-link" href="/idea/">
                 <span>진행중인 아이디어</span></a>
         </li>
 
@@ -90,14 +90,14 @@
             </form>
 
             <!-- Topbar Navbar -->
-            <c:if test="${empty sessionScope.id}">
+            <c:if test="${empty sessionScope.name}">
                 <a class="sg-button btnFade btnLight" href="/member/login">로그인</a>
                 <a class="sg-button btnFade btnLight" href="/member/join">회원가입</a>
             </c:if>
-            <c:if test="${not empty sessionScope.id}">
-                ${sessionScope.id }님 로그인중 /
-                <c:if test="${sessionScope.mem_type==false}">당신은 일반회원입니다</c:if>
-                <c:if test="${sessionScope.mem_type==true}">당신은 관리자입니다</c:if>
+            <c:if test="${not empty sessionScope.name}">
+                ${sessionScope.name }님 로그인중 /
+                <c:if test="${sessionScope.domtype==false}">당신은 일반회원입니다</c:if>
+                <c:if test="${sessionScope.domtype==true}">당신은 관리자입니다</c:if>
                 <a class="sg-button" href="/member/detail">내정보확인</a><br/>
                 <a class="sg-button" href="/member/logout">로그아웃</a><br/>
                 <a class="sg-button" href="/member/out">탈퇴</a><br/>
