@@ -1,5 +1,5 @@
 # playdata-FinalProject
-
+## 개발기간 : 2022.8.22 ~ 2022.9.15
 ## 소개
   다양한 목적을 가진 이용자들이, 제약과 장벽없이 크고작은 아이디어를 공유하며 소통할 수 있는 웹 서비스를 구축하고자 합니다.
 기존의 아이디어 공모 웹서비스들은 공모글을 게재하는것만으로 해당 사이트에 이용비용을 지불해야합니다.
@@ -26,12 +26,26 @@
 https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 
-## 시스템 구성도
+## 초기 ERD
 ![OIS (1)](https://user-images.githubusercontent.com/89010847/185848161-021c2a11-d450-4045-aab4-9c8a43b40cf6.png)
+
+## 1차 수정 ERD
+![새 테이블](https://user-images.githubusercontent.com/89010847/186045427-12e32fa1-600a-416c-8170-7a80cb0f2e8e.PNG)
+
 
 ## 스프린트
 https://github.com/users/dongry-lee/projects/1
 
+## check in & check out
+
+8/23
+
+Erd 게시판부분 다시 만들기
+
+
+아이디어 게시판 개발 시작
+
+투표게시판 기능 개발 시작
 
 
 
