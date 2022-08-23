@@ -1,6 +1,6 @@
-package com.encore.deeppocket.board;
+package com.encore.oais.board;
 
-import com.encore.deeppocket.member.Member;
+import com.encore.oais.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

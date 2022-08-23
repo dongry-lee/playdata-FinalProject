@@ -1,4 +1,4 @@
-package com.encore.deeppocket;
+package com.encore.oais;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

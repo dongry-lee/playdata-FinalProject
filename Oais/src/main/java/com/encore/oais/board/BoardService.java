@@ -1,7 +1,7 @@
-package com.encore.deeppocket.board;
+package com.encore.oais.board;
 
 
-import com.encore.deeppocket.member.Member;
+import com.encore.oais.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

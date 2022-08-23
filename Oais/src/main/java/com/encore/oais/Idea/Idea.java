@@ -1,6 +1,6 @@
-package com.encore.deeppocket.Idea;
+package com.encore.oais.Idea;
 
-import com.encore.deeppocket.member.Member;
+import com.encore.oais.member.Member;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;

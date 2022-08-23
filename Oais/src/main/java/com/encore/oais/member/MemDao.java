@@ -1,4 +1,4 @@
-package com.encore.deeppocket.member;
+package com.encore.oais.member;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
