@@ -1,17 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: 27251
-  Date: 2022-08-10
-  Time: 오후 12:34
+  Date: 2022-08-24
+  Time: 오전 12:15
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
+    <title>진행중인 투표</title>
+    <%--style css--%>
     <link href="/bootstrap/css/custom.css" rel="stylesheet">
-    <title>Title</title>
+    <link href="/bootstrap/css/vote.css" rel="stylesheet">
 </head>
 <body>
 <!-- Page Wrapper -->
@@ -30,26 +31,35 @@
         </ul>
     </div>
     <!-- End of Sidemenu-->
-        <div id="content">
+    <!-- Content -->
+    <div id="content">
+        <div class="fg-head"><h1>진행중인 아이디어 투표</h1></div>
+        <div class="vote-form">
+            <div class="vote-box">
+                <div class="vote-info">
+                    <h1 class="vote-title">강아지 vs 고양이</h1>
+                    <div class="vote-content">
+                        뭐 키울까요?
+                    </div>
 
-            <%--  real content  --%>
-            <c:forEach var="b" items="${list}">
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <div class="card bg-light border-0 h-100">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <h2 class="fs-4 fw-bold"><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
-                            <p class="mb-0">${b.num.name}</p>
-                            <p class="mb-0">${b.content}</p>
-                            <p class="mb-0">${b.hash}</p>
-                            <p class="mb-0">${b.wdate}</p>
-                            <p class="mb-0">${b.ddate}</p>
-                            <p class="mb-0">${b.views}</p>
-                            <p class="mb-0">${b.part}</p>
+                </div>
+                <div class="vote-img">
+                    <img src="/bootstrap/img/catanddog.png">
+                </div>
+                <div class="vote-option">
+                    <div class="option-select">
+                        <div>
+                            <span></span>
+                            <input type="radio" id="" name="강아지" /><label><span></span>강아지</label>
+                            <input type="radio" id="" name="고양이" /><label><span></span>고양이</label>
                         </div>
+
                     </div>
                 </div>
-            </c:forEach>
+            </div>
+
         </div>
     </div>
+</div>
 </body>
 </html>
