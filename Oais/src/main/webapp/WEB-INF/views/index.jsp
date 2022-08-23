@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 
@@ -39,7 +39,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="/vote">
                 <span>투표하기</span></a>
         </li>
 
@@ -62,11 +62,9 @@
     <!-- End of Sidebar -->
 
 
-
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-    <%-- header bar --%>
+        <%-- header bar --%>
         <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 
             <!-- Sidebar Toggle (Topbar) -->
@@ -78,7 +76,8 @@
             <form action="/board/getbyall" method="post"
                   class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
-                    <input name="val" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                    <input name="val" type="text" class="form-control bg-light border-0 small"
+                           placeholder="Search for..."
                            aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
@@ -104,42 +103,39 @@
             </c:if>
 
         </nav>
-    <!-- header bar -->
+        <!-- header bar -->
         <div id="content">
-        <%--  real content  --%>
+            <%--  real content  --%>
             <%--  slide banner  --%>
-                <div class="banner-container22">
-                    <div class="banner22">
-                        <div data-index=1></div>
-                        <div data-index=2></div>
-                        <div data-index=3></div>
-                        <div data-index=4></div>
-                    </div>
+            <div class="banner-container22">
+                <div class="banner22">
+                    <div data-index=1></div>
+                    <div data-index=2></div>
+                    <div data-index=3></div>
+                    <div data-index=4></div>
                 </div>
-                <div class="list-button22">
-                    <span class="list-button-item22 active"></span>
-                    <span class="list-button-item22"></span>
-                    <span class="list-button-item22"></span>
-                    <span class="list-button-item22"></span>
-                </div>
+            </div>
+            <div class="list-button22">
+                <span class="list-button-item22 active"></span>
+                <span class="list-button-item22"></span>
+                <span class="list-button-item22"></span>
+                <span class="list-button-item22"></span>
+            </div>
             <%--  slide banner  --%>
             <%--  main content   --%>
             <div class="main-content">
                 <div class="totalbox">
-                <div class="hot-idea">
-                    <div class="ideabox"></div>
+                    <div class="hot-idea">
+                        <div class="ideabox"></div>
 
-                </div>
-                <div class="hot-vote">
-                    <div class="vote-box"></div>
-                </div>
+                    </div>
+                    <div class="hot-vote">
+                        <div class="vote-box"></div>
+                    </div>
                 </div>
             </div>
-        <%--  real content end  --%>
-<div><p>hello</p></div>
-
-            <div></div>
-
+            <%--  real content end  --%>
+<div></div>
 
         </div>
     </div>
