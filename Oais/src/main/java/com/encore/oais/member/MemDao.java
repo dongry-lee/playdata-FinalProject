@@ -3,9 +3,15 @@ package com.encore.oais.member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+
 @Repository
 public interface MemDao extends JpaRepository<Member, String> {
 
+    ArrayList<Member> findByMid(String id);
+    @Transactional
+    void deleteByMid(String mid);
 }
 
 //save(): insert, update(모든 컬럼수정)
