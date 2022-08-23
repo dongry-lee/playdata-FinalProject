@@ -8,12 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <title>안녕하세요12345</title>
-</head>
-<body>
-<html>
-<head>
-    <title>Title</title>
 </head>
 <body>
 <form class="container" action="/articles/create" method="post">
