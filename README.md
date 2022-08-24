@@ -41,8 +41,8 @@ https://github.com/users/dongry-lee/projects/1
 8/23<br>
 check in<br>
 Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
-header 만들기, 아이디어게시판 view html - 민서
-sidebar 만들기, 투표게시판 view html - 진웅
+header 만들기, 아이디어게시판 view html - 민서<br>
+sidebar 만들기, 투표게시판 view html - 진웅<br>
 아이디어 게시판 기능 개발 시작 - 동근<br>
 투표게시판 기능 개발 시작 - 진수<br>
 member table 다듬기  - 동근<br>
@@ -54,4 +54,10 @@ side menu 완성 / 메인 페이지 slidebanner 수정중 / 투표게시판 view
 header menu 제작중 / 검색창 아이콘 삽입 수정/ 아이콘 연결 오류 해결중 - 민서<br>
 
 
-
+8/24<br>
+check in<br>
+아이디어 게시판 기능 개발(첨부파일, 댓글제외), 댓글테이블 및 기능개발  - 동근<br>
+투표게시판 틀 만들기 / 투표기능 제작 - 진수<br>
+메인 헤더 메뉴 수정/ 사이드 메뉴 바와 코드 비교/ 게시판 글작성 틀 제작 - 민서<br>
+<br>
+check out<br>
