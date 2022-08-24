@@ -26,7 +26,7 @@
 https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 <img width="552" alt="1 메인화면" src="https://user-images.githubusercontent.com/110527157/186382235-b9b29651-c78a-46f6-bd38-4e96b495aa0b.png">
 <img width="549" alt="2  로그인" src="https://user-images.githubusercontent.com/110527157/186382270-37ee2e5e-2ff7-4f5d-86e1-bf21ad0f7dc0.png">
-<img width="1440" alt="3 회원가입" src="https://user-images.githubusercontent.com/110527157/186382298-9945000a-e042-458f-ad27-6d1109e98fc7.png">
+<img width="542" alt="3 회원가입" src="https://user-images.githubusercontent.com/110527157/186383195-0bf4f3b0-6672-4c7f-95e5-0fe648b1731e.png">
 <img width="551" alt="4 마이페이지" src="https://user-images.githubusercontent.com/110527157/186382448-a41caad3-1d87-4387-b03d-f4410337efde.png">
 <img width="548" alt="5 아이디어페이지" src="https://user-images.githubusercontent.com/110527157/186382516-140c1e86-0bd4-45b7-8e9b-905f39989ec8.png">
 <img width="543" alt="6 투표 페이지" src="https://user-images.githubusercontent.com/110527157/186382601-bf8e246a-75fb-41dc-bae5-aa0c9d9789c5.png">
