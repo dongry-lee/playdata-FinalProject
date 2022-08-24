@@ -14,7 +14,7 @@
     <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
 
-    <title>Title</title>
+    <title>아이디어게시</title>
 </head>
 <body>
 <!-- Page Wrapper -->
@@ -35,7 +35,7 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item">
-            <a class="nav-link" href="/idea/list">
+            <a class="nav-link" href="/idea/">
                 <span>진행중인 아이디어</span></a>
         </li>
 
@@ -114,6 +114,11 @@
 
             </nav>
             <%--  real content  --%>
+
+
+            <c:if test="${not empty sessionScope.id}">
+                <a href="/idea/add">글작성</a>
+            </c:if>
             <c:forEach var="b" items="${list}">
                 <div class="col-lg-6 col-xxl-4 mb-5">
                     <div class="card bg-light border-0 h-100">
