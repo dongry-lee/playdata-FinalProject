@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="playdata-FinalProject:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/playdata_FinalProject_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="playdata-FinalProject/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="playdata-FinalProject" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:2.7.2" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.6.10.Final" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

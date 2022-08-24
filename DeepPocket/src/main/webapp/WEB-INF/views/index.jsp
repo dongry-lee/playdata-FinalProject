@@ -1,169 +1,172 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
 
-    <!-- Custom styles for this template-->
-    <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
-    <%-- JS  --%>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>DeePocket</title>
+    <style>
+        *{ font-family: Inter;
+
+        }
+
+        /*header*/
+        header {
+            height: 75px;
+            background-color: white;
+            border: 0px solid #253342;
+            box-shadow: 0px 0px 2px 0px black;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        h1 {
+            float: left;
+            position: absolute;
+            width: 75px;
+            height: 1px;
+            left: 22px;
+            top: 0px;
+
+            background: url(/img/img.png);
+            background-size: cover;
+            background-position: left;
+            border-radius: 10px;
+            margin: 20px auto 20px auto;
+
+            box-shadow: 0px 0px 0px 0px black;
+            padding: 20px;
+
+        }
+
+
+        nav {
+            list-style: none;
+            display: flex;
+            padding-left: 0;
+            text-decoration: none;
+        }
+        nav. serach > icon {
+            position: absolute;
+            top: 50%;
+            margin-left: 17px;
+            margin-top: 17px;
+            z-index: 1;
+        }
+        .search > input {
+            border: 0;
+            background-color: #f0f0f0;
+
+            margin: 20px 600px 20px 160px;
+
+            width: 300px;
+            height: 1px;
+            border-radius: 8px;
+            padding: 20px 15px;
+            font-size: 13px;
+        }
+        /*nav .menu {float:right;} */
+
+        nav >  button  {
+            line-height: 35px;
+            color:black;
+            padding: 8px 12px;
+            /*display: block;*/
+            /*position: absolute; */
+            list-style: none;
+            border-radius: 100px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11px;
+            margin-top: 20px;
+            width: 60px;
+        }
+        /* nav .menu .a > button:hover {
+            padding:0 5px;
+            display: block;
+            position: absolute;
+            list-style: none;
+            border-radius: 80px;
+            font-size: 9px;
+            margin-top: 20px;
+            width: 100px;
+        } */
+    .login_button {
+        color: black;
+        margin-top: 5px;
+        border:0px; border-radius:10px; background-color: #D4FEF0; font-family: Inter;font-weight:400;
+        font-size: 11px; line-height: 16px;
+        font-style: normal;
+        width: 70px;
+        padding: 10px;
+
+    }
+    </style>
 </head>
+<body>
+<header> <!-- 헤더 -->
+    <div class="wrapper"> <!--전체 랩 -->
+        <a href="https://www.naver.com"><h1></h1></a>
+        <nav> <!-- 메뉴부분 -->
+            <div class="search"> <!-- 검색창 -->
 
-<body id="page-top">
-
-<!-- Page Wrapper -->
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
+                <input type="text" placeholder="공모/투표/게시판 찾아보기">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
-            <div class="sidebar-brand-text mx-3">DeePocket</div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <li class="nav-item">
-            <a class="nav-link" href="/idea/list">
-                <span>진행중인 아이디어</span></a>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <span>투표하기</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/board/">
-                <span>자유게시판</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <span>Q&A</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-    </ul>
-    <!-- End of Sidebar -->
-
-
-
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-    <%-- header bar --%>
-        <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-
-            <!-- Sidebar Toggle (Topbar) -->
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Topbar Search -->
-            <form action="/board/getbyall" method="post"
-                  class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                    <input name="val" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                           aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                            search
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-            <!-- Topbar Navbar -->
-            <c:if test="${empty sessionScope.id}">
-                <a class="sg-button btnFade btnLight" href="/member/login">로그인</a>
-                <a class="sg-button btnFade btnLight" href="/member/join">회원가입</a>
-            </c:if>
-            <c:if test="${not empty sessionScope.id}">
-                ${sessionScope.id }님 로그인중 /
-                <c:if test="${sessionScope.mem_type==false}">당신은 일반회원입니다</c:if>
-                <c:if test="${sessionScope.mem_type==true}">당신은 관리자입니다</c:if>
-                <a class="sg-button" href="/member/detail">내정보확인</a><br/>
-                <a class="sg-button" href="/member/logout">로그아웃</a><br/>
-                <a class="sg-button" href="/member/out">탈퇴</a><br/>
-            </c:if>
-
+            <!-- <div class="menu">  버튼 부분 -->
+            <!-- <li><a href="#"><input type="button" value="로그인" onclick="add()" class="btn btn-primary" style='margin-left:400px'></a></li>
+        </div> -->
+            <!--<span style="padding: 5px; margin-top: 15px; border-radius:100px;  font-family: Inter;font-weight:400;
+            font-size: 11px;
+            font-style: normal;"
+            > -->
+<%--             <span style= "color: black; position: absolute;--%>
+<%--                    padding: 10px;--%>
+<%--                    margin-top: 25px; border:0px; border-radius:10px; background-color: #D4FEF0; font-family: Inter;font-weight:400;--%>
+<%--               font-size: 11px; line-height: 16px;--%>
+<%--               font-style: normal; text-decoration:none">--%>
+<%--                 <a href=""><button onclick="login()" type="button" class="btn btn-info" size="10px">로그인</button></a>--%>
+<%--                </span> --%>
+            <!--
+            </span>-->
+<%--            <span>--%>
+<%--            <button type='button' value='로그인' style='color: black; position: absolute;--%>
+<%--                 padding: 10px;--%>
+<%--                 margin-top: 25px; border:0px; border-radius:10px; background-color: #D4FEF0; font-family: Inter;font-weight:400;--%>
+<%--            font-size: 11px; line-height: 16px;--%>
+<%--            font-style: normal;'/>--%>
+<%--            <button type='button' value='회원가입' style='color: black; position: absolute;--%>
+<%--                 padding: 10px;--%>
+<%--                 margin-top: 25px; border:0px; border-radius:10px; background-color: #D4FEF0; font-family: Inter;font-weight:400;--%>
+<%--            font-size: 11px; line-height: 16px;--%>
+<%--            font-style: normal;'/>--%>
+<%--            </span>--%>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href=""><button  type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href=""><button  type="button" class="login_button" size="10px">회원가입</button></a>
+             </span>
         </nav>
-    <!-- header bar -->
-        <div id="content">
-        <%--  real content  --%>
-            <%--  slide banner  --%>
-                <div class="banner-container22">
-                    <div class="banner22">
-                        <div data-index=1></div>
-                        <div data-index=2></div>
-                        <div data-index=3></div>
-                        <div data-index=4></div>
-                    </div>
-                </div>
-                <div class="list-button22">
-                    <span class="list-button-item22 active"></span>
-                    <span class="list-button-item22"></span>
-                    <span class="list-button-item22"></span>
-                    <span class="list-button-item22"></span>
-                </div>
-            <%--  slide banner  --%>
-            <%--  main content   --%>
-            <div class="main-content">
-                <div class="totalbox">
-                <div class="hot-idea">
-                    <div class="ideabox"></div>
-
-                </div>
-                <div class="hot-vote">
-                    <div class="vote-box"></div>
-                </div>
-                </div>
-            </div>
-        <%--  real content end  --%>
-<div><p>hello</p></div>
-
-            <div></div>
 
 
-        </div>
     </div>
-</div>
-
-<!-- Bootstrap core JavaScript-->
-<%--<script src="vendor/jquery/jquery.min.js"></script>--%>
-<%--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--%>
-
-<%--<!-- Core plugin JavaScript-->--%>
-<%--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>--%>
-
-<%--<!-- Custom scripts for all pages-->--%>
-<%--<script src="js/sb-admin-2.min.js"></script>--%>
-
-<%--<!-- Page level plugins -->--%>
-<%--<script src="vendor/chart.js/Chart.min.js"></script>--%>
-
-<!-- Page level custom scripts -->
-<%--<script src="js/demo/chart-area-demo.js"></script>--%>
-<%--<script src="js/demo/chart-pie-demo.js"></script>--%>
-<%-- JS   --%>
-<script src="/bootstrap/js/main.js"></script>
+</header>
 
 </body>
-
-</html>
