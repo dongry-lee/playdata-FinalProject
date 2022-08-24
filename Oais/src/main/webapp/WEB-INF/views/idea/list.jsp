@@ -10,29 +10,73 @@
 <html>
 <head>
     <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
-    <title>Title</title>
+    <title>아이디어게시</title>
 </head>
 <body>
 <!-- Page Wrapper -->
-<div class="wrapper">
+<div id="wrapper">
 
-    <!-- Sidemenu -->
-    <div class="menu">
-        <ul class="sidemenu">
-            <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
-            <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/vote" class="item"><div>투표하기</div></a></li>
-            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
-            <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
-                @2022 Oais</div>
-        </ul>
-    </div>
-    <!-- End of Sidemenu-->
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- 사이드바 - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">DeePocket</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <li class="nav-item">
+            <a class="nav-link" href="/idea/">
+                <span>진행중인 아이디어</span></a>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span>투표하기</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/board/">
+                <span>자유게시판</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="tables.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Q&A</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+    </ul>
+    <!-- End of Sidebar -->
+
+
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+
+        <!-- End of Main Content -->
         <div id="content">
 
             <%--  real content  --%>
+
+
+            <c:if test="${not empty sessionScope.id}">
+                <a href="/idea/add">글작성</a>
+            </c:if>
             <c:forEach var="b" items="${list}">
                 <div class="col-lg-6 col-xxl-4 mb-5">
                     <div class="card bg-light border-0 h-100">
