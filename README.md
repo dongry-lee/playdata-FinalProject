@@ -24,6 +24,19 @@
 
 ## 웹 기획
 https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
+<img width="552" alt="1 메인화면" src="https://user-images.githubusercontent.com/110527157/186382235-b9b29651-c78a-46f6-bd38-4e96b495aa0b.png">
+<img width="549" alt="2  로그인" src="https://user-images.githubusercontent.com/110527157/186382270-37ee2e5e-2ff7-4f5d-86e1-bf21ad0f7dc0.png">
+<img width="1440" alt="3 회원가입" src="https://user-images.githubusercontent.com/110527157/186382298-9945000a-e042-458f-ad27-6d1109e98fc7.png">
+<img width="551" alt="4 마이페이지" src="https://user-images.githubusercontent.com/110527157/186382448-a41caad3-1d87-4387-b03d-f4410337efde.png">
+<img width="548" alt="5 아이디어페이지" src="https://user-images.githubusercontent.com/110527157/186382516-140c1e86-0bd4-45b7-8e9b-905f39989ec8.png">
+<img width="543" alt="6 투표 페이지" src="https://user-images.githubusercontent.com/110527157/186382601-bf8e246a-75fb-41dc-bae5-aa0c9d9789c5.png">
+<img width="542" alt="7 자유 게시판" src="https://user-images.githubusercontent.com/110527157/186382583-8291d1b9-069b-430d-8cba-280bc51694a9.png">
+<img width="544" alt="8 고객센터" src="https://user-images.githubusercontent.com/110527157/186382588-a8922bd4-bb11-4003-81d5-ec00081912cb.png">
+<img width="550" alt="8  아이디어상세페이지" src="https://user-images.githubusercontent.com/110527157/186382590-fe99f81c-b9cc-492b-b8c0-0f66dda73933.png">
+<img width="539" alt="9 투표 상세페이지" src="https://user-images.githubusercontent.com/110527157/186382593-13e31b85-3e13-46db-aef6-d9dcac509e8c.png">
+<img width="547" alt="10 자유게시판 상세페이지" src="https://user-images.githubusercontent.com/110527157/186382595-d446b289-8c25-494a-a62a-ef8f4590fa28.png">
+<img width="548" alt="11 고객센터 글작성" src="https://user-images.githubusercontent.com/110527157/186382597-18f761c8-7d51-46e6-930a-1e2677865933.png">
+<img width="544" alt="12 글작성 페이지" src="https://user-images.githubusercontent.com/110527157/186382599-9428bc1c-c2cf-4a51-94f3-e6dd17ffed6c.png">
 
 
 ## 초기 ERD
