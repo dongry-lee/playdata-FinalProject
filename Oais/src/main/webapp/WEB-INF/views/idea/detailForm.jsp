@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Community 상세페이지</title>
+<<<<<<< HEAD
+=======
 
     <!-- Custom fonts for this template-->
     <link href="/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,6 +21,7 @@
 
 
     <title>아이디어게시판 글 디테일</title>
+>>>>>>> develop
 </head>
 <body id="page-top">
 
