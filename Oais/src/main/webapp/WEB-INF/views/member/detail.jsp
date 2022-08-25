@@ -7,7 +7,7 @@
 <%--    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>--%>
 <%--    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>--%>
 
-<%--    <link href="/bootstrap/layout/member/join.css" rel="stylesheet">--%>
+<%--    <link href="/layout/member/join.css" rel="stylesheet">--%>
 <%--    <title>내 정보확인</title>--%>
 <%--<script>--%>
 

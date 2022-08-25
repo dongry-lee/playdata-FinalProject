@@ -1,13 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 27251
-  Date: 2022-08-12
-  Time: 오전 10:39
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 
     <!-- Custom fonts for this template-->
     <link href="/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,8 +15,16 @@
     <!-- Custom styles for this template-->
     <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
+
+
+    <title>아이디어게시판 수정폼</title>
 </head>
-<body>
+<body id="page-top">
+
+
+
+
+
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -39,23 +44,11 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/idea/addIdea" data-toggle="collapse" data-target="#collapsePages"
+            <a class="nav-link collapsed" href="/idea/" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>진행중인 아이디어</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
-                </div>
-            </div>
         </li>
 
         <!-- Nav Item - Charts -->
@@ -81,6 +74,18 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <%--        <div class="text-center d-none d-md-inline">--%>
+        <%--        <button class="rounded-circle border-0" id="sidebarToggle"></button>--%>
+        <%--    </div>--%>
+
+        <!-- Sidebar Message -->
+        <%--        <div class="sidebar-card d-none d-lg-flex">--%>
+        <%--            <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">--%>
+        <%--            <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>--%>
+        <%--            <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>--%>
+        <%--        </div>--%>
 
     </ul>
     <!-- End of Sidebar -->
@@ -136,10 +141,45 @@
             </nav>
             <%--  real content  --%>
 
+            <form action="/idea/edit" method="post">
+                <table border="1">
+                    <tr><th>이거안보이게할거임</th><td><input type="text" name="wnum" value="${b.wnum}" readonly></td></tr>
+                    <tr><th>title</th><td><input type="text" name="title" value="${b.title}"></td></tr>
+                    <tr><th>name</th><td><input type="text" name="name" value="${b.num.name}" readonly></td></tr>
+                    <tr><th>content</th><td><textarea rows="15" cols="20" name="content" >"${b.content}"</textarea></td></tr>
+                    <tr><th>마감일자</th><td><input type="date" name="ddate" value="${b.ddate}"></td></tr>
+                    <tr><th>hash</th><td><input type="text" name="hash" value="${b.hash}" ></td></tr>
+                        <tr><th>수정</th><td><input value="수정" type="submit"></td></tr>
+
+                        <tr><th>삭제</th><td><input  type="button" value="삭제" onclick="location.href='/idea/delete?wnum=${b.wnum}'"></td></tr>
+                </table>
+            </form>
             <%--  real content end  --%>
             <h3>Deepocket</h3>
+
+
         </div>
     </div>
 </div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+
+
+
 </body>
 </html>

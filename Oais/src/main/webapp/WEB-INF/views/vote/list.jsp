@@ -11,8 +11,8 @@
 <head>
     <title>진행중인 투표</title>
     <%--style css--%>
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
-    <link href="/bootstrap/css/vote.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/vote.css" rel="stylesheet">
 </head>
 <body>
 <header>

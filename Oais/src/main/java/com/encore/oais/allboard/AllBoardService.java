@@ -15,13 +15,26 @@ public class AllBoardService {
     public ArrayList<AllBoard> getAllIdea(){
         return dao.findByTypecd(0);
     }
+    public AllBoard addAllBoard(AllBoard b){
+        return dao.save(b);
+    }
     public AllBoard addIdea(AllBoard b){
         b.setTypecd(0);
         return dao.save(b);
     }
+    public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
+    public AllBoard addvote(AllBoard v){
+        v.setTypecd(0);
+        return dao.save(v);
+    }
+
     public AllBoard getByNum(int wnum){
 
         return dao.findById(wnum).orElse(null);
+    }
+
+    public void delAllBoard(int wnum){
+        dao.deleteById(wnum);
     }
 //
 //
