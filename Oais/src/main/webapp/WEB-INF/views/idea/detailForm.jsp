@@ -5,9 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Community 상세페이지</title>
-<<<<<<< HEAD
-=======
+<title>아이디어게시판 글 상세페이지</title>
 
     <!-- Custom fonts for this template-->
     <link href="/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,8 +18,6 @@
     <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
 
 
-    <title>아이디어게시판 글 디테일</title>
->>>>>>> develop
 </head>
 <body id="page-top">
 
@@ -114,20 +110,6 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <!-- Topbar Search -->
-                <form action="/board/getbyall" method="post"
-                      class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input name="val" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                search
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
 
                 <!-- Topbar Navbar -->
                 <c:if test="${empty sessionScope.id}">
@@ -161,9 +143,23 @@
 
                 </table>
 
-                <h3>댓글</h3><input type="text" value="댓글을 입력해주세요">
-
-                <h3>댓글내용</h3>
+                <h3>댓글</h3>
+            <form action="/idea/detail" method="post">
+                <input type="text" name="wnum" value="${b.wnum}" readonly><%-- 안보이게 만들어야함 --%>
+                <input type="text" name="num" value="${sessionScope.num}" readonly><%-- 안보이게 만들어야함 --%>
+                <input type="text" value="${sessionScope.name}" readonly>
+                <input type="text" name="content" placeholder="댓글을 입력해주세요">
+                <input type="submit" value="댓글달기">
+            </form>
+                <table>
+                <c:forEach var="c" items="${comments}">
+                    <tr><td>${c.num.name}</td><td>${c.cdate}</td><td>${c.content}</td>
+                        <c:if test="${sessionScope.num == c.num.num}">
+                        <td><a href="/idea/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}">삭제</a></td>
+                        </c:if>
+                    </tr>
+                </c:forEach>
+                </table>
 
             <%--  real content end  --%>
             <h3>Deepocket</h3>
