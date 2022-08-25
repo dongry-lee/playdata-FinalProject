@@ -10,6 +10,7 @@ import javax.persistence.*;
 
 
 public class VoteBoard {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int wnum;
@@ -19,6 +20,7 @@ public class VoteBoard {
     private Member num;
 
     private String title;
-
     private String content;
+
+
 }
