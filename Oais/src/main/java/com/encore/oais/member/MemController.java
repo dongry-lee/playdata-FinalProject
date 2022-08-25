@@ -38,6 +38,7 @@ public class MemController {
             if (m.getPwd().equals(pwd)) {
                 session.setAttribute("id", id);
                 session.setAttribute("name", m.getName());
+                session.setAttribute("num", m.getNum());
                 session.setAttribute("domtype", m.isDomtype());
                 path = "redirect:/";
             } else {

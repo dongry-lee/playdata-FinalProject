@@ -3,20 +3,33 @@
 <html>
 <head>
 
-    <!-- Custom styles for this template-->
-<%--    <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">--%>
-<%--    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">--%>
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
 
-    <!-- Initialize Swiper -->
-
-
+    <link href="/css/custom.css" rel="stylesheet">
     <%-- JS  --%>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <title>DeePocket</title>
+    <title>오늘의 아이디어스!</title>
 </head>
 
-<body id="page-top">
+<body>
+<header>
+    <div class="wrapper"> <!--전체 랩 -->
+        <a href="https://www.naver.com"><h1></h1></a>
+        <nav> <!-- 메뉴부분 -->
+            <div class="search"> <!-- 검색창 -->
+
+                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
+                <input type="text" placeholder="공모/투표/게시판 찾아보기">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            </div>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href=""><button  type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href=""><button  type="button" class="login_button" size="10px">회원가입</button></a>
+             </span>
+        </nav>
+    </div>
+</header>
 
 <!-- Page Wrapper -->
 <div class="wrapper">
@@ -24,10 +37,10 @@
     <!-- Sidemenu -->
     <div class="menu">
         <ul class="sidemenu">
-            <li class="sidbtn"><a href="#" class="item"><div>홈</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>투표하기</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>자유게시판</div></a></li>
+            <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
+            <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
+            <li class="sidbtn"><a href="/vote/list" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
             <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
                 @2022 Oais</div>

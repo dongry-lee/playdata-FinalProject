@@ -1,0 +1,301 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    /*overflow-x:hidden;*/
+    /*overflow-y:auto;*/
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+/* 기본 스타일 제거*/
+/**/
+.wrapper{
+    display: flex;
+}
+/* slidebanner */
+.banner-container{
+    width:100vw;
+    height:300px;
+    overflow:hidden;
+}
+.banner{
+    width:calc(100vw*4);
+    height:100%;
+    display:flex;
+    animation: animation1 10s infinite;
+    /*기본 전환 animation을 위한 설정*/
+    -webkit-transition: all 1.0s cubic-bezier(1, .01, .32, 1);
+    -moz-transition: all 1.0s cubic-bezier(1, .01, .32, 1);
+    -o-transition: all 1.0s cubic-bezier(1, .01, .32, 1);
+    -ms-transition: all 1.0s cubic-bezier(1, .01, .32, 1);
+    transition: all 1.0s cubic-bezier(1, .01, .32, 1);
+}
+.banner>div{
+    border-radius: 20px;
+    width:100vw;
+    height:100%;
+    display:block;
+}
+.banner>div:nth-child(1){
+    background-color:#2E4559;
+}
+.banner>div:nth-child(2){
+    background-color:#4A6D8C;
+}
+.banner>div:nth-child(3){
+    background-color:#6A8AA6;
+}
+.banner>div:nth-child(4){
+    background-color:#A9C6D9;
+}
+.list-button{
+    width:100%;
+    height:10px;
+    display:flex;
+    justify-content:center;
+    margin-top:-30px;
+    position:absolute;
+    z-index:2;
+}
+.list-button-item{
+    width:10px;
+    height:10px;
+    border-radius:5rem;
+    background-color:black;
+    cursor: pointer;
+    display: inline-block;
+    margin:6px;
+}
+.list-button-item.active{
+    background-color:white;
+}
+@keyframes animation1 {
+    0% {margin-left: 0}
+    20% {margin-left: 0}
+    25% {margin-left: -100%}
+    45% {margin-left: -100%}
+    50% {margin-left: -200%}
+    70% {margin-left: -200%}
+    75% {margin-left: -300%}
+    95% {margin-left: -300%}
+    100% {margin-left: 0}
+}
+@keyframes animation2 {
+    0% {margin-left: -100%}
+    20% {margin-left: -100%}
+    25% {margin-left: -200%}
+    45% {margin-left: -200%}
+    50% {margin-left: -300%}
+    70% {margin-left: -300%}
+    75% {margin-left: 0}
+    95% {margin-left: 0}
+    100% {margin-left: -100%}
+}
+@keyframes animation3 {
+    0% {margin-left: -200%}
+    20% {margin-left: -200%}
+    25% {margin-left: -300%}
+    45% {margin-left: -300%}
+    50% {margin-left: 0}
+    70% {margin-left: 0}
+    75% {margin-left: -100%}
+    95% {margin-left: -100%}
+    100% {margin-left: -200%}
+}
+@keyframes animation4 {
+    0% {margin-left: -300%}
+    20% {margin-left: -300%}
+    25% {margin-left: 0}
+    45% {margin-left: 0}
+    50% {margin-left: -100%}
+    70% {margin-left: -100%}
+    75% {margin-left: -200%}
+    95% {margin-left: -200%}
+    100% {margin-left: -300%}
+}
+
+.slidebanner-box{
+    width: 100%
+}
+/* slidebanner */
+
+/* main content */
+.totalbox{
+    display: flex;
+    gap: 24px 64px;
+    flex-wrap: wrap;
+}
+
+.hot-idea{
+
+}
+
+
+/*sidemenu*/
+.sidemenu{
+    width: 14rem!important;
+    min-height: 100vh;
+    background-color: #ffffff;
+    list-style: none;
+    padding-top: 20px;
+}
+
+.sidbtn{
+    list-style: none;
+    background-color: #ffffff;
+    width: fit-content;
+    padding: 10px 20px 10px 20px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.sidbtn:hover{
+    background-color: #d4fef0;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.hhd{
+    position: absolute;
+    clear: left;
+    float: left;
+    left: 0px;
+    bottom: 0px;
+}
+/*sidemenu*/
+
+/*header*/
+header {
+    height: 75px;
+    background-color: white;
+    border: 0px solid #253342;
+    box-shadow: 0px 0px 2px 0px black;
+    position: relative;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+h1 {
+    float: left;
+    position: absolute;
+    width: 75px;
+    height: 1px;
+    left: 22px;
+    top: 0px;
+
+    background: url(/img/img.png);
+    background-size: cover;
+    background-position: left;
+    border-radius: 10px;
+    margin: 20px auto 20px auto;
+
+    box-shadow: 0px 0px 0px 0px black;
+    padding: 20px;
+
+}
+
+
+nav {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    text-decoration: none;
+}
+nav. serach > icon {
+    position: absolute;
+    top: 50%;
+    margin-left: 17px;
+    margin-top: 17px;
+    z-index: 1;
+}
+.search > input {
+    border: 0;
+    background-color: #f0f0f0;
+
+    margin: 20px 600px 20px 160px;
+
+    width: 300px;
+    height: 1px;
+    border-radius: 8px;
+    padding: 20px 15px;
+    font-size: 13px;
+
+}
+
+nav >  button  {
+    line-height: 35px;
+    color:black;
+    padding: 8px 12px;
+    /*display: block;*/
+    /*position: absolute; */
+    list-style: none;
+    border-radius: 100px;
+
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 11px;
+    margin-top: 20px;
+    width: 60px;
+}
+.login_button {
+    color: black;
+    margin-top: 5px;
+    border:0px; border-radius:12px; background-color: #D4FEF0;
+    font-size: 11px;
+    line-height: 16px;
+    font-style: normal;
+    font-family: Inter;
+    font-weight: bold;
+    width: 70px;
+    padding: 10px;
+
+
+}
+/*header*/
