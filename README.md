@@ -1,5 +1,5 @@
 # playdata-FinalProject
-
+## 개발기간 : 2022.8.22 ~ 2022.9.15
 ## 소개
   다양한 목적을 가진 이용자들이, 제약과 장벽없이 크고작은 아이디어를 공유하며 소통할 수 있는 웹 서비스를 구축하고자 합니다.
 기존의 아이디어 공모 웹서비스들은 공모글을 게재하는것만으로 해당 사이트에 이용비용을 지불해야합니다.
@@ -24,16 +24,67 @@
 
 ## 웹 기획
 https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
+<img width="552" alt="1 메인화면" src="https://user-images.githubusercontent.com/110527157/186382235-b9b29651-c78a-46f6-bd38-4e96b495aa0b.png">
+<img width="549" alt="2  로그인" src="https://user-images.githubusercontent.com/110527157/186382270-37ee2e5e-2ff7-4f5d-86e1-bf21ad0f7dc0.png">
+<img width="542" alt="3 회원가입" src="https://user-images.githubusercontent.com/110527157/186383195-0bf4f3b0-6672-4c7f-95e5-0fe648b1731e.png">
+<img width="551" alt="4 마이페이지" src="https://user-images.githubusercontent.com/110527157/186382448-a41caad3-1d87-4387-b03d-f4410337efde.png">
+<img width="548" alt="5 아이디어페이지" src="https://user-images.githubusercontent.com/110527157/186382516-140c1e86-0bd4-45b7-8e9b-905f39989ec8.png">
+<img width="543" alt="6 투표 페이지" src="https://user-images.githubusercontent.com/110527157/186382601-bf8e246a-75fb-41dc-bae5-aa0c9d9789c5.png">
+<img width="542" alt="7 자유 게시판" src="https://user-images.githubusercontent.com/110527157/186382583-8291d1b9-069b-430d-8cba-280bc51694a9.png">
+<img width="544" alt="8 고객센터" src="https://user-images.githubusercontent.com/110527157/186382588-a8922bd4-bb11-4003-81d5-ec00081912cb.png">
+<img width="550" alt="8  아이디어상세페이지" src="https://user-images.githubusercontent.com/110527157/186382590-fe99f81c-b9cc-492b-b8c0-0f66dda73933.png">
+<img width="539" alt="9 투표 상세페이지" src="https://user-images.githubusercontent.com/110527157/186382593-13e31b85-3e13-46db-aef6-d9dcac509e8c.png">
+<img width="547" alt="10 자유게시판 상세페이지" src="https://user-images.githubusercontent.com/110527157/186382595-d446b289-8c25-494a-a62a-ef8f4590fa28.png">
+<img width="548" alt="11 고객센터 글작성" src="https://user-images.githubusercontent.com/110527157/186382597-18f761c8-7d51-46e6-930a-1e2677865933.png">
+<img width="544" alt="12 글작성 페이지" src="https://user-images.githubusercontent.com/110527157/186382599-9428bc1c-c2cf-4a51-94f3-e6dd17ffed6c.png">
 
 
-## 시스템 구성도
+## 초기 ERD
 ![OIS (1)](https://user-images.githubusercontent.com/89010847/185848161-021c2a11-d450-4045-aab4-9c8a43b40cf6.png)
+
+## 1차 수정 ERD
+![새 테이블](https://user-images.githubusercontent.com/89010847/186045427-12e32fa1-600a-416c-8170-7a80cb0f2e8e.PNG)
+
 
 ## 스프린트
 https://github.com/users/dongry-lee/projects/1
 
+## check in & check out
+
+8/23<br>
+check in<br>
+Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
+header 만들기, 아이디어게시판 view html - 민서<br>
+sidebar 만들기, 투표게시판 view html - 진웅<br>
+아이디어 게시판 기능 개발 시작 - 동근<br>
+투표게시판 기능 개발 시작 - 진수<br>
+member table 다듬기  - 동근<br>
+<br>
+check out<br>
+회원가입, 탈퇴, 로그인 수정 / 아이디어게시판 홈화면,글작성 백 개발 - 동근<br>
+side menu 완성 / 메인 페이지 slidebanner 수정중 / 투표게시판 view 제작중 - 진웅<br>
+투표항목 DB설계 / 투표기능 백 개발 및 공부 /JSON으로 작업해보기 - 진수<br>
+header menu 제작중 / 검색창 아이콘 삽입 수정/ 아이콘 연결 오류 해결중 - 민서<br>
 
 
+8/24<br>
+check in<br>
+아이디어 게시판 기능 개발(첨부파일, 댓글제외), 댓글테이블 및 기능개발  - 동근<br>
+투표게시판 틀 만들기 / 투표기능 제작 - 진수<br>
+header menu 수정/ 사이드 메뉴 바와 코드 비교/ 게시판 글작성 틀 제작 - 민서<br>
+<br>
+check out<br>
+게시판 글 crud, 댓글 테이블 및 기능개발 시작 - 동근<br>
+투표 작성페이지/ 상세페이지 제작 목표 - 진웅<br>
+투표게시판 제목 내용 DB저장,투표기능 개발 진행중 - 진수 <br>
+header menu 완성(백그라운드로고 이미지에 링크삽입, 버튼 중첩 문제 해결, 헤더 바 길이 수정)/사이드 메뉴바와 합쳐서 페이지 틀 구성 - 민서<br>
 
 
-
+8/25<br>
+check in<br>
+댓글기능 C,R, github merge오류 해결 - 동근<br>
+투표 작성페이지/ 상세페이지 제작 및 컨트롤러 연결 - 진웅<br>
+ - 진수<br>
+ 아이디어 공모페이지/ 상세페이지 제작/ 해당 헤더 수정제작 및 연결 민서<br>
+<br>
+check out<br>
