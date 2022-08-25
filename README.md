@@ -88,3 +88,4 @@ check in<br>
  아이디어 공모페이지/ 상세페이지 제작/ 해당 헤더 수정제작 및 연결 민서<br>
 <br>
 check out<br>
+댓글기능 CRD, github merge오류 해결, 첨부파일 넣기 작업 시작 - 동근<br>
