@@ -15,6 +15,9 @@ public class AllBoardService {
     public ArrayList<AllBoard> getAllIdea(){
         return dao.findByTypecd(0);
     }
+    public AllBoard addAllBoard(AllBoard b){
+        return dao.save(b);
+    }
     public AllBoard addIdea(AllBoard b){
         b.setTypecd(0);
         return dao.save(b);
@@ -28,6 +31,10 @@ public class AllBoardService {
     public AllBoard getByNum(int wnum){
 
         return dao.findById(wnum).orElse(null);
+    }
+
+    public void delAllBoard(int wnum){
+        dao.deleteById(wnum);
     }
 //
 //

@@ -3,6 +3,7 @@ package com.encore.oais.allboard;
 
 import com.encore.oais.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -30,9 +32,15 @@ public class IdeaController {
     public void addForm(){}
 
     @PostMapping("/add")
-    public String add(AllBoard b){
+    public String add(String title, Member num, String content, @DateTimeFormat(pattern="yyyy-MM-dd")Date ddate, String hash){
+        AllBoard b = new AllBoard();
+        b.setTitle(title);
+        b.setNum(num);
+        b.setContent(content);
+        b.setDdate(ddate);
+        b.setHash(hash);
         service.addIdea(b);
-        return "redirect:/board/";
+        return "redirect:/idea/";
     }
 
 
@@ -40,6 +48,8 @@ public class IdeaController {
     public String detailForm(int wnum, Map m){
         AllBoard b = service.getByNum(wnum);
         m.put("b", b);
+        b.setViews(b.getViews()+1);
+        service.addAllBoard(b);
         return "idea/detailForm";
     }
 
@@ -52,9 +62,21 @@ public class IdeaController {
     }
 
     @PostMapping("/edit")
-    public String edit(){
+    public String edit(int wnum, String title, String content, @DateTimeFormat(pattern="yyyy-MM-dd")Date ddate, String hash){
+        AllBoard b = service.getByNum(wnum);
+        System.out.println(b);
+        b.setTitle(title);
+        b.setContent(content);
+        b.setDdate(ddate);
+        b.setHash(hash);
+        service.addAllBoard(b);
+        return "redirect:/idea/detail?wnum="+wnum;
+    }
 
-        return "idea/editForm";
+    @GetMapping("/delete")
+    public String delete(int wnum){
+        service.delAllBoard(wnum);
+        return "redirect:/idea/";
     }
 ////    @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ
 ////    public ResponseEntity<byte[]> read_img(String fname, int num) {
@@ -75,11 +97,7 @@ public class IdeaController {
 
 
 //
-//    @GetMapping("/delete")
-//    public String delete(int num){
-//        service.delBoard(num);
-//        return "redirect:/board/";
-//    }
+
 //
 ////    @ResponseBody
 ////    @GetMapping("/getByNum")

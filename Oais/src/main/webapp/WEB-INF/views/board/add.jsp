@@ -5,14 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>글작성</title>
-
-    <!-- Custom styles for this template-->
-    <link href="/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
-
-    <%-- JS  --%>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
     <title>DeePocket</title>
 </head>
 

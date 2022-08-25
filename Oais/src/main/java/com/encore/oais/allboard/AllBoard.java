@@ -5,6 +5,7 @@ import com.encore.oais.member.Member;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -31,19 +32,23 @@ public class AllBoard {
 
     @Column(nullable = false)
     private String content;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date wdate;
 
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date ddate;
 
     @Column(columnDefinition = "integer default 0")
     private int views;
+
     @Column(columnDefinition = "integer default 0")
     private int part;
 
     private String hash; //해쉬,태그,이걸,나눠서,써야하네
-
-
 
     @PrePersist  //insert전 미리 실행해야할 메소드
     public void beforeCreate(){
