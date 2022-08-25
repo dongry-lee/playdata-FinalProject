@@ -56,6 +56,7 @@ a {
 /**/
 .wrapper{
     display: flex;
+
 }
 /* slidebanner */
 .banner-container{
@@ -178,7 +179,7 @@ a {
 
 /*sidemenu*/
 .sidemenu{
-    width: 14rem!important;
+    width: 10rem!important;
     min-height: 100vh;
     background-color: #ffffff;
     list-style: none;
@@ -212,15 +213,16 @@ a {
 header {
     height: 75px;
     background-color: white;
-    border: 0px solid #253342;
-    box-shadow: 0px 0px 2px 0px black;
-    position: relative;
+    border: 0px; /*solid #253342;*/
+    box-shadow: 0px 0px 0px 0px black;
+    /*position: relative;*/
     width: 100%;
     z-index: 9999;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 h1 {
     float: left;
