@@ -41,7 +41,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="/vote">
+            <a class="nav-link" href="/voteboard/write/">
                 <span>투표하기</span></a>
         </li>
 
