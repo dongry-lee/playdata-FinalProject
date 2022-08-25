@@ -9,8 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>

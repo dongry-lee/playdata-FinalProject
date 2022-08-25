@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="css/member/login.css" rel="stylesheet">
+    <link href="/layout/member/login.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Insert title here</title>
     <style>
@@ -103,12 +103,6 @@
                 <a href="/">메인으로</a>
             </li>
         </ul>
-<%--        <table style="border:solid 1px black">--%>
-<%--            --%>
-<%--            <tr><th>pwd</th><td><input type="password" name="pwd"></td></tr>--%>
-<%--            <tr><th>로그인</th><td><input type="submit" value="로그인">--%>
-<%--                <a href="/member/join">회원가입</a></td></tr>--%>
-<%--        </table>--%>
     </form>
     </div>
 </div>

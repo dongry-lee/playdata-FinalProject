@@ -4,7 +4,7 @@
 <head>
 
 
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
     <%-- JS  --%>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>오늘의 아이디어스!</title>
@@ -20,7 +20,7 @@
         <ul class="sidemenu">
             <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/vote" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/vote/list" class="item"><div>투표하기</div></a></li>
             <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
             <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>

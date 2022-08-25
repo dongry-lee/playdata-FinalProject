@@ -19,6 +19,12 @@ public class AllBoardService {
         b.setTypecd(0);
         return dao.save(b);
     }
+    public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
+    public AllBoard addvote(AllBoard v){
+        v.setTypecd(0);
+        return dao.save(v);
+    }
+
     public AllBoard getByNum(int wnum){
 
         return dao.findById(wnum).orElse(null);
