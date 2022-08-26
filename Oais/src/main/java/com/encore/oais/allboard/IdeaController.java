@@ -6,12 +6,14 @@ import com.encore.oais.comments.CommentsService;
 import com.encore.oais.member.MemService;
 import com.encore.oais.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,7 +32,8 @@ public class IdeaController {
     @Autowired
     private MemService m_service;
 
-
+    @Value("${spring.servlet.multipart.location}")
+    private String imgpath;
     @RequestMapping("/")
     public String list(Model model){
         ArrayList<AllBoard> list = service.getAllIdea();
@@ -42,14 +45,19 @@ public class IdeaController {
     public void addForm(){}
 
     @PostMapping("/add")
-    public String add(String title, Member num, String content, @DateTimeFormat(pattern="yyyy-MM-dd")Date ddate, String hash){
+    public String add(String title, Member num, String content, @DateTimeFormat(pattern="yyyy-MM-dd")Date ddate,
+                      String hash, MultipartFile img1, MultipartFile img2, MultipartFile img3){
         AllBoard b = new AllBoard();
+        System.out.println(img1);
+        System.out.println(img2);
+        System.out.println(img3);
         b.setTitle(title);
         b.setNum(num);
         b.setContent(content);
         b.setDdate(ddate);
         b.setHash(hash);
         service.addIdea(b);
+
         return "redirect:/idea/";
     }
 
@@ -60,7 +68,6 @@ public class IdeaController {
         AllBoard c = new AllBoard();
         c.setWnum(wnum);
         ArrayList<Comments> comments = c_service.getAll(c);
-        System.out.println(comments);
         m.put("b", b);
         m.put("comments", comments);
         b.setViews(b.getViews()+1);
@@ -71,13 +78,14 @@ public class IdeaController {
     @PostMapping("/detail")
     public String addComments(int wnum, int num, String content){
         AllBoard b = service.getByWnum(wnum);
+        b.setPart(b.getPart()+1);
         Member m = m_service.getByNum(num);
         Comments c = new Comments();
         c.setContent(content);
         c.setNum(m);
         c.setWnum(b);
-        System.out.println(c);
         c_service.addComment(c);
+        service.addAllBoard(b);
         return "redirect:/idea/detail?wnum="+wnum;
     }
 
@@ -110,6 +118,9 @@ public class IdeaController {
     @GetMapping("/comment/delete")
     public String commentdelete(int cnum, int wnum){
         c_service.delConmment(cnum);
+        AllBoard b = service.getByWnum(wnum);
+        b.setPart(b.getPart()-1);
+        service.addAllBoard(b);
         return "redirect:/idea/detail?wnum="+wnum;
     }
 ////    @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ
