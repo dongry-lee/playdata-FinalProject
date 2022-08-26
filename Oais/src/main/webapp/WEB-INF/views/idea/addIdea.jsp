@@ -10,8 +10,8 @@ To change this template use File | Settings | File Templates.
 <html>
 <head>
     <title>아이디어 공모</title>
-    <link href="/bootstrap/css/custom.css" rel="stylesheet">
-    <link href="/bootstrap/css/idea.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/idea.css" rel="stylesheet">
 </head>
 <body>
 <header>
