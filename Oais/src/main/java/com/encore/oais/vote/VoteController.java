@@ -1,3 +1,4 @@
+
 //package com.encore.oais.vote;
 //
 //import com.encore.oais.voteboard.VoteBoard;
@@ -24,4 +25,3 @@
 //        return "";
 //    }
 //
-//}

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>투표 상세페이지</title>
     <link href="/css/custom.css" rel="stylesheet">
 </head>
 <body>

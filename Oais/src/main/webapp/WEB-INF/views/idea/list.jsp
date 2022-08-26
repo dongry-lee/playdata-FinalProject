@@ -9,10 +9,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>진행중인 아이디어 공모</title>
+
     <link href="/css/custom.css" rel="stylesheet">
-    <link href=/css/idea.css" rel="stylesheet">
-<%--    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">--%>
+    <title>Title</title>
 </head>
 <body>
 <header>
