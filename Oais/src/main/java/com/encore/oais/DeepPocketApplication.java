@@ -10,6 +10,4 @@ public class DeepPocketApplication {
         SpringApplication.run(DeepPocketApplication.class, args);
     }
 
-
-
 }

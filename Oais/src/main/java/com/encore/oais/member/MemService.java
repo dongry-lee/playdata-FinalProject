@@ -15,7 +15,7 @@ public class MemService {
         return dao.save(m);//한줄 insert한 뒤 추가된 한줄 컬럼값들을 vo에 담아 반환
     }
 
-    //로그인, 내정보확인
+//    로그인, 내정보확인
     public ArrayList<Member> getMember(String id){
         return dao.findByMid(id);
     }
@@ -30,10 +30,8 @@ public class MemService {
         dao.deleteByMid(mid);
     }
 
-    //전체검색
-    public ArrayList<Member> getAll(){
-        return (ArrayList<Member>) dao.findAll();
+    public Member getByNum(int num){
+        return dao.findById(num).orElse(null);
     }
-
 
 }

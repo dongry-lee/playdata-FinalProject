@@ -5,10 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Repository
-public interface MemDao extends JpaRepository<Member, String> {
-
+public interface MemDao extends JpaRepository<Member, Integer> {
     ArrayList<Member> findByMid(String id);
     @Transactional
     void deleteByMid(String mid);
