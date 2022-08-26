@@ -8,9 +8,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class VoteService {
 
-    @Autowired
-    private VoteRepository voteRepository;
-
-    public void writevote(Vote vote){voteRepository.save(vote);
-    }
 }
