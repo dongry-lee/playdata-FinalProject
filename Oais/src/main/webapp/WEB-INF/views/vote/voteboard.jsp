@@ -14,7 +14,7 @@
 
 <a href="/voteboard/vote">투표</a>
 
-  <form action="/voteboard/writepro/" method="post">
+  <form action="/voteboard/cro/" method="post">
     <input name="num.num" type="text" value="${sessionScope.num}">
     제목
     <input name="title" type="text">

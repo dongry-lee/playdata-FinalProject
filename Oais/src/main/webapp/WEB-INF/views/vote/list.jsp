@@ -42,7 +42,7 @@
         <ul class="sidemenu">
             <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/vote" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/vote/" class="item"><div>투표하기</div></a></li>
             <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
             <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -72,7 +72,7 @@
                             <input type="radio" id="" name="강아지" /><label><span></span>강아지</label>
                             <input type="radio" id="" name="고양이" /><label><span></span>고양이</label>
                         </div>
-
+                        <a href="/voteboard/vote">투표</a>
                     </div>
                 </div>
             </div>
