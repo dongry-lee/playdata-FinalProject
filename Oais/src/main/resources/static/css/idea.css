@@ -1,0 +1,115 @@
+/*.content {*/
+/*    display: grid;*/
+/*    width: 100%;*/
+/*    align-self: start;*/
+/*    padding-bottom: 10vh;*/
+/*    --container-width: 1140px;*/
+/*    grid-template-columns: minmax(36px, 1fr) min(calc(100% - 72px), var(--container-width)) minmax(0px, calc(1140px - var(--container-width) )) minmax(36px, 1fr);*/
+/*}*/
+
+
+.fg-head > h2{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Inter';
+    font-style: normal;
+    padding: 20px 0px 20px 20px;
+}
+
+.idea-form{
+
+    /*display: grid;*/
+
+    /*align-self: start;*/
+    /*padding-bottom: 10vh;*/
+    /*--container-width: 1140px;*/
+    /*grid-template-columns: minmax(36px, 1fr) min(calc(100% - 72px), var(--container-width)) minmax(0px, calc(1140px - var(--container-width) )) minmax(36px, 1fr);*/
+
+
+    width: auto;
+    height: 660px;
+    margin-left: 10px;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background-color: #d4fef0;
+
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*z-index: 9999;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*display: flex;*/
+
+    /*!*width: auto;*!*/
+    /*height: 660px;*/
+    /*margin-left: 10px;*/
+    /*!*padding: 15px 30px;*!*/
+    /*border-radius: 15px;*/
+    /*background-color: #d4fef0;*/
+}
+
+.idea-box{
+    display: flex;
+    width: 1200px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.idea-img > img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.idea-info{
+    width: 300px;
+    height: 230px;
+    padding: 20px;
+}
+
+.idea-content{
+    padding: 20px;
+}
+.idea-img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.write-info {
+    width: 300px;
+    height: 130px;
+    padding: 15px;
+    background-color: #d4fef0;
+    border-radius: 15px;
+
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+/*write-form {
+    width: 300px;
+    height: 130px;
+    padding: 15px;
+    background-color: #d4fef0;
+    border-radius: 15px;
+
+    margin-left: 10px;
+    border-radius: 15px;*/
+/*    */
+/*}*/
+
+.write_button {
+    color: black;
+    margin-left: 800px;
+    margin-top: 5px;
+    border:0px; border-radius:12px; background-color: #D4FEF0;
+    font-size: 11px;
+    line-height: 16px;
+    font-style: normal;
+    font-family: Inter;
+    font-weight: bold;
+    width: 60px;
+    padding: 7px;
+}
