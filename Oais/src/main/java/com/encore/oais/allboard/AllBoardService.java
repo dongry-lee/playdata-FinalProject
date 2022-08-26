@@ -28,7 +28,7 @@ public class AllBoardService {
         return dao.save(v);
     }
 
-    public AllBoard getByNum(int wnum){
+    public AllBoard getByWnum(int wnum){
 
         return dao.findById(wnum).orElse(null);
     }
