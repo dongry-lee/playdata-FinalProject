@@ -179,8 +179,10 @@ a {
 
 /*sidemenu*/
 .sidemenu{
-    width: 10rem!important;
-    min-height: 100vh;
+
+    width: 9.5rem!important;
+    /*min-height: 100vh;*/
+
     background-color: #ffffff;
     list-style: none;
     padding-top: 20px;
@@ -189,10 +191,10 @@ a {
 .sidbtn{
     list-style: none;
     background-color: #ffffff;
-    width: fit-content;
+    /* width: fit-content; */
     padding: 10px 20px 10px 20px;
     margin: auto;
-    text-align: center;
+    /* text-align: center; */
     border-radius: 20px;
     font-weight: bold;
 }
@@ -200,6 +202,7 @@ a {
     background-color: #d4fef0;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+
 .hhd{
     position: absolute;
     clear: left;

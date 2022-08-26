@@ -15,6 +15,7 @@
     <link href="/css/vote.css" rel="stylesheet">
 </head>
 <body>
+
 <header>
     <div class="wrapper"> <!--전체 랩 -->
         <a href="https://www.naver.com"><h1></h1></a>
@@ -42,7 +43,7 @@
         <ul class="sidemenu">
             <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/vote/" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/vote/list" class="item"><div>투표하기</div></a></li>
             <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
             <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -52,18 +53,17 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div class="fg-head"><h1>진행중인 아이디어 투표</h1></div>
+        <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
             <div class="vote-box">
                 <div class="vote-info">
-                    <h1 class="vote-title">강아지 vs 고양이</h1>
+                    <p class="vote-title">강아지 vs 고양이</p>
                     <div class="vote-content">
                         뭐 키울까요?
                     </div>
-
                 </div>
                 <div class="vote-img">
-                    <img src="/bootstrap/img/catanddog.png">
+                    <img src="/img/catanddog.png">
                 </div>
                 <div class="vote-option">
                     <div class="option-select">
@@ -72,7 +72,7 @@
                             <input type="radio" id="" name="강아지" /><label><span></span>강아지</label>
                             <input type="radio" id="" name="고양이" /><label><span></span>고양이</label>
                         </div>
-                        <a href="/voteboard/vote">투표</a>
+
                     </div>
                 </div>
             </div>

@@ -13,7 +13,9 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
+
         <a href="/"><h1></h1></a>
+
         <nav> <!-- 메뉴부분 -->
             <div class="search"> <!-- 검색창 -->
 
