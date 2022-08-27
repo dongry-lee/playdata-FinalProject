@@ -29,7 +29,9 @@ public class VoteController {
 
 
         Vote saved = voteRepository.save(vote);
+
         System.out.println(saved.toString());
+
         return "";
 
     }

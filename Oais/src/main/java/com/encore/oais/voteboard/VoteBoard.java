@@ -7,7 +7,8 @@ import javax.persistence.*;
 
 @Entity
 @Data
-
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class VoteBoard {
 
@@ -20,7 +21,12 @@ public class VoteBoard {
     private Member num;
 
     private String title;
+
     private String content;
+
+    private String item01;
+
+    private String item02;
 
 
 }
