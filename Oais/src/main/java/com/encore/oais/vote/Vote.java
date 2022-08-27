@@ -20,10 +20,12 @@ public class Vote {
     private VoteBoard wnum;
 
     @Column(nullable = false)
-    private String item;
+    private int nvote01;
 
     @Column(nullable = false)
-    private int nvote;
+    private int nvote02;
+
+
 
     public Vote(String item) {
     }

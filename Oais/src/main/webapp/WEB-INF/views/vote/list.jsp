@@ -62,6 +62,7 @@
                         뭐 키울까요?
                     </div>
                 </div>
+                <a href="/voteboard/write">게시글 작성</a>
                 <div class="vote-img">
                     <img src="/img/catanddog.png">
                 </div>

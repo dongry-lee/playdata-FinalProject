@@ -54,24 +54,25 @@
     <div id="voteadd-content">
         <div class="fg-head"><p>투표 작성하기</p></div>
         <div class="vote-addform">
-            <form class="votef" action="/voteboard/create" method="post">
+            <form class="votef" action="/voteboard/writepro" method="post">
+                <input name="num.num" type="text" value="${sessionScope.num}">
                 <div class="titlebox">
                 <span class="v-title">제목을 작성하세요</span><br/>
                 <input name="title" type="text">
-                <button>작성</button>
                 </div>
                 <div class="add-content">
                     <div class="contentbox">
                         <div class="votetex">
                         <span class="v-title">투표 내용</span><br/>
-                        <textarea class="votecntarea" name="item" type="text" placeholder="내용을 입력해 주세요."></textarea>
+                        <textarea class="votecntarea" name="content" type="text" placeholder="내용을 입력해 주세요."></textarea>
                         </div>
                         <div class="vote-plus">
                         <span class="v-title">투표 항목</span><br/>
                             <ul>
-                                <li><input type="text"><br/></li>
+                                <li><input name="item01" type="text"><br/></li>
+                                <li><input name="item02" type="text"><br/></li>
                             </ul>
-                        <button>항목 추가</button>
+                        <button onclick="location.href='/voteboard'">게시글 작성</button>
                         </div>
                     </div>
                     <div class="addimg">
