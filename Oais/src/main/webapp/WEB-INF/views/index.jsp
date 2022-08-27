@@ -11,7 +11,7 @@
 </head>
 
 <body>
- <header>
+<header>
     <div class="wrapper"> <!--전체 랩 -->
 
         <a href="/"><h1></h1></a>
@@ -50,6 +50,7 @@
 
 <!-- Page Wrapper -->
 <div class="wrapper">
+
     <!-- Sidemenu -->
     <div class="menu">
         <ul class="sidemenu">
