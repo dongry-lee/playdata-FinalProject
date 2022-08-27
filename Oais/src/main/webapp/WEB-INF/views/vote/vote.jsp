@@ -12,6 +12,7 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/vote/addvote.css" rel="stylesheet">
 </head>
+
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
@@ -53,7 +54,7 @@
     <div id="voteadd-content">
         <div class="fg-head"><p>투표 작성하기</p></div>
         <div class="vote-addform">
-            <form class="votef" action="/voteboard/votepro" method="post">
+            <form class="votef" action="/voteboard/create" method="post">
                 <div class="titlebox">
                 <span class="v-title">제목을 작성하세요</span><br/>
                 <input name="item" type="text">
