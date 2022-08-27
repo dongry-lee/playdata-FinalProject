@@ -11,9 +11,15 @@ public class VoteBoardController {
     @Autowired
     private VoteBoardService voteBoardService;
 
+    @RequestMapping("/voteboard")
+    public String VoteBoard(){
+        return "vote/list";
+
+    }
+
     @GetMapping("/voteboard/write")
     public String VoteBoardFrom(){
-        return "vote/test";
+        return "vote/vote";
 
     }
 
@@ -21,6 +27,6 @@ public class VoteBoardController {
     public String boardWritePro(VoteBoard voteBoard){
         voteBoardService.write(voteBoard);
 
-        return "";
+        return "vote/list";
     }
 }

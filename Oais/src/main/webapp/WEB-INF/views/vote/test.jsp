@@ -13,6 +13,7 @@
 <body>
 <div class="layout">
   <form action="/voteboard/writepro" method="post">
+    <input name="num.num" type="text" value="${sessionScope.num}">
     <input name="title" type="text">
     <textarea name="content"></textarea>
     <input name="item01" type="text">
