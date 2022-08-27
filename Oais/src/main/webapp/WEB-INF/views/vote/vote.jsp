@@ -57,14 +57,14 @@
             <form class="votef" action="/voteboard/create" method="post">
                 <div class="titlebox">
                 <span class="v-title">제목을 작성하세요</span><br/>
-                <input name="item" type="text">
+                <input name="title" type="text">
                 <button>작성</button>
                 </div>
                 <div class="add-content">
                     <div class="contentbox">
                         <div class="votetex">
                         <span class="v-title">투표 내용</span><br/>
-                        <textarea class="votecntarea" name="" type="text" placeholder="내용을 입력해 주세요."></textarea>
+                        <textarea class="votecntarea" name="item" type="text" placeholder="내용을 입력해 주세요."></textarea>
                         </div>
                         <div class="vote-plus">
                         <span class="v-title">투표 항목</span><br/>

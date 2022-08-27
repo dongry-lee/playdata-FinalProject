@@ -13,7 +13,7 @@ public class VoteBoardController {
 
     @GetMapping("/voteboard/write")
     public String VoteBoardFrom(){
-        return "vote/list";
+        return "vote/test";
 
     }
 

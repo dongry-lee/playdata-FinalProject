@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.Id;
 import java.util.Optional;
 
-@Repository
 public interface VoteRepository extends JpaRepository<Vote,Integer> {
 
 }

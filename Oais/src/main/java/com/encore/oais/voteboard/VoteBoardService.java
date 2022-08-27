@@ -10,6 +10,7 @@ public class VoteBoardService {
     private VoteBoardRepository voteBoardRepository;
 
     public void write(VoteBoard voteBoard){
+
         voteBoardRepository.save(voteBoard);
     }
 }

@@ -11,7 +11,7 @@ public class VoteDto {
     private String item;
 
     public Vote toEntity(){
-        return new Vote(null,item);
+        return new Vote(item);
     }
 
 }
