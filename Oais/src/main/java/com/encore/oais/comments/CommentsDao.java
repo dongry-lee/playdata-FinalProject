@@ -1,3 +1,4 @@
+
 package com.encore.oais.comments;
 
 import com.encore.oais.allboard.AllBoard;
@@ -12,3 +13,4 @@ import java.util.ArrayList;
 public interface CommentsDao extends JpaRepository<Comments, Integer> {
     ArrayList<Comments> findByWnum(AllBoard wnum);
 }
+
