@@ -19,11 +19,14 @@ public class Vote {
     @JoinColumn(nullable = false)
     private VoteBoard wnum;
 
-    @Column
-    private String item;
+    @Column(nullable = false)
+    private int nvote01;
 
-    @Column
-    private int nvote;
-    public Vote(Object o, String item) {
+    @Column(nullable = false)
+    private int nvote02;
+
+
+
+    public Vote(String item) {
     }
 }

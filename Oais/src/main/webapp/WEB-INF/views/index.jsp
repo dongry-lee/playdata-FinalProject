@@ -13,7 +13,9 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
+
         <a href="/"><h1></h1></a>
+
         <nav> <!-- 메뉴부분 -->
             <div class="search"> <!-- 검색창 -->
 
@@ -54,7 +56,7 @@
         <ul class="sidemenu">
             <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/voteboard/write" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/voteboard" class="item"><div>투표하기</div></a></li>
             <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
             <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
