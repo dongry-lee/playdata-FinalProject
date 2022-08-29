@@ -49,9 +49,6 @@
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/out"><button type="button" class="login_button" size="10px">탈퇴</button></a>
-             </span>
             </c:if>
 
 
@@ -89,12 +86,14 @@
     <div id="content">
         <div class="myinfo">
             <h2>내 정보</h2>
+            <form action="/member/mypage" method="post">
             <div>
-                <input id="" name="" type="text"> <button>내 정보 수정</button>
+                <input type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
             </div>
             <div>
-                <input id="" name="" type="text"> <button>회원 탈퇴</button>
+                <input name="name" value="${m.name}" type="text"> <a href="/member/out">회원탈퇴</a>
             </div>
+            </form>
         </div>
         <div>
             <div class="tab">
@@ -105,12 +104,16 @@
 
             <div id="MyUpload" class="tabcontent" style="display: block">
                 <h3>내 업로드</h3>
-                <p>내가 업로드한 아이디어 및 투표</p>
+                <c:forEach var="item" items="${myUploadList}">
+                <p>${item}</p>
+                </c:forEach>
             </div>
 
             <div id="MyPartic" class="tabcontent">
                 <h3>내가 참여한</h3>
-                <p>내가 참여한 아이디어 및 투표 게시글</p>
+                <c:forEach var="item" items="${myPartList}">
+                <p>${item.wnum.title}</p>
+                </c:forEach>
             </div>
 
             <div id="MyScrap" class="tabcontent">
