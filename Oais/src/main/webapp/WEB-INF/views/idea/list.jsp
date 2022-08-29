@@ -9,96 +9,102 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<<<<<<< HEAD
+
     <link href="/css/custom.css" rel="stylesheet">
     <title>Title</title>
-=======
-    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
-    <title>아이디어게시</title>
->>>>>>> develop
 </head>
 <body>
-<!-- Page Wrapper -->
-<div id="wrapper">
+<header>
+    <div class="wrapper"> <!--전체 랩 -->
+        <a href="https://www.naver.com"><h1></h1></a>
+        <nav> <!-- 메뉴부분 -->
+            <div class="search"> <!-- 검색창 -->
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- 사이드바 - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
+                <input type="text" placeholder="공모/투표/게시판 찾아보기">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
-            <div class="sidebar-brand-text mx-3">DeePocket</div>
-        </a>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href=""><button  type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href=""><button  type="button" class="login_button" size="10px">회원가입</button></a>
+             </span>
+        </nav>
+    </div>
+</header>
+<!-- Page Wrapper -->
+<%--<div class="wrapper"> <!--전체 랩 -->--%>
+<%--    <a href="https://www.naver.com"><h1></h1></a>--%>
+<%--    <nav> <!-- 메뉴부분 -->--%>
+<%--        <div class="search"> <!-- 검색창 -->--%>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <li class="nav-item">
-            <a class="nav-link" href="/idea/">
-                <span>진행중인 아이디어</span></a>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <span>투표하기</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/board/">
-                <span>자유게시판</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Q&A</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-    </ul>
-    <!-- End of Sidebar -->
-
-
-
+<%--            <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>--%>
+<%--            <input type="text" placeholder="공모/투표/게시판 찾아보기">--%>
+<%--            <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->--%>
+<%--        </div>--%>
+<%--        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+<%--            <a href=""><button  type="button" class="login_button" size="10px">로그인</button></a>--%>
+<%--             </span>--%>
+<%--        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+<%--            <a href=""><button  type="button" class="login_button" size="10px">회원가입</button></a>--%>
+<%--             </span>--%>
+<%--    </nav>--%>
+<%--</div>--%>
+<%--</header>--%>
+<!-- Page Wrapper -->
+<div class="wrapper">
+    <!-- Sidemenu -->
+    <div class="menu">
+        <ul class="sidemenu">
+            <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
+            <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
+            <li class="sidbtn"><a href="/vote" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
+            <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
+            <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
+                @2022 Oais</div>
+        </ul>
+    </div>
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-
-        <!-- End of Main Content -->
-        <div id="content">
+    <div id="content">
+        <div class="fg-head"><h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/idea/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
+             </span></h2> </div>
+        <div class="idea-form">
+            <div class="idea-box">
+                <div class="idea-img">
+                    <img src="/img/img_1.png">
+                </div>
+                <div class="idea-info">
+                    <div class="idea-content">
 
             <%--  real content  --%>
-
-
             <c:if test="${not empty sessionScope.id}">
                 <a href="/idea/add">글작성</a>
             </c:if>
-            <c:forEach var="b" items="${list}">
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <div class="card bg-light border-0 h-100">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <h2 class="fs-4 fw-bold"><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
-                            <p class="mb-0">${b.num.name}</p>
-                            <p class="mb-0">${b.content}</p>
-                            <p class="mb-0">${b.hash}</p>
-                            <p class="mb-0">${b.wdate}</p>
-                            <p class="mb-0">${b.ddate}</p>
-                            <p class="mb-0">${b.views}</p>
-                            <p class="mb-0">${b.part}</p>
+                <c:forEach var="b" items="${list}">
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <h2 class="fs-4 fw-bold"><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
+                                <p class="mb-0">${b.num.name}</p>
+                                <p class="mb-0">${b.content}</p>
+                                <p class="mb-0">${b.hash}</p>
+                                <p class="mb-0">${b.wdate}</p>
+                                <p class="mb-0">${b.ddate}</p>
+                                <p class="mb-0">${b.views}</p>
+                                <p class="mb-0">${b.part}</p>
+                            </div>
                         </div>
                     </div>
+                </c:forEach>
+                    </div>
                 </div>
-            </c:forEach>
+            </div>
         </div>
     </div>
+</div>
 </body>
 </html>
