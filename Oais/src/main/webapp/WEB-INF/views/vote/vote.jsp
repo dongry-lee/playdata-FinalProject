@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: yjs61
   Date: 2022-08-24
-  Time: ?˜¤?›„ 5:22
+  Time: ?ï¿½ï¿½?ï¿½ï¿½ 5:22
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,20 +15,20 @@
 
 <body>
 <header>
-    <div class="wrapper"> <!--? „ì²? ?ž© -->
+    <div class="wrapper"> <!--?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ -->
         <a href="https://www.naver.com"><h1></h1></a>
-        <nav> <!-- ë©”ë‰´ë¶?ë¶? -->
-            <div class="search"> <!-- ê²??ƒ‰ì°? -->
+        <nav> <!-- ë©”ë‰´ï¿½?ï¿½? -->
+            <div class="search"> <!-- ï¿½??ï¿½ï¿½ï¿½? -->
 
                 <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="ê³µëª¨/?ˆ¬?‘œ/ê²Œì‹œ?Œ ì°¾ì•„ë³´ê¸°">
+                <input type="text" placeholder="ê³µëª¨/?ï¿½ï¿½?ï¿½ï¿½/ê²Œì‹œ?ï¿½ï¿½ ì°¾ì•„ë³´ê¸°">
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">ë¡œê·¸?¸</button></a>
+            <a href=""><button type="button" class="login_button" size="10px">ë¡œê·¸?ï¿½ï¿½</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">?šŒ?›ê°??ž…</button></a>
+            <a href=""><button type="button" class="login_button" size="10px">?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½</button></a>
              </span>
         </nav>
     </div>
@@ -41,21 +41,21 @@
     <div class="menu">
         <ul class="sidemenu">
             <li class="sidbtn"><a href="/" class="item">
-                <div>?™ˆ</div>
+                <div>?ï¿½ï¿½</div>
             </a></li>
             <li class="sidbtn"><a href="/idea/" class="item">
-                <div>?•„?´?””?–´ ê³µëª¨</div>
+                <div>?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ê³µëª¨</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote/list" class="item">
-                <div>?ˆ¬?‘œ?•˜ê¸?</div>
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
+                <div>?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?</div>
             </a></li>
             <li class="sidbtn"><a href="/board/" class="item">
-                <div>?ž?œ ê²Œì‹œ?Œ</div>
+                <div>?ï¿½ï¿½?ï¿½ï¿½ê²Œì‹œ?ï¿½ï¿½</div>
             </a></li>
             <li class="sidbtn"><a href="#" class="item">
-                <div>ê³ ê°?„¼?„°</div>
+                <div>ê³ ê°?ï¿½ï¿½?ï¿½ï¿½</div>
             </a></li>
-            <div class="hhd">?´?š©?•½ê´??†ê°œì¸? •ë³´ì²˜ë¦¬ë°©ì¹?<br/>
+            <div class="hhd">?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ê°œì¸?ï¿½ï¿½ë³´ì²˜ë¦¬ë°©ï¿½?<br/>
                 @2022 Oais
             </div>
         </ul>
@@ -63,38 +63,39 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="voteadd-content">
-        <div class="fg-head"><p>?ˆ¬?‘œ ?ž‘?„±?•˜ê¸?</p></div>
+        <div class="fg-head"><p>?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?</p></div>
         <div class="vote-addform">
-            <form class="votef" action="/voteboard/votepro" method="post">
+            <form class="votef" action="/voteboard/writepro" method="post">
                 <div class="vethead">
+                    <input name="num.num" type="text" value="${sessionScope.num}">
                     <div class="titlebox">
-                        <span class="v-title">? œëª©ì„ ?ž‘?„±?•˜?„¸?š”</span><br/>
-                        <input name="item" type="text">
-                        <button>?ž‘?„±</button>
+                        <span class="v-title">?ï¿½ï¿½ëª©ì„ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½</span><br/>
+                        <input name="title" type="text">
+                        <button>?ï¿½ï¿½?ï¿½ï¿½</button>
                     </div>
                     <div class="titlebox">
-                        <span class="v-title">?ˆ¬?‘œ ë§ˆê°?¼</span><br/>
+                        <span class="v-title">?ï¿½ï¿½?ï¿½ï¿½ ë§ˆê°?ï¿½ï¿½</span><br/>
                         <input name="date" type="date">
                     </div>
                 </div>
                 <div class="add-content">
                     <div class="contentbox">
                         <div class="votetex">
-                        <span class="v-title">?ˆ¬?‘œ ?‚´?š©</span><br/>
-                        <textarea class="votecntarea" name="content" type="text" placeholder="?‚´?š©?„ ?ž…? ¥?•´ ì£¼ì„¸?š”."></textarea>
+                        <span class="v-title">?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½</span><br/>
+                        <textarea class="votecntarea" name="content" type="text" placeholder="?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì£¼ì„¸?ï¿½ï¿½."></textarea>
                         </div>
                         <div class="vote-plus">
-                            <span class="v-title">?ˆ¬?‘œ ?•­ëª?</span><br/>
+                            <span class="v-title">?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½?</span><br/>
                             <ul>
                                 <li><input name="item01" type="text"><br/></li>
                                 <li><input name="item02" type="text"><br/></li>
                             </ul>
-                        <button onclick="location.href='/voteboard'">ê²Œì‹œê¸? ?ž‘?„±</button>
+                        <button onclick="location.href='/voteboard/list'">ê²Œì‹œï¿½? ?ï¿½ï¿½?ï¿½ï¿½</button>
                         </div>
                     </div>
                     <div class="addimg">
-                        <span class="v-title">?´ë¯¸ì??ì²¨ë??</span><br/>
-                        <button>?´ë¯¸ì?? ?“±ë¡?</button>
+                        <span class="v-title">?ï¿½ï¿½ë¯¸ï¿½??ì²¨ï¿½??</span><br/>
+                        <button>?ï¿½ï¿½ë¯¸ï¿½?? ?ï¿½ï¿½ï¿½?</button>
                     </div>
                 </div>
                 <div class="hashcode">
@@ -102,7 +103,7 @@
                 </div>
                 <div class="addbtn-box">
                     <div class="addbox">
-                        <input type="submit" name="?ž‘?„±">
+                        <input type="submit" name="?ï¿½ï¿½?ï¿½ï¿½">
                         <button>ì·¨ì†Œ</button>
                     </div>
                 </div>
