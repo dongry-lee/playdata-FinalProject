@@ -122,6 +122,10 @@ public class MemController {
     //회원가입
     //로그인
     //내정보확인 및 수정
+    @GetMapping("/mypage")
+    public String mypageForm(){
+        return "member/mypageForm";
+    }
     //로그아웃 / 탈퇴
 }
 
