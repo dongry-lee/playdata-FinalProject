@@ -157,4 +157,4 @@ check out<br>
  - 동근:<br>
  - 진수:<br>
  - 민서: <br>
- - 진웅:<br>
+ - 진웅: mypage html 완료/ mypage 탭 컨텐츠 제작해야함.. / 자유게시판 list, detail, addboard 아이디어게시판 참고하여 제작 시작<br>
