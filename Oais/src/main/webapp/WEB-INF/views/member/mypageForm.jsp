@@ -1,15 +1,23 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 27251
+  Date: 2022-08-29
+  Time: 오후 12:31
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 
-
+<%--   css  --%>
     <link href="/css/custom.css" rel="stylesheet">
-    <%-- JS  --%>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <title>오늘의 아이디어스!</title>
-</head>
+    <link href="/css/mypage.css" rel="stylesheet">
 
+<%--  JS  --%>
+    <script src="/js/mypage.js"></script>
+    <title>마이페이지</title>
+</head>
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
@@ -38,11 +46,9 @@
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>
              </span>
-
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
              </span>
-
             </c:if>
 
 
@@ -50,7 +56,6 @@
     </div>
 </header>
 
-<!-- Page Wrapper -->
 <div class="wrapper">
 
     <!-- Sidemenu -->
@@ -79,25 +84,46 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div class="slidebanner-box">
-            <!-- Swiper -->
-            <div class="banner-container">
-                <div class="banner">
-                    <div data-index=1></div>
-                    <div data-index=2></div>
-                    <div data-index=3></div>
-                    <div data-index=4></div>
-                </div>
+        <div class="myinfo">
+            <h2>내 정보</h2>
+            <form action="/member/mypage" method="post">
+            <div>
+                <input type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
             </div>
-            <div class="list-button">
-                <span class="list-button-item active"></span>
-                <span class="list-button-item"></span>
-                <span class="list-button-item"></span>
-                <span class="list-button-item"></span>
+            <div>
+                <input name="name" value="${m.name}" type="text"> <a href="/member/out">회원탈퇴</a>
+            </div>
+            </form>
+        </div>
+        <div>
+            <div class="tab">
+                <button class="tablinks" onclick="openmytab(event, 'MyUpload')">내 업로드</button>
+                <button class="tablinks" onclick="openmytab(event, 'MyPartic')">내가 참여한</button>
+                <button class="tablinks" onclick="openmytab(event, 'MyScrap')">내 스크랩</button>
+            </div>
+
+            <div id="MyUpload" class="tabcontent" style="display: block">
+                <h3>내 업로드</h3>
+                <c:forEach var="item" items="${myUploadList}">
+                <p>${item}</p>
+                </c:forEach>
+            </div>
+
+            <div id="MyPartic" class="tabcontent">
+                <h3>내가 참여한</h3>
+                <c:forEach var="item" items="${myPartList}">
+                <p>${item.wnum.title}</p>
+                </c:forEach>
+            </div>
+
+            <div id="MyScrap" class="tabcontent">
+                <h3>내 스크랩</h3>
+                <p>스크랩한 아이디어 및 투표 게시물</p>
             </div>
         </div>
     </div>
 </div>
-</body>
 
+
+</body>
 </html>
