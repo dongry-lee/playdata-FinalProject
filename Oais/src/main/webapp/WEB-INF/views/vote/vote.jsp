@@ -15,6 +15,7 @@
 
 <body>
 <header>
+
     <div class="wrapper"> <!-- 전체 랩 -->
         <a href="https://www.naver.com"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
@@ -41,6 +42,7 @@
     <div class="menu">
         <ul class="sidemenu">
             <li class="sidbtn"><a href="/" class="item">
+
                 <div>홈</div>
             </a></li>
             <li class="sidbtn"><a href="/idea/" class="item">
@@ -67,6 +69,7 @@
         <div class="vote-addform">
             <form class="votef" action="/voteboard/writepro" method="post">
                 <div class="vethead">
+                    <input name="num.num" type="text" value="${sessionScope.num}">
                     <div class="titlebox">
                         <span class="v-title">투표 제목을 입력하세요</span><br/>
                         <input name="item" type="text">
@@ -102,6 +105,7 @@
                 </div>
                 <div class="addbtn-box">
                     <div class="addbox">
+
                         <input type="submit" name="작성">
                         <button>취소</button>
                     </div>
