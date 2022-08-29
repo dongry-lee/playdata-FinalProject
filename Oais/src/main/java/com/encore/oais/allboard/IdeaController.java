@@ -48,9 +48,6 @@ public class IdeaController {
     public String add(String title, Member num, String content, @DateTimeFormat(pattern="yyyy-MM-dd")Date ddate,
                       String hash, MultipartFile img1, MultipartFile img2, MultipartFile img3){
         AllBoard b = new AllBoard();
-        System.out.println(img1);
-        System.out.println(img2);
-        System.out.println(img3);
         b.setTitle(title);
         b.setNum(num);
         b.setContent(content);
