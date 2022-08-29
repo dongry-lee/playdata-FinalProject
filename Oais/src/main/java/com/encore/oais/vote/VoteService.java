@@ -1,3 +1,4 @@
+
 //package com.encore.oais.vote;
 //
 //import com.encore.oais.allboard.AllBoard;
