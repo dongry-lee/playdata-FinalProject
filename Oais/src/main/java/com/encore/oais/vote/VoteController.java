@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
 
 @Controller
+@RequestMapping("/vote")
 public class VoteController {
 
     @Autowired
@@ -23,12 +24,12 @@ public class VoteController {
     private VoteRepository voteRepository;
 
 
-//    @RequestMapping("/list")
-//    public String list(Model model){
-//        ArrayList<AllBoard> list = voteService.getAllvote();
-//        model.addAttribute("list", list);
-//        return "vote/list";
-//    }
+    @RequestMapping("/list")
+    public String list(Model model){
+        ArrayList<AllBoard> list = voteService.getAllvote();
+        model.addAttribute("list", list);
+        return "vote/list";
+    }
 
     @GetMapping("/voteboard/vote")
     public String newVoteFrom() {

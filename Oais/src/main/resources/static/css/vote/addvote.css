@@ -57,6 +57,10 @@
     width: fit-content;
     padding: 20px;
 }
+
+.vethead{
+    display: flex;
+}
 /* end - title*/
 
 /* content */
