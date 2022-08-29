@@ -78,13 +78,13 @@
 }
 
 .write-info {
-    width: 300px;
-    height: 130px;
-    padding: 15px;
+    width: 951px;
+    height: 112px;
+    padding: 10px;
     background-color: #d4fef0;
     border-radius: 15px;
-
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-top: 15px;
     border-radius: 15px;
 }
 
@@ -113,3 +113,4 @@
     width: 60px;
     padding: 7px;
 }
+

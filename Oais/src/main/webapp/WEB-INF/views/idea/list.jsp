@@ -51,7 +51,7 @@
    <!-- Content Wrapper -->
     <div id="content">
         <div class="fg-head"><h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/idea/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
+            <a href="/idea/add"><button  type="button" class="write_button" size="10px">글작성</button></a>
              </span></h2> </div>
         <div class="idea-form">
             <div class="idea-box">
@@ -60,8 +60,8 @@
                 </div>
                 <div class="idea-info">
                     <div class="idea-content">
-
-                        <c:forEach var="b" items="${list}">
+<%--                        <div id="real_content">--%>
+                         <c:forEach var="b" items="${list}">
                             <div class="col-lg-6 col-xxl-4 mb-5">
                                 <div class="card bg-light border-0 h-100">
                                     <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
@@ -83,6 +83,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
