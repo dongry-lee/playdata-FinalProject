@@ -24,6 +24,7 @@ public class VoteController {
     private VoteRepository voteRepository;
 
 
+
     @RequestMapping("/list")
     public String list(Model model){
         ArrayList<AllBoard> list = voteService.getAllvote();

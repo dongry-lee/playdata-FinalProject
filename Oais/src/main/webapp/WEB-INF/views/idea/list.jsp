@@ -24,12 +24,25 @@
                 <input type="text" placeholder="공모/투표/게시판 찾아보기">
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
+            <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
              </span>
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
+            </c:if>
+            <c:if test="${sessionScope.num != null}">
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                환영합니다! ${sessionScope.name}님
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button  type="button" class="login_button" size="10px">로그아웃</button></a>
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/out"><button  type="button" class="login_button" size="10px">탈퇴</button></a>
+             </span>
+            </c:if>
         </nav>
     </div>
 </header>
@@ -57,7 +70,12 @@
         <c:forEach var="b" items="${list}">
             <div class="idea-box">
                 <div class="idea-img">
-                    <img src="/img/img_1.png">
+                    <c:if test="${b.img1 != null}">
+                    <img src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                    </c:if>
+                    <c:if test="${b.img1 == null}">
+                        <div>이미지가 없습니다.</div>
+                    </c:if>
                 </div>
                 <div class="idea-info">
                     <div class="idea-content">

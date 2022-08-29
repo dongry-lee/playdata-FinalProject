@@ -10,12 +10,13 @@ import java.util.List;
 
 @Service
 public class VoteService {
+
     @Autowired
     private VoteRepository voteRepository;
 
     @Autowired
     private AllBoardDao dao;
 
-    public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
+    public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(1);}
 
 }
