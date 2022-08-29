@@ -38,12 +38,12 @@
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>
              </span>
+
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/out"><button type="button" class="login_button" size="10px">탈퇴</button></a>
-             </span>
+            
+
             </c:if>
 
 
