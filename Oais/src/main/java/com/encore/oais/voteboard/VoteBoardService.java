@@ -21,5 +21,7 @@ public class VoteBoardService {
         return (ArrayList<VoteBoard>) voteBoardRepository.findAll();
 
     }
+
+
 }
 
