@@ -66,14 +66,7 @@ public class MemController {
         return "redirect:/";
     }
 
-//    @GetMapping("/detail")
-//    public String detail(HttpSession session, Model mm){
-//        String id = (String) session.getAttribute("id");
-//        ArrayList<Member> list = service.getMember(id);
-//        Member m = list.get(0);
-//        mm.addAttribute("m", m);
-//        return "member/detail";
-//    }
+
 
     @GetMapping("/logout")
     public String logout(HttpSession session){
@@ -123,5 +116,30 @@ public class MemController {
     //로그인
     //내정보확인 및 수정
     //로그아웃 / 탈퇴
+
+    @GetMapping("/mypage")
+    public String mypageForm(HttpSession session, Map mm){
+        int num = (int) session.getAttribute("num");
+        Member m = service.getByNum(num);
+        mm.put("m", m);
+        return "member/mypage";
+    }
+
+//    @GetMapping("/detail")
+//    public String detail(HttpSession session, Model mm){
+//        String id = (String) session.getAttribute("id");
+//        ArrayList<Member> list = service.getMember(id);
+//        Member m = list.get(0);
+//        mm.addAttribute("m", m);
+//        return "member/detail";
+//    }
+
+    @PostMapping("/mypage")
+    public String edit(int num, String name){
+        Member m = service.getByNum(num);
+        m.setName(name);
+        service.editMember(m);
+    return "redirect:/member/mypage";
+    }
 }
 

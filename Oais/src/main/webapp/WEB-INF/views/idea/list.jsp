@@ -16,7 +16,7 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <div class="search"> <!-- 검색창 -->
 
@@ -39,9 +39,7 @@
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button  type="button" class="login_button" size="10px">로그아웃</button></a>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/out"><button  type="button" class="login_button" size="10px">탈퇴</button></a>
-             </span>
+
             </c:if>
         </nav>
     </div>
