@@ -147,8 +147,82 @@ public class IdeaController {
         b.setContent(content);
         b.setDdate(ddate);
         b.setHash(hash);
-        service.addAllBoard(b);
-        return "redirect:/idea/detail?wnum="+wnum;
+
+        if (img1!=null) {
+            MultipartFile file = img1;
+            String fname = file.getOriginalFilename();
+
+            if (fname != null && !fname.equals("")) {
+                File dir = new File(imgpath + b.getWnum());
+                File uploaded = new File(imgpath + b.getWnum() + "/" + b.getImg1());
+                uploaded.delete();
+                if (!dir.exists()) {
+                    dir.mkdir();
+                }
+
+                File f2 = new File(dir.getPath() + "/" + fname);
+
+                try {
+                    file.transferTo(f2);
+                    b.setImg1(fname);
+
+                } catch (IllegalStateException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+        if (img2!=null) {
+            MultipartFile file = img2;
+            String fname = file.getOriginalFilename();
+            if (fname != null && !fname.equals("")) {
+                File dir = new File(imgpath + b.getWnum());
+                File uploaded = new File(imgpath + b.getWnum() + "/" + b.getImg2());
+                uploaded.delete();
+
+                File f2 = new File(dir.getPath() + "/" + fname);
+
+                try {
+                    file.transferTo(f2);
+                    b.setImg2(fname);
+
+                } catch (IllegalStateException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+        if (img3!=null) {
+            MultipartFile file = img3;
+            String fname = file.getOriginalFilename();
+            if (fname != null && !fname.equals("")) {
+                File dir = new File(imgpath + b.getWnum());
+                File uploaded = new File(imgpath + b.getWnum() + "/" + b.getImg3());
+                uploaded.delete();
+
+                File f2 = new File(dir.getPath() + "/" + fname);
+
+                try {
+                    file.transferTo(f2);
+                    b.setImg3(fname);
+
+                } catch (IllegalStateException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+            service.addAllBoard(b);
+            return "redirect:/idea/detail?wnum="+wnum;
     }
 
     @GetMapping("/delete")
