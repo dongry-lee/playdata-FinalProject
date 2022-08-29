@@ -66,18 +66,18 @@
     <div id="content">
         <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
+            <a href="/voteboard/write">게시글 작성</a>
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
-
                 <div class="vote-info">
                     <p class="vote-title">강아지 vs 고양이</p>
                     <div class="vote-content">
-                            ${item.wnum}/${item.title}/${item.content}/${item.item01}/${item.item02}
+                            ${item.title}/${item.content}/${item.item01}/${item.item02}
 
                     </div>
 
+
                 </div>
-                <a href="/voteboard/write">게시글 작성</a>
                 <div class="vote-img">
                     <img src="/img/catanddog.png">
                 </div>
