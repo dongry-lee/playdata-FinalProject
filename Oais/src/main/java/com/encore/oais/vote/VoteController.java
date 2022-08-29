@@ -1,5 +1,5 @@
 
-package com.encore.oais.vote;
+//package com.encore.oais.vote;
 
 import com.encore.oais.allboard.AllBoard;
 import com.encore.oais.voteboard.VoteBoard;

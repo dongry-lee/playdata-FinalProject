@@ -2,6 +2,7 @@ package com.encore.oais.voteboard;
 
 import com.encore.oais.member.Member;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
@@ -20,12 +21,14 @@ public class VoteBoard {
     private Member num;
 
     private String title;
-
     private String content;
 
     private String item01;
-
     private String item02;
+
+    private int totalCount;
+    private int count01;
+    private int count02;
 
 
 }

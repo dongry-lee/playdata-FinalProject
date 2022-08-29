@@ -70,9 +70,9 @@
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-                    <p class="vote-title">강아지 vs 고양이</p>
+                    <p class="vote-title">${item.title}</p>
                     <div class="vote-content">
-                            ${item.title}/${item.content}/${item.item01}/${item.item02}
+                            ${item.content}
 
                     </div>
 
@@ -85,8 +85,8 @@
                     <div class="option-select">
                         <div>
                             <span></span>
-                            <input type="radio" id="" name="강아지"/><label><span></span>강아지</label>
-                            <input type="radio" id="" name="고양이"/><label><span></span>고양이</label>
+                            <input type="radio" id="count01" name="radio" value="${item.count01}"/><label><span></span>${item.item01}</label>
+                            <input type="radio" id="count02" name="radio" value="${item.count02}"/><label><span></span>${item.item02}</label>
                         </div>
 
                     </div>
@@ -100,5 +100,7 @@
     </div>
 
 </div>
+
 </body>
+
 </html>

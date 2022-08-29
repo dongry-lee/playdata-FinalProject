@@ -72,8 +72,7 @@
                     <input name="num.num" type="text" value="${sessionScope.num}">
                     <div class="titlebox">
                         <span class="v-title">투표 제목을 입력하세요</span><br/>
-                        <input name="item" type="text">
-                        <button>작성하기</button>
+                        <input name="title" type="text">
                     </div>
                     <div class="titlebox">
                         <span class="v-title">마감일자</span><br/>
