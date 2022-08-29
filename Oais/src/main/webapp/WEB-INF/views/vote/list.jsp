@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>진행중인 투표</title>
@@ -27,10 +27,10 @@
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button  type="button" class="login_button" size="10px">로그인</button></a>
+            <a href=""><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button  type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href=""><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
         </nav>
     </div>
@@ -41,13 +41,24 @@
     <!-- Sidemenu -->
     <div class="menu">
         <ul class="sidemenu">
-            <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
-            <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/vote/list" class="item"><div>투표하기</div></a></li>
-            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
+            <li class="sidbtn"><a href="/" class="item">
+                <div>홈</div>
+            </a></li>
+            <li class="sidbtn"><a href="/idea/" class="item">
+                <div>아이디어 공모</div>
+            </a></li>
+            <li class="sidbtn"><a href="/vote/list" class="item">
+                <div>투표하기</div>
+            </a></li>
+            <li class="sidbtn"><a href="/board/" class="item">
+                <div>자유게시판</div>
+            </a></li>
+            <li class="sidbtn"><a href="#" class="item">
+                <div>고객센터</div>
+            </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
-                @2022 Oais</div>
+                @2022 Oais
+            </div>
         </ul>
     </div>
     <!-- End of Sidemenu-->
@@ -55,12 +66,17 @@
     <div id="content">
         <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
+            <a href="/voteboard/write">게시글 작성</a>
+            <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-                    <p class="vote-title">강아지 vs 고양이</p>
+                    <p class="vote-title">${item.title}</p>
                     <div class="vote-content">
-                        뭐 키울까요?
+                            ${item.content}
+
                     </div>
+
+
                 </div>
                 <div class="vote-img">
                     <img src="/img/catanddog.png">
@@ -69,16 +85,22 @@
                     <div class="option-select">
                         <div>
                             <span></span>
-                            <input type="radio" id="" name="강아지" /><label><span></span>강아지</label>
-                            <input type="radio" id="" name="고양이" /><label><span></span>고양이</label>
+                            <input type="radio" id="count01" name="radio" value="${item.count01}"/><label><span></span>${item.item01}</label>
+                            <input type="radio" id="count02" name="radio" value="${item.count02}"/><label><span></span>${item.item02}</label>
                         </div>
 
                     </div>
                 </div>
-            </div>
+
+            </div></c:forEach>
+
 
         </div>
+
     </div>
+
 </div>
+
 </body>
+
 </html>

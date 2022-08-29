@@ -1,6 +1,7 @@
 package com.encore.oais.comments;
 
 import com.encore.oais.allboard.AllBoard;
+import com.encore.oais.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,11 @@ public class CommentsService {
         return dao.findByWnum(wnum);
     }
 
+    public ArrayList<Comments> getByNum(int num){
+        Member m = new Member();
+        m.setNum(num);
+        return dao.findByNum(m);
+    }
     public Comments addComment(Comments c){
         return dao.save(c);
     }
