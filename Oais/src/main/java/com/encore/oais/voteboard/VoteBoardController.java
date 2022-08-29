@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Map;
+
 @Controller
 public class VoteBoardController {
     @Autowired
@@ -27,6 +29,16 @@ public class VoteBoardController {
     public String boardWritePro(VoteBoard voteBoard){
         voteBoardService.write(voteBoard);
 
-        return "vote/list";
+        return "redirect:/voteboard/list";
     }
+
+    @GetMapping("/voteboard/list")
+    public String boardList(Map map){
+
+        map.put("itemlist",voteBoardService.getAll());
+
+        return "vote/list";
+
+    }
+
 }
