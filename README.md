@@ -163,7 +163,8 @@ check out<br>
 check in<br>
  - 동근: <br>
  - 진수: <br>
- - 민서:아이디어페이지 css랑 동근님이 최신화하신 백코드랑 합쳐서 페이지 완성, 디테일페이지 댓글부분 제작 / 요즘 즐겨듣는 노래:ella mai-naked<br>   
+ - 민서:아이디어페이지 css랑 동근님이 최신화하신 백코드랑 합쳐서 페이지 완성, 디테일페이지 댓글부분 제작/<br>
+        요즘 즐겨듣는 노래:ella mai-naked<br>   
  - 진웅: <br>
        
  check out<br>
