@@ -105,20 +105,40 @@
             <div id="MyUpload" class="tabcontent" style="display: block">
                 <h3>내 업로드</h3>
                 <c:forEach var="item" items="${myUploadList}">
-                <p>${item}</p>
+                    <c:if test="${item.img1 != null && item.img1!=''}">
+                    <img width="300px" height="300px" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                    </c:if>
+                    <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
+                    <p>${item.part}</p>
+                    <p>${item.views}</p>
+                    <p>${item.hash}</p>
                 </c:forEach>
             </div>
 
             <div id="MyPartic" class="tabcontent">
                 <h3>내가 참여한</h3>
-                <c:forEach var="item" items="${myPartList}">
-                <p>${item.wnum.title}</p>
-                </c:forEach>
+                    <c:forEach var="item" items="${myPartList}">
+                        <c:if test="${item.wnum.img1 != null && item.wnum.img1!=''}">
+                            <img width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
+                        </c:if>
+                        <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
+                        <p>${item.wnum.part}</p>
+                        <p>${item.wnum.views}</p>
+                        <p>${item.wnum.hash}</p>
+
+                    </c:forEach>
             </div>
 
             <div id="MyScrap" class="tabcontent">
                 <h3>내 스크랩</h3>
-                <p>스크랩한 아이디어 및 투표 게시물</p>
+                <c:forEach var="item" items="${myScrapList}">
+                    <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
+                    <p>${item.wnum.part}</p>
+                    <p>${item.wnum.views}</p>
+                    <p>${item.wnum.hash}</p>
+
+                    <button onclick="location.href='/scrap/del?snum=${item.snum}'">스크랩삭제</button>
+                </c:forEach>
             </div>
         </div>
     </div>
