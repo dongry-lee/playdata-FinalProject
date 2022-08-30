@@ -68,13 +68,26 @@
         <div class="vote-form">
             <a href="/voteboard/write">게시글 작성</a>
             <c:forEach var="item" items="${itemlist}">
-            <div class="vote-box">
-                <div class="vote-info">
-                    <p class="vote-title">${item.title}</p>
-                    <div class="vote-content">
-                            ${item.content}
-
+                <div class="vote-box">
+                    <div class="vote-info">
+                        <p class="vote-title">${item.title}</p>
+                        <div class="vote-content">
+                                ${item.content}
+                        </div>
                     </div>
+                    <div class="vote-img">
+                        <img src="/img/catanddog.png">
+                    </div>
+                    <div class="vote-option">
+                        <div class="option-select">
+                            <div>
+                                <span></span>
+                                <input type="radio" id="count01" name="radio"
+                                       value="${item.count01}"/><label><span></span>${item.item01}</label>
+                                <input type="radio" id="count02" name="radio"
+                                       value="${item.count02}"/><label><span></span>${item.item02}</label>
+                            </div>
+
 
 
                 </div>
@@ -95,20 +108,4 @@
                             <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
 
 
-                        </div>
 
-                    </div>
-                </div>
-
-            </div></c:forEach>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-</body>
-
-</html>
