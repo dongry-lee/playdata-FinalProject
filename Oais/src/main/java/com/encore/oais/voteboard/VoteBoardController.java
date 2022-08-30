@@ -41,6 +41,7 @@ public class VoteBoardController {
 
     }
 
+
     @RequestMapping("/votedetail")
     public String VoteDetailFrom(){
         return "vote/votedetail";
