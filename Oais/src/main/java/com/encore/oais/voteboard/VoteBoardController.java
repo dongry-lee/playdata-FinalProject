@@ -41,12 +41,5 @@ public class VoteBoardController {
 
     }
 
-//    @GetMapping("/voteboard/list")
-//    public String voteCount(Map map){
-//
-//        map.put("voteCount",voteBoardService.getCount());
-//
-//        return "vote/list";
-//    }
 
 }

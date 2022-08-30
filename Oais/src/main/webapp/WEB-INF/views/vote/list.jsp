@@ -85,8 +85,16 @@
                     <div class="option-select">
                         <div>
                             <span></span>
-                            <input type="radio" id="count01" name="radio" value="${item.count01}"/><label><span></span>${item.item01}</label>
-                            <input type="radio" id="count02" name="radio" value="${item.count02}"/><label><span></span>${item.item02}</label>
+                            <form action="/voteboard/resultpro"  method="post">
+                            <input type="hidden" name="wnum" value="${item.wnum}">
+                            <input type="radio" id="vote1" name="item" value="${item.item01}"/><label><span></span>${item.item01}</label>
+                            <input type="radio" id="vote2" name="item" value="${item.item02}"/><label><span></span>${item.item02}</label>
+                            <button>투표</button>
+                            </form>
+                            <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
+                            <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
+
+
                         </div>
 
                     </div>
