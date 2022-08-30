@@ -108,15 +108,19 @@
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
 
+
                             </div>
 
                         </div>
+
+
                     </div>
 
+
                 </div>
-                </c:forEach>
-            </div>
-        </div>
-    </div>
+
+            </div></c:forEach>
+
 </body>
+
 </html>
