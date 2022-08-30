@@ -20,6 +20,7 @@
 - 운영체제:   window10, macOS<br>
 - DB:         MySQL<br>
 - framework:  spring boot<br>
+- IDE: IntelliJ
 - html,css,js
 
 ## 웹 기획
@@ -161,7 +162,7 @@ check out<br>
 
 8/30 (화요일) 오늘의 질문 : 요즘 즐겨듣는 노래는?
 check in<br>
- - 동근: 아프지마요 동근님..ㅠ<br>
+ - 동근: 내스크랩 기능 구현 / i'aint worried - one republic<br>
  - 진수:투표기능 완성 후 시간이 남으면 검색,해쉬태그 기능 개발 / The Walters - I Love You So<br>
  - 민서:아이디어페이지 css랑 동근님이 최신화하신 백코드랑 합쳐서 페이지 완성, 디테일페이지 댓글부분 제작/<br>
         요즘 즐겨듣는 노래:ella mai-naked<br>   
