@@ -41,6 +41,11 @@ public class VoteBoardController {
 
     }
 
+    @RequestMapping("/votedetail")
+    public String VoteDetailFrom(){
+        return "vote/votedetail";
+    }
+
 //    @GetMapping("/voteboard/list")
 //    public String voteCount(Map map){
 //
