@@ -1,4 +1,5 @@
-package com.encore.oais.voteboard.voteresult;
+package com.encore.oais.voteboard.votecomment;
+
 
 import com.encore.oais.voteboard.VoteBoard;
 import lombok.AllArgsConstructor;
@@ -9,21 +10,16 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-
-public class VoteResult {
+@AllArgsConstructor
+public class VoteComment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int vnum;
-
+    private int vnum;
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    public VoteBoard wnum;
+    private VoteBoard wnum;
 
-
-    public String item;
-
-
+    private String commnet;
 }
