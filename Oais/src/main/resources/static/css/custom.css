@@ -264,7 +264,7 @@ nav. serach > icon {
     border: 0;
     background-color: #f0f0f0;
 
-    margin: 20px 600px 20px 160px;
+    margin: 20px 480px 20px 160px;
 
     width: 300px;
     height: 1px;
@@ -298,7 +298,7 @@ nav >  button  {
     font-style: normal;
     font-family: Inter;
     font-weight: bold;
-    width: 70px;
+    width: auto;
     padding: 10px;
 
 }
