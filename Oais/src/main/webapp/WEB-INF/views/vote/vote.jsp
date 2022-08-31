@@ -24,7 +24,7 @@
 <header>
 
     <div class="wrapper"> <!-- 전체 랩 -->
-        <a href="https://www.naver.com"><h1></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <div class="search"> <!-- 검색창 -->
 
