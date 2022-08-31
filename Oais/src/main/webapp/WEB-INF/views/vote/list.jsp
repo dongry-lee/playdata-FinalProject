@@ -88,8 +88,6 @@
                                        value="${item.count02}"/><label><span></span>${item.item02}</label>
                             </div>
 
-
-
                 </div>
                 <div class="vote-img">
                     <img src="/img/catanddog.png">
