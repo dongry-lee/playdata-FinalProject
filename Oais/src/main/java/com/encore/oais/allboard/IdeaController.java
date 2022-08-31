@@ -255,23 +255,6 @@ public class IdeaController {
         }
         return result;
     }
-////    @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ
-////    public ResponseEntity<byte[]> read_img(String fname, int num) {
-////        File f = new File(img_path + num + "/" + fname);
-////        HttpHeaders header = new HttpHeaders();// http ��� ����
-////        ResponseEntity<byte[]> result = null;
-////        try {
-////            // ��� ���� �߰�. ���� ���� Ÿ�� ����.
-////            header.add("Content-Type", Files.probeContentType(f.toPath()));
-////            result = new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(f), header, HttpStatus.OK);
-////        } catch (IOException e) {
-////            // TODO Auto-generated catch block
-////            e.printStackTrace();
-////        }
-////        return result;
-////    }
-
-
 
 //
 

@@ -42,6 +42,10 @@ public class AllBoardService {
         member.setNum(m);
         return dao.findByNum(member);
     }
+
+    public ArrayList<AllBoard> search(String val){
+        return dao.selectVal("%"+val+"%");
+    }
 //
 //
 //    public ArrayList<AllBoard> getByTitle(String title){

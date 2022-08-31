@@ -18,12 +18,14 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
+            <form action="/search" method="post"> <!-- 검색창 -->
+                <div class="search">
 
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
@@ -69,7 +71,7 @@
             <div class="idea-box">
                 <div class="idea-img">
                     <c:if test="${b.img1 != null}">
-                    <img src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                    <img width="300px" height="300px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
                     </c:if>
                     <c:if test="${b.img1 == null}">
                         <div>이미지가 없습니다.</div>
