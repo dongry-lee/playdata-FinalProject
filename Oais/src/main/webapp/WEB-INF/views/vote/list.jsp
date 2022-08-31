@@ -47,7 +47,7 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote/list" class="item">
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
             <li class="sidbtn"><a href="/board/" class="item">
