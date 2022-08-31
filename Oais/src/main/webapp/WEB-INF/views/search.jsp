@@ -22,16 +22,16 @@
             <div>이미지가 없습니다.</div>
         </c:if>
         <p><a href="/idea/detail?wnum=${item.wnum}">${item.title}</a></p>
-        <p>${item.num.name}</p>
-        <p>${item.content}</p>
-        <p>${item.ddate}</p>
-        <p>${item.hash}</p>
-        <p>${item.part}</p>
-        <p>${item.views}</p>
+        <p>닉네임${item.num.name}</p>
+        <p>content${item.content}</p>
+        <p>마감일자${item.ddate}</p>
+        <p>해쉬태그<a href="/search?val=${item.hash}">${item.hash}</a></p>
+        <p>참여자${item.part}</p>
+        <p>조회수${item.views}</p>
     </c:if>
 </c:forEach>
 </div>
-<div><p>아이디어게시판</p>
+<div><p>투표게시판</p>
     <c:forEach var="item" items="${result}">
         <c:if test="${item.typecd == 4}">
             <c:if test="${item.img1 != null}">
@@ -40,13 +40,13 @@
             <c:if test="${item.img1 == null}">
                 <div>이미지가 없습니다.</div>
             </c:if>
-            <p>${item.num.name}</p>
-            <p>${item.content}</p>
-            <p>${item.hash}</p>
-            <p>${item.wdate}</p>
-            <p>${item.ddate}</p>
-            <p>${item.views}</p>
-            <p>${item.part}</p>
+            <p><a href="/idea/detail?wnum=${item.wnum}">${item.title}</a></p>
+            <p>닉네임${item.num.name}</p>
+            <p>content${item.content}</p>
+            <p>해쉬태그<a href="/search?val=${item.hash}">${item.hash}</a></p>
+            <p>마감일${item.ddate}</p>
+            <p>참여자수${item.part}</p>
+            <p>조회수${item.views}</p>
         </c:if>
     </c:forEach>
 </div>
@@ -59,13 +59,13 @@
             <c:if test="${item.img1 == null}">
                 <div>이미지가 없습니다.</div>
             </c:if>
-            <p>${item.num.name}</p>
-            <p>${item.content}</p>
-            <p>${item.hash}</p>
-            <p>${item.wdate}</p>
-            <p>${item.ddate}</p>
-            <p>${item.views}</p>
-            <p>${item.part}</p>
+            <p><a href="/idea/detail?wnum=${item.wnum}">${item.title}</a></p>
+            <p>닉네임${item.num.name}</p>
+            <p>내용${item.content}</p>
+            <p>해쉬태그<a href="/search?val=${item.hash}">${item.hash}</a></p>
+            <p>마감일자${item.ddate}</p>
+            <p>참여자${item.part}</p>
+            <p>조회수${item.views}</p>
         </c:if>
     </c:forEach>
 </div>

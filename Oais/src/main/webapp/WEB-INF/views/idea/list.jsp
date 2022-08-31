@@ -18,7 +18,7 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <form action="/search" method="post"> <!-- 검색창 -->
+            <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search">
 
                     <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
