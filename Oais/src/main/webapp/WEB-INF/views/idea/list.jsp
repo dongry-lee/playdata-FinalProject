@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>진행중인 공모</title>
@@ -82,7 +83,7 @@
              </span></h2> </div>
         <div class="idea-form">
 
-        <c:forEach var="b" items="${list}">
+         <c:forEach var="b" items="${list}">
             <div class="idea-box">
                 <div class="idea-img">
                     <c:if test="${b.img1 != null}">
@@ -97,7 +98,11 @@
                         <h2><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
                         <p>${b.num.name}</p>
                         <p>${b.content}</p>
-                        <p>${b.hash}</p>
+                        <p><c:set var="hashtag" value="${fn:split(b.hash,'#')}"/>
+                            <c:forEach var="hashelement" items="${hashtag}">
+                                <a href="/search?val=${hashelement}">#${hashelement}</a>
+                            </c:forEach>
+                                </p>
                         <p>${b.wdate}</p>
                         <p>${b.ddate}</p>
                         <p>${b.views}</p>
@@ -112,7 +117,7 @@
 
             </div>
 
-        </c:forEach>
+         </c:forEach>
         </div>
     </div>
 </div>
