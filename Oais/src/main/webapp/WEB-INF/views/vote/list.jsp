@@ -27,10 +27,10 @@
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">로그인</button></a>
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
         </nav>
     </div>
@@ -47,7 +47,7 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote/list" class="item">
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
             <li class="sidbtn"><a href="/board/" class="item">
@@ -94,6 +94,7 @@
 
                                 <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
                             </div>
+
 
 
                         </div>
