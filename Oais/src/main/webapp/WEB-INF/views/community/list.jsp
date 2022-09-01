@@ -80,7 +80,7 @@
     <!-- Content Wrapper -->
     <div id="content">
         <div class="fg-head"><h2>자유게시판 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/idea/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
+            <a href="/community/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
              </span></h2></div>
         <div class="idea-form">
             <c:forEach var="b" items="${list}">

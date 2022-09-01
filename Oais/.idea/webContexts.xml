@@ -4,6 +4,8 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/add.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/add.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/list.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/idea/add.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/idea" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/idea/addIdea.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/idea" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/idea/detailForm.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/idea" />
@@ -13,6 +15,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/mypageForm.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/search.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vote/list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vote" />
+
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vote/votedetail.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vote" />
       </map>
     </option>
