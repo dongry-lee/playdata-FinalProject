@@ -68,7 +68,7 @@
             <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
             <li class="sidbtn"><a href="#" class="item">

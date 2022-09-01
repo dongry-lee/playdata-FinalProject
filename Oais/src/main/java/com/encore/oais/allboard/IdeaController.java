@@ -41,6 +41,7 @@ public class IdeaController {
 
     @Value("${spring.servlet.multipart.location}")
     private String imgpath;
+
     @RequestMapping("/")
     public String list(Model model){
         ArrayList<AllBoard> list = service.getAllIdea();
@@ -107,9 +108,7 @@ public class IdeaController {
     @GetMapping("/detail")
     public String detailForm(int wnum, Map m){
         AllBoard b = service.getByWnum(wnum);
-        AllBoard c = new AllBoard();
-        c.setWnum(wnum);
-        ArrayList<Comments> comments = c_service.getAll(c);
+        ArrayList<Comments> comments = c_service.getAll(b);
         m.put("b", b);
         m.put("comments", comments);
         b.setViews(b.getViews()+1);
