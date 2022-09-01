@@ -80,11 +80,11 @@
                     </div>
                 </div>
                 <div class="add-content" style="display: flex;">
-                    <div class="write-info" style="width: 400px; padding: 90px;">
+                    <div class="write-info" style="width: 400px; padding: 40px;">
                         <th style="display: none"><!--여기안보이게--></th>
                         <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
                         <textarea class="titlecntarea" name="content" type="text"
-                                  style="font-size:15px; border:0; width:auto; margin-bottom:0px; padding: 70px; height:auto; ">"${b.content}"</textarea><br>
+                                  style="font-size:15px; border:0; width:auto; margin-bottom:0px; padding: 32px; height:auto; ">"${b.content}"</textarea><br>
                         <%--                                <th>content</th>--%>
                         <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
 
@@ -96,81 +96,111 @@
                     <div class="addimg" style="padding:40px;">
                         <span class="v-title" style=" font-size: 17px; padding: 10px 0px 0px 30px;">이미지 첨부📁</span><br/>
                         <div class="write-info" style="width:200px;">
-                            <span class="v-title" style="font-size: 13px;">이미지1</span><br/>
-                            <td><input name="img1" type="file"></td>
-                            <span class="v-title" style="font-size: 13px;">이미지2</span><br/>
-                            <td><input name="img2" type="file"></td>
-                            <span class="v-title" style="font-size: 13px;">이미지3</span><br/>
-                            <td><input name="img3" type="file"></td>
+                            <c:if test="${b.img1 != null}">
+                                <tr>
+                                    <th>img1</th>
+                                    <td><img width="100px" height="100px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
+                                </tr>
+                            </c:if>
+                            <c:if test="${b.img2 != null}">
+                                <tr>
+                                    <th>img1</th>
+                                    <td><img width="100px" height="100px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
+                                </tr>
+                            </c:if>
+                            <c:if test="${b.img3 != null}">
+                                <tr>
+                                    <th>img3</th>
+                                    <td><img width="100px" height="100px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
+                                </tr>
+                            </c:if>
+<%--                            <span class="v-title" style="font-size: 13px;">이미지1</span><br/>--%>
+<%--                            <td><input name="img1" type="file"></td>--%>
+<%--                            <span class="v-title" style="font-size: 13px;">이미지2</span><br/>--%>
+<%--                            <td><input name="img2" type="file"></td>--%>
+<%--                            <span class="v-title" style="font-size: 13px;">이미지3</span><br/>--%>
+<%--                            <td><input name="img3" type="file"></td>--%>
                         </div>
                     </div>
 
+                </div>
+                <div class="hashcode">
+                    <div class="write-info" style="width: 647px; height: 49px;">
+                        <th>  hash</th>
+                         <input type="text" name="hash" value="${b.hash}" readonly style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px ">
+                    </div>
+                </div>
+                <div class="addbtn-box" style="display: flex; align-content: space-between; padding-top: 20px;">
+                    <c:if test="${sessionScope.id==b.num.mid}">
+                        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                            <a href="/idea/edit?wnum=${b.wnum}"><button type="button" class="cancel_button" size="10px">수정</button></a>
+                         </span>
+                    </c:if>
+                </div>
 
 
 
+<%--<table border="1">--%>
+<%--    <tr>--%>
+<%--        <th>title</th>--%>
+<%--        <td><input type="text" name="title" value="${b.title}" readonly></td>--%>
+<%--    </tr>--%>
+<%--    <tr>--%>
+<%--        <th>name</th>--%>
+<%--        <td><input type="text" name="writer" value="${b.num.name}" readonly></td>--%>
+<%--    </tr>--%>
+<%--    <tr>--%>
+<%--        <th>등록일자</th>--%>
+<%--        <td><input type="text" value="${b.wdate}" readonly></td>--%>
+<%--    </tr>--%>
+<%--    <tr>--%>
+<%--        <th>마감일자</th>--%>
+<%--        <td><input type="text" value="${b.ddate}" readonly></td>--%>
+<%--    </tr>--%>
 
-<table border="1">
-    <tr>
-        <th>title</th>
-        <td><input type="text" name="title" value="${b.title}" readonly></td>
-    </tr>
-    <tr>
-        <th>name</th>
-        <td><input type="text" name="writer" value="${b.num.name}" readonly></td>
-    </tr>
-    <tr>
-        <th>등록일자</th>
-        <td><input type="text" value="${b.wdate}" readonly></td>
-    </tr>
-    <tr>
-        <th>마감일자</th>
-        <td><input type="text" value="${b.ddate}" readonly></td>
-    </tr>
+<%--    <tr>--%>
+<%--        <th>hash</th>--%>
+<%--        <td><input type="text" name="hash" value="${b.hash}" readonly></td>--%>
+<%--    </tr>--%>
+<%--    <tr>--%>
+<%--        <th>content</th>--%>
+<%--        <td><textarea rows="15" cols="20" name="content" readonly>"${b.content}"</textarea></td>--%>
+<%--    </tr>--%>
+<%--    <c:if test="${b.img1 != null}">--%>
+<%--    <tr>--%>
+<%--        <th>img1</th>--%>
+<%--        <td><img width="500px" height="500px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>--%>
+<%--    </tr>--%>
+<%--    </c:if>--%>
+<%--    <c:if test="${b.img2 != null}">--%>
+<%--        <tr>--%>
+<%--            <th>img1</th>--%>
+<%--            <td><img width="500px" height="500px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>--%>
+<%--        </tr>--%>
+<%--    </c:if>--%>
+<%--    <c:if test="${b.img3 != null}">--%>
+<%--        <tr>--%>
+<%--            <th>img3</th>--%>
+<%--            <td><img width="500px" height="500px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>--%>
+<%--        </tr>--%>
+<%--    </c:if>--%>
+<%--    <c:if test="${sessionScope.id==b.num.mid}">--%>
+<%--        <tr>--%>
+<%--            <th>수정</th>--%>
+<%--            <td><a href="/idea/edit?wnum=${b.wnum}">수정</a></td>--%>
+<%--        </tr>--%>
+<%--    </c:if>--%>
 
-    <tr>
-        <th>hash</th>
-        <td><input type="text" name="hash" value="${b.hash}" readonly></td>
-    </tr>
-    <tr>
-        <th>content</th>
-        <td><textarea rows="15" cols="20" name="content" readonly>"${b.content}"</textarea></td>
-    </tr>
-    <c:if test="${b.img1 != null}">
-    <tr>
-        <th>img1</th>
-        <td><img width="500px" height="500px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
-    </tr>
-    </c:if>
-    <c:if test="${b.img2 != null}">
-        <tr>
-            <th>img1</th>
-            <td><img width="500px" height="500px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
-        </tr>
-    </c:if>
-    <c:if test="${b.img3 != null}">
-        <tr>
-            <th>img3</th>
-            <td><img width="500px" height="500px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
-        </tr>
-    </c:if>
-    <c:if test="${sessionScope.id==b.num.mid}">
-        <tr>
-            <th>수정</th>
-            <td><a href="/idea/edit?wnum=${b.wnum}">수정</a></td>
-        </tr>
-    </c:if>
-
-</table>
-
+<div class="comment" >
 <h3>댓글</h3>
 <form action="/idea/detail" method="post">
-    <input type="text" name="wnum" value="${b.wnum}" readonly><%-- 안보이게 만들어야함 --%>
-    <input type="text" name="num" value="${sessionScope.num}" readonly><%-- 안보이게 만들어야함 --%>
+    <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+    <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
     <input type="text" value="${sessionScope.name}" readonly>
     <input type="text" name="content" placeholder="댓글을 입력해주세요">
     <input type="submit" value="댓글달기">
 </form>
-
+</div>
     <c:forEach var="c" items="${comments}">
 
             <span>${c.num.name}</span>
@@ -187,6 +217,9 @@
 <h3>Oais</h3>
 
 
-
+</form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
