@@ -1,5 +1,7 @@
 package com.encore.oais.voteboard;
 
+import com.encore.oais.voteboard.votecomment.VoteComment;
+import com.encore.oais.voteboard.votecomment.VoteCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,9 @@ import java.util.Map;
 public class VoteBoardController {
     @Autowired
     private VoteBoardService voteBoardService;
+
+    @Autowired
+    VoteCommentService voteCommentService;
 
     @RequestMapping("/voteboard")
     public String VoteBoard(){
@@ -40,7 +45,12 @@ public class VoteBoardController {
         return "vote/list";
 
     }
+    @GetMapping("/voteboard/detail")
+    public String getComment( int wnum, Map map)
+    {
+        map.put("voteboard",voteBoardService.getBywnum(wnum));
 
-
+        return "vote/votedetail";
+    }
 
 }

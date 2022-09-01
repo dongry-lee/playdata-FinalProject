@@ -61,6 +61,7 @@
         </ul>
     </div>
     <!-- End of Sidemenu-->
+
     <!-- Content -->
     <div id="content">
         <div class="fg-head"><h2>자유게시판</h2>
