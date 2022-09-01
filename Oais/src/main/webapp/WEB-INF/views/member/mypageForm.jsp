@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
 
@@ -113,7 +114,12 @@
                     <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
                     <p>아이디어 참여 인원 : ${item.part}</p>
                     <p>조회수 : ${item.views}</p>
-                    <p class="mp-upload-hash">${item.hash}</p>
+                    <p class="mp-upload-hash"><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+                        <c:forEach var="hashelement" items="${hashtag}">
+                            <a href="/search?val=${hashelement}">#${hashelement}</a>
+                        </c:forEach>
+                    </p>
+
                     </div>
                 </c:forEach>
             </div>
@@ -128,7 +134,11 @@
                         <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
                         <p>${item.wnum.part}</p>
                         <p>${item.wnum.views}</p>
-                        <p>${item.wnum.hash}</p>
+                        <p><c:set var="hashtag" value="${fn:split(item.wnum.hash,'#')}"/>
+                            <c:forEach var="hashelement" items="${hashtag}">
+                                <a href="/search?val=${hashelement}">#${hashelement}</a>
+                            </c:forEach>
+                        </p>
 
                     </c:forEach>
             </div>
@@ -139,7 +149,11 @@
                     <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
                     <p>${item.wnum.part}</p>
                     <p>${item.wnum.views}</p>
-                    <p>${item.wnum.hash}</p>
+                    <p><c:set var="hashtag" value="${fn:split(item.wnum.hash,'#')}"/>
+                        <c:forEach var="hashelement" items="${hashtag}">
+                            <a href="/search?val=${hashelement}">#${hashelement}</a>
+                        </c:forEach>
+                    </p>
 
                     <button onclick="location.href='/scrap/del?snum=${item.snum}'">스크랩삭제</button>
                 </c:forEach>
