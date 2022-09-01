@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public interface VoteCommentRepository extends JpaRepository<VoteComment,Integer> {
 
     ArrayList<VoteComment> findByWnum(VoteBoard wnum);
-
     ArrayList<VoteComment> findByNum(Member num);
 
 }
