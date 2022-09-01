@@ -22,6 +22,11 @@ public class VoteBoardService {
 
     }
 
+//    public VoteBoard getBywnum(int wnum){
+//
+//        return voteBoardRepository.findById(wnum);
+//
+//    }
 
 
 

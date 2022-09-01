@@ -76,7 +76,7 @@
         <div class="vote-addform">
             <form class="votef" action="/voteboard/writepro" method="post">
                 <div class="vethead">
-                    <input name="num.num" type="text" value="${sessionScope.num}">
+                    <input name="num.num" type="hidden" value="${sessionScope.num}">
                     <div class="titlebox">
                         <span class="v-title">투표 제목을 입력하세요</span><br/>
                         <input name="title" type="text">

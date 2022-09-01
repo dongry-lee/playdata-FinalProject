@@ -39,7 +39,6 @@ public class VoteResultController {
     @GetMapping("/voteboard/totalcount")
     public String voteTotalCount(int wnum,Map map) {
 
-        System.out.println("controller:"+wnum);
         long votetotalcount = voteResultService.getTotalCount(wnum);
 
         map.put("votetotalcount",votetotalcount);
