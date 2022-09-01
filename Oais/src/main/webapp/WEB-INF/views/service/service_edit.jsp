@@ -87,9 +87,21 @@
               <img src="/img/ois.png">
               <span>문의 글 수정</span>
               <hr>
-
           </div>
-
+          <div class="service_content">
+              <div>
+                  <span class="ser-title">제목</span>
+                  <input class="ser_tex" type="text">
+                  <span class="ser-title">첨부파일</span>
+                  <input type="file">
+                  <span class="ser-title">문의 내용</span>
+                  <textarea></textarea>
+              </div>
+              <div class="service_btnbox">
+                  <button>글 수정</button>
+                  <button>삭제</button>
+              </div>
+          </div>
       </div>
   </div>
 </div>
