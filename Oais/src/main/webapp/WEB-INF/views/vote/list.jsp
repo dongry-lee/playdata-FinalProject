@@ -27,10 +27,10 @@
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">로그인</button></a>
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
         </nav>
     </div>
@@ -47,13 +47,13 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote/list" class="item">
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -73,34 +73,38 @@
                     <p class="vote-title">${item.title}</p>
                     <div class="vote-content">
                             ${item.content}
-
                     </div>
+                </div>
+                    <div class="vote-img">
+                        <img src="/img/catanddog.png">
+                    </div>
+                    <div class="vote-option">
+                        <div class="option-select">
+                            <div>
+                                <form action="/voteboard/resultpro" method="post">
+                                    <input type="hidden" name="wnum" value="${item.wnum}">
+                                    <input type="radio" id="vote1" name="item"
+                                           value="${item.item01}"/><label><span></span>${item.item01}</label>
+                                    <input type="radio" id="vote2" name="item"
+                                           value="${item.item02}"/><label><span></span>${item.item02}</label>
+                                    <button>투표</button>
+                                </form>
+                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
+                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
+
+                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
+                            </div>
 
 
-                </div>
-                <div class="vote-img">
-                    <img src="/img/catanddog.png">
-                </div>
-                <div class="vote-option">
-                    <div class="option-select">
-                        <div>
-                            <span></span>
-                            <input type="radio" id="count01" name="radio" value="${item.count01}"/><label><span></span>${item.item01}</label>
-                            <input type="radio" id="count02" name="radio" value="${item.count02}"/><label><span></span>${item.item02}</label>
+
                         </div>
 
                     </div>
-                </div>
-
-            </div></c:forEach>
 
 
-        </div>
+                </div></c:forEach>
 
-    </div>
-
-</div>
+            </div>
 
 </body>
-
 </html>

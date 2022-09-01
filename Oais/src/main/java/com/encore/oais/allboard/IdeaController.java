@@ -41,6 +41,7 @@ public class IdeaController {
 
     @Value("${spring.servlet.multipart.location}")
     private String imgpath;
+
     @RequestMapping("/")
     public String list(Model model){
         ArrayList<AllBoard> list = service.getAllIdea();
@@ -107,9 +108,7 @@ public class IdeaController {
     @GetMapping("/detail")
     public String detailForm(int wnum, Map m){
         AllBoard b = service.getByWnum(wnum);
-        AllBoard c = new AllBoard();
-        c.setWnum(wnum);
-        ArrayList<Comments> comments = c_service.getAll(c);
+        ArrayList<Comments> comments = c_service.getAll(b);
         m.put("b", b);
         m.put("comments", comments);
         b.setViews(b.getViews()+1);
@@ -255,23 +254,6 @@ public class IdeaController {
         }
         return result;
     }
-////    @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ
-////    public ResponseEntity<byte[]> read_img(String fname, int num) {
-////        File f = new File(img_path + num + "/" + fname);
-////        HttpHeaders header = new HttpHeaders();// http ��� ����
-////        ResponseEntity<byte[]> result = null;
-////        try {
-////            // ��� ���� �߰�. ���� ���� Ÿ�� ����.
-////            header.add("Content-Type", Files.probeContentType(f.toPath()));
-////            result = new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(f), header, HttpStatus.OK);
-////        } catch (IOException e) {
-////            // TODO Auto-generated catch block
-////            e.printStackTrace();
-////        }
-////        return result;
-////    }
-
-
 
 //
 

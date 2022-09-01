@@ -18,12 +18,14 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
 
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
@@ -67,7 +69,7 @@
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
             <li class="sidbtn"><a href="/voteboard/list" class="item"><div>투표하기</div></a></li>
             <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
+            <li class="sidbtn"><a href="/service/list" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
                 @2022 Oais</div>
         </ul>
@@ -84,7 +86,7 @@
             <div class="idea-box">
                 <div class="idea-img">
                     <c:if test="${b.img1 != null}">
-                    <img src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                    <img width="300px" height="300px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
                     </c:if>
                     <c:if test="${b.img1 == null}">
                         <div>이미지가 없습니다.</div>
@@ -102,6 +104,11 @@
                         <p>${b.part}</p>
                     </div>
                 </div>
+                <c:if test="${sessionScope.num!=null}">
+                <div class="scrap button">
+                    <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}'">스크랩</button>
+                </div>
+                </c:if>
 
             </div>
 

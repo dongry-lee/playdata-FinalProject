@@ -6,7 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>--%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <link href="/css/custom.css" rel="stylesheet">
@@ -15,6 +17,7 @@
     <title>아이디어게시판 글작성</title>
 </head>
 <body>
+
 <header>
     <div class="wrapper"> <!--전체 랩 -->
         <a href="https://www.naver.com"><h1 class=""></h1></a>
@@ -130,6 +133,7 @@
 <%--                                <td><input type="submit" value="글작성"></td>--%>
 <%--                            </tr>--%>
                              </div>
+
 
                     </form>
                 </div>

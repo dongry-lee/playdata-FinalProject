@@ -25,12 +25,13 @@
         <a href="/"><h1></h1></a>
 
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -73,7 +74,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -84,42 +85,66 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
+        <h2>내 정보</h2>
         <div class="myinfo">
-            <h2>내 정보</h2>
             <form action="/member/mypage" method="post">
             <div>
-                <input type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
+                <input class="infotext" type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
             </div>
             <div>
-                <input name="name" value="${m.name}" type="text"> <a href="/member/out">회원탈퇴</a>
+                <input class="infotext" type="text" name="name" value="${m.name}"> <a href="/member/out">회원탈퇴</a>
             </div>
             </form>
         </div>
-        <div>
+        <div class="tabbox">
             <div class="tab">
                 <button class="tablinks" onclick="openmytab(event, 'MyUpload')">내 업로드</button>
                 <button class="tablinks" onclick="openmytab(event, 'MyPartic')">내가 참여한</button>
                 <button class="tablinks" onclick="openmytab(event, 'MyScrap')">내 스크랩</button>
             </div>
 
-            <div id="MyUpload" class="tabcontent" style="display: block">
-                <h3>내 업로드</h3>
+            <div id="MyUpload" class="tabcontent" style="display: flex">
+
                 <c:forEach var="item" items="${myUploadList}">
-                <p>${item}</p>
+                    <div class="upbox">
+                    <c:if test="${item.img1 != null && item.img1!=''}">
+                    <img class="mp-uplodimg" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                    </c:if>
+                    <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
+                    <p>아이디어 참여 인원 : ${item.part}</p>
+                    <p>조회수 : ${item.views}</p>
+                    <p class="mp-upload-hash">${item.hash}</p>
+                    </div>
                 </c:forEach>
             </div>
 
             <div id="MyPartic" class="tabcontent">
                 <h3>내가 참여한</h3>
-                <c:forEach var="item" items="${myPartList}">
-                <p>${item.wnum.title}</p>
-                </c:forEach>
+                    <c:forEach var="item" items="${myPartList}">
+                        <c:if test="${item.wnum.img1 != null && item.wnum.img1!=''}">
+                            <img width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
+                        </c:if>
+
+                        <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
+                        <p>${item.wnum.part}</p>
+                        <p>${item.wnum.views}</p>
+                        <p>${item.wnum.hash}</p>
+
+                    </c:forEach>
             </div>
 
             <div id="MyScrap" class="tabcontent">
                 <h3>내 스크랩</h3>
-                <p>스크랩한 아이디어 및 투표 게시물</p>
+                <c:forEach var="item" items="${myScrapList}">
+                    <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
+                    <p>${item.wnum.part}</p>
+                    <p>${item.wnum.views}</p>
+                    <p>${item.wnum.hash}</p>
+
+                    <button onclick="location.href='/scrap/del?snum=${item.snum}'">스크랩삭제</button>
+                </c:forEach>
             </div>
+
         </div>
     </div>
 </div>
