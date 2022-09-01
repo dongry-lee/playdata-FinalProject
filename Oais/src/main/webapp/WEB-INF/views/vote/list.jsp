@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>진행중인 투표</title>
@@ -15,51 +15,96 @@
     <link href="/css/vote.css" rel="stylesheet">
 </head>
 <body>
+
+<header>
+    <div class="wrapper"> <!--전체 랩 -->
+        <a href="https://www.naver.com"><h1></h1></a>
+        <nav> <!-- 메뉴부분 -->
+            <div class="search"> <!-- 검색창 -->
+
+                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
+                <input type="text" placeholder="공모/투표/게시판 찾아보기">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            </div>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
+             </span>
+        </nav>
+    </div>
+</header>
 <!-- Page Wrapper -->
 <div class="wrapper">
 
     <!-- Sidemenu -->
     <div class="menu">
         <ul class="sidemenu">
-            <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
-            <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
-            <li class="sidbtn"><a href="/vote/" class="item"><div>투표하기</div></a></li>
-            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
-            <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
+            <li class="sidbtn"><a href="/" class="item">
+                <div>홈</div>
+            </a></li>
+            <li class="sidbtn"><a href="/idea/" class="item">
+                <div>아이디어 공모</div>
+            </a></li>
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
+                <div>투표하기</div>
+            </a></li>
+            <li class="sidbtn"><a href="/board/" class="item">
+                <div>자유게시판</div>
+            </a></li>
+            <li class="sidbtn"><a href="#" class="item">
+                <div>고객센터</div>
+            </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
-                @2022 Oais</div>
+                @2022 Oais
+            </div>
         </ul>
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div class="fg-head"><h1>진행중인 아이디어 투표</h1></div>
+        <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
+            <a href="/voteboard/write">게시글 작성</a>
+            <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-                    <h1 class="vote-title">강아지 vs 고양이</h1>
+                    <p class="vote-title">${item.title}</p>
                     <div class="vote-content">
-                        뭐 키울까요?
+                            ${item.content}
+                    </div>
+                </div>
+                    <div class="vote-img">
+                        <img src="/img/catanddog.png">
+                    </div>
+                    <div class="vote-option">
+                        <div class="option-select">
+                            <div>
+                                <form action="/voteboard/resultpro" method="post">
+                                    <input type="hidden" name="wnum" value="${item.wnum}">
+                                    <input type="radio" id="vote1" name="item"
+                                           value="${item.item01}"/><label><span></span>${item.item01}</label>
+                                    <input type="radio" id="vote2" name="item"
+                                           value="${item.item02}"/><label><span></span>${item.item02}</label>
+                                    <button>투표</button>
+                                </form>
+                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
+                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
+
+                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
+                            </div>
+
+
+
+                        </div>
+
                     </div>
 
-                </div>
-                <div class="vote-img">
-                    <img src="/bootstrap/img/catanddog.png">
-                </div>
-                <div class="vote-option">
-                    <div class="option-select">
-                        <div>
-                            <span></span>
-                            <input type="radio" id="" name="강아지" /><label><span></span>강아지</label>
-                            <input type="radio" id="" name="고양이" /><label><span></span>고양이</label>
-                        </div>
-                        <a href="/voteboard/vote">투표</a>
-                    </div>
-                </div>
+
+                </div></c:forEach>
+
             </div>
 
-        </div>
-    </div>
-</div>
 </body>
 </html>

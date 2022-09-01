@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-    <link href="/layout/member/join.css" rel="stylesheet">
+    <link href="/css/join.css" rel="stylesheet">
 
 <title>회원가입</title>
 
@@ -106,7 +106,7 @@
         <form action="/member/join" method="post" type="submit" name="f1">
             <ul>
             <li>
-                <img src=""  alt="로고" class="center-block">
+                <img src="/img/img.png"  alt="로고" class="center-block">
             </li>
             <li>
                 <label><strong>아이디</strong><br>

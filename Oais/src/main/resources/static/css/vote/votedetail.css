@@ -1,0 +1,49 @@
+.detail-comment{
+    /*display: flex;*/
+    margin-top: 20px;
+    padding: 20px;
+    width: 1200px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.commentlist{
+    margin-top: 20px;
+    padding: 20px;
+    width: 1200px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.commentBox{
+    display: flex;
+}
+.cmtbt{
+    width: 70px;
+    height: 5.2rem;
+    border: none;
+
+}
+.cmt-tt{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+#writeComment{
+    width: 100%;
+    height: 6.25em;
+    border: none;
+    resize: none;
+}
+.cmtwriter{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.cmt{
+    display: flex;
+    margin-bottom: 15px;
+}
+.eddelbt{
+    border: none;
+    background: none;
+}

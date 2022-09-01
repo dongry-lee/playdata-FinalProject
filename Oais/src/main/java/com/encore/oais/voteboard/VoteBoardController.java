@@ -6,14 +6,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Map;
+
 @Controller
 public class VoteBoardController {
     @Autowired
     private VoteBoardService voteBoardService;
 
+    @RequestMapping("/voteboard")
+    public String VoteBoard(){
+        return "vote/list";
+
+    }
+
     @GetMapping("/voteboard/write")
     public String VoteBoardFrom(){
-        return "vote/list";
+        return "vote/vote";
 
     }
 
@@ -21,6 +29,18 @@ public class VoteBoardController {
     public String boardWritePro(VoteBoard voteBoard){
         voteBoardService.write(voteBoard);
 
-        return "";
+        return "redirect:/voteboard/list";
     }
+
+    @GetMapping("/voteboard/list")
+    public String boardList(Map map){
+
+        map.put("itemlist",voteBoardService.getAll());
+
+        return "vote/list";
+
+    }
+
+
+
 }

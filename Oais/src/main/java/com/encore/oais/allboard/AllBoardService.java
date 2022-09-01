@@ -15,6 +15,10 @@ public class AllBoardService {
     public ArrayList<AllBoard> getAllIdea(){
         return dao.findByTypecd(0);
     }
+    public ArrayList<AllBoard> getAllCommunity(){
+        return dao.findByTypecd(1);
+    }
+
     public AllBoard addAllBoard(AllBoard b){
         return dao.save(b);
     }
@@ -22,19 +26,37 @@ public class AllBoardService {
         b.setTypecd(0);
         return dao.save(b);
     }
+    public AllBoard addCommunity(AllBoard b){
+        b.setTypecd(1);
+        return dao.save(b);
+    }
+
+
+
+
     public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
     public AllBoard addvote(AllBoard v){
         v.setTypecd(0);
         return dao.save(v);
     }
 
-    public AllBoard getByNum(int wnum){
+    public AllBoard getByWnum(int wnum){
 
         return dao.findById(wnum).orElse(null);
     }
 
     public void delAllBoard(int wnum){
         dao.deleteById(wnum);
+    }
+
+    public ArrayList<AllBoard> getByNum(int m){
+        Member member = new Member();
+        member.setNum(m);
+        return dao.findByNum(member);
+    }
+
+    public ArrayList<AllBoard> search(String val){
+        return dao.selectVal("%"+val+"%");
     }
 //
 //

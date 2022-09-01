@@ -9,96 +9,97 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<<<<<<< HEAD
+    <title>진행중인 공모</title>
     <link href="/css/custom.css" rel="stylesheet">
-    <title>Title</title>
-=======
-    <link href="/bootstrap/layout/member/main/main.scss" rel="stylesheet">
-    <title>아이디어게시</title>
->>>>>>> develop
+    <link href="/css/idea.css" rel="stylesheet">
 </head>
 <body>
-<!-- Page Wrapper -->
-<div id="wrapper">
+<header>
+    <div class="wrapper"> <!--전체 랩 -->
+        <a href="/"><h1></h1></a>
+        <nav> <!-- 메뉴부분 -->
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- 사이드바 - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">DeePocket</div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <li class="nav-item">
-            <a class="nav-link" href="/idea/">
-                <span>진행중인 아이디어</span></a>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <span>투표하기</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/board/">
-                <span>자유게시판</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Q&A</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-    </ul>
-    <!-- End of Sidebar -->
-
-
-
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-
-        <!-- End of Main Content -->
-        <div id="content">
-
-            <%--  real content  --%>
-
-
-            <c:if test="${not empty sessionScope.id}">
-                <a href="/idea/add">글작성</a>
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
+            <c:if test="${sessionScope.num == null}">
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
+             </span>
             </c:if>
-            <c:forEach var="b" items="${list}">
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <div class="card bg-light border-0 h-100">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <h2 class="fs-4 fw-bold"><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
-                            <p class="mb-0">${b.num.name}</p>
-                            <p class="mb-0">${b.content}</p>
-                            <p class="mb-0">${b.hash}</p>
-                            <p class="mb-0">${b.wdate}</p>
-                            <p class="mb-0">${b.ddate}</p>
-                            <p class="mb-0">${b.views}</p>
-                            <p class="mb-0">${b.part}</p>
-                        </div>
+            <c:if test="${sessionScope.num != null}">
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                환영합니다! ${sessionScope.name}님
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button  type="button" class="login_button" size="10px">로그아웃</button></a>
+             </span>
+
+            </c:if>
+        </nav>
+    </div>
+</header>
+<!-- Page Wrapper -->
+<div class="wrapper">
+    <!-- Sidemenu -->
+    <div class="menu">
+        <ul class="sidemenu">
+            <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
+            <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
+            <li class="sidbtn"><a href="/voteboard/list" class="item"><div>투표하기</div></a></li>
+            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
+            <li class="sidbtn"><a href="#" class="item"><div>고객센터</div></a></li>
+            <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
+                @2022 Oais</div>
+        </ul>
+    </div>
+    <!-- End of Sidemenu-->
+   <!-- Content Wrapper -->
+    <div id="content">
+        <div class="fg-head"><h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/idea/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
+             </span></h2> </div>
+        <div class="idea-form">
+        <c:forEach var="b" items="${list}">
+            <div class="idea-box">
+                <div class="idea-img">
+                    <c:if test="${b.img1 != null}">
+                    <img width="300px" height="300px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                    </c:if>
+                    <c:if test="${b.img1 == null}">
+                        <div>이미지가 없습니다.</div>
+                    </c:if>
+                </div>
+                <div class="idea-info">
+                    <div class="idea-content">
+                        <h2><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
+                        <p>${b.num.name}</p>
+                        <p>${b.content}</p>
+                        <p>${b.hash}</p>
+                        <p>${b.wdate}</p>
+                        <p>${b.ddate}</p>
+                        <p>${b.views}</p>
+                        <p>${b.part}</p>
                     </div>
                 </div>
-            </c:forEach>
+                <c:if test="${sessionScope.num!=null}">
+                <div class="scrap button">
+                    <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}'">스크랩</button>
+                </div>
+                </c:if>
+
+            </div>
+
+        </c:forEach>
         </div>
     </div>
+</div>
 </body>
 </html>

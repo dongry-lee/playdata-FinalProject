@@ -1,0 +1,111 @@
+.voteadd-content{
+    width: 1350px;
+    height: 640px;
+}
+.vote-addform{
+    width: 1280px;
+    height: 530px;
+    margin-left: 10px;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background-color: #d4fef0;
+}
+
+.vote-box{
+    display: flex;
+    width: 1200px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.vote-info{
+    width: 300px;
+    height: 230px;
+    padding: 20px;
+}
+.fg-head > p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.vote-content{
+    padding: 20px;
+}
+
+/*spen 제목*/
+.v-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+/**/
+
+.votef{
+    position: absolute;
+    background-color: #ffffff;
+    width: inherit;
+    height: inherit;
+    border-radius: 15px;
+}
+/* title */
+.titlebox{
+    border-radius: 15px;
+    background-color: #d4fef0;
+    margin: 20px;
+    width: fit-content;
+    padding: 20px;
+}
+
+.vethead{
+    display: flex;
+}
+/* end - title*/
+
+/* content */
+.add-content{
+    display: flex;
+    border-radius: 15px;
+    /*background-color: #d4fef0;*/
+    width: fit-content;
+    padding: 20px;
+}
+.contentbox{
+    display: flex;
+    background-color: #d4fef0;
+    padding: 30px;
+    border-radius: 20px;
+}
+.addimg{
+    background-color: #d4fef0;
+    padding: 30px;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+
+.votecntarea{
+    width: 350px;
+    height: 200px;
+    border: none;
+    resize: none;
+}
+
+.vote-plus{
+    margin-left: 20px;
+}
+
+/* end - content */
+
+/*해시태그*/
+
+.hashcode{
+    background-color: #d4fef0;
+}
+
+/*end 해시태그*/
+/* submit box */
+.addbox{
+    float: right;
+}
+/* submit box */
