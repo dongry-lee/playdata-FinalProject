@@ -12,7 +12,7 @@
 
     <%-- css --%>
     <link href="/css/custom.css" rel="stylesheet">
-    <link href="/css/service.css" rel="stylesheet">
+    <link href="/css/servicelist.css" rel="stylesheet">
     <title>고객센터</title>
 </head>
 <body>
@@ -84,7 +84,58 @@
   <!-- End of Sidemenu-->
   <!-- Content -->
   <div id="content">
-
+    <div>
+        <div>
+            <img src="/img/ois.png">
+            <p>고객센터</p>
+            <hr>
+        </div>
+        <div><button onclick="location.href='/service/add';">글 작성</button></div>
+        <div>
+            <table class="rwd-table">
+                <tbody>
+                <tr>
+                    <th>No.</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                </tr>
+                <tr>
+                    <td data-th="Supplier Code">
+                        1
+                    </td>
+                    <td data-th="Supplier Name">
+                        오아이스 공식 서비스 오픈 이벤트
+                    </td>
+                    <td data-th="Invoice Number">
+                        2022/09/01
+                    </td>
+                </tr>
+                <tr>
+                    <td data-th="Supplier Code">
+                        2
+                    </td>
+                    <td data-th="Supplier Name">
+                        로그인문제 해결 공지사항
+                    </td>
+                    <td data-th="Invoice Number">
+                        2022/08/31
+                    </td>
+                </tr>
+                <tr>
+                    <td data-th="Supplier Code">
+                        3
+                    </td>
+                    <td data-th="Supplier Name">
+                        2022년은 왜 벌써4개월 남았는지
+                    </td>
+                    <td data-th="Invoice Number">
+                        2022/09/01
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
   </div>
 </div>
 </body>
