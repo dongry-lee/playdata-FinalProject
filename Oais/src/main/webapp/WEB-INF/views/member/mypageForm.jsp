@@ -75,7 +75,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -86,29 +86,30 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
+        <h2>내 정보</h2>
         <div class="myinfo">
-            <h2>내 정보</h2>
             <form action="/member/mypage" method="post">
             <div>
-                <input type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
+                <input class="infotext" type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
             </div>
             <div>
-                <input name="name" value="${m.name}" type="text"> <a href="/member/out">회원탈퇴</a>
+                <input class="infotext" type="text" name="name" value="${m.name}"> <a href="/member/out">회원탈퇴</a>
             </div>
             </form>
         </div>
-        <div>
+        <div class="tabbox">
             <div class="tab">
                 <button class="tablinks" onclick="openmytab(event, 'MyUpload')">내 업로드</button>
                 <button class="tablinks" onclick="openmytab(event, 'MyPartic')">내가 참여한</button>
                 <button class="tablinks" onclick="openmytab(event, 'MyScrap')">내 스크랩</button>
             </div>
 
-            <div id="MyUpload" class="tabcontent" style="display: block">
-                <h3>내 업로드</h3>
+            <div id="MyUpload" class="tabcontent" style="display: flex">
+
                 <c:forEach var="item" items="${myUploadList}">
+                    <div class="upbox">
                     <c:if test="${item.img1 != null && item.img1!=''}">
-                    <img width="300px" height="300px" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                    <img class="mp-uplodimg" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
                     </c:if>
                     <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
                     <p>아이디어 참여 인원 : ${item.part}</p>
@@ -129,6 +130,7 @@
                         <c:if test="${item.wnum.img1 != null && item.wnum.img1!=''}">
                             <img width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
                         </c:if>
+
                         <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
                         <p>${item.wnum.part}</p>
                         <p>${item.wnum.views}</p>
@@ -156,6 +158,7 @@
                     <button onclick="location.href='/scrap/del?snum=${item.snum}'">스크랩삭제</button>
                 </c:forEach>
             </div>
+
         </div>
     </div>
 </div>

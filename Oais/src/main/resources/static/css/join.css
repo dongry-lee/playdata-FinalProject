@@ -42,6 +42,7 @@ body {
     margin: 2%;
     width:90%;
     height: 50px;
+    border-radius: 10px;
     border: solid 1px #dadada;
 }
 .emailcontent{
@@ -66,7 +67,8 @@ body {
     cursor: pointer;
     color:white;
     display: block;
-    background-color: #3858a6;
+    border-radius: 10px;
+    background-color: #73cc8e;
 }
 
 #bt_secu{
@@ -77,7 +79,7 @@ body {
     height: 55px;
     width: 40%;
     display: block;
-    background-color: #3858a6;
+    background-color: #73cc8e;
     border: solid 1px #dadada
 }
 .canslbtn{
@@ -87,6 +89,7 @@ body {
     font-size: 15px;
     color:white;
     background-color: #8e8e8e;
+    border-radius: 10px;
     border: solid 1px #dadada
 }
 .sub{

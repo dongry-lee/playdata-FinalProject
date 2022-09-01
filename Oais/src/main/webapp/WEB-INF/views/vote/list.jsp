@@ -27,10 +27,10 @@
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">로그인</button></a>
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
         </nav>
     </div>
@@ -53,7 +53,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>

@@ -24,7 +24,7 @@
 <header>
 
     <div class="wrapper"> <!-- 전체 랩 -->
-        <a href="https://www.naver.com"><h1></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <div class="search"> <!-- 검색창 -->
 
@@ -61,7 +61,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -76,7 +76,7 @@
         <div class="vote-addform">
             <form class="votef" action="/voteboard/writepro" method="post">
                 <div class="vethead">
-                    <input name="num.num" type="text" value="${sessionScope.num}">
+                    <input name="num.num" type="hidden" value="${sessionScope.num}">
                     <div class="titlebox">
                         <span class="v-title">투표 제목을 입력하세요</span><br/>
                         <input name="title" type="text">

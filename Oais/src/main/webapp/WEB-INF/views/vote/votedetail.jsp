@@ -28,10 +28,10 @@
                 <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">로그인</button></a>
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
         </nav>
     </div>
@@ -54,7 +54,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -64,6 +64,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
+
     <div id="content">
         <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
@@ -89,13 +90,23 @@
                     </div>
                 </div>
             </div>
+            <form action="/voteboard/detailpro" method="post">
             <div class="detail-comment">
                 <h2 class="cmt-tt">댓글 작성</h2>
+                <c:forEach var="c" items="${comment}">
+                <form action="/voteboard/detailpro" method="post">
+                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                    <input name="wnum.wnum" type="hidden" value="${c.wnum}}">
+                    
                 <div class="commentBox">
-                    <textarea id="writeComment" name="cmtcontent" maxlength="1000"
+                    <textarea id="writeComment" name="comment" maxlength="1000"
                               placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다."></textarea>
                     <button class="cmtbt" type="submit">작성</button>
+
                 </div>
+
+                </form>
+
             </div>
             <div class="commentlist">
                 <div class="cmtRod">
