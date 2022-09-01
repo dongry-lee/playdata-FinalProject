@@ -70,9 +70,8 @@
         <div class="vote-form">
             <div class="vote-box">
                 <div class="vote-info">
-                    <p class="vote-title">강아지 vs 고양이</p>
+                    <p class="vote-title">${voteboard.title}</p>
                     <div class="vote-content">
-                        뭐 키울까요?
                     </div>
                 </div>
                 <div class="vote-img">
@@ -83,9 +82,9 @@
                         <div>
                             <span></span>
                             <input type="radio" id="count01" name="radio"
-                                   value="${item.count01}"/><label><span></span>강아지</label>
+                                   value="${voteboard.item01}"/><label><span></span>${voteboard.item01}</label>
                             <input type="radio" id="count02" name="radio"
-                                   value="${item.count02}"/><label><span></span>고양이</label>
+                                   value="${voteboard.item02}"/><label><span></span>${voteboard.item02}</label>
                         </div>
                     </div>
                 </div>
@@ -93,11 +92,10 @@
             <form action="/voteboard/detailpro" method="post">
             <div class="detail-comment">
                 <h2 class="cmt-tt">댓글 작성</h2>
-                <c:forEach var="c" items="${comment}">
-                <form action="/voteboard/detailpro" method="post">
-                    <input name="num.num" type="hidden" value="${sessionScope.num}">
-                    <input name="wnum.wnum" type="hidden" value="${c.wnum}}">
-                    
+
+                    <input name="num.num" type="text" value="${sessionScope.num}">
+                    <input name="wnum.wnum" type="text" value="${voteboard.wnum}">
+
                 <div class="commentBox">
                     <textarea id="writeComment" name="comment" maxlength="1000"
                               placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다."></textarea>
@@ -108,15 +106,16 @@
                 </form>
 
             </div>
+
             <div class="commentlist">
                 <div class="cmtRod">
                     <div>
                         <div class="cmt">
-                            <span class="cmtwriter">김춘식</span>
+                            <span class="cmtwriter">${sessionScope.num}</span>
                             <button class="eddelbt" onclick="">수정</button>
                             <button class="eddelbt">삭제</button>
                         </div>
-                        <p>강아지 추천 드립니다 둘 다 키워봐서 알아요!</p>
+                      <p></p>
                     </div>
                     <hr>
                 </div>

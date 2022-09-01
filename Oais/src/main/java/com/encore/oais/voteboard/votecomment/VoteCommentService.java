@@ -1,7 +1,5 @@
 package com.encore.oais.voteboard.votecomment;
 
-import com.encore.oais.comments.Comments;
-import com.encore.oais.member.Member;
 import com.encore.oais.voteboard.VoteBoard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,21 +11,16 @@ public class VoteCommentService {
     @Autowired
     private VoteCommentRepository voteCommentRepository;
 
-    public void addComment(VoteComment voteComment){
+    public void addComment(VoteComment voteComment) {
 
         voteCommentRepository.save(voteComment);
 
     }
 
-    public ArrayList<VoteComment> getALL(){
 
-        return (ArrayList<VoteComment>)voteCommentRepository.findAll();
+    public ArrayList<VoteComment> getAll() {
+
+        return (ArrayList<VoteComment>) voteCommentRepository.findAll();
+
     }
-
-
-
-
-
-
-
 }

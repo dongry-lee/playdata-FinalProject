@@ -70,7 +70,9 @@
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-                    <p class="vote-title">${item.title}</p>
+
+                    <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
+
                     <div class="vote-content">
                             ${item.content}
                     </div>
