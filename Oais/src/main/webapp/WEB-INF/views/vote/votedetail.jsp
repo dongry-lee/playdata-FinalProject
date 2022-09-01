@@ -91,11 +91,15 @@
             </div>
             <div class="detail-comment">
                 <h2 class="cmt-tt">댓글 작성</h2>
+
+                <form action="/voteboard/detailpro" method="post">
                 <div class="commentBox">
-                    <textarea id="writeComment" name="cmtcontent" maxlength="1000"
+                    <textarea id="writeComment" name="comment" maxlength="1000"
                               placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다."></textarea>
                     <button class="cmtbt" type="submit">작성</button>
                 </div>
+
+                </form>
             </div>
             <div class="commentlist">
                 <div class="cmtRod">

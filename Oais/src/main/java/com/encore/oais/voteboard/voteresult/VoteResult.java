@@ -22,7 +22,7 @@ public class VoteResult {
     @JoinColumn(nullable = false)
     public VoteBoard wnum;
 
-
+    @Column(nullable = false)
     public String item;
 
 
