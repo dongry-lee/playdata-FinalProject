@@ -11,28 +11,23 @@ import java.util.ArrayList;
 @Service
 public class VoteCommentService {
     @Autowired
-    VoteCommentRepository voteCommentRepository;
+    private VoteCommentRepository voteCommentRepository;
 
-    public ArrayList<VoteComment> getAll(VoteBoard wnum){
+    public void addComment(VoteComment voteComment){
 
-        return voteCommentRepository.findByWnum(wnum);
-
-    }
-
-    public ArrayList<VoteComment> getByNum(int num){
-        Member member= new Member();
-        member.setNum(num);
-        return voteCommentRepository.findByNum(member);
+        voteCommentRepository.save(voteComment);
 
     }
 
-    public VoteComment addComment(VoteComment voteComment){
+    public ArrayList<VoteComment> getALL(){
 
-        return voteCommentRepository.save(voteComment);
-
+        return (ArrayList<VoteComment>)voteCommentRepository.findAll();
     }
 
-    public void deletById(int cnum){
-        voteCommentRepository.deleteById(cnum);}
+
+
+
+
+
 
 }

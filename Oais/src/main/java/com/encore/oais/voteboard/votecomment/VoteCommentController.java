@@ -16,40 +16,27 @@ import java.util.Map;
 
 @Controller
 public class VoteCommentController {
-    @Autowired
-    MemService memService;
 
     @Autowired
-    VoteCommentService voteCommentService;
+    private VoteCommentService voteCommentService;
 
-    @Autowired
-    VoteBoardService voteBoardService;
+    @PostMapping("/voteboard/detailpro")
+    public String addComment(VoteComment voteComment) {
 
-
-    @PostMapping("voteboard/detailpro")
-    public String voteAddComment(int wnum,int num,String comment){
-
-        VoteBoard voteBoard =voteBoardService.getByWnum(wnum);
-        Member member = memService.getByNum(num);
-        VoteComment voteComment = new VoteComment();
-        voteComment.setComment(comment);
-        voteComment.setNum(member);
-        voteComment.setWnum(voteBoard);
         voteCommentService.addComment(voteComment);
-        voteBoardService.getAll();
-        return "redirect:/vote/votedetail";
 
+        return "redirect:/voteboard/detail";
+    }
+    @GetMapping("/voteboard/detail")
+    public String getComment(Map map)
+    {
+        map.put("comment",voteCommentService.getALL());
+
+        return "vote/votedetail";
     }
 
-    @GetMapping("voteboard/detail")
-    public String voteDetailForm(int wnum, Map map){
-        VoteBoard voteBoard = voteBoardService.getByWnum(wnum);
-        ArrayList<VoteComment> voteComment= voteCommentService.getAll(voteBoard);
-        map.put("board", voteBoard );
-        map.put("comment",voteComment);
-        voteBoardService.getAll();
 
-        return "/vote/votedetail";
-    }
+
+
 
 }
