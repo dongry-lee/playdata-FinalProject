@@ -71,7 +71,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -82,7 +82,24 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-
+        <div>
+            <img src="/img/ois.png">
+            <p>작성글 내용</p>
+            <hr>
+        </div>
+        <div class="serv_detbox">
+            <div>
+                <p>Dorumamu</p><p>2022-09-01</p>
+                <p class="cnttit">도르마무 거래를 하러 왔습니다.</p>
+                <div class="serv-content">
+                    제가 아이디어를 썼는데 아이디어가 지워졌어요 복구해주세요 기분나빠요!
+                </div>
+                <div class="dtilbtn">
+                    <button>수정</button>
+                    <button>삭제</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

@@ -71,7 +71,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -82,7 +82,33 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
+        <div>
+            <div>
+                <img src="/img/ois.png">
+                <p>문의 글 작성</p>
+                <hr>
 
+            </div>
+            <div class="service_content">
+                <div>
+                    <span class="ser-title">제목</span>
+                    <input class="ser_tex" type="text">
+                    <span class="ser-title">게시글 비밀번호</span>
+                    <input class="ser_tex" type="password">
+                    <span class="ser-title">첨부파일</span>
+                    <input type="file">
+                    <span class="ser-title">문의 내용</span>
+                    <textarea>
+
+                    </textarea>
+                </div>
+                <div class="service_btnbox">
+                    <button>글 작성</button>
+                    <button>취소</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 </body>
