@@ -94,7 +94,7 @@ check out<br>
 
 
 8/26 스프린트1 회고
-## 스프린트
+스프린트
 https://github.com/users/dongry-lee/projects/1
 
 
