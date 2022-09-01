@@ -12,10 +12,7 @@ public class VoteBoardService {
     @Autowired
     private VoteBoardRepository voteBoardRepository;
 
-    public VoteBoard getByWnum(int wnum){
 
-        return voteBoardRepository.findById(wnum).orElse(null);
-    }
 
     public void write(VoteBoard voteBoard) {
 
@@ -28,12 +25,11 @@ public class VoteBoardService {
 
     }
 
-//    public VoteBoard getBywnum(int wnum){
-//
-//        return voteBoardRepository.findById(wnum);
-//
-//    }
+    public VoteBoard getBywnum(int wnum){
 
+        return voteBoardRepository.findById(wnum).orElse(null);
+
+    }
 
 
 }
