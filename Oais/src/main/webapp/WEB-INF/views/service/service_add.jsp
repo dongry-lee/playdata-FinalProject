@@ -93,8 +93,6 @@
                 <div>
                     <span class="ser-title">제목</span>
                     <input class="ser_tex" type="text">
-                    <span class="ser-title">게시글 비밀번호</span>
-                    <input class="ser_tex" type="password">
                     <span class="ser-title">첨부파일</span>
                     <input type="file">
                     <span class="ser-title">문의 내용</span>
