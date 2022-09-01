@@ -17,9 +17,13 @@ public class VoteResult {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int vnum;
 
+
     @ManyToOne
     @JoinColumn(nullable = false)
     public VoteBoard wnum;
 
+    @Column(nullable = false)
     public String item;
+
+
 }

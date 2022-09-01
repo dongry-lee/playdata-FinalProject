@@ -91,7 +91,12 @@
                                 </form>
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
+
+                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
                             </div>
+
+
+
                         </div>
 
                     </div>

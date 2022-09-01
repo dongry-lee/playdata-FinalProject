@@ -1,5 +1,6 @@
 package com.encore.oais.voteboard.voteresult;
 
+import com.encore.oais.voteboard.VoteBoard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,17 @@ public class VoteResultController {
 
         return "vote/votecount";
 
+
+    }
+
+    @GetMapping("/voteboard/totalcount")
+    public String voteTotalCount(int wnum,Map map) {
+
+        long votetotalcount = voteResultService.getTotalCount(wnum);
+
+        map.put("votetotalcount",votetotalcount);
+
+        return "vote/votetotalcount";
 
     }
 }
