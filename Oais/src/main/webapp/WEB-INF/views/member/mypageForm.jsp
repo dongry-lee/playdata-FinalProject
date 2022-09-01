@@ -124,6 +124,7 @@
                         <c:if test="${item.wnum.img1 != null && item.wnum.img1!=''}">
                             <img width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
                         </c:if>
+
                         <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
                         <p>${item.wnum.part}</p>
                         <p>${item.wnum.views}</p>
