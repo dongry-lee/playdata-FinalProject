@@ -3,8 +3,20 @@
     padding:0;
 
 }
+
+/* Change the color to your own background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px #d4fef0 inset !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
 body{
-    background-color: #f5f6f7;
+    background-color: #F2FFFB;
 }
 
 a{
@@ -39,14 +51,19 @@ a{
     outline: 0;
     border: 0;
     color: #fff;
-    background-color: #3858a6;
+    background-color: #73cc8e;
 }
 #id, #pw, #repw, #login_bt{
     margin: 2%;
     width: 90%;
     height: 50px;
-    border: 1px solid #dadada;
+    border-radius: 10px;
+    border: none;
 
+}
+
+#id, #pw{
+    background-color: #D5F5E2;
 }
 
 .center-block{
