@@ -40,7 +40,6 @@ public class AllBoard {
     private Date wdate;
 
     @Temporal(TemporalType.DATE)
-    @Column(nullable = false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date ddate;
 
