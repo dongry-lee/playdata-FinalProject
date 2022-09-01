@@ -29,11 +29,11 @@
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px" style="width: auto;">마이페이지</button></a>
+            <a href="/member/mypage"><button type="button" class="login_button" size="10px" style="width: 75px;">마이페이지</button></a>
              </span>
 
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+            <a href="/member/logout"><button type="button" class="login_button" size="10px" style="width: 64px;">로그아웃</button></a>
              </span>
                 </c:if>
             </div>
@@ -69,75 +69,75 @@
     <!-- Content -->
     <div id="content">
         <div class="fg-head"><h2>아이디어 공모하기</h2></div>
-        <div class="idea-writeform">
-            <form class="addef" action="/idea/add" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
-                <div class="vethead" style="display: flex;">
-                    <div class="write-info" style="width: 870px;">
-                        <input type="text" name="title" value="${b.title}" readonly style="font-size:15px; border:0; width:860px; margin-bottom:30px;"><br>
-<%--                        <textarea class="titlecntarea" name="content" type="text" value="${b.title}" style="font-size:15px; border:0; width:860px; margin-bottom:30px;"></textarea><br>--%>
-                        <th>이름</th>
-                        <input type="text" name="name" value="${b.num.name}" readonly style="border: 0;">
-                    </div>
-                </div>
-                <div class="add-content" style="display: flex;">
-                    <div class="write-info" style="width: 400px; padding: 40px;">
-                        <th style="display: none"><!--여기안보이게--></th>
-                        <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
-                        <textarea class="titlecntarea" name="content" type="text"
-                                  style="font-size:15px; border:0; width:auto; margin-bottom:0px; padding: 32px; height:auto; ">"${b.content}"</textarea><br>
-                        <%--                                <th>content</th>--%>
-                        <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
-
-                        <th>등록일자</th>
-                        <td><input type="text" value="${b.wdate}" readonly></td>
-                        <th>마감일자</th>
-                        <td><input type="text" value="${b.ddate}" readonly></td>
-                    </div>
-                    <div class="addimg" style="padding:40px;">
-                        <span class="v-title" style=" font-size: 17px; padding: 10px 0px 0px 30px;">이미지 첨부📁</span><br/>
-                        <div class="write-info" style="width:200px;">
-                            <c:if test="${b.img1 != null}">
-                                <tr>
-                                    <th>img1</th>
-                                    <td><img width="100px" height="100px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
-                                </tr>
-                            </c:if>
-                            <c:if test="${b.img2 != null}">
-                                <tr>
-                                    <th>img1</th>
-                                    <td><img width="100px" height="100px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
-                                </tr>
-                            </c:if>
-                            <c:if test="${b.img3 != null}">
-                                <tr>
-                                    <th>img3</th>
-                                    <td><img width="100px" height="100px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
-                                </tr>
-                            </c:if>
-<%--                            <span class="v-title" style="font-size: 13px;">이미지1</span><br/>--%>
-<%--                            <td><input name="img1" type="file"></td>--%>
-<%--                            <span class="v-title" style="font-size: 13px;">이미지2</span><br/>--%>
-<%--                            <td><input name="img2" type="file"></td>--%>
-<%--                            <span class="v-title" style="font-size: 13px;">이미지3</span><br/>--%>
-<%--                            <td><input name="img3" type="file"></td>--%>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="hashcode">
-                    <div class="write-info" style="width: 647px; height: 49px;">
-                        <th>  hash</th>
-                         <input type="text" name="hash" value="${b.hash}" readonly style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px ">
-                    </div>
-                </div>
-                <div class="addbtn-box" style="display: flex; align-content: space-between; padding-top: 20px;">
-                    <c:if test="${sessionScope.id==b.num.mid}">
-                        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                            <a href="/idea/edit?wnum=${b.wnum}"><button type="button" class="cancel_button" size="10px">수정</button></a>
-                         </span>
+        <div class="idea-form"> <!--  idea form vs idea write-from-->
+            <c:if test="${b.img1 != null}">
+                <div class="idea-box">
+                    <div class="idea-img">
+                        <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
                     </c:if>
-                </div>
+                    <c:if test="${b.img2 != null}">
+                        <div class="idea-box">
+                            <div class="idea-img">
+                            <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
+                    </c:if>
+                    <c:if test="${b.img3 != null}">
+                                <div class="idea-box">
+                                    <div class="idea-img">
+                            <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
+                    </c:if>
+                     <c:if test="${b.img1 == null}">
+                                <div>이미지가 없습니다.</div>
+                     </c:if>
+                     </div>
+                     <div class="idea-info">
+                       <div class="idea-content">
+                            <h2><a href="/idea/add?wnum=${b.wnum}">${b.title}</a></h2>
+                            <p>${b.num.name}</p>
+                            <p>${b.content}</p>
+                            <p>${b.hash}</p>
+                            <p>${b.wdate}</p>
+                            <p>${b.ddate}</p>
+                             <p>${b.views}</p>
+                             <p>${b.part}</p>
+                       </div>
+                     </div>
+                </div><!-- 아이디어 박스 끝 -->
+                 <div class="addbtn-box">
+                      <c:if test="${sessionScope.id==b.num.mid}">
+                            <span style="padding: 5px; margin-top: 230px; border-radius:100px; border:1px; border-color: #f0f0f0;">
+                                <a href="/idea/edit?wnum=${b.wnum}"><button type="submit" class="cancel_button" size="10px" >수정</button></a><!--button type="button"-->
+                            </span>
+<%--                          </c:if>--%>
+                            <span style="padding: 5px; margin-top: 230px; border-radius:100px;">
+                                <a href="/idea/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
+                                 </span>
+                      </c:if>
+                 </div>
+                 <div class="idea-box" style="margin-top: 20px">
+                      <div class="comment" style="margin-left: 15px;" >
+                       <h3>댓글</h3>
+                       <form action="/idea/detail" method="post">
+                       <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+                       <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+                       <input type="text" value="${sessionScope.name}" readonly>
+                       <input type="text" name="content" placeholder="댓글을 입력해주세요">
+                        <input type="submit" value="댓글달기">
+                        </form>
+                      </div>
+                 </div>
+                 <div class="idea-box" style="margin-top: 40px;">
+                     <div class="commented" style="margin-left: 15px;" >
+                        <c:forEach var="c" items="${comments}">
+                                        <span>${c.num.name}</span>
+                                        <span>${c.cdate}</span>
+                                        <span>${c.content}</span>
+                                        <c:if test="${sessionScope.num == c.num.num}">
+                                            <span><a href="/idea/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                                        </c:if>
 
+                        </c:forEach>
+                      </div>
+                 </div>
 
 
 <%--<table border="1">--%>
@@ -192,34 +192,36 @@
 <%--    </c:if>--%>
 
 <div class="comment" >
-<h3>댓글</h3>
-<form action="/idea/detail" method="post">
-    <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
-    <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
-    <input type="text" value="${sessionScope.name}" readonly>
-    <input type="text" name="content" placeholder="댓글을 입력해주세요">
-    <input type="submit" value="댓글달기">
-</form>
-</div>
-    <c:forEach var="c" items="${comments}">
+<%--<h3>댓글</h3>--%>
+<%--<form action="/idea/detail" method="post">--%>
+<%--    <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>
+<%--    <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>
+<%--    <input type="text" value="${sessionScope.name}" readonly>--%>
+<%--    <input type="text" name="content" placeholder="댓글을 입력해주세요">--%>
+<%--    <input type="submit" value="댓글달기">--%>
+<%--</form>--%>
+<%--</div>--%>
+<%--    <c:forEach var="c" items="${comments}">--%>
 
-            <span>${c.num.name}</span>
-            <span>${c.cdate}</span>
-            <span>${c.content}</span>
-            <c:if test="${sessionScope.num == c.num.num}">
-                <span><a href="/idea/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}">삭제</a></span>
-            </c:if>
+<%--            <span>${c.num.name}</span>--%>
+<%--            <span>${c.cdate}</span>--%>
+<%--            <span>${c.content}</span>--%>
+<%--            <c:if test="${sessionScope.num == c.num.num}">--%>
+<%--                <span><a href="/idea/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}">삭제</a></span>--%>
+<%--            </c:if>--%>
 
-    </c:forEach>
+<%--    </c:forEach>--%>
 
 
-<%--  real content end  --%>
-<h3>Oais</h3>
+<%--&lt;%&ndash;  real content end  &ndash;%&gt;--%>
+<%--<h3>Oais</h3>--%>
 
 
 </form>
         </div>
     </div>
 </div>
+                </div>
+                </div>
 </body>
 </html>

@@ -82,7 +82,7 @@
              </span></h2> </div>
         <div class="idea-form">
 
-        <c:forEach var="b" items="${list}">
+         <c:forEach var="b" items="${list}">
             <div class="idea-box">
                 <div class="idea-img">
                     <c:if test="${b.img1 != null}">
@@ -112,7 +112,7 @@
 
             </div>
 
-        </c:forEach>
+         </c:forEach>
         </div>
     </div>
 </div>
