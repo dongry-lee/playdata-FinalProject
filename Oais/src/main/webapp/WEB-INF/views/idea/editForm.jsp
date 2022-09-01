@@ -30,11 +30,11 @@
              </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/mypage"><button type="button" class="login_button" size="10px"
-                                             style="width: auto;">마이페이지</button></a>
+                                             style="width: 75px;">마이페이지</button></a>
              </span>
 
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+            <a href="/member/logout"><button type="button" class="login_button" size="10px" style="width: 64px;">로그아웃</button></a>
              </span>
                 </c:if>
             </div>
