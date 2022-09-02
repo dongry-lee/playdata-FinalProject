@@ -23,10 +23,12 @@ public class Scrap {
     private Member num;
 
     @OneToOne
+//            (cascade = CascadeType.REMOVE)
     @JoinColumn(unique = true)
     private AllBoard wnum;
 
     @OneToOne
+//            (cascade = CascadeType.REMOVE)
     @JoinColumn(unique = true)
     private VoteBoard wnum2;
 

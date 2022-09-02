@@ -99,39 +99,20 @@
                     <th>제목</th>
                     <th>작성일</th>
                 </tr>
+                <c:forEach var="service" items="${list}">
                 <tr>
                     <td data-th="Supplier Code">
-                        1
+                        ${service.wnum}
                     </td>
                     <td data-th="Supplier Name">
-                        오아이스 공식 서비스 오픈 이벤트
+                        <a href="/service/detail?wnum=${service.wnum}">${service.title}</a>
                     </td>
                     <td data-th="Invoice Number">
-                        2022/09/01
+                        ${service.wdate}
                     </td>
                 </tr>
-                <tr>
-                    <td data-th="Supplier Code">
-                        2
-                    </td>
-                    <td data-th="Supplier Name">
-                        로그인문제 해결 공지사항
-                    </td>
-                    <td data-th="Invoice Number">
-                        2022/08/31
-                    </td>
-                </tr>
-                <tr>
-                    <td data-th="Supplier Code">
-                        3
-                    </td>
-                    <td data-th="Supplier Name">
-                        2022년은 왜 벌써4개월 남았는지
-                    </td>
-                    <td data-th="Invoice Number">
-                        2022/09/01
-                    </td>
-                </tr>
+                    </c:forEach>
+
                 </tbody>
             </table>
         </div>
