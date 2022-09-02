@@ -48,7 +48,7 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 
 ## 스프린트
-https://github.com/users/dongry-lee/projects/1<br>
+https://github.com/users/dongry-lee/projects/1
 8/26 스프린트1 회고<br>
 
 동근
@@ -138,6 +138,7 @@ check in<br>
 <br>
 check out<br>
 댓글기능 C,R,D github merge오류 해결 - 동근<br>
+공모페이지 html제작 css 수정 필, 헤더 수정제작  및 연결 완-민서<br>
 
 
 8/27
