@@ -1,6 +1,7 @@
 package com.encore.oais.voteboard;
 
 import com.encore.oais.allboard.AllBoard;
+import com.encore.oais.voteboard.votecomment.VoteComment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -10,10 +10,9 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 
 @Repository
-public interface VoteCommentRepository extends JpaRepository<VoteComment,Integer> {
+public interface VoteCommentRepository extends JpaRepository<VoteComment,String> {
 
 //    ArrayList<VoteComment> findByWnum(VoteBoard wnum);
 //    ArrayList<VoteComment> findByNum(Member num);
-    ArrayList<VoteComment> findByComment(String comment);
 
 }

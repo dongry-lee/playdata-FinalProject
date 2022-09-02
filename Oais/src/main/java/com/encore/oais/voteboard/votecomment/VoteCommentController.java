@@ -28,13 +28,15 @@ public class VoteCommentController {
         return "redirect:/voteboard/detail?wnum="+ voteComment.getWnum().getWnum();
     }
 
+
+
+
     @GetMapping("/voteboard/comment")
+    public String boardList(String comment,Map map){
 
-    public String getC(Map map){
+        map.put("votecomment",voteCommentService.getByComment(comment));
 
-        map.put("cm",voteCommentService.getAll());
-
-        return "redircet: /vote/votedetail";
+        return "/vote/votedetail";
 
     }
 

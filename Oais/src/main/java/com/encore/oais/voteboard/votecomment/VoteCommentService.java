@@ -17,10 +17,16 @@ public class VoteCommentService {
 
     }
 
-
     public ArrayList<VoteComment> getAll() {
 
         return (ArrayList<VoteComment>) voteCommentRepository.findAll();
 
     }
+
+    public VoteComment getByComment(String comment){
+
+        return voteCommentRepository.findById(comment).orElse(null);
+
+    }
+
 }
