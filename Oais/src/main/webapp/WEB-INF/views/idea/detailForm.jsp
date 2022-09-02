@@ -91,7 +91,7 @@
                      </div>
                      <div class="idea-info">
                        <div class="idea-content">
-                            <h2><a href="/idea/add?wnum=${b.wnum}">${b.title}</a></h2>
+                            <h2>${b.title}</h2>
                             <p>${b.num.name}</p>
                             <p>${b.content}</p>
                             <p>${b.hash}</p>

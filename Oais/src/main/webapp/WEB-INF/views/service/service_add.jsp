@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <%-- css --%>
@@ -90,22 +91,30 @@
 
             </div>
             <div class="service_content">
+                <form action="/service/add" method="post" enctype="multipart/form-data">
                 <div>
                     <span class="ser-title">제목</span>
-                    <input class="ser_tex" type="text">
-                    <span class="ser-title">게시글 비밀번호</span>
-                    <input class="ser_tex" type="password">
-                    <span class="ser-title">첨부파일</span>
-                    <input type="file">
+                    <input class="ser_tex" name="title" type="text">
+                    <span class="ser-title">멤버num(displauy none해주세용)</span>
+                    <input class="ser_tex" name="num" type="text" value="${sessionScope.num}" readonly>
+                    <span class="ser-title">첨부파일1</span>
+                    <input type="file" name="img1">
+                    <span class="ser-title">첨부파일2</span>
+                    <input type="file" name="img2">
+                    <span class="ser-title">첨부파일3</span>
+                    <input type="file" name="img3">
                     <span class="ser-title">문의 내용</span>
-                    <textarea>
+                    <textarea name="content">
 
                     </textarea>
+
                 </div>
                 <div class="service_btnbox">
                     <button>글 작성</button>
                     <button>취소</button>
                 </div>
+
+                </form>
             </div>
 
         </div>

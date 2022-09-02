@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 27251
@@ -89,18 +90,53 @@
         </div>
         <div class="serv_detbox">
             <div>
-                <p>Dorumamu</p><p>2022-09-01</p>
-                <p class="cnttit">도르마무 거래를 하러 왔습니다.</p>
+                <p>${b.num.name}</p>
+                <p>${b.wdate}</p>
+                <p class="cnttit">${b.title}</p>
                 <div class="serv-content">
-                    제가 아이디어를 썼는데 아이디어가 지워졌어요 복구해주세요 기분나빠요!
+                    ${b.content}
+                <c:if test="${b.img1 != null}">
+                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img1}">
+                </c:if>
+                <c:if test="${b.img2 != null}">
+                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img2}">
+                </c:if>
+                <c:if test="${b.img3 != null}">
+                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img3}">
+                </c:if>
                 </div>
                 <div class="dtilbtn">
-                    <button>수정</button>
-                    <button>삭제</button>
+                    <c:if test="${sessionScope.id==b.num.mid}">
+                                <a href="/service/edit?wnum=${b.wnum}">수정</a>
+                                <a href="/service/">목록으로</a>
+                    </c:if>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="댓글을 달아주세요 창">
+        <form action="/service/detail" method="post">
+            <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+            <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+            <input type="text" value="${sessionScope.name}" readonly>
+            <input type="text" name="content" placeholder="댓글을 입력해주세요">
+            <input type="submit" value="댓글달기">
+        </form>
+    </div>
+            <div class="달린댓글창" style="margin-left: 15px;" >
+                <c:forEach var="c" items="${comments}">
+                    <span>${c.num.name}</span>
+                    <span>${c.cdate}</span>
+                    <span>${c.content}</span>
+                    <c:if test="${sessionScope.num == c.num.num}">
+                        <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                    </c:if>
+
+                </c:forEach>
+
+    </div>
+
 </div>
 </body>
 </html>

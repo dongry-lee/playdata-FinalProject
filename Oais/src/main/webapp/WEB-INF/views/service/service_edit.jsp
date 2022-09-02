@@ -87,6 +87,18 @@
               <img src="/img/ois.png">
               <span>문의 글 수정</span>
               <hr>
+              <form action="/service/edit" method="post" enctype="multipart/form-data">
+                <input type="text" value="${b.num.name}" readonly/>
+                  <input type="text" name="wnum" value="${b.wnum}" readonly/>
+                  <input type="text" name="title" value="${b.title}"/>
+                  <input type="text" name="content" value="${b.content}"/>
+                  <input type="file" name="img1"/>
+                  <input type="file" name="img2"/>
+                  <input type="file" name="img3"/>
+                  <input type="submit" value="수정"/>
+              </form>
+              <button onclick="location.href='/service/delete?wnum=${b.wnum}'">삭제</button>
+              </div>
 
           </div>
 
