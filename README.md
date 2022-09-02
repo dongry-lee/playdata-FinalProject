@@ -48,7 +48,7 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 
 ## 스프린트
-https://github.com/users/dongry-lee/projects/1
+https://github.com/users/dongry-lee/projects/1<br>
 8/26 스프린트1 회고<br>
 
 동근
