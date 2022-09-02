@@ -25,18 +25,18 @@ public class VoteCommentController {
 
         voteCommentService.addComment(voteComment);
 
-        return "redirect:/voteboard/detail";
-    }
-    @GetMapping("/voteboard/detail")
-    public String getComment(Map map)
-    {
-        map.put("comment",voteCommentService.getALL());
-
-        return "vote/votedetail";
+        return "redirect:/voteboard/detail?wnum="+ voteComment.getWnum().getWnum();
     }
 
+    @GetMapping("/voteboard/comment")
 
+    public String getC(Map map){
 
+        map.put("cm",voteCommentService.getAll());
+
+        return "redircet: /vote/votedetail";
+
+    }
 
 
 }
