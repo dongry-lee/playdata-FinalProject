@@ -103,6 +103,7 @@
                     <input type="file" name="img2">
                     <span class="ser-title">첨부파일3</span>
                     <input type="file" name="img3">
+
                     <span class="ser-title">문의 내용</span>
                     <textarea name="content">
 

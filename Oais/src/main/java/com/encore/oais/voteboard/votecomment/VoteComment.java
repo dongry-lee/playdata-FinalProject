@@ -15,6 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VoteComment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cnum; // 댓글번호
@@ -23,7 +24,7 @@ public class VoteComment {
     @JoinColumn(nullable = false)
     private VoteBoard wnum; //글번호
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(nullable = false)
     private Member num; //회원번호
 
