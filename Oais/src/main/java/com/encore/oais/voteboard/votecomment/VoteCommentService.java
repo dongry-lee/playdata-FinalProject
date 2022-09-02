@@ -17,10 +17,26 @@ public class VoteCommentService {
 
     }
 
-
     public ArrayList<VoteComment> getAll() {
 
         return (ArrayList<VoteComment>) voteCommentRepository.findAll();
 
     }
+
+    public ArrayList<VoteComment> getByComment(int wnum){
+
+        VoteBoard voteBoard =new VoteBoard();
+        voteBoard.setWnum(wnum);
+
+        return voteCommentRepository.findByWnum(voteBoard);
+
+    }
+
+    public void delComment(int cnum){
+
+        voteCommentRepository.deleteById(cnum);
+
+    }
+
+
 }

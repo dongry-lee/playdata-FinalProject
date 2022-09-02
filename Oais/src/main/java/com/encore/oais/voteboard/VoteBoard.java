@@ -26,5 +26,9 @@ public class VoteBoard {
     private String item01;
     private String item02;
 
+    private int totalCount;
+    private int count01;
+    private int count02;
+
 
 }

@@ -32,8 +32,7 @@
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
-             </span>
-        </nav>
+             </span></nav>
     </div>
 </header>
 <!-- Page Wrapper -->
@@ -95,20 +94,20 @@
                                 </form>
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
-
                                 <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
+                                <form action="/voteboard/delVoteBoard">
+                                    <input name="num.num" type="text" value="${sessionScope.num}">
+                                    <input name="wnum" type="text" value="${item.wnum}">
+                                    <button>삭제</button>
+                                </form>
                             </div>
-
 
                         </div>
 
+
                     </div>
-
-
                 </div>
-            </c:forEach>
-
-        </div>
-
+                </c:forEach>
+            </div>
 </body>
 </html>
