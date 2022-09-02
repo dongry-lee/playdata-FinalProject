@@ -78,13 +78,9 @@
                 <div class="vethead">
                     <input name="num.num" type="hidden" value="${sessionScope.num}">
                     <div class="titlebox">
-                        <span class="v-title">투표 제목을 입력하세요</span><br/>
-                        <input name="title" type="text">
+                        <input class="vottitle" name="title" type="text" placeholder="제목">
                     </div>
-                    <div class="titlebox">
-                        <span class="v-title">마감일자</span><br/>
-                        <input name="date" type="date">
-                    </div>
+
                 </div>
                 <div class="add-content">
                     <div class="contentbox">
@@ -93,13 +89,22 @@
                             <textarea class="votecntarea" name="content" type="text"
                                       placeholder="내용을 입력해 주세요."></textarea>
                         </div>
-                        <div class="vote-plus">
-                            <span class="v-title">투표항목</span><br/>
-                            <ul>
-                                <li><input name="item01" type="text"><br/></li>
-                                <li><input name="item02" type="text"><br/></li>
-                            </ul>
-                            <button onclick="location.href='/voteboard'">게시글 작성</button>
+                        <div class="votelist">
+                            <span class="v-title">투표항목</span>
+                            <div class="vote-plus">
+                                <ul>
+                                    <li><input class="voteitem" name="item01" type="text"><br/></li>
+                                    <li><input class="voteitem" name="item02" type="text"><br/></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="v-title">마감일자</span>
+                                <div class="latdate">
+
+                                <input name="date" type="date">
+                                </div>
+                            </div>
+
                             <%--항목추가 기능 / 나중에 살려보아요--%>
 <%--                            <table>--%>
 <%--                                <tr>--%>
@@ -128,31 +133,39 @@
                                 </tr>
                             </table>
                         </div>
-                    </div>
-                    <div class="addimg">
-                        <span class="v-title">이미지 첨부</span><br/>
-                        <button>이미지 등록</button>
-                    </div>
-                </div>
-                <div class="hashcode">
-                    <div>
-                        <div class="tr_hashTag_area">
-                            <p><strong>해시태그 구현</strong></p>
-                            <div class="form-group">
-                                <input type="hidden" value="" name="tag" id="rdTag" />
+                        <div >
+                            <div>
+                                <span class="v-title">이미지 첨부</span>
+                                <div class="addimg">
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <div>
+                                <span class="v-title">해시태그</span>
+                                <div class="hashcode">
+                                    <div class="tr_hashTag_area">
+
+                                        <div class="form-group">
+                                            <input type="hidden" value="" name="tag" id="rdTag" />
+                                        </div>
+
+                                        <ul id="tag-list"></ul>
+
+                                        <div class="form-group">
+                                            <input type="text" id="tag" size="7" placeholder="엔터로 해시태그를 등록해주세요." style="width: 300px;"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <ul id="tag-list"></ul>
-
-                            <div class="form-group">
-                                <input type="text" id="tag" size="7" placeholder="엔터로 해시태그를 등록해주세요." style="width: 300px;"/>
-                            </div>
                         </div>
-                    </div>#hashtag
+
+                    </div>
+
                 </div>
                 <div class="addbtn-box">
                     <div class="addbox">
-                        <input type="submit" name="작성">
+                        <button onclick="location.href='/voteboard'">게시글 작성</button>
                         <button>취소</button>
                     </div>
                 </div>

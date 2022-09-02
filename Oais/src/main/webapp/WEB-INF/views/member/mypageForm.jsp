@@ -90,10 +90,10 @@
         <div class="myinfo">
             <form action="/member/mypage" method="post">
             <div>
-                <input class="infotext" type="text" value="${m.mid}" readonly> <input type="submit" value="내 정보 수정">
+                <input class="infotext" type="text" value="${m.mid}" readonly> <input class="info-btn" type="submit" value="내 정보 수정">
             </div>
             <div>
-                <input class="infotext" type="text" name="name" value="${m.name}"> <a href="/member/out">회원탈퇴</a>
+                <input class="infotext" type="text" name="name" value="${m.name}"> <a class="info-btn" href="/member/out">회원탈퇴</a>
             </div>
             </form>
         </div>
@@ -111,7 +111,7 @@
                     <c:if test="${item.img1 != null && item.img1!=''}">
                     <img class="mp-uplodimg" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
                     </c:if>
-                    <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
+                    <a class="uptitle" href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
                     <p>아이디어 참여 인원 : ${item.part}</p>
                     <p>조회수 : ${item.views}</p>
                     <p class="mp-upload-hash"><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
@@ -127,19 +127,20 @@
             <div id="MyPartic" class="tabcontent">
                 <h3>내가 참여한</h3>
                     <c:forEach var="item" items="${myPartList}">
+                        <div class="upbox">
                         <c:if test="${item.wnum.img1 != null && item.wnum.img1!=''}">
-                            <img width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
+                            <img class="mp-uplodimg" width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
                         </c:if>
 
-                        <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
-                        <p>${item.wnum.part}</p>
-                        <p>${item.wnum.views}</p>
-                        <p><c:set var="hashtag" value="${fn:split(item.wnum.hash,'#')}"/>
+                        <a  class="uptitle" href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
+                        <p>투표 참여인원: ${item.wnum.part}</p>
+                        <p>조회수 : ${item.wnum.views}</p>
+                        <p class="mp-upload-hash"><c:set var="hashtag" value="${fn:split(item.wnum.hash,'#')}"/>
                             <c:forEach var="hashelement" items="${hashtag}">
                                 <a href="/search?val=${hashelement}">#${hashelement}</a>
                             </c:forEach>
                         </p>
-
+                     </div>
                     </c:forEach>
             </div>
 
@@ -154,7 +155,6 @@
                             <a href="/search?val=${hashelement}">#${hashelement}</a>
                         </c:forEach>
                     </p>
-
                     <button onclick="location.href='/scrap/del?snum=${item.snum}'">스크랩삭제</button>
                 </c:forEach>
             </div>
