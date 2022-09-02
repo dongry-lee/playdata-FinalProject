@@ -102,6 +102,19 @@
 .hashcode{
     background-color: #d4fef0;
 }
+.tag-item{
+    background-color: #6A8AA6;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 20px;
+}
+#tag-list{
+    display: flex;
+}
+.del-btn > img{
+    width: 10px;
+    height: 10px;
+}
 
 /*end 해시태그*/
 /* submit box */
