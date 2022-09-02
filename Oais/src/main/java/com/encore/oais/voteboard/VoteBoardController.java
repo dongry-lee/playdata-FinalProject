@@ -4,6 +4,7 @@ import com.encore.oais.voteboard.votecomment.VoteComment;
 import com.encore.oais.voteboard.votecomment.VoteCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +15,10 @@ import java.util.Map;
 public class VoteBoardController {
     @Autowired
     private VoteBoardService voteBoardService;
-
     @Autowired
-    VoteCommentService voteCommentService;
+    private VoteCommentService voteCommentService;
+
+
 
     @RequestMapping("/voteboard")
     public String VoteBoard(){
@@ -46,11 +48,20 @@ public class VoteBoardController {
 
     }
     @GetMapping("/voteboard/detail")
-    public String getComment( int wnum, Map map)
+    public String getComment(int wnum, Map map)
     {
         map.put("voteboard",voteBoardService.getBywnum(wnum));
+        map.put("votecomment",voteCommentService.getByComment(wnum));
+
 
         return "vote/votedetail";
+    }
+    @GetMapping("/voteboard/delVoteBoard")
+    public String delvoteboard(int wnum){
+
+        voteBoardService.delvoteboard(wnum);
+
+        return "/vote/list";
     }
 
 }

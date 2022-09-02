@@ -106,16 +106,23 @@
 
 
             </div>
-
+            <c:forEach var="comment" items="${votecomment}">
             <div class="commentlist">
                 <div class="cmtRod">
                     <div>
+                        <form action="/voteboard/delcomment">
+                            <input name="num.num" type="hidden" value="${sessionScope.num}">
+                            <input name="cnum" type="hidden" value="${comment.cnum}">
+                            <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
                         <div class="cmt">
                             <span class="cmtwriter">${sessionScope.num}</span>
-                            <button class="eddelbt" onclick="">수정</button>
-                            <button class="eddelbt">삭제</button>
+                            <c:if test="${(sessionScope.id==comment.num.mid)}">
+                            <button>삭제</button>
+                            </c:if>
                         </div>
-                      <p></p>
+                        </form>
+                      <p>${comment.comment}</p>
+                        </c:forEach>
                     </div>
                     <hr>
                 </div>

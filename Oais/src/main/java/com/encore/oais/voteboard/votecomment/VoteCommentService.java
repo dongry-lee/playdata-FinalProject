@@ -23,10 +23,20 @@ public class VoteCommentService {
 
     }
 
-    public VoteComment getByComment(String comment){
+    public ArrayList<VoteComment> getByComment(int wnum){
 
-        return voteCommentRepository.findById(comment).orElse(null);
+        VoteBoard voteBoard =new VoteBoard();
+        voteBoard.setWnum(wnum);
+
+        return voteCommentRepository.findByWnum(voteBoard);
 
     }
+
+    public void delComment(int cnum){
+
+        voteCommentRepository.deleteById(cnum);
+
+    }
+
 
 }
