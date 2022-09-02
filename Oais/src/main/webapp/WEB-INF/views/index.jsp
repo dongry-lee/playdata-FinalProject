@@ -20,7 +20,7 @@
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
             <div class="search" style="position: absolute;">
-                <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px     0px 20px 160px;">
                 <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
 <%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
             </div>
