@@ -49,57 +49,9 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 ## 스프린트
 https://github.com/users/dongry-lee/projects/1
-
-
-
-## check in & check out
-
-8/23<br>
-check in<br>
-Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
-header 만들기, 아이디어게시판 view html - 민서<br>
-sidebar 만들기, 투표게시판 view html - 진웅<br>
-아이디어 게시판 기능 개발 시작 - 동근<br>
-투표게시판 기능 개발 시작 - 진수<br>
-member table 다듬기  - 동근<br>
-<br>
-check out<br>
-회원가입, 탈퇴, 로그인 수정 / 아이디어게시판 홈화면,글작성 백 개발 - 동근<br>
-side menu 완성 / 메인 페이지 slidebanner 수정중 / 투표게시판 view 제작중 - 진웅<br>
-투표항목 DB설계 / 투표기능 백 개발 및 공부 /JSON으로 작업해보기 - 진수<br>
-header menu 제작중 / 검색창 아이콘 삽입 수정/ 아이콘 연결 오류 해결중 - 민서<br>
-
-
-8/24<br>
-check in<br>
-아이디어 게시판 기능 개발(첨부파일, 댓글제외), 댓글테이블 및 기능개발  - 동근<br>
-투표게시판 틀 만들기 / 투표기능 제작 - 진수<br>
-header menu 수정/ 사이드 메뉴 바와 코드 비교/ 게시판 글작성 틀 제작 - 민서<br>
-<br>
-check out<br>
-게시판 글 crud, 댓글 테이블 및 기능개발 시작 - 동근<br>
-투표 작성페이지/ 상세페이지 제작 목표 - 진웅<br>
-투표게시판 제목 내용 DB저장,투표기능 개발 진행중 - 진수 <br>
-header menu 완성(백그라운드로고 이미지에 링크삽입, 버튼 중첩 문제 해결, 헤더 바 길이 수정)/사이드 메뉴바와 합쳐서 페이지 틀 구성 - 민서<br>
-
-
-8/25<br>
-check in<br>
-댓글기능 C,R, github merge오류 해결 - 동근<br>
-투표 작성페이지/ 상세페이지 제작 및 컨트롤러 연결 - 진웅<br>
-투표기능 개발- 진수<br>
- 아이디어 공모페이지/ 상세페이지 제작/ 해당 헤더 수정제작 및 연결 민서<br>
-<br>
-check out<br>
-
-
 8/26 스프린트1 회고<br>
-(
-https://github.com/users/dongry-lee/projects/1)
-
 
 동근
-
 
 - 스프린트 진행을 잘한 것 같다
 - 수업에서 배운 부분들이 많이 벗어 났다
@@ -143,6 +95,49 @@ https://github.com/users/dongry-lee/projects/1)
 - 모르는 부분에 대한 공부 시간 백로그가져가기
 - git marge후 프로젝트가 정상동작하지 않는다
 - 커밋을 짧게가져간다
+
+
+
+## check in & check out
+
+8/23<br>
+check in<br>
+Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
+header 만들기, 아이디어게시판 view html - 민서<br>
+sidebar 만들기, 투표게시판 view html - 진웅<br>
+아이디어 게시판 기능 개발 시작 - 동근<br>
+투표게시판 기능 개발 시작 - 진수<br>
+member table 다듬기  - 동근<br>
+<br>
+check out<br>
+회원가입, 탈퇴, 로그인 수정 / 아이디어게시판 홈화면,글작성 백 개발 - 동근<br>
+side menu 완성 / 메인 페이지 slidebanner 수정중 / 투표게시판 view 제작중 - 진웅<br>
+투표항목 DB설계 / 투표기능 백 개발 및 공부 /JSON으로 작업해보기 - 진수<br>
+header menu 제작중 / 검색창 아이콘 삽입 수정/ 아이콘 연결 오류 해결중 - 민서<br>
+
+
+8/24<br>
+check in<br>
+아이디어 게시판 기능 개발(첨부파일, 댓글제외), 댓글테이블 및 기능개발  - 동근<br>
+투표게시판 틀 만들기 / 투표기능 제작 - 진수<br>
+header menu 수정/ 사이드 메뉴 바와 코드 비교/ 게시판 글작성 틀 제작 - 민서<br>
+<br>
+check out<br>
+게시판 글 crud, 댓글 테이블 및 기능개발 시작 - 동근<br>
+투표 작성페이지/ 상세페이지 제작 목표 - 진웅<br>
+투표게시판 제목 내용 DB저장,투표기능 개발 진행중 - 진수 <br>
+header menu 완성(백그라운드로고 이미지에 링크삽입, 버튼 중첩 문제 해결, 헤더 바 길이 수정)/사이드 메뉴바와 합쳐서 페이지 틀 구성 - 민서<br>
+
+
+8/25<br>
+check in<br>
+댓글기능 C,R, github merge오류 해결 - 동근<br>
+투표 작성페이지/ 상세페이지 제작 및 컨트롤러 연결 - 진웅<br>
+투표기능 개발- 진수<br>
+ 아이디어 공모페이지/ 상세페이지 제작/ 해당 헤더 수정제작 및 연결 민서<br>
+<br>
+check out<br>
+댓글기능 C,R,D github merge오류 해결 - 동근<br>
 
 
 8/27
