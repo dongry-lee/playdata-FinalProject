@@ -34,19 +34,33 @@
             <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
             </c:if>
-            <c:if test="${sessionScope.num != null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                환영합니다! ${sessionScope.name}님
+            <div class="button-group" style="display: flex; align-content: space-between;">
+                <c:if test="${sessionScope.num != null}">
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+               <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>
+            <a href="/member/mypage"><button type="button" class="login_button" size="10px" style="width: auto;">마이페이지</button></a>
              </span>
 
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
              </span>
+                </c:if>
+            </div>
+<%--            <c:if test="${sessionScope.num != null}">--%>
+<%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+<%--                환영합니다! ${sessionScope.name}님--%>
+<%--             </span>--%>
+<%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+<%--            <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>--%>
+<%--             </span>--%>
 
-            </c:if>
+<%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+<%--            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>--%>
+<%--             </span>--%>
+
+<%--            </c:if>--%>
 
 
         </nav>
@@ -71,7 +85,7 @@
             <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>

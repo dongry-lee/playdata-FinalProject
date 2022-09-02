@@ -3,163 +3,199 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>글작성</title>
-    
-    <title>DeePocket</title>
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/idea.css" rel="stylesheet">
+    <meta charset="UTF-8">
+<title>자유게시판 글작성</title>
 </head>
+<body>
+<header>
+    <div class="wrapper"> <!--전체 랩 -->
+        <a href="https://www.naver.com"><h1 class=""></h1></a>
+        <nav> <!-- 메뉴부분 -->
+            <div class="search"> <!-- 검색창 -->
 
-
-<body id="page-top">
-
-<!-- Page Wrapper -->
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
+                <input type="text" placeholder="공모/투표/게시판 찾아보기" style=" margin: 20px 480px 20px 160px;">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
             </div>
-            <div class="sidebar-brand-text mx-3">DeePocket</div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <li class="nav-item">
-            <a class="nav-link" href="/idea/list">
-                <span>진행중인 아이디어</span></a>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <span>투표하기</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/board/">
-                <span>자유게시판</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <span>Q&A</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-    </ul>
-    <!-- End of Sidebar -->
-
-
-
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-        <%-- header bar --%>
-        <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-
-            <!-- Sidebar Toggle (Topbar) -->
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
-            </button>
-
-            <!-- Topbar Search -->
-            <form action="/board/getbyall" method="post"
-                  class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                    <input name="val" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                           aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">
-                            search
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-            <!-- Topbar Navbar -->
-            <c:if test="${empty sessionScope.id}">
-                <a class="sg-button btnFade btnLight" href="/member/login">로그인</a>
-                <a class="sg-button btnFade btnLight" href="/member/join">회원가입</a>
-            </c:if>
-            <c:if test="${not empty sessionScope.id}">
-                ${sessionScope.id }님 로그인중 /
-                <c:if test="${sessionScope.mem_type==false}">당신은 일반회원입니다</c:if>
-                <c:if test="${sessionScope.mem_type==true}">당신은 관리자입니다</c:if>
-                <a class="sg-button" href="/member/detail">내정보확인</a><br/>
-                <a class="sg-button" href="/member/logout">로그아웃</a><br/>
-                <a class="sg-button" href="/member/out">탈퇴</a><br/>
-            </c:if>
-
+            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
+                <c:if test="${sessionScope.num != null}">
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+               <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
+             </span>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/mypage"><button type="button" class="login_button" size="10px" style="width: auto;">마이페이지</button></a>
+             </span>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+             </span>
+                </c:if>
+            </div>
         </nav>
-        <!-- header bar -->
-        <div id="content">
-            <%--  real content  --%>
-
-
-                <h3>글작성 폼</h3>
-                <form action="/board/add" method="post" enctype="multipart/form-data">
-
-                    <table border="1">
-                        <tr><th>writer</th><td><input type="text" name="writer" value="${sessionScope.id }"readonly></td></tr>
-                        <tr><th>title</th><td><input type="text" name="title"></td></tr>
-                        <tr><th>content</th><td><textarea rows="15" cols="20" name="content"></textarea></td></tr>
-                        <tr><th>hash</th><td><input type="text" name="hash"></td></tr>
-                        <tr><th>img</th><td><input type="file" name="f"></td></tr>
-                        <tr><th>save</th><td><input type="submit" value="작성"><a href="/board/">취소</a></td></tr>
-
-                    </table>
-
-                </form>
-            
-            <%--  main content   --%>
-            <div class="main-content">
-                <div class="totalbox">
-                    <div class="hot-idea">
-                        <div class="ideabox"></div>
-
-                    </div>
-                    <div class="hot-vote">
-                        <div class="vote-box"></div>
+    </div>
+</header>
+<!-- Page Wrapper -->
+<div class="wrapper">
+    <!-- Sidemenu -->
+    <div class="menu">
+        <ul class="sidemenu">
+            <li class="sidbtn"><a href="/" class="item">
+                <div>홈</div>
+            </a></li>
+            <li class="sidbtn"><a href="/idea/" class="item">
+                <div>아이디어 공모</div>
+            </a></li>
+            <li class="sidbtn"><a href="/vote" class="item">
+                <div>투표하기</div>
+            </a></li>
+            <li class="sidbtn"><a href="/board/" class="item">
+                <div>자유게시판</div>
+            </a></li>
+            <li class="sidbtn"><a href="#" class="item">
+                <div>고객센터</div>
+            </a></li>
+            <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
+                @2022 Oais
+            </div>
+        </ul>
+    </div>
+    <!-- End of Sidemenu-->
+    <!-- Content -->
+    <div id="content">
+        <div class="fg-head"><h2>자유게시판</h2>
+        </div>
+        <div class="idea-writeform">
+            <%--            <div class="idea-box">--%>
+            <%--                <div class="write-form">--%>
+            <%--                <div class="write-info">--%>
+            <form class="addef" action="/idea/add" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
+                <%--                        <table border="1" style="width: 921px;height: 112px; padding: 20px; background-color: #d4fef0; border-radius: 15px; margin-top: 15px;margin-left: 20px;">--%>
+                <div class="vethead" style="display: flex;">
+                    <div class="write-info" style="width: 870px;">
+                        <%--                                <th>title</th>--%>
+                        <textarea class="titlecntarea" name="title" type="text" placeholder="제목을 입력해 주세요." style="font-size:15px; border:0; width:860px; margin-bottom:30px;"></textarea><br>
+                        <%--                                <td><input type="text" name="title" placeholder="제목을 입력해주세요"></td>--%>
+                        <th>이름</th>
+                        <input type="text" name="name" value="${sessionScope.name}" readonly style="border: 0;">
+                        <%--</div>--%>
                     </div>
                 </div>
-            </div>
-            <%--  real content end  --%>
+                <div class="add-content" style="display: flex;">
+                    <div class="write-info" style="width: 400px; padding: 90px;">
+                        <th style="display: none"><!--여기안보이게--></th>
+                        <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
+                        <textarea class="titlecntarea" name="content" type="text" placeholder="내용을 입력해 주세요."
+                                  style="font-size:15px; border:0; width:465px; margin-bottom:30px; padding: 50px; height:100px; "></textarea><br>
+                        <%--                                <th>content</th>--%>
+                        <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
+                        <th>마감일자</th>
+                        <td><input type="date" name="ddate"></td>
+                    </div>
+                    <div class="addimg" style="padding:40px;">
+                        <span class="v-title" style=" font-size: 17px; padding: 10px 0px 0px 30px;">이미지 첨부📁</span><br/>
+                        <div class="write-info" style="width:200px;">
+                            <span class="v-title" style="font-size: 13px;">이미지1</span><br/>
+                            <td><input name="img1" type="file"></td>
+                            <span class="v-title" style="font-size: 13px;">이미지2</span><br/>
+                            <td><input name="img2" type="file"></td>
+                            <span class="v-title" style="font-size: 13px;">이미지3</span><br/>
+                            <td><input name="img3" type="file"></td>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="hashcode">
+                    <div class="write-info" style="width: 647px; height: 49px;">
+                        <th>  hash</th>
+                        <td><input type="text" name="hash" style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px "></td>
+                    </div>
+                </div>
+                <div class="addbtn-box">
+                    <%--                                <a href="/idea/"><button type="button" class="cancel_button" size="10px" style="width: auto;">취소</button></a>--%>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                                <a href=""><input type="submit" class="write_button" size="10px"></a>
+                                </span>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                                <a href="/idea/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
+                                 </span>
 
+                    <%--                            <tr>--%>
+                    <%--                                <td><input type="submit" value="글작성"></td>--%>
+                    <%--                            </tr>--%>
+                </div>
 
+            </form>
         </div>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript-->
-<%--<script src="vendor/jquery/jquery.min.js"></script>--%>
-<%--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--%>
-
-<%--<!-- Core plugin JavaScript-->--%>
-<%--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>--%>
-
-<%--<!-- Custom scripts for all pages-->--%>
-
-
-<%--<!-- Page level plugins -->--%>
-<%--<script src="vendor/chart.js/Chart.min.js"></script>--%>
-
-<!-- Page level custom scripts -->
-<%--<script src="js/demo/chart-area-demo.js"></script>--%>
-<%--<script src="js/demo/chart-pie-demo.js"></script>--%>
-<%-- JS   --%>
-<script src="/bootstrap/js/main.js"></script>
-
+</div>
 </body>
-
 </html>
+
+
+
+
+
+
+<%--        <div id="content">--%>
+<%--            &lt;%&ndash;  real content  &ndash;%&gt;--%>
+
+
+<%--                <h3>글작성 폼</h3>--%>
+<%--                <form action="/board/add" method="post" enctype="multipart/form-data">--%>
+
+<%--                    <table border="1">--%>
+<%--                        <tr><th>writer</th><td><input type="text" name="writer" value="${sessionScope.id }"readonly></td></tr>--%>
+<%--                        <tr><th>title</th><td><input type="text" name="title"></td></tr>--%>
+<%--                        <tr><th>content</th><td><textarea rows="15" cols="20" name="content"></textarea></td></tr>--%>
+<%--                        <tr><th>hash</th><td><input type="text" name="hash"></td></tr>--%>
+<%--                        <tr><th>img</th><td><input type="file" name="f"></td></tr>--%>
+<%--                        <tr><th>save</th><td><input type="submit" value="작성"><a href="/board/">취소</a></td></tr>--%>
+
+<%--                    </table>--%>
+
+<%--                </form>--%>
+<%--            --%>
+<%--            &lt;%&ndash;  main content   &ndash;%&gt;--%>
+<%--            <div class="main-content">--%>
+<%--                <div class="totalbox">--%>
+<%--                    <div class="hot-idea">--%>
+<%--                        <div class="ideabox"></div>--%>
+
+<%--                    </div>--%>
+<%--                    <div class="hot-vote">--%>
+<%--                        <div class="vote-box"></div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            &lt;%&ndash;  real content end  &ndash;%&gt;--%>
+
+
+
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
+
+<%--<!-- Bootstrap core JavaScript-->--%>
+<%--&lt;%&ndash;<script src="vendor/jquery/jquery.min.js"></script>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>&ndash;%&gt;--%>
+
+<%--&lt;%&ndash;<!-- Core plugin JavaScript-->&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="vendor/jquery-easing/jquery.easing.min.js"></script>&ndash;%&gt;--%>
+
+<%--&lt;%&ndash;<!-- Custom scripts for all pages-->&ndash;%&gt;--%>
+
+
+<%--&lt;%&ndash;<!-- Page level plugins -->&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="vendor/chart.js/Chart.min.js"></script>&ndash;%&gt;--%>
+
+<%--<!-- Page level custom scripts -->--%>
+<%--&lt;%&ndash;<script src="js/demo/chart-area-demo.js"></script>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="js/demo/chart-pie-demo.js"></script>&ndash;%&gt;--%>
+<%--&lt;%&ndash; JS   &ndash;%&gt;--%>
+
+
+<%--</body>--%>
+
+<%--</html>--%>
