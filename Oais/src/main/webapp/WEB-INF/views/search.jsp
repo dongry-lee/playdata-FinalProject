@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%--
   Created by IntelliJ IDEA.
   User: idong-geun
@@ -25,7 +26,11 @@
         <p>닉네임${item.num.name}</p>
         <p>content${item.content}</p>
         <p>마감일자${item.ddate}</p>
-        <p>해쉬태그<a href="/search?val=${item.hash}">${item.hash}</a></p>
+        <p><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+            <c:forEach var="hashelement" items="${hashtag}">
+                <a href="/search?val=${hashelement}">#${hashelement}</a>
+            </c:forEach>
+        </p>
         <p>참여자${item.part}</p>
         <p>조회수${item.views}</p>
     </c:if>
@@ -43,7 +48,11 @@
             <p><a href="/idea/detail?wnum=${item.wnum}">${item.title}</a></p>
             <p>닉네임${item.num.name}</p>
             <p>content${item.content}</p>
-            <p>해쉬태그<a href="/search?val=${item.hash}">${item.hash}</a></p>
+            <p><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+                <c:forEach var="hashelement" items="${hashtag}">
+                    <a href="/search?val=${hashelement}">#${hashelement}</a>
+                </c:forEach>
+            </p>
             <p>마감일${item.ddate}</p>
             <p>참여자수${item.part}</p>
             <p>조회수${item.views}</p>
@@ -62,7 +71,11 @@
             <p><a href="/idea/detail?wnum=${item.wnum}">${item.title}</a></p>
             <p>닉네임${item.num.name}</p>
             <p>내용${item.content}</p>
-            <p>해쉬태그<a href="/search?val=${item.hash}">${item.hash}</a></p>
+            <p><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+                <c:forEach var="hashelement" items="${hashtag}">
+                    <a href="/search?val=${hashelement}">#${hashelement}</a>
+                </c:forEach>
+            </p>
             <p>마감일자${item.ddate}</p>
             <p>참여자${item.part}</p>
             <p>조회수${item.views}</p>

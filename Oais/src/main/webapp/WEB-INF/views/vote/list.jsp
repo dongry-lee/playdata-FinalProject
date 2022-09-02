@@ -53,7 +53,7 @@
             <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/list" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -64,9 +64,11 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
+        <div class="fg-head">
+            <p>진행중인 아이디어 투표</p>
+            <a class="addvote" href="/voteboard/write">게시글 작성</a>
+        </div>
         <div class="vote-form">
-            <a href="/voteboard/write">게시글 작성</a>
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
@@ -76,7 +78,6 @@
                     <div class="vote-content">
                             ${item.content}
                     </div>
-                </div>
                     <div class="vote-img">
                         <img src="/img/catanddog.png">
                     </div>
@@ -98,15 +99,15 @@
                             </div>
 
 
-
                         </div>
 
                     </div>
 
 
-                </div></c:forEach>
+                </div>
+            </c:forEach>
 
-            </div>
+        </div>
 
 </body>
 </html>
