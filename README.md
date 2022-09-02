@@ -99,8 +99,8 @@ https://github.com/users/dongry-lee/projects/1<br>
 9/2(금요일) 스프린트2 회고 <br>
   - 동근:<br>
   - 진수:<br>
-  - 민서:<br>
   - 진웅:<br>
+  - 민서:<br>
 
 ## check in & check out
 
