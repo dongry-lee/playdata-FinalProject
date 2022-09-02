@@ -11,9 +11,9 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1 class=""></h1></a>
+        <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
+            <div class="search">
 
                 <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
                 <input type="text" placeholder="공모/투표/게시판 찾아보기" style=" margin: 20px 480px 20px 160px;">
@@ -70,7 +70,7 @@
             <%--            <div class="idea-box">--%>
             <%--                <div class="write-form">--%>
             <%--                <div class="write-info">--%>
-            <form class="addef" action="/idea/add" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
+            <form class="addef" action="/community/add" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
                 <%--                        <table border="1" style="width: 921px;height: 112px; padding: 20px; background-color: #d4fef0; border-radius: 15px; margin-top: 15px;margin-left: 20px;">--%>
                 <div class="vethead" style="display: flex;">
                     <div class="write-info" style="width: 870px;">
@@ -127,7 +127,7 @@
                 </div>
 
             </form>
-        </div>
+        </div
     </div>
 </div>
 </div>

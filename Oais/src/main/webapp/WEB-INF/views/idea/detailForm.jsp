@@ -15,7 +15,7 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1 class=""></h1></a>
+        <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
             <div class="search"> <!-- 검색창 -->
 
@@ -191,7 +191,6 @@
 <%--        </tr>--%>
 <%--    </c:if>--%>
 
-<div class="comment" >
 <%--<h3>댓글</h3>--%>
 <%--<form action="/idea/detail" method="post">--%>
 <%--    <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>

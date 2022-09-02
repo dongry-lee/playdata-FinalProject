@@ -103,15 +103,15 @@ public class CommunityController {
 
 
     @GetMapping("/detail")
-    public String detailForm() {
-//        AllBoard b = service.getByWnum(wnum);
+    public String detailForm(int wnum, Map m) {
+        AllBoard b = service.getByWnum(wnum);
 //        AllBoard c = new AllBoard();
 //        c.setWnum(wnum);
-//        ArrayList<Comments> comments = c_service.getAll(c);
-//        m.put("b", b);
-//        m.put("comments", comments);
-//        b.setViews(b.getViews() + 1);
-//        service.addAllBoard(b);
+        ArrayList<Comments> comments = c_service.getAll(b);
+        m.put("b", b);
+        m.put("comments", comments);
+        b.setViews(b.getViews() + 1);
+        service.addAllBoard(b);
         return "community/detailForm";
     }
 
@@ -126,7 +126,7 @@ public class CommunityController {
         c.setWnum(b);
         c_service.addComment(c);
         service.addAllBoard(b);
-        return "redirect:/idea/detail?wnum=" + wnum;
+        return "redirect:/community/detail?wnum=" + wnum;
     }
 
 

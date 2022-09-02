@@ -87,7 +87,7 @@
                 <div class="idea-box">
                     <div class="idea-img">
                         <c:if test="${b.img1 != null}">
-                            <img width="300px" height="300px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                            <img width="300px" height="300px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}">
                         </c:if>
                         <c:if test="${b.img1 == null}">
                             <div>이미지가 없습니다.</div>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="idea-info">
                         <div class="idea-content">
-                            <h2><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
+                            <h2><a href="/community/detail?wnum=${b.wnum}">${b.title}</a></h2>
                             <p>${b.num.name}</p>
                             <p>${b.content}</p>
                             <p>${b.hash}</p>

@@ -86,7 +86,7 @@
                         <th style="display: none"><!--여기안보이게--></th>
                         <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
                         <textarea class="titlecntarea" name="content" type="text" placeholder="내용을 입력해 주세요."
-                                  style="font-size:15px; border:0; width:465px; margin-bottom:30px; padding: 50px; height:100px; "></textarea><br>
+                                  style="font-size:15px; border:0; width:339px; margin-bottom:20px; padding: 30px; height:88px; "></textarea><br>
                         <%--                                <th>content</th>--%>
                         <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
                         <th>마감일자</th>
