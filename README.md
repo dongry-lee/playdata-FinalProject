@@ -207,3 +207,15 @@ check in<br>
 
 9/2(금요일) 스프린트2 회고 <br>
 ( https://github.com/users/dongry-lee/projects/1) <br>
+  - 동근:<br>
+  - 진수:<br>
+  - 민서:<br>
+  - 진웅:<br>
+  
+  check in <br> 금요일 입니다....! 지금 가장 가고싶은 여행지는 어디인가요?
+  - 동근:<br>
+  - 진수:<br>
+  - 민서:<br>
+  - 진웅:<br>
+  
+  
