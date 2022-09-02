@@ -48,7 +48,7 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 
 ## 스프린트
-https://github.com/users/dongry-lee/projects/1
+https://github.com/users/dongry-lee/projects/1<br>
 8/26 스프린트1 회고<br>
 
 동근
@@ -96,7 +96,11 @@ https://github.com/users/dongry-lee/projects/1
 - git marge후 프로젝트가 정상동작하지 않는다
 - 커밋을 짧게가져간다
 
-
+9/2(금요일) 스프린트2 회고 <br>
+  - 동근:<br>
+  - 진수:<br>
+  - 민서:<br>
+  - 진웅:<br>
 
 ## check in & check out
 
@@ -201,12 +205,7 @@ check in<br>
  - 민서: 아이디어페이지 디테일페이지 수정완+ 수정페이지 수정완+ 오늘 밤에 가능하면 자유게시판 틀 구현 복붙+약간의수정 /+ 내일은 아이디어 리스트페이지 내용 css랑 메인 헤더 검색버튼 css 할게요이 <br>   
  - 진웅: 고객센터 페이지 간단 view 제작 완료 기타 css 수정 완료 / 생각보다 수정해야할 부분이 많고 세션 문제를 해결해야 할 것 같다..<br>
 
-9/2(금요일) 스프린트2 회고 <br>
-( https://github.com/users/dongry-lee/projects/1) <br>
-  - 동근:<br>
-  - 진수:<br>
-  - 민서:<br>
-  - 진웅:<br>
+
   
   check in  금요일 입니다....! 오늘의 질문 :지금 가장 가고싶은 여행지는 어디인가요?<br>
   - 동근: 고객센터 기능, 자유게시판 기능 / 제주도<br>
