@@ -46,4 +46,5 @@ public class VoteResultController {
         return "vote/votetotalcount";
 
     }
+
 }

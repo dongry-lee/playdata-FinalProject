@@ -64,4 +64,5 @@ public class VoteBoardController {
         return "/vote/list";
     }
 
+
 }
