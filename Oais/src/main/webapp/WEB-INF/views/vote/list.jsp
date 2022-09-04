@@ -97,7 +97,9 @@
                                 <form action="/voteboard/delVoteBoard">
                                     <input name="num.num" type="text" value="${sessionScope.num}">
                                     <input name="wnum" type="text" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}">
                                     <button>삭제</button>
+                                    </c:if>
                                 </form>
                             </div>
 
