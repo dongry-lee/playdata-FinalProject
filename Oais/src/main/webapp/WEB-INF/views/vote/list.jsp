@@ -73,7 +73,7 @@
                 <div class="vote-info">
 
                     <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
-
+                        ${item.wdate}
                     <div class="vote-content">
                             ${item.content}
                     </div>
@@ -86,7 +86,7 @@
                                 <form action="/voteboard/resultpro" method="post">
                                     <input type="hidden" name="wnum" value="${item.wnum}">
                                     <input type="radio" id="vote1" name="item"
-                                           value="${item.item01}"/><label><span></span>${item.item01},${item.wdate}</label>
+                                           value="${item.item01}"/><label><span></span>${item.item01}</label>
                                     <input type="radio" id="vote2" name="item"
                                            value="${item.item02}"/><label><span></span>${item.item02}</label>
                                     <button>투표</button>
