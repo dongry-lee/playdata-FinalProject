@@ -33,7 +33,6 @@ public class VoteResultController {
 
         return "vote/votecount";
 
-
     }
 
     @GetMapping("/voteboard/totalcount")
