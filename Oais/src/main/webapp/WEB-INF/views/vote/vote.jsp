@@ -89,22 +89,16 @@
                             <textarea class="votecntarea" name="content" type="text"
                                       placeholder="내용을 입력해 주세요."></textarea>
                         </div>
-                        <div class="votelist">
-                            <span class="v-title">투표항목</span>
-                            <div class="vote-plus">
-                                <ul>
-                                    <li><input class="voteitem" name="item01" type="text"><br/></li>
-                                    <li><input class="voteitem" name="item02" type="text"><br/></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span class="v-title">마감일자</span>
-                                <div class="latdate">
 
-                                <input name="date" type="date">
-                                </div>
-                            </div>
-
+                        <div class="vote-plus">
+                            <span class="v-title">투표항목</span><br/>
+                            <ul>
+                                <li><input name="item01" type="text"><br/></li>
+                                <li><input name="item02" type="text"><br/></li>
+                                <li><input name="item03" type="text"><br/></li>
+                                <li><input name="item04" type="text"><br/></li>
+                            </ul>
+                            <button onclick="location.href='/voteboard'">게시글 작성</button>
                             <%--항목추가 기능 / 나중에 살려보아요--%>
 <%--                            <table>--%>
 <%--                                <tr>--%>
@@ -129,8 +123,8 @@
 <%--                                                </td>--%>
 <%--                                            </tr>--%>
 <%--                                        </table>--%>
-                                    </td>
-                                </tr>
+<%--                                    </td>--%>
+<%--                                </tr>--%>
                             </table>
                         </div>
                         <div >

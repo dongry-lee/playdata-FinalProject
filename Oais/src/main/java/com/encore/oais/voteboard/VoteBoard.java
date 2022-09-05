@@ -36,9 +36,15 @@ public class VoteBoard {
 
     private String item01;
     private String item02;
+    private String item03;
+    private String item04;
 
     @CreatedDate
     private LocalDate wdate;
+
+    private String img1;
+    private String img2;
+    private String img3;
 
     private int totalCount;
     private int count01;
