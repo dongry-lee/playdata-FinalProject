@@ -22,6 +22,9 @@ public class AllBoardService {
         return dao.findByTypecd(2);
     }
 
+    public ArrayList<AllBoard> getHotIdea(){return dao.hotidea();}
+
+
     public AllBoard addAllBoard(AllBoard b){
         return dao.save(b);
     }
@@ -39,9 +42,6 @@ public class AllBoardService {
         b.setTypecd(2);
         return dao.save(b);
     }
-
-
-
 
     public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
     public AllBoard addvote(AllBoard v){
