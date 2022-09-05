@@ -147,6 +147,9 @@
             <div id="MyScrap" class="tabcontent">
                 <h3>내 스크랩</h3>
                 <c:forEach var="item" items="${myScrapList}">
+                    <c:if test="${item.wnum.img1 != null && item.wnum.img1!=''}">
+                        <img class="mp-uplodimg" width="300px" height="300px" src="/idea/read_img?fname=${item.wnum.img1}&wnum=${item.wnum.wnum}">
+                    </c:if>
                     <a href="/idea/detail?wnum=${item.wnum.wnum}">${item.wnum.title}</a>
                     <p>${item.wnum.part}</p>
                     <p>${item.wnum.views}</p>

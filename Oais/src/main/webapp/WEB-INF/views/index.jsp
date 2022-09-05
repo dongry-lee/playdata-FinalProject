@@ -117,6 +117,9 @@
             <%-- real Content--%>
             <h3>hot idea</h3>
             <c:forEach var="item" items="${hotList}">
+                <c:if test="${item.img1 != null && item.img1!=''}">
+                    <img width="300px" height="300px" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                </c:if>
                 <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
                 <p>${item.part}</p>
                 <p>${item.views}</p>
