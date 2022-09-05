@@ -13,8 +13,12 @@
 <head>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
 
     <title>아이디어게시판 글작성</title>
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -22,12 +26,14 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기" style=" margin: 20px 480px 20px 160px;">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+<%--            <div class="search"> <!-- 검색창 -->--%>
+                <form action="/search" method="get"> <!-- 검색창 -->
+                    <div class="search" style="position: absolute;">
+                        <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px     0px 20px 160px;">
+                        <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
+                    </div>
+                </form>
             <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->

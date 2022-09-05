@@ -84,7 +84,8 @@
 }
 
 .idea-content{
-    padding: 20px;
+    padding: 0px;
+    /*원래 20 */
 }
 .idea-img{
     width: 300px;
