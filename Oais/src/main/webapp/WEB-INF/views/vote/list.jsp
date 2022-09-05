@@ -89,16 +89,40 @@
                                            value="${item.item01}"/><label><span></span>${item.item01}</label>
                                     <input type="radio" id="vote2" name="item"
                                            value="${item.item02}"/><label><span></span>${item.item02}</label>
+                                    <c:if test="${item.item03!=null && item.item03!=''}">
+                                        <input type="radio" id="vote3" name="item"
+                                               value="${item.item03}"/><label><span></span>${item.item03}</label>
+                                    </c:if>
+                                    <c:if test="${item.item04!=null && item.item04!=''}">
+                                        <input type="radio" id="vote4" name="item"
+                                               value="${item.item04}"/><label><span></span>${item.item04}</label>
+                                    </c:if>
                                     <button>투표</button>
                                 </form>
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
+                                <c:if test="${item.item03!=null && item.item03!=''}">
+                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>
+                                </c:if>
+                                <c:if test="${item.item04!=null && item.item04!=''}">
+                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>
+                                </c:if>
                                 <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
-                                <form action="/voteboard/delVoteBoard">
-                                    <input name="num.num" type="text" value="${sessionScope.num}">
-                                    <input name="wnum" type="text" value="${item.wnum}">
+
+                                <form>
+                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                    <input name="wnum" type="hidden" value="${item.wnum}">
                                     <c:if test="${(sessionScope.id==item.num.mid)}">
-                                    <button>삭제</button>
+                                        <button>수정</button>
+                                    </c:if>
+                                   </form>
+
+
+                                    <form action="/voteboard/delVoteBoard">
+                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                    <input name="wnum" type="hidden" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}">
+                                        <button>삭제</button>
                                     </c:if>
                                 </form>
                             </div>

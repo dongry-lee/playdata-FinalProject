@@ -98,6 +98,8 @@
                             <ul>
                                 <li><input name="item01" type="text"><br/></li>
                                 <li><input name="item02" type="text"><br/></li>
+                                <li><input name="item03" type="text"><br/></li>
+                                <li><input name="item04" type="text"><br/></li>
                             </ul>
                             <button onclick="location.href='/voteboard'">게시글 작성</button>
                             <%--항목추가 기능 / 나중에 살려보아요--%>
@@ -124,8 +126,8 @@
 <%--                                                </td>--%>
 <%--                                            </tr>--%>
 <%--                                        </table>--%>
-                                    </td>
-                                </tr>
+<%--                                    </td>--%>
+<%--                                </tr>--%>
                             </table>
                         </div>
                     </div>
