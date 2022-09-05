@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 27251
@@ -20,12 +21,13 @@
         <a href="/"><h1></h1></a>
 
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -68,10 +70,10 @@
             <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/list" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -89,18 +91,53 @@
         </div>
         <div class="serv_detbox">
             <div>
-                <p>Dorumamu</p><p>2022-09-01</p>
-                <p class="cnttit">도르마무 거래를 하러 왔습니다.</p>
+                <p>${b.num.name}</p>
+                <p>${b.wdate}</p>
+                <p class="cnttit">${b.title}</p>
                 <div class="serv-content">
-                    제가 아이디어를 썼는데 아이디어가 지워졌어요 복구해주세요 기분나빠요!
+                    ${b.content}
+                <c:if test="${b.img1 != null}">
+                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img1}">
+                </c:if>
+                <c:if test="${b.img2 != null}">
+                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img2}">
+                </c:if>
+                <c:if test="${b.img3 != null}">
+                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img3}">
+                </c:if>
                 </div>
                 <div class="dtilbtn">
-                    <button>수정</button>
-                    <button>삭제</button>
+                    <c:if test="${sessionScope.id==b.num.mid}">
+                                <a href="/service/edit?wnum=${b.wnum}">수정</a>
+                                <a href="/service/">목록으로</a>
+                    </c:if>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="댓글을 달아주세요 창">
+        <form action="/service/detail" method="post">
+            <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+            <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+            <input type="text" value="${sessionScope.name}" readonly>
+            <input type="text" name="content" placeholder="댓글을 입력해주세요">
+            <input type="submit" value="댓글달기">
+        </form>
+    </div>
+            <div class="달린댓글창" style="margin-left: 15px;" >
+                <c:forEach var="c" items="${comments}">
+                    <span>${c.num.name}</span>
+                    <span>${c.cdate}</span>
+                    <span>${c.content}</span>
+                    <c:if test="${sessionScope.num == c.num.num}">
+                        <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                    </c:if>
+
+                </c:forEach>
+
+    </div>
+
 </div>
 </body>
 </html>

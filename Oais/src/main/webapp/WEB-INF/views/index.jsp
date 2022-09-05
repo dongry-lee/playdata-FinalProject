@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
 
@@ -85,7 +86,7 @@
             <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/list" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -112,6 +113,25 @@
                 <span class="list-button-item"></span>
                 <span class="list-button-item"></span>
             </div>
+
+            <%-- real Content--%>
+            <h3>hot idea</h3>
+            <c:forEach var="item" items="${hotList}">
+                <c:if test="${item.img1 != null && item.img1!=''}">
+                    <img width="300px" height="300px" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                </c:if>
+                <a href="/idea/detail?wnum=${item.wnum}">${item.title}</a>
+                <p>${item.part}</p>
+                <p>${item.views}</p>
+                <p><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+                    <c:forEach var="hashelement" items="${hashtag}">
+                        <c:if test="${hashelement != ''}">
+                            <a href="/search?val=${hashelement}">#${hashelement}</a>
+                        </c:if>
+                    </c:forEach>
+                </p>
+
+            </c:forEach>
         </div>
     </div>
 </div>

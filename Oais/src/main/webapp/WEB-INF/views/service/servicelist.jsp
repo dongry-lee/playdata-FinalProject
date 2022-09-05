@@ -22,12 +22,13 @@
     <a href="/"><h1></h1></a>
 
     <nav> <!-- 메뉴부분 -->
-      <div class="search"> <!-- 검색창 -->
-
-        <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-        <input type="text" placeholder="공모/투표/게시판 찾아보기">
-        <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-      </div>
+        <form action="/search" method="get"> <!-- 검색창 -->
+            <div class="search">
+                <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            </div>
+        </form>
       <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -70,10 +71,10 @@
       <li class="sidbtn"><a href="/voteboard/list" class="item">
         <div>투표하기</div>
       </a></li>
-      <li class="sidbtn"><a href="/board/" class="item">
+      <li class="sidbtn"><a href="/community/" class="item">
         <div>자유게시판</div>
       </a></li>
-      <li class="sidbtn"><a href="#" class="item">
+      <li class="sidbtn"><a href="/service/" class="item">
         <div>고객센터</div>
       </a></li>
       <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -99,39 +100,20 @@
                     <th>제목</th>
                     <th>작성일</th>
                 </tr>
+                <c:forEach var="service" items="${list}">
                 <tr>
                     <td data-th="Supplier Code">
-                        1
+                        ${service.wnum}
                     </td>
                     <td data-th="Supplier Name">
-                        오아이스 공식 서비스 오픈 이벤트
+                        <a href="/service/detail?wnum=${service.wnum}">${service.title}</a>
                     </td>
                     <td data-th="Invoice Number">
-                        2022/09/01
+                        ${service.wdate}
                     </td>
                 </tr>
-                <tr>
-                    <td data-th="Supplier Code">
-                        2
-                    </td>
-                    <td data-th="Supplier Name">
-                        로그인문제 해결 공지사항
-                    </td>
-                    <td data-th="Invoice Number">
-                        2022/08/31
-                    </td>
-                </tr>
-                <tr>
-                    <td data-th="Supplier Code">
-                        3
-                    </td>
-                    <td data-th="Supplier Name">
-                        2022년은 왜 벌써4개월 남았는지
-                    </td>
-                    <td data-th="Invoice Number">
-                        2022/09/01
-                    </td>
-                </tr>
+                    </c:forEach>
+
                 </tbody>
             </table>
         </div>

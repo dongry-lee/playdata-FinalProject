@@ -15,14 +15,15 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1 class=""></h1></a>
+        <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기" style=" margin: 20px 480px 20px 160px;">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
@@ -54,10 +55,10 @@
             <li class="sidbtn"><a href="/vote" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -91,7 +92,7 @@
                      </div>
                      <div class="idea-info">
                        <div class="idea-content">
-                            <h2><a href="/idea/add?wnum=${b.wnum}">${b.title}</a></h2>
+                            <h2>${b.title}</h2>
                             <p>${b.num.name}</p>
                             <p>${b.content}</p>
                             <p>${b.hash}</p>
@@ -107,9 +108,8 @@
                             <span style="padding: 5px; margin-top: 230px; border-radius:100px; border:1px; border-color: #f0f0f0;">
                                 <a href="/idea/edit?wnum=${b.wnum}"><button type="submit" class="cancel_button" size="10px" >수정</button></a><!--button type="button"-->
                             </span>
-<%--                          </c:if>--%>
                             <span style="padding: 5px; margin-top: 230px; border-radius:100px;">
-                                <a href="/idea/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
+                                <a href="/idea/"><button type="button" class="cancel_button" size="10px">목록으로</button></a><!--button type="button"-->
                                  </span>
                       </c:if>
                  </div>
