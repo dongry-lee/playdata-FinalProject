@@ -57,11 +57,12 @@ public class VoteBoardController {
         return "vote/votedetail";
     }
     @GetMapping("/voteboard/delVoteBoard")
-    public String delvoteboard(int wnum){
+    public String delVoteBoard(int wnum){
 
         voteBoardService.delvoteboard(wnum);
 
-        return "/vote/list";
+        return "redirect:/voteboard/list";
     }
+
 
 }

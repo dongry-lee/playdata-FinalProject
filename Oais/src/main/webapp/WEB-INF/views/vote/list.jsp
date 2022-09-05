@@ -74,7 +74,7 @@
                 <div class="vote-info">
 
                     <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
-
+                        ${item.wdate}
                     <div class="vote-content">
                             ${item.content}
                     </div>
@@ -98,7 +98,9 @@
                                 <form action="/voteboard/delVoteBoard">
                                     <input name="num.num" type="text" value="${sessionScope.num}">
                                     <input name="wnum" type="text" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}">
                                     <button>삭제</button>
+                                    </c:if>
                                 </form>
                             </div>
 
