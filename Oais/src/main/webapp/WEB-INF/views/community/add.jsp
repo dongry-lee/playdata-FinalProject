@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +14,18 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
+
             <div class="search">
 
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기" style=" margin: 20px 480px 20px 160px;">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+
+
+                <form action="/search" method="get"> <!-- 검색창 -->
+                    <div class="search">
+                        <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                        <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                        <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                    </div>
+                </form>
             <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
@@ -46,13 +53,13 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote" class="item">
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -90,8 +97,6 @@
                                   style="font-size:15px; border:0; width:465px; margin-bottom:30px; padding: 50px; height:100px; "></textarea><br>
                         <%--                                <th>content</th>--%>
                         <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
-                        <th>마감일자</th>
-                        <td><input type="date" name="ddate"></td>
                     </div>
                     <div class="addimg" style="padding:40px;">
                         <span class="v-title" style=" font-size: 17px; padding: 10px 0px 0px 30px;">이미지 첨부📁</span><br/>
@@ -106,19 +111,14 @@
                     </div>
 
                 </div>
-                <div class="hashcode">
-                    <div class="write-info" style="width: 647px; height: 49px;">
-                        <th>  hash</th>
-                        <td><input type="text" name="hash" style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px "></td>
-                    </div>
-                </div>
+
                 <div class="addbtn-box">
                     <%--                                <a href="/idea/"><button type="button" class="cancel_button" size="10px" style="width: auto;">취소</button></a>--%>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
                                 <a href=""><input type="submit" class="write_button" size="10px"></a>
                                 </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                                <a href="/idea/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
+                                <a href="/community/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
                                  </span>
 
                     <%--                            <tr>--%>

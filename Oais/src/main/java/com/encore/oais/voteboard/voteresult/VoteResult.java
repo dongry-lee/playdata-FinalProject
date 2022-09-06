@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,6 +26,9 @@ public class VoteResult {
 
     @Column(nullable = false)
     public String item;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<VoteBoard> voteBoards = new ArrayList<>();
 
 
 }

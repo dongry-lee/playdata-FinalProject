@@ -105,9 +105,9 @@ public class CommunityController {
     @GetMapping("/detail")
     public String detailForm(int wnum, Map m) {
         AllBoard b = service.getByWnum(wnum);
-//        AllBoard c = new AllBoard();
-//        c.setWnum(wnum);
-        ArrayList<Comments> comments = c_service.getAll(b);
+        AllBoard c = new AllBoard();
+        c.setWnum(wnum);
+        ArrayList<Comments> comments = c_service.getAll(c);
         m.put("b", b);
         m.put("comments", comments);
         b.setViews(b.getViews() + 1);
@@ -118,14 +118,12 @@ public class CommunityController {
     @PostMapping("/detail")
     public String addComments(int wnum, int num, String content) {
         AllBoard b = service.getByWnum(wnum);
-        b.setPart(b.getPart() + 1);
         Member m = m_service.getByNum(num);
         Comments c = new Comments();
         c.setContent(content);
         c.setNum(m);
         c.setWnum(b);
         c_service.addComment(c);
-        service.addAllBoard(b);
         return "redirect:/community/detail?wnum=" + wnum;
     }
 
@@ -134,17 +132,16 @@ public class CommunityController {
     public String editForm(int wnum, Map m) {
         AllBoard b = service.getByWnum(wnum);
         m.put("b", b);
-        return "idea/editForm";
+        return "community/editForm";
     }
 
     @PostMapping("/edit")
-    public String edit(int wnum, String title, String content, @DateTimeFormat(pattern = "yyyy-MM-dd") Date ddate, String hash,
+    public String edit(int wnum, String title, String content,
                        MultipartFile img1, MultipartFile img2, MultipartFile img3) {
         AllBoard b = service.getByWnum(wnum);
         b.setTitle(title);
         b.setContent(content);
-        b.setDdate(ddate);
-        b.setHash(hash);
+
 
         if (img1 != null) {
             MultipartFile file = img1;
@@ -220,22 +217,19 @@ public class CommunityController {
             }
         }
         service.addAllBoard(b);
-        return "redirect:/idea/detail?wnum=" + wnum;
+        return "redirect:/community/detail?wnum=" + wnum;
     }
 
     @GetMapping("/delete")
     public String delete(int wnum) {
         service.delAllBoard(wnum);
-        return "redirect:/idea/";
+        return "redirect:/community/";
     }
 
     @GetMapping("/comment/delete")
     public String commentdelete(int cnum, int wnum) {
         c_service.delConmment(cnum);
-        AllBoard b = service.getByWnum(wnum);
-        b.setPart(b.getPart() - 1);
-        service.addAllBoard(b);
-        return "redirect:/idea/detail?wnum=" + wnum;
+        return "redirect:/community/detail?wnum=" + wnum;
     }
 
     @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ

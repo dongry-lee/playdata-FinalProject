@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,5 +31,8 @@ public class VoteComment {
     private Member num; //회원번호
 
     private String comment; //댓글내용
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<VoteBoard> voteBoards = new ArrayList<>();
 
 }

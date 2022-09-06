@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <%-- css --%>
@@ -20,12 +21,13 @@
         <a href="/"><h1></h1></a>
 
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -68,10 +70,10 @@
             <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/list" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -90,22 +92,31 @@
 
             </div>
             <div class="service_content">
+                <form action="/service/add" method="post" enctype="multipart/form-data">
                 <div>
                     <span class="ser-title">제목</span>
-                    <input class="ser_tex" type="text">
-                    <span class="ser-title">게시글 비밀번호</span>
-                    <input class="ser_tex" type="password">
-                    <span class="ser-title">첨부파일</span>
-                    <input type="file">
+                    <input class="ser_tex" name="title" type="text">
+                    <span class="ser-title">멤버num(displauy none해주세용)</span>
+                    <input class="ser_tex" name="num" type="text" value="${sessionScope.num}" readonly>
+                    <span class="ser-title">첨부파일1</span>
+                    <input type="file" name="img1">
+                    <span class="ser-title">첨부파일2</span>
+                    <input type="file" name="img2">
+                    <span class="ser-title">첨부파일3</span>
+                    <input type="file" name="img3">
+
                     <span class="ser-title">문의 내용</span>
-                    <textarea>
+                    <textarea name="content">
 
                     </textarea>
+
                 </div>
                 <div class="service_btnbox">
                     <button>글 작성</button>
                     <button>취소</button>
                 </div>
+
+                </form>
             </div>
 
         </div>

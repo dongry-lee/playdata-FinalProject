@@ -20,19 +20,19 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="https://www.naver.com"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-            </div>
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                </div>
+            </form>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
-             </span>
-        </nav>
+             </span></nav>
     </div>
 </header>
 <!-- Page Wrapper -->
@@ -64,19 +64,20 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
+        <div class="fg-head">
+            <p>진행중인 아이디어 투표</p>
+            <a class="addvote" href="/voteboard/write">게시글 작성</a>
+        </div>
         <div class="vote-form">
-            <a href="/voteboard/write">게시글 작성</a>
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
 
                     <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
-
+                        ${item.wdate}
                     <div class="vote-content">
                             ${item.content}
                     </div>
-                </div>
                     <div class="vote-img">
                         <img src="/img/catanddog.png">
                     </div>
@@ -89,24 +90,50 @@
                                            value="${item.item01}"/><label><span></span>${item.item01}</label>
                                     <input type="radio" id="vote2" name="item"
                                            value="${item.item02}"/><label><span></span>${item.item02}</label>
+                                    <c:if test="${item.item03!=null && item.item03!=''}">
+                                        <input type="radio" id="vote3" name="item"
+                                               value="${item.item03}"/><label><span></span>${item.item03}</label>
+                                    </c:if>
+                                    <c:if test="${item.item04!=null && item.item04!=''}">
+                                        <input type="radio" id="vote4" name="item"
+                                               value="${item.item04}"/><label><span></span>${item.item04}</label>
+                                    </c:if>
                                     <button>투표</button>
                                 </form>
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
-
+                                <c:if test="${item.item03!=null && item.item03!=''}">
+                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>
+                                </c:if>
+                                <c:if test="${item.item04!=null && item.item04!=''}">
+                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>
+                                </c:if>
                                 <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
+
+                                <form>
+                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                    <input name="wnum" type="hidden" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}">
+                                        <button>수정</button>
+                                    </c:if>
+                                   </form>
+
+
+                                    <form action="/voteboard/delVoteBoard">
+                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                    <input name="wnum" type="hidden" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}">
+                                        <button>삭제</button>
+                                    </c:if>
+                                </form>
                             </div>
-
-
 
                         </div>
 
+
                     </div>
-
-
-                </div></c:forEach>
-
+                </div>
+                </c:forEach>
             </div>
-
 </body>
 </html>

@@ -23,7 +23,9 @@
 .vote-content{
     padding: 20px;
 }
-
+.fg-head{
+    display: flex;
+}
 .fg-head > p {
     font-size: 30px;
     font-weight: bold;
@@ -44,4 +46,15 @@
     width: 300px;
     height: 200px;
     border-radius: 10px;
+}
+.addvote{
+    color: black;
+    margin: 20px;
+    border: 0px;
+    border-radius: 12px;
+    background-color: #D4FEF0;
+    font-size: 11px;
+    font-weight: bold;
+    height: max-content;
+    padding: 10px;
 }

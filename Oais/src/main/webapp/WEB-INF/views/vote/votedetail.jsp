@@ -100,22 +100,29 @@
                     <textarea id="writeComment" name="comment" maxlength="1000"
                               placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다."></textarea>
                     <button class="cmtbt" type="submit">작성</button>
+            </form>
+        </div>
 
-                </div>
 
-                </form>
 
             </div>
-
+            <c:forEach var="comment" items="${votecomment}">
             <div class="commentlist">
                 <div class="cmtRod">
                     <div>
+                        <form action="/voteboard/delcomment">
+                            <input name="num.num" type="hidden" value="${sessionScope.num}">
+                            <input name="cnum" type="hidden" value="${comment.cnum}">
+                            <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
                         <div class="cmt">
                             <span class="cmtwriter">${sessionScope.num}</span>
-                            <button class="eddelbt" onclick="">수정</button>
-                            <button class="eddelbt">삭제</button>
+                            <c:if test="${(sessionScope.id==comment.num.mid)}">
+                            <button>삭제</button>
+                            </c:if>
                         </div>
-                      <p></p>
+                        </form>
+                      <p>${comment.comment}</p>
+                        </c:forEach>
                     </div>
                     <hr>
                 </div>

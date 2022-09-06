@@ -20,12 +20,13 @@
     <a href="/"><h1></h1></a>
 
     <nav> <!-- 메뉴부분 -->
-      <div class="search"> <!-- 검색창 -->
-
-        <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-        <input type="text" placeholder="공모/투표/게시판 찾아보기">
-        <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-      </div>
+        <form action="/search" method="get"> <!-- 검색창 -->
+            <div class="search">
+                <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            </div>
+        </form>
       <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -68,10 +69,10 @@
       <li class="sidbtn"><a href="/voteboard/list" class="item">
         <div>투표하기</div>
       </a></li>
-      <li class="sidbtn"><a href="/board/" class="item">
+      <li class="sidbtn"><a href="/community/" class="item">
         <div>자유게시판</div>
       </a></li>
-      <li class="sidbtn"><a href="/service/list" class="item">
+      <li class="sidbtn"><a href="/service/" class="item">
         <div>고객센터</div>
       </a></li>
       <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -87,9 +88,34 @@
               <img src="/img/ois.png">
               <span>문의 글 수정</span>
               <hr>
+              <form action="/service/edit" method="post" enctype="multipart/form-data">
+                <input type="text" value="${b.num.name}" readonly/>
+                  <input type="text" name="wnum" value="${b.wnum}" readonly/>
+                  <input type="text" name="title" value="${b.title}"/>
+                  <input type="text" name="content" value="${b.content}"/>
+                  <input type="file" name="img1"/>
+                  <input type="file" name="img2"/>
+                  <input type="file" name="img3"/>
+                  <input type="submit" value="수정"/>
+              </form>
+              <button onclick="location.href='/service/delete?wnum=${b.wnum}'">삭제</button>
+              </div>
 
           </div>
-
+          <div class="service_content">
+              <div>
+                  <span class="ser-title">제목</span>
+                  <input class="ser_tex" type="text">
+                  <span class="ser-title">첨부파일</span>
+                  <input type="file">
+                  <span class="ser-title">문의 내용</span>
+                  <textarea></textarea>
+              </div>
+              <div class="service_btnbox">
+                  <button>글 수정</button>
+                  <button>삭제</button>
+              </div>
+          </div>
       </div>
   </div>
 </div>

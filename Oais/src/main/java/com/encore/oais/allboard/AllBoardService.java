@@ -18,21 +18,30 @@ public class AllBoardService {
     public ArrayList<AllBoard> getAllCommunity(){
         return dao.findByTypecd(1);
     }
+    public ArrayList<AllBoard> getAllService(){
+        return dao.findByTypecd(2);
+    }
+
+    public ArrayList<AllBoard> getHotIdea(){return dao.hotidea();}
+
 
     public AllBoard addAllBoard(AllBoard b){
         return dao.save(b);
     }
-    public AllBoard addIdea(AllBoard b){
+    public AllBoard addIdea(AllBoard b) {
         b.setTypecd(0);
-        return dao.save(b);
+     return dao.save(b);
     }
+
     public AllBoard addCommunity(AllBoard b){
         b.setTypecd(1);
         return dao.save(b);
     }
 
-
-
+    public AllBoard addService(AllBoard b){
+        b.setTypecd(2);
+        return dao.save(b);
+    }
 
     public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
     public AllBoard addvote(AllBoard v){

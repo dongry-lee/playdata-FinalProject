@@ -21,10 +21,13 @@
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search">
-
-                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                    <form action="/search" method="get"> <!-- 검색창 -->
+                        <div class="search">
+                            <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                            <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                            <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                        </div>
+                    </form>
                 </div>
             </form>
             <c:if test="${sessionScope.num == null}">
@@ -70,7 +73,7 @@
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
             <li class="sidbtn"><a href="/voteboard/list" class="item"><div>투표하기</div></a></li>
             <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
-            <li class="sidbtn"><a href="/service/list" class="item"><div>고객센터</div></a></li>
+            <li class="sidbtn"><a href="/service/" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
                 @2022 Oais</div>
         </ul>
@@ -98,18 +101,10 @@
                             <h2><a href="/community/detail?wnum=${b.wnum}">${b.title}</a></h2>
                             <p>${b.num.name}</p>
                             <p>${b.content}</p>
-                            <p>${b.hash}</p>
                             <p>${b.wdate}</p>
-                            <p>${b.ddate}</p>
                             <p>${b.views}</p>
-                            <p>${b.part}</p>
                         </div>
                     </div>
-                    <c:if test="${sessionScope.num!=null}">
-                        <div class="scrap button">
-                            <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}'">스크랩</button>
-                        </div>
-                    </c:if>
 
                 </div>
 
