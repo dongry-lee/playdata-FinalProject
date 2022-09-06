@@ -76,7 +76,6 @@
                 </c:forEach>
             </p>
             <p>마감일자${item.ddate}</p>
-            <p>참여자${item.part}</p>
             <p>조회수${item.views}</p>
         </c:if>
     </c:forEach>
