@@ -13,6 +13,8 @@ public interface AllBoardDao extends JpaRepository<AllBoard, Integer> {
     ArrayList<AllBoard> findByTypecd(int num);
     ArrayList<AllBoard> findByNum(Member m);
 
+    @Query(value = "select * from vote_board where title like :val or content like :val or hash like :val", nativeQuery = true)
+    ArrayList<AllBoard> selectvoteVal(@Param(value = "val") String val);
     @Query(value = "select * from all_board where title like :val or content like :val or hash like :val", nativeQuery = true)
     ArrayList<AllBoard> selectVal(@Param(value = "val") String val);
 

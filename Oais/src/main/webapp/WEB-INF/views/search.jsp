@@ -37,8 +37,8 @@
 </c:forEach>
 </div>
 <div><p>투표게시판</p>
-    <c:forEach var="item" items="${result}">
-        <c:if test="${item.typecd == 4}">
+    <c:forEach var="item" items="${resultVote}">
+
             <c:if test="${item.img1 != null}">
                 <img width="300px" height="300px" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
             </c:if>
@@ -56,7 +56,7 @@
             <p>마감일${item.ddate}</p>
             <p>참여자수${item.part}</p>
             <p>조회수${item.views}</p>
-        </c:if>
+
     </c:forEach>
 </div>
 <div><p>자유게시판</p>
