@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface MemDao extends JpaRepository<Member, Integer> {
     ArrayList<Member> findByMid(String id);
     @Transactional
-    void deleteByMid(String mid);
+    void deleteById(int num);
 }
 
 //save(): insert, update(모든 컬럼수정)

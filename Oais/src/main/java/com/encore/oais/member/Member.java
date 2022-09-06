@@ -1,12 +1,14 @@
 package com.encore.oais.member;
 
 
+import com.encore.oais.allboard.AllBoard;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity //테이블
@@ -37,4 +39,5 @@ public class Member {
     @Column(columnDefinition = "boolean default false")
     private boolean socialtype; //소셜, 일반회원(false)
 
+    
 }

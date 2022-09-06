@@ -19,6 +19,12 @@ public class ScrapService {
         dao.deleteById(snum);
     }
 
+    public void delScrapByNum(int num){
+        Member m = new Member();
+        m.setNum(num);
+        dao.deleteByNum(m);
+    }
+
     public ArrayList<Scrap> getByNum(int num){
         Member m = new Member();
         m.setNum(num);

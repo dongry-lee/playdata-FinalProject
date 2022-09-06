@@ -1,5 +1,8 @@
 package com.encore.oais.member;
 
+import com.encore.oais.allboard.AllBoardService;
+import com.encore.oais.comments.CommentsService;
+import com.encore.oais.scrap.ScrapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +13,14 @@ public class MemService {
     @Autowired
     private MemDao dao;
 
+    @Autowired
+    private ScrapService s_service;
+
+    @Autowired
+    private CommentsService c_service;
+
+    @Autowired
+    private AllBoardService a_service;
     //가입
     public Member join(Member m){
         return dao.save(m);//한줄 insert한 뒤 추가된 한줄 컬럼값들을 vo에 담아 반환
@@ -26,8 +37,14 @@ public class MemService {
     }
 
     //탈퇴
-    public void delMember(String mid){
-        dao.deleteByMid(mid);
+    public void delMember(int num){
+        dao.deleteById(num);
+//        s_service.delScrapByNum(num); //멤버가 한 스크랩 삭제
+//        c_service.delCommentByNum(num);// 맴버가 쓴 댓글 삭제
+//        //멤버가 쓴 글의 댓글 삭제
+//        //멤버가 쓴 글을 누군가가 스크랩 한걸 삭제
+//        a_service.delAllBoardByNum(num);//멤버가 쓴 글 삭제
+
     }
 
     public Member getByNum(int num){
