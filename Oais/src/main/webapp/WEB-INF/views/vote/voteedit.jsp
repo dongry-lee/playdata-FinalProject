@@ -74,8 +74,9 @@
     <div id="voteadd-content">
         <div class="fg-head"><p>투표 작성하기</p></div>
         <div class="vote-addform">
-            <form class="votef" action="/voteboard/edit" method="post">
+            <form class="votef" action="/voteboard/edit" method="post" enctype="multipart/form-data">
                 <div class="vethead">
+                    <input name="wnum" type="hidden" value="${voteboard.wnum}">
                     <input name="num.num" type="hidden" value="${sessionScope.num}">
                     <div class="titlebox">
                         <input class="vottitle" name="title" value="${voteboard.title}" type="text" placeholder="제목">
@@ -86,12 +87,11 @@
                     <div class="contentbox">
                         <div class="votetex">
                             <span class="v-title">투표내용</span><br/>
+
                             <textarea class="votecntarea" name="content" type="text"
-                                      placeholder="내용을 입력해 주세요.">${voteboard.content}
+                                      placeholder="내용을 입력해 주세요.">${voteboard.content}<%--입력한 글내용--%>
                             </textarea>
-
                         </div>
-
                         <div class="vote-plus">
                             <span class="v-title">투표항목</span><br/>
                             <ul>
@@ -132,9 +132,9 @@
                             <div>
                                 <span class="v-title">이미지 첨부</span>
                                 <div class="addimg">
-                                    <input type="file" name="img1">
-                                    <input type="file" name="img2">
-                                    <input type="file" name="img3">
+                                    <input type="file" name="img1"><%--첨부한 이미지1--%>
+                                    <input type="file" name="img2"><%--첨부한 이미지2--%>
+                                    <input type="file" name="img3"><%--첨부한 이미지3--%>
                                 </div>
                             </div>
                             <div>
