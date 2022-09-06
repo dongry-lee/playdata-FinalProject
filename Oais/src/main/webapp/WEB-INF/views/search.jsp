@@ -37,15 +37,15 @@
 </c:forEach>
 </div>
 <div><p>투표게시판</p>
-    <c:forEach var="item" items="${result}">
-        <c:if test="${item.typecd == 4}">
+    <c:forEach var="item" items="${resultVote}">
+
             <c:if test="${item.img1 != null}">
-                <img width="300px" height="300px" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                <img width="300px" height="300px" src="/read_img?fname=${item.img1}&wnum=${item.wnum}">
             </c:if>
             <c:if test="${item.img1 == null}">
                 <div>이미지가 없습니다.</div>
             </c:if>
-            <p><a href="/idea/detail?wnum=${item.wnum}">${item.title}</a></p>
+            <p><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
             <p>닉네임${item.num.name}</p>
             <p>content${item.content}</p>
             <p><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
@@ -54,9 +54,8 @@
                 </c:forEach>
             </p>
             <p>마감일${item.ddate}</p>
-            <p>참여자수${item.part}</p>
             <p>조회수${item.views}</p>
-        </c:if>
+
     </c:forEach>
 </div>
 <div><p>자유게시판</p>

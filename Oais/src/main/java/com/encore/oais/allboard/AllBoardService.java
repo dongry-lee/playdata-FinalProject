@@ -68,6 +68,10 @@ public class AllBoardService {
     public ArrayList<AllBoard> search(String val){
         return dao.selectVal("%"+val+"%");
     }
+
+    public ArrayList<AllBoard> searchVote(String val){
+        return dao.selectvoteVal("%"+val+"%");
+    }
 //
 //
 //    public ArrayList<AllBoard> getByTitle(String title){
