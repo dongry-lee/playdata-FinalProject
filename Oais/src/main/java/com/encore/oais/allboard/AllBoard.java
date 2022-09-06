@@ -52,12 +52,16 @@ public class AllBoard {
     private String hash; //해쉬,태그,이걸,나눠서,써야하네
 
     private String img1;
+
     private String img2;
+
     private String img3;
 
     @PrePersist  //insert전 미리 실행해야할 메소드
     public void beforeCreate(){
+
         wdate = new Date();//현재 날짜 생성
+
     }
 
 }

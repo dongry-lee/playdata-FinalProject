@@ -20,6 +20,7 @@ public class VoteResultService {
 
         return voteResultRepository.countByItem(item);
     }
+
     public long getTotalCount(int wnum) {
         VoteBoard voteBoard = new VoteBoard();
         voteBoard.setWnum(wnum);

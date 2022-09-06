@@ -72,14 +72,16 @@
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-
+                    ${item.view}
                     <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
                         ${item.wdate}
                     <div class="vote-content">
                             ${item.content}
                     </div>
                     <div class="vote-img">
-                        <img src="/img/catanddog.png">
+                        <c:if test="${item.img1 != null}">
+                        <img src="/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                        </c:if>
                     </div>
                     <div class="vote-option">
                         <div class="option-select">
@@ -110,13 +112,12 @@
                                 </c:if>
                                 <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
 
-                                <form>
+
                                     <input name="num.num" type="hidden" value="${sessionScope.num}">
                                     <input name="wnum" type="hidden" value="${item.wnum}">
                                     <c:if test="${(sessionScope.id==item.num.mid)}">
-                                        <button>수정</button>
+                                        <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
                                     </c:if>
-                                   </form>
 
 
                                     <form action="/voteboard/delVoteBoard">

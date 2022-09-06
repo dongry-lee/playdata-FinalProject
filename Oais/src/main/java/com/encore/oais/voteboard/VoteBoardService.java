@@ -16,9 +16,9 @@ public class VoteBoardService {
 
 
 
-    public void write(VoteBoard voteBoard) {
+    public VoteBoard write(VoteBoard voteBoard) {
 
-        voteBoardRepository.save(voteBoard);
+        return voteBoardRepository.save(voteBoard);
     }
 
     public ArrayList<VoteBoard> getAll() {

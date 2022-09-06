@@ -70,13 +70,23 @@
         <div class="vote-form">
             <div class="vote-box">
                 <div class="vote-info">
+                    ${item.view}
                     <p class="vote-title">${voteboard.title}</p>
                     <div class="vote-content">
                     </div>
                 </div>
                 <div class="vote-img">
-                    <img src="/img/catanddog.png">
+                    <c:if test="${voteboard.img1 != null}">
+                        <img src="/read_img?fname=${voteboard.img1}&wnum=${voteboard.wnum}">
+                    </c:if>
+                    <c:if test="${voteboard.img2 != null}">
+                        <img src="/read_img?fname=${voteboard.img2}&wnum=${voteboard.wnum}">
+                    </c:if>
+                    <c:if test="${voteboard.img3 != null}">
+                        <img src="/read_img?fname=${voteboard.img3}&wnum=${voteboard.wnum}">
+                    </c:if>
                 </div>
+
                 <div class="vote-option">
                     <div class="option-select">
                         <div>
@@ -90,45 +100,44 @@
                 </div>
             </div>
             <form action="/voteboard/detailpro" method="post">
-            <div class="detail-comment">
-                <h2 class="cmt-tt">댓글 작성</h2>
+                <div class="detail-comment">
+                    <h2 class="cmt-tt">댓글 작성</h2>
 
                     <input name="num.num" type="text" value="${sessionScope.num}">
                     <input name="wnum.wnum" type="text" value="${voteboard.wnum}">
 
-                <div class="commentBox">
+                    <div class="commentBox">
                     <textarea id="writeComment" name="comment" maxlength="1000"
                               placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다."></textarea>
-                    <button class="cmtbt" type="submit">작성</button>
+                        <button class="cmtbt" type="submit">작성</button>
             </form>
         </div>
 
 
-
-            </div>
-            <c:forEach var="comment" items="${votecomment}">
-            <div class="commentlist">
-                <div class="cmtRod">
-                    <div>
-                        <form action="/voteboard/delcomment">
-                            <input name="num.num" type="hidden" value="${sessionScope.num}">
-                            <input name="cnum" type="hidden" value="${comment.cnum}">
-                            <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
-                        <div class="cmt">
-                            <span class="cmtwriter">${sessionScope.num}</span>
-                            <c:if test="${(sessionScope.id==comment.num.mid)}">
+    </div>
+    <c:forEach var="comment" items="${votecomment}">
+    <div class="commentlist">
+        <div class="cmtRod">
+            <div>
+                <form action="/voteboard/delcomment">
+                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                    <input name="cnum" type="hidden" value="${comment.cnum}">
+                    <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
+                    <div class="cmt">
+                        <span class="cmtwriter">${sessionScope.num}</span>
+                        <c:if test="${(sessionScope.id==comment.num.mid)}">
                             <button>삭제</button>
-                            </c:if>
-                        </div>
-                        </form>
-                      <p>${comment.comment}</p>
-                        </c:forEach>
+                        </c:if>
                     </div>
-                    <hr>
-                </div>
+                </form>
+                <p>${comment.comment}</p>
+                </c:forEach>
             </div>
+            <hr>
         </div>
     </div>
+</div>
+</div>
 </div>
 </body>
 </html>
