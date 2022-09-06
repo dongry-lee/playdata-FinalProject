@@ -70,7 +70,7 @@
         <div class="vote-form">
             <div class="vote-box">
                 <div class="vote-info">
-                    조회수${voteboard.view} , 등록날짜${voteboard.wdate} ,마감날짜${voteboard.ddate}
+                    조회수${voteboard.views} , 등록날짜${voteboard.wdate} ,마감날짜${voteboard.ddate}
                     <p class="vote-title">${voteboard.title}</p> <%--입력한 글제목--%>
                     <div class="vote-content">
                         ${voteboard.content} <%--입력한 글내용--%>

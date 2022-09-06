@@ -58,7 +58,7 @@ public class VoteBoard {
     private String hash;
 
     @Column(columnDefinition = "integer default 0")
-    private int view;
+    private int views;
 
 
 

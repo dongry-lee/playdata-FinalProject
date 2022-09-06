@@ -133,7 +133,7 @@ public class VoteBoardController {
     @GetMapping("/voteboard/detail")
     public String getComment(int wnum, Map map) {
         VoteBoard voteboard = voteBoardService.getBywnum(wnum);
-        voteboard.setView(voteboard.getView() + 1);
+        voteboard.setViews(voteboard.getViews() + 1);
         voteBoardService.write(voteboard); //조회수 1씩증가
 
         map.put("voteboard", voteBoardService.getBywnum(wnum));

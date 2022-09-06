@@ -72,7 +72,7 @@
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-                    조회수${item.view} , 등록날짜${item.wdate} ,마감날짜${item.ddate}
+                    조회수${item.views} , 등록날짜${item.wdate} ,마감날짜${item.ddate}
                     <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}<%--입력한 제목--%></a></p>
                     <div class="vote-content">
                             ${item.content}<%--입력한 글내용--%>
@@ -106,7 +106,10 @@
                                     <button>투표</button>
                                     </c:if>
 
+
+
                                 </form>
+
                                     <%--라디오버튼 누르고 투표시 투표항목다 투표수 출력--%>
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
@@ -134,6 +137,12 @@
                                         <button>삭제</button>
                                     </c:if>
                                 </form>
+                                    <%--스크랩버튼--%>
+                                <c:if test="${sessionScope.num!=null}">
+                                    <div class="scrap button">
+                                        <button onclick="location.href='/scrap/vote/add?num=${sessionScope.num}&wnum2=${item.wnum}'">스크랩</button>
+                                    </div>
+                                </c:if>
                             </div>
 
                         </div>
