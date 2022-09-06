@@ -22,9 +22,8 @@
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">
-                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px     0px 20px 160px;">
+                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
                 </div>
             </form>
             <div class="button-group" style="display: flex; align-content: space-between; padding-top: 10px;">
@@ -78,23 +77,25 @@
                     <h2 style="font-size: 31px; position: absolute;width: 611px;height: 35px;left: 240px;top: 143px;">
                         <a href="/idea/add?wnum=${b.wnum}">${b.title}</a></h2>
                     <div class="idea-img">
-                        <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
+                        <td><img width="300px" height="300px" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                                 border-radius: 23px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
                     </c:if>
                     <c:if test="${b.img2 != null}">
                         <div class="idea-box">
                             <div class="idea-img">
-                            <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
+                            <td><img width="300px" height="300px"style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                                 border-radius: 23px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
                     </c:if>
                     <c:if test="${b.img3 != null}">
                                 <div class="idea-box">
                                     <div class="idea-img">
-                            <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
+                            <td><img width="300px" height="300px"style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                                 border-radius: 23px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
                     </c:if>
                      <c:if test="${b.img1 == null}">
                                 <div>이미지가 없습니다.</div>
                      </c:if><br>
                                         <p style="font-size: 12px;">조회수:${b.views}</p>
-                                        <p style="display: none">${b.part}</p>
                      </div>
                      <div class="idea-info" style="width: 500px;">
                        <div class="idea-content">

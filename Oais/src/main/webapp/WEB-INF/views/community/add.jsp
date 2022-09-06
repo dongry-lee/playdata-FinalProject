@@ -6,8 +6,12 @@
 <head>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
     <meta charset="UTF-8">
     <title>자유게시판 글작성</title>
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header>
@@ -15,15 +19,10 @@
         <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
 
-            <div class="search">
-
-
-
                 <form action="/search" method="get"> <!-- 검색창 -->
-                    <div class="search">
+                    <div class="search" style="position: absolute;">
                         <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                        <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                        <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                        <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </form>
             <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
@@ -68,7 +67,6 @@
         </ul>
     </div>
     <!-- End of Sidemenu-->
-
     <!-- Content -->
     <div id="content">
         <div class="fg-head"><h2>자유게시판</h2>
@@ -111,9 +109,7 @@
                     </div>
 
                 </div>
-
                 <div class="addbtn-box">
-                    <%--                                <a href="/idea/"><button type="button" class="cancel_button" size="10px" style="width: auto;">취소</button></a>--%>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
                                 <a href=""><input type="submit" class="write_button" size="10px"></a>
                                 </span>
