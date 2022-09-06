@@ -16,6 +16,5 @@ public interface CommentsDao extends JpaRepository<Comments, Integer> {
     ArrayList<Comments> findByWnum(AllBoard wnum);
     ArrayList<Comments> findByNum(Member num);
 
-    void deleteByNum(Member num);
 }
 

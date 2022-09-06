@@ -11,7 +11,4 @@ import java.util.ArrayList;
 public interface ScrapDao extends JpaRepository<Scrap, Integer> {
 
     ArrayList<Scrap> findByNum(Member num);
-
-    @Transactional
-    void deleteByNum(Member num);
 }

@@ -18,8 +18,7 @@ public interface AllBoardDao extends JpaRepository<AllBoard, Integer> {
 
     @Query(value = "select * from all_board where typecd=0 order by part DESC limit 4", nativeQuery = true)
     ArrayList<AllBoard> hotidea();
-
-    void deleteByNum(Member num);
+    
 //    ArrayList<AllBoard> findByTitleLike(String title); //제목으로 검색
 //    ArrayList<AllBoard> findByContentLike(String content); //내용으로 검색
 //    ArrayList<AllBoard> findByHashLike(String hash); //해쉬태그로 검색
