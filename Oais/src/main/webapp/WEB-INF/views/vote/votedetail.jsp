@@ -71,18 +71,19 @@
             <div class="vote-box">
                 <div class="vote-info">
                     조회수${voteboard.view} , 등록날짜${voteboard.wdate} ,마감날짜${voteboard.ddate}
-                    <p class="vote-title">${voteboard.title}</p>
+                    <p class="vote-title">${voteboard.title}</p> <%--입력한 글제목--%>
                     <div class="vote-content">
+                        ${voteboard.content} <%--입력한 글내용--%>
                     </div>
                 </div>
                 <div class="vote-img">
-                    <c:if test="${voteboard.img1 != null}">
+                    <c:if test="${voteboard.img1 != null}"> <%--img1이 null이 아니라면 img1출력--%>
                         <img src="/read_img?fname=${voteboard.img1}&wnum=${voteboard.wnum}">
                     </c:if>
-                    <c:if test="${voteboard.img2 != null}">
+                    <c:if test="${voteboard.img2 != null}"> <%--img2이 null이 아니라면 img2출력--%>
                         <img src="/read_img?fname=${voteboard.img2}&wnum=${voteboard.wnum}">
                     </c:if>
-                    <c:if test="${voteboard.img3 != null}">
+                    <c:if test="${voteboard.img3 != null}"> <%--img3이 null이 아니라면 img3출력--%>
                         <img src="/read_img?fname=${voteboard.img3}&wnum=${voteboard.wnum}">
                     </c:if>
                 </div>
@@ -92,31 +93,34 @@
                         <div>
                             <form action="/voteboard/resultpro2" method="post">
                                 <input type="hidden" name="wnum.wnum" value="${voteboard.wnum}">
+                                <%--라디오버튼옆 투표항목들 출력--%>
                                 <input type="radio" id="vote1" name="item"
                                        value="${voteboard.item01}"/><label><span></span>${voteboard.item01}</label>
                                 <input type="radio" id="vote2" name="item"
                                        value="${voteboard.item02}"/><label><span></span>${voteboard.item02}</label>
-                                <c:if test="${voteboard.item03!=null && voteboard.item03!=''}">
+                                <c:if test="${voteboard.item03!=null && voteboard.item03!=''}"> <%--투표항목3이 null or 공백이 아니라면 투표항목3 라디오버튼 출력--%>
                                     <input type="radio" id="vote3" name="item"
                                            value="${voteboard.item03}"/><label><span></span>${voteboard.item03}</label>
                                 </c:if>
-                                <c:if test="${voteboard.item04!=null && voteboard.item04!=''}">
+                                <c:if test="${voteboard.item04!=null && voteboard.item04!=''}"> <%--투표항목4가 null or 공백이 아니라면 투표항목4 라디오버튼 출력--%>
                                     <input type="radio" id="vote4" name="item"
                                            value="${voteboard.item04}"/><label><span></span>${voteboard.item04}</label>
                                 </c:if>
 
-                                <c:if test="${(sessionScope.domtype==false)}">
+                                <c:if test="${(sessionScope.domtype==false)}"> <%--로그인한상태가 아니라면 투표버튼 안보이게--%>
                                     <button>투표</button>
                                 </c:if>
                             </form>
+                            <%-- 투표수 출력 --%>
                             <jsp:include page="/voteboard/count?item=${voteboard.item01}"></jsp:include>
                             <jsp:include page="/voteboard/count?item=${voteboard.item02}"></jsp:include>
-                            <c:if test="${voteboard.item03!=null && voteboard.item03!=''}">
+                            <c:if test="${voteboard.item03!=null && voteboard.item03!=''}"> <%--투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력--%>
                                 <jsp:include page="/voteboard/count?item=${voteboard.item03}"></jsp:include>
                             </c:if>
-                            <c:if test="${voteboard.item04!=null && voteboard.item04!=''}">
+                            <c:if test="${voteboard.item04!=null && voteboard.item04!=''}"> <%--투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력--%>
                                 <jsp:include page="/voteboard/count?item=${voteboard.item04}"></jsp:include>
                             </c:if>
+                            <%--총 투표수 출력--%>
                             <jsp:include page="/voteboard/totalcount?wnum=${voteboard.wnum}"></jsp:include>
                             <%--                            <span></span>--%>
                             <%--                            <input type="radio" id="vote1" name="radio"--%>
@@ -154,13 +158,13 @@
                     <input name="cnum" type="hidden" value="${comment.cnum}">
                     <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
                     <div class="cmt">
-                        <span class="cmtwriter">${comment.num.mid}</span>
-                        <c:if test="${(sessionScope.id==comment.num.mid)}">
+                        <span class="cmtwriter">${comment.num.mid}</span>  <%--댓글작성한 사용자 아이디출력--%>
+                        <c:if test="${(sessionScope.id==comment.num.mid)}"> <%-- 로그인아이디와 글작성자 아이디 같을시 삭제보이게--%>
                             <button>삭제</button>
                         </c:if>
                     </div>
                 </form>
-                <p>${comment.comment}</p>
+                <p>${comment.comment}</p> <%-- 입력한 댓글출력--%>
                 </c:forEach>
             </div>
             <hr>
