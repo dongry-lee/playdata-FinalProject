@@ -20,10 +20,19 @@ public class VoteResultService {
 
         return voteResultRepository.countByItem(item);
     }
+
     public long getTotalCount(int wnum) {
         VoteBoard voteBoard = new VoteBoard();
         voteBoard.setWnum(wnum);
         return voteResultRepository.countByWnum(voteBoard);
+    }
+
+    public void deletWnum(int wnum){
+        VoteBoard voteBoard= new VoteBoard();
+        voteBoard.setWnum(wnum);
+
+        voteResultRepository.deleteByWnum(voteBoard);
+
     }
 
 
