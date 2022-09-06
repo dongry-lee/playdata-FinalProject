@@ -130,11 +130,13 @@
                         </div>
                         <div >
                             <div>
+
                                 <span class="v-title">이미지 첨부</span>
                                 <div class="addimg">
                                     <input type="file" name="img1"><%--첨부한 이미지1--%>
                                     <input type="file" name="img2"><%--첨부한 이미지2--%>
                                     <input type="file" name="img3"><%--첨부한 이미지3--%>
+
                                 </div>
                             </div>
                             <div>
