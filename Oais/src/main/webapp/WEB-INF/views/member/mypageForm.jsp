@@ -122,6 +122,23 @@
 
                     </div>
                 </c:forEach>
+
+                <c:forEach var="item" items="${myUploadVoteList}">
+                    <div class="upbox">
+                        <c:if test="${item.img1 != null && item.img1!=''}">
+                            <img class="mp-uplodimg" src="/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                        </c:if>
+                        <a class="uptitle" href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a>
+                        <p>조회수 : ${item.views}</p>
+                        <p class="mp-upload-hash"><c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+                            <c:forEach var="hashelement" items="${hashtag}">
+                                <a href="/search?val=${hashelement}">#${hashelement}</a>
+                            </c:forEach>
+                        </p>
+
+                    </div>
+                </c:forEach>
+
             </div>
 
             <div id="MyPartic" class="tabcontent">
