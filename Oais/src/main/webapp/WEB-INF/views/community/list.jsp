@@ -105,6 +105,11 @@
                             <p>${b.views}</p>
                         </div>
                     </div>
+                    <c:if test="${sessionScope.num!=null}">
+                        <div class="scrap button">
+                            <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=community'">스크랩</button>
+                        </div>
+                    </c:if>
 
                 </div>
 

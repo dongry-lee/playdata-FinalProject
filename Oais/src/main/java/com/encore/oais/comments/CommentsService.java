@@ -26,4 +26,5 @@ public class CommentsService {
     }
 
     public void delConmment(int cnum){dao.deleteById(cnum);}
+
 }

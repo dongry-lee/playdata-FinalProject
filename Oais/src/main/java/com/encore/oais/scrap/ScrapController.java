@@ -23,14 +23,14 @@ public class ScrapController {
     private AllBoardService a_service;
 
     @GetMapping("/add")
-    public String addScrap(int num, int wnum){
+    public String addScrap(int num, int wnum, String page){
         Member m = m_service.getByNum(num);
         AllBoard a = a_service.getByWnum(wnum);
         Scrap scrap = new Scrap();
         scrap.setNum(m);
         scrap.setWnum(a);
         service.addScrap(scrap);
-        return "redirect:/idea/";
+        return "redirect:/"+page+"/";
     }
 
     @GetMapping("/del")

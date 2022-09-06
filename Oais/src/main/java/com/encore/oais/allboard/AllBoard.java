@@ -1,7 +1,10 @@
 package com.encore.oais.allboard;
 
 
+import com.encore.oais.comments.Comments;
 import com.encore.oais.member.Member;
+import com.encore.oais.scrap.Scrap;
+import com.encore.oais.voteboard.votecomment.VoteComment;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -59,5 +63,11 @@ public class AllBoard {
     public void beforeCreate(){
         wdate = new Date();//현재 날짜 생성
     }
+
+    @OneToMany(mappedBy = "wnum", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Comments> comments;
+
+    @OneToMany(mappedBy = "wnum", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Scrap> scraps;
 
 }

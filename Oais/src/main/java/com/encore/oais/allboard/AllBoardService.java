@@ -58,6 +58,7 @@ public class AllBoardService {
         dao.deleteById(wnum);
     }
 
+
     public ArrayList<AllBoard> getByNum(int m){
         Member member = new Member();
         member.setNum(m);

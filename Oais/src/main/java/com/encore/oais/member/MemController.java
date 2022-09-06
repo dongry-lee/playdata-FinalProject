@@ -98,8 +98,8 @@ public class MemController {
 
     @RequestMapping("/out")
     public String out(HttpSession session){
-        String id = (String) session.getAttribute("id");
-        service.delMember(id);
+        int num = (Integer) session.getAttribute("num");
+        service.delMember(num);
         return "redirect:/member/logout";
     }
 
