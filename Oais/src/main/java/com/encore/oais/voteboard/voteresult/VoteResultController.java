@@ -14,6 +14,7 @@ public class VoteResultController {
     @Autowired
     private VoteResultService voteResultService;
 
+
     @PostMapping("/voteboard/resultpro")
     public String voteResultPro(VoteResult voteResult) {
 
@@ -21,6 +22,15 @@ public class VoteResultController {
 
         return "redirect:/voteboard/list";
     }
+
+    @PostMapping("/voteboard/resultpro2")
+    public String voteResultPro2(VoteResult voteResult) {
+
+        voteResultService.result(voteResult);
+
+        return "redirect:/voteboard/detail?wnum="+voteResult.getWnum().getWnum();
+    }
+
 
 
     @GetMapping("/voteboard/count")
@@ -43,7 +53,8 @@ public class VoteResultController {
         map.put("votetotalcount",votetotalcount);
 
         return "vote/votetotalcount";
-
     }
+
+
 
 }
