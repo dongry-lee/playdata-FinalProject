@@ -16,8 +16,9 @@ public class SearchController {
     @GetMapping("/search")
     public void search(String val, Map map){
         ArrayList<AllBoard> result = service.search(val);
-        System.out.println(result);
+        ArrayList<AllBoard> resultVote = service.searchVote(val);
         map.put("result", result);
+        map.put("resultVote", resultVote);
 
     }
 }

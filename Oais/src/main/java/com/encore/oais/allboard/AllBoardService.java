@@ -58,6 +58,7 @@ public class AllBoardService {
         dao.deleteById(wnum);
     }
 
+
     public ArrayList<AllBoard> getByNum(int m){
         Member member = new Member();
         member.setNum(m);
@@ -66,6 +67,10 @@ public class AllBoardService {
 
     public ArrayList<AllBoard> search(String val){
         return dao.selectVal("%"+val+"%");
+    }
+
+    public ArrayList<AllBoard> searchVote(String val){
+        return dao.selectvoteVal("%"+val+"%");
     }
 //
 //

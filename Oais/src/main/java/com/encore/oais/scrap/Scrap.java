@@ -22,14 +22,10 @@ public class Scrap {
     @JoinColumn(nullable = false)
     private Member num;
 
-    @OneToOne
-//            (cascade = CascadeType.REMOVE)
-    @JoinColumn(unique = true)
+    @ManyToOne
     private AllBoard wnum;
 
-    @OneToOne
-//            (cascade = CascadeType.REMOVE)
-    @JoinColumn(unique = true)
+    @ManyToOne
     private VoteBoard wnum2;
 
 
