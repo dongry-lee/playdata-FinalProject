@@ -112,7 +112,8 @@
                                     <span>투표 마감일 : ${item.wdate}</span>
                                 </form>
 
-                                    <%--라디오버튼 누르고 투표시 투표항목다 투표수 출력--%>
+                                    <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
+
                                 <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
                                 <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
                                 <c:if test="${item.item03!=null && item.item03!=''}"><%--투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력--%>

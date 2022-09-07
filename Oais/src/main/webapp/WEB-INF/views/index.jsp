@@ -138,35 +138,48 @@
                                             <a href="/search?val=${hashelement}">#${hashelement}</a>
                                         </c:if>
                                     </c:forEach>
+
                                 </p>
                             </div>
                         </div>
                     </c:forEach>
                 </div>
-                <div class="hotvotebox">
-                    <div class="hotvote">
-                        <h2>오늘 점심 메뉴 추천 투표</h2>
-                        <div class="vovoto">
 
+                <div class="hotvotebox">
+
+                    <div class="hotvote">
+                        <c:forEach var="hotevotelist" items="${hotVoteListLast}">
+                                <h2>${hotevotelist.title}</h2>
+                                    ${hotevotelist.content}
+                        <div class="vovoto">
+                            <c:if test="${hotevotelist.img1 != null && hotevotelist.img1!=''}">
+                                <img class="hotimg" src="/idea/read_img?fname=${hotevotelist.img1}&wnum=${hotevotelist.wnum}">
+                            </c:if>
                             <div>
                                 <input type="radio" name="vote">
-                                <span>군만두</span>
+                                <span>${hotevotelist.item01}</span>
                                 <progress value="20" max="200"></progress>
                             </div>
                             <div>
                                 <input type="radio" name="vote">
-                                <span>물만두</span>
+                                <span>${hotevotelist.item02}</span>
                                 <progress value="20" max="200"></progress>
                             </div>
                             <div>
+                                <c:if test="${hotevotelist.item03!=null && hotevotelist.item03!=''}">
                                 <input type="radio" name="vote">
-                                <span>찐만두</span>
+                                <span>${hotevotelist.item03}</span>
                                 <progress value="20" max="200"></progress>
+                                </c:if>
                             </div>
                             <div>
+                                <c:if test="${hotevotelist.item04!=null && hotevotelist.item04!=''}">
                                 <input type="radio" name="vote">
-                                <span>카트만두</span>
+                                <span>${hotevotelist.item04}</span>
                                 <progress value="20" max="200"></progress>
+                                </c:if>
+                                </c:forEach>
+
                             </div>
                         </div>
                     </div>

@@ -44,11 +44,21 @@ public class VoteBoardService {
 
     }
 
+
+    public ArrayList<VoteBoard> getHotVoteIdea(){
+
+        return voteBoardRepository.hotvoteidea();
+
+    }
+
+
+
     public ArrayList<VoteBoard> selectByNum(int num){
         Member m = new Member();
         m.setNum(num);
         return voteBoardRepository.findByNum(m);
     }
+
 
 }
 
