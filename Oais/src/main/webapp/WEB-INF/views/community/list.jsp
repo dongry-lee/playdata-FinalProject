@@ -12,7 +12,7 @@
     <title>자유게시판</title>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
-    <link href="/css/community.css" rel="stylesheet">
+    <link href="/css/slide.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 
@@ -28,7 +28,7 @@
                       <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 800px; position: absolute;">
+            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
              <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
@@ -37,7 +37,7 @@
             <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
             </c:if>
-            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 10px;margin-left: 950px; position: absolute;">
+            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 940px;margin-top: 17px;position: absolute;">
                 <c:if test="${sessionScope.num != null}">
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
@@ -85,42 +85,94 @@
              </span></h2></div>
         <div class="idea-form">
             <c:forEach var="b" items="${list}">
-                <div class="idea-box">
-                    <h2 style="font-size: 31px; position: absolute;width: 611px;height: 35px;left: 240px;top: 163px;">
-                        <a href="/community/detail?wnum=${b.wnum}">${b.title}</a></h2>
-                    <div class="idea-img">
-                        <c:if test="${b.img1 != null}">
-                            <img width="300px" height="300px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}">
-                        </c:if>
-                        <c:if test="${b.img1 == null}">
-                            <div>이미지가 없습니다.</div>
-                        </c:if><br>
-                        <p style="font-size: 12px;">조회수:${b.views}</p>
-                    </div>
-                    <div class="idea-info"style="width: 500px;">
+                <div class="idea-box" style="margin-bottom: 20px;">
+                    <div class="title-img" style="width: 350px; margin-left: 30px;">
+                        <div class="title" style="font-size: 30px;margin-top:3px; width: 611px;height: 35px;left: 240px;top: 143px;margin-left: 5px;">
+                            <a href="/community/detail?wnum=${b.wnum}">${b.title}</a></div>
+                                <div class="section">
+                                    <input type="radio" name="slide" id="slide01" checked>
+                                    <input type="radio" name="slide" id="slide02">
+                                    <input type="radio" name="slide" id="slide03">
+
+                                    <div class="slidewrap">
+                                        <ul class="slidelist">
+                                            <li>
+                                                <a>
+                                                    <label for="slide03" class="left"></label><c:if test="${b.img1 != null}">
+                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}"></c:if>
+                                                    <label for="slide02" class="right"></label>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <label for="slide01" class="left"></label><c:if test="${b.img2 != null}">
+                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img2}&wnum=${b.wnum}"></c:if>
+                                                    <label for="slide03" class="right"></label>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <label for="slide02" class="left"></label><c:if test="${b.img3 != null}">
+                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img3}&wnum=${b.wnum}"></c:if>
+                                                    <label for="slide01" class="right"></label>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+
+<%--                                <c:if test="${b.img1 != null}">--%>
+<%--                                <div class="idea-img"style="width: 300px;--%>
+<%--                                                             height: 200px;--%>
+<%--                                                              border-radius: 10px;--%>
+<%--                                                             padding: 6px;--%>
+<%--                                                              margin-left: 30px;--%>
+<%--                                                                margin-bottom: 20px;">--%>
+<%--&lt;%&ndash;                                 <c:if test="${b.img1 != null}">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                    <div class="idea-box">&ndash;%&gt;--%>
+<%--                                <img width="300px" height="300px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}">--%>
+<%--                                 </c:if>--%>
+<%--                                 <c:if test="${b.img2 != null}">--%>
+<%--                                 <div class="idea-box">--%>
+<%--                                     <div class="idea-img">--%>
+<%--                                        <td><img width="300px" height="300px"  src="/community/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>--%>
+<%--                                 </c:if>--%>
+<%--                                    <c:if test="${b.img3 != null}">--%>
+<%--                                    <div class="idea-box">--%>
+<%--                                     <div class="idea-img">--%>
+<%--                                        <td><img width="300px" height="300px" src="/community/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>--%>
+<%--                                        </c:if>--%>
+<%--                                        <c:if test="${b.img1 == null}">--%>
+<%--                                                <div>이미지가 없습니다.</div>--%>
+<%--                                         </c:if><br>--%>
+                                                <br><p style="font-size: 12px;">조회수:${b.views}</p>
+                                     </div>
+                    <div class="idea-info">
                         <div class="idea-content">
-                            <div class="wrote" style="font-size: 20px;">작성자:${b.num.name}</div>
-                            <div class="realcontent" style="position: absolute;width: 484px;height: 26px;left: 590px;top: 245px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 20px;line-height: 24px;">${b.content}</div>
+                            <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div><br>
+                            <div class="realcontent" style="border:1px; width: 484px;height:170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}</div>
                         </div>
-                        <p style="position: absolute;
+                        <p style="
                                         width: 291px;
                                         height: 30px;
                                          left: 570px;
-                                        top: 370px;
+                                        top: 360px;
                                         font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
                                     line-height: 24px;">게시글 작성일:${b.wdate}</p>
 
-                        </div>
                     </div>
 
-                </div>
-
             </c:forEach>
-        </div>
+
     </div>
+</div>
+                                 </div>
 </div>
 </body>
 </html>

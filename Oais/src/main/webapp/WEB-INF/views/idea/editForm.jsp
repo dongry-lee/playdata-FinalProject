@@ -26,7 +26,7 @@
                         <%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
                     </div>
                 </form>
-            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>

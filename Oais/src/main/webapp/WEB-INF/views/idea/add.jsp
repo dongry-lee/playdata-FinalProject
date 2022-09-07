@@ -33,7 +33,7 @@
                         <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </form>
-            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
@@ -63,10 +63,10 @@
             <li class="sidbtn"><a href="/vote" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="#" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>

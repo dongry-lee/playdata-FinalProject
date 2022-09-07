@@ -32,7 +32,7 @@
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px; margin-left: 990px;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                         <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
@@ -80,45 +80,57 @@
     <div id="content">
         <div class="fg-head"><h2>자유게시판</h2></div>
         <div class="idea-form"> <!--  idea form vs idea write-from-->
-            <c:if test="${b.img1 != null}">
-            <div class="idea-box">
-                <h2 style="font-size: 31px; position: absolute;width: 611px;height: 35px;left: 240px;top: 143px;">
-                    <a href="/community/add?wnum=${b.wnum}">${b.title}</a></h2>
-                <div class="idea-img">
-                    <td><img width="300px" height="300px" src="/community/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
-                    </c:if>
-                    <c:if test="${b.img2 != null}">
-                    <div class="idea-box">
-                        <div class="idea-img">
-                            <td><img width="300px" height="300px"  src="/community/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
-                    </c:if>
-                    <c:if test="${b.img3 != null}">
-                            <div class="idea-box">
-                                <div class="idea-img">
-                                    <td><img width="300px" height="300px" src="/community/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
-                    </c:if>
-                    <c:if test="${b.img1 == null}">
-                                        <div>이미지가 없습니다.</div>
-                    </c:if><br>
-                                    <p style="font-size: 12px;">조회수:${b.views}</p>
-                    </div>
-                    <div class="idea-info" style="width: 500px;">
-                    <div class="idea-content">
-                                        <div class="wrote" style="font-size: 20px;">작성자:${b.num.name}</div>
-                                        <div class="realcontent" style="position: absolute;width: 484px;height: 26px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 20px;line-height: 24px;">${b.content}</div>
-                    </div>
-                                    <p style="position: absolute;
+<%--            <c:if test="${b.img1 != null}">--%>
+            <div class="idea-box" style="margin-bottom: 20px;">
+                <div class="title-img" style="width: 350px;">
+                  <div class="title" style="font-size: 30px;margin-top:3px; width: 611px;height: 35px;left: 240px;top: 143px;margin-left: 37px;">
+                      <a href="/community/add?wnum=${b.wnum}">${b.title}</a></div>
+                    <c:if test="${b.img1 != null}">
+                    <div class="idea-img" style="width: 300px;
+                                              height: 200px;
+                                              border-radius: 10px;
+                                             padding: 6px;
+                                              margin-left: 30px;
+                                             margin-bottom: 20px;">
+                        <td><img width="300px" height="300px" src="/community/read_img?wnum=${b.wnum}&fname=${b.img1}">
+                        </td>
+                        </c:if>
+                        <c:if test="${b.img2 != null}">
+                        <div class="idea-box">
+                            <div class="idea-img">
+                                <td><img width="300px" height="300px"
+                                         src="/community/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
+                                </c:if>
+                                <c:if test="${b.img3 != null}">
+                                <div class="idea-box">
+                                    <div class="idea-img">
+                                        <td><img width="300px" height="300px"
+                                                 src="/community/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
+                                        </c:if>
+                                        <c:if test="${b.img1 == null}">
+                                            <div>이미지가 없습니다.</div>
+                                        </c:if><br>
+                                        <p style="font-size: 12px;margin-top: 15px;">조회수:${b.views}</p>
+                                    </div>
+                                </div>
+                    <div class="idea-info">
+                        <div class="idea-content">
+                                        <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div><br>
+                                        <div class="realcontent" style="border:1px; width: 484px;height: 170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px;line-height: 24px;">${b.content}</div>
+                        </div>
+                                    <p style="
                                         width: 291px;
                                         height: 30px;
                                          left: 570px;
-                                        top: 370px;
+                                        top: 360px;
                                         font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
                                         line-height: 24px;">공모 작성일:${b.wdate}</p>
-                                </div>
-                            </div><!-- 아이디어 박스 끝 -->
+
+                      </div><!-- 아이디어 박스 끝 -->
+                            </div>
                             <div class="addbtn-box">
                               <c:if test="${sessionScope.id==b.num.mid}">
                                 <span style="padding: 5px; margin-top: 230px; border-radius:100px; border:1px; border-color: #f0f0f0;">
@@ -133,9 +145,9 @@
                                     <form action="/community/detail" method="post">
                                         <div class="detail-comment">
                                             <h2 class="cmt-tt">댓글 작성</h2>
-                                            <input name="num.num" type="text" value="${sessionScope.num}">
-                                            <input name="wnum.wnum" type="text" value="${b.wnum}">
-                                            <input type="text" value="${sessionScope.name}" readonly>
+                                                <input name="num.num" type="text" value="${sessionScope.num}">
+                                                <input name="wnum.wnum" type="text" value="${b.wnum}">
+                                                <input type="text" value="${sessionScope.name}" readonly>
 
                                             <div class="commentBox">
                                                 <textarea id="writeComment" name="comment" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;"></textarea>
@@ -163,9 +175,8 @@
                                     </c:forEach>
                                 </div>
                             </div>
-                            </form>
 
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -174,5 +185,7 @@
     </div>
 </div>
 
+</div>
+</div>
 </body>
 </html>

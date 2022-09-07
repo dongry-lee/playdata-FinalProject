@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/add.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/detailForm.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       </map>
     </option>
   </component>
