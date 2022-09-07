@@ -42,6 +42,13 @@ public class VoteBoardService {
 
     }
 
+    public ArrayList<VoteBoard> getHotVoteIdea(){
+
+        return voteBoardRepository.hotvoteidea();
+
+    }
+
+
 
 }
 
