@@ -72,7 +72,6 @@
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-                    조회수${item.views} , 등록날짜${item.wdate} ,마감날짜${item.ddate}
                     <div class="vote-cntbox">
                         <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
                         <div class="vote-content">
