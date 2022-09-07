@@ -8,6 +8,7 @@
     <link href="/css/custom.css" rel="stylesheet">
     <%-- JS  --%>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>오늘의 아이디어스!</title>
 </head>
 
@@ -108,12 +109,12 @@
                     <div data-index=4></div>
                 </div>
             </div>
-            <div class="list-button">
-                <span class="list-button-item active"></span>
-                <span class="list-button-item"></span>
-                <span class="list-button-item"></span>
-                <span class="list-button-item"></span>
-            </div>
+<%--            <div class="list-button">--%>
+<%--                <span class="list-button-item active"></span>--%>
+<%--                <span class="list-button-item"></span>--%>
+<%--                <span class="list-button-item"></span>--%>
+<%--                <span class="list-button-item"></span>--%>
+<%--            </div>--%>
 
             <%-- real Content--%>
             <div class="hedtitle">

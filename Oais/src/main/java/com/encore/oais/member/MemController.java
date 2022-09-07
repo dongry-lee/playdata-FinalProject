@@ -6,6 +6,8 @@ import com.encore.oais.comments.Comments;
 import com.encore.oais.comments.CommentsService;
 import com.encore.oais.scrap.Scrap;
 import com.encore.oais.scrap.ScrapService;
+import com.encore.oais.voteboard.VoteBoard;
+import com.encore.oais.voteboard.VoteBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +37,9 @@ public class MemController {
 
     @Autowired
     private ScrapService s_service;
+
+    @Autowired
+    private VoteBoardService v_service;
 
 
     @GetMapping("/login")
@@ -138,12 +143,14 @@ public class MemController {
         int num = (int) session.getAttribute("num");
         Member m = service.getByNum(num);
         ArrayList<AllBoard> myUploadList = a_service.getByNum(num);
+        ArrayList<VoteBoard> myUploadVoteList = v_service.selectByNum(num);
         ArrayList<Comments> myPartList = c_service.getByNum(num);
         ArrayList<Scrap> myScrapList = s_service.getByNum(num);
         mm.put("m", m);
         mm.put("myUploadList", myUploadList);
         mm.put("myPartList", myPartList);
         mm.put("myScrapList", myScrapList);
+        mm.put("myUploadVoteList", myUploadVoteList);
         return "member/mypageForm";
     }
 

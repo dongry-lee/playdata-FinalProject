@@ -16,12 +16,22 @@
 }
 
 .vote-info{
-    width: 300px;
+    display: flex;
+    /*width: 300px;*/
     height: 230px;
     padding: 20px;
 }
+.vote-cntbox{
+    width: 330px;
+}
 .vote-content{
-    padding: 20px;
+    /*padding: 20px;*/
+    margin-top: 20px;
+}
+
+.vote-title{
+    font-size: 20px;
+    font-weight: bold;
 }
 .fg-head{
     display: flex;
@@ -40,7 +50,6 @@
     width: 300px;
     height: 200px;
     border-radius: 10px;
-    padding: 25px;
 }
 .vote-img > img{
     width: 300px;

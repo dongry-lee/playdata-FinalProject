@@ -1,8 +1,10 @@
 package com.encore.oais.voteboard;
 
+
 import com.encore.oais.allboard.AllBoard;
 import com.encore.oais.voteboard.voteresult.VoteResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.encore.oais.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -24,5 +26,5 @@ public interface VoteBoardRepository extends JpaRepository<VoteBoard,Integer> {
     ArrayList<VoteBoard> hotvoteidea();
 
 
-
+    ArrayList<VoteBoard> findByNum(Member num);
 }
