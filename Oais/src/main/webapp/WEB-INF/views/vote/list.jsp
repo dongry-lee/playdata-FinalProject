@@ -66,7 +66,9 @@
     <div id="content">
         <div class="fg-head">
             <p>진행중인 아이디어 투표</p>
+            <c:if test="${sessionScope.num != null}">
             <a class="addvote" href="/voteboard/write">게시글 작성</a>
+            </c:if>
         </div>
         <div class="vote-form">
             <c:forEach var="item" items="${itemlist}">
@@ -116,17 +118,18 @@
 
                                     <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
 
-                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
-                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
-                                <c:if test="${item.item03!=null && item.item03!=''}"><%--투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력--%>
-                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>
-                                </c:if>
-                                <c:if test="${item.item04!=null && item.item04!=''}"><%--투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력--%>
-                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>
-                                </c:if>
-                                    <%--총투표수 출력--%>
-                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
+<%--                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>--%>
+<%--                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>--%>
+<%--                                <c:if test="${item.item03!=null && item.item03!=''}">&lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
+<%--                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>--%>
+<%--                                </c:if>--%>
+<%--                                <c:if test="${item.item04!=null && item.item04!=''}">&lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
+<%--                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>--%>
+<%--                                </c:if>--%>
+<%--                                    &lt;%&ndash;총투표수 출력&ndash;%&gt;--%>
+<%--                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>--%>
 
+                                <jsp:include page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>
 
                                     <input name="num.num" type="hidden" value="${sessionScope.num}">
                                     <input name="wnum" type="hidden" value="${item.wnum}">
