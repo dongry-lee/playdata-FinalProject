@@ -67,3 +67,7 @@
     height: max-content;
     padding: 10px;
 }
+
+.vote-option{
+    margin-left: 20px;
+}

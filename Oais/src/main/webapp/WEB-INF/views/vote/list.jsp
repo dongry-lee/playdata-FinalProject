@@ -91,10 +91,12 @@
                                     <div class="voteitmrad">
                                     <input type="radio" id="vote1" name="item" value="${item.item01}"/>
                                         <label>${item.item01}</label>
+                                        <progress value="${item.item01}" max="200"></progress>
                                     </div>
                                     <div class="voteitmrad">
                                     <input type="radio" id="vote2" name="item" value="${item.item02}"/>
                                         <label>${item.item02}</label>
+                                        <progress value="${item.item02}" max="200"></progress>
                                     </div>
                                     <c:if test="${item.item03!=null && item.item03!=''}">
                                         <input type="radio" id="vote3" name="item" value="${item.item03}"/>
