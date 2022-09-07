@@ -17,7 +17,7 @@ public interface VoteResultRepository extends JpaRepository<VoteResult, Integer>
     @Transactional
     void deleteByWnum(VoteBoard wnum);
 
-    @Query(value = "select * from vote_result group by wnum_wnum order by count(wnum_wnum) desc limit 3",nativeQuery = true )
+    @Query(value = "select * from vote_result group by wnum_wnum,vnum,item order by count(wnum_wnum) desc limit 3",nativeQuery = true )
     ArrayList<VoteResult> hotVote();
 
 

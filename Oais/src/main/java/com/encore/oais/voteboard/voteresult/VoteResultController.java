@@ -34,12 +34,31 @@ public class VoteResultController {
 
 
     @GetMapping("/voteboard/count")
-    public String voteCount(String item,Map map){
+    public String voteCount(String item01,String item02, String item03, String item04, int wnum, Map map){
+
+        long votecount1 = voteResultService.getCount(item01);
+        long votecount2 = voteResultService.getCount(item02);
+        if(!item03.equals("")){
+        long votecount3 = voteResultService.getCount(item03);
+            map.put("votecount3",votecount3);
+            map.put("item03", item03);
+        }
+        if(!item04.equals("")){
+            long votecount4 = voteResultService.getCount(item04);
+            map.put("votecount4",votecount4);
+            map.put("item04", item04);
+        }
+
+        long votetotalcount = voteResultService.getTotalCount(wnum);
 
 
-        long votecount = voteResultService.getCount(item);
 
-        map.put("votecount",votecount);
+        map.put("votetotalcount",votetotalcount);
+        map.put("votecount1",votecount1);
+        map.put("votecount2",votecount2);
+        map.put("item01", item01);
+        map.put("item02", item02);
+
 
         return "vote/votecount";
 

@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+
     <title></title>
 </head>
 <body>
-${votecount}
+${item01}<progress value="${votecount1}" max="50"></progress>
+${item02}<progress value="${votecount2}" max="50"></progress>
+${item03}<progress value="${votecount3}" max="50"></progress>
+${item04}<progress value="${votecount4}" max="50"></progress>
 </body>
 </html>
