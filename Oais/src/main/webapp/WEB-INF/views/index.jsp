@@ -8,6 +8,7 @@
     <link href="/css/custom.css" rel="stylesheet">
     <%-- JS  --%>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>오늘의 아이디어스!</title>
 </head>
 

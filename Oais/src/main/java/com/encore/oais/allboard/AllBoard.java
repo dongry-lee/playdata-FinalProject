@@ -53,7 +53,7 @@ public class AllBoard {
     @Column(columnDefinition = "integer default 0")
     private int part;
 
-    private String hash; //해쉬,태그,이걸,나눠서,써야하네
+    private String hash;
 
     private String img1;
 

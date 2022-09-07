@@ -14,6 +14,30 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/vote.css" rel="stylesheet">
     <link href="/css/vote/votedetail.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['number', 'Populartiy'],
+                ['${voteboard.item01}', ${item01result}],
+                ['${voteboard.item02}', ${item02result}],
+                ['${voteboard.item03}',  ${item03result}],
+                ['${voteboard.item04}', ${item04result}]
+            ]);
+
+            var options = {
+                title: '${voteboard.title}'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 <body>
 
@@ -107,26 +131,29 @@
                                            value="${voteboard.item04}"/><label><span></span>${voteboard.item04}</label>
                                 </c:if>
 
+
                                 <c:if test="${(sessionScope.domtype==false)}"> <%--로그인한상태가 아니라면 투표버튼 안보이게--%>
                                     <button>투표</button>
                                 </c:if>
                             </form>
                             <%-- 투표수 출력 --%>
-                            <jsp:include page="/voteboard/count?item=${voteboard.item01}"></jsp:include>
-                            <jsp:include page="/voteboard/count?item=${voteboard.item02}"></jsp:include>
-                            <c:if test="${voteboard.item03!=null && voteboard.item03!=''}"> <%--투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력--%>
-                                <jsp:include page="/voteboard/count?item=${voteboard.item03}"></jsp:include>
-                            </c:if>
-                            <c:if test="${voteboard.item04!=null && voteboard.item04!=''}"> <%--투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력--%>
-                                <jsp:include page="/voteboard/count?item=${voteboard.item04}"></jsp:include>
-                            </c:if>
-                            <%--총 투표수 출력--%>
-                            <jsp:include page="/voteboard/totalcount?wnum=${voteboard.wnum}"></jsp:include>
+<%--                            <jsp:include page="/voteboard/count?item=${voteboard.item01}"></jsp:include>--%>
+<%--                            <jsp:include page="/voteboard/count?item=${voteboard.item02}"></jsp:include>--%>
+<%--                            <c:if test="${voteboard.item03!=null && voteboard.item03!=''}"> &lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
+<%--                                <jsp:include page="/voteboard/count?item=${voteboard.item03}"></jsp:include>--%>
+<%--                            </c:if>--%>
+<%--                            <c:if test="${voteboard.item04!=null && voteboard.item04!=''}"> &lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
+<%--                                <jsp:include page="/voteboard/count?item=${voteboard.item04}"></jsp:include>--%>
+<%--                            </c:if>--%>
+<%--                            &lt;%&ndash;총 투표수 출력&ndash;%&gt;--%>
+<%--                            <jsp:include page="/voteboard/totalcount?wnum=${voteboard.wnum}"></jsp:include>--%>
+
                             <%--                            <span></span>--%>
                             <%--                            <input type="radio" id="vote1" name="radio"--%>
                             <%--                                   value="${voteboard.item01}"/><label><span></span>${voteboard.item01}</label>--%>
                             <%--                            <input type="radio" id="vote2" name="radio"--%>
                             <%--                                   value="${voteboard.item02}"/><label><span></span>${voteboard.item02}</label>--%>
+                            <div id="piechart" style="width: 300px; height: 200px;"></div>
                         </div>
                     </div>
                 </div>
