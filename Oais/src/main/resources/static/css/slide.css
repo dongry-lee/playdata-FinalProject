@@ -38,14 +38,11 @@
     cursor: pointer;
 }
 .section .slidelist .left {
-    /*left: 30px;*/
-    right: 280px;
+    left: 0px;
     background:url('/img/left-arrow.png') center center / 40% no-repeat;
 }
 .section .slidelist .right {
     right: 0px;
-    margin-left: 10px;
-    left: 270px;
     background:url('/img/right-arrow.png') center center / 40% no-repeat;
 }
 .section [id="slide01"]:checked ~ .slidewrap .slidelist >li {transform:translateX(0%);}
