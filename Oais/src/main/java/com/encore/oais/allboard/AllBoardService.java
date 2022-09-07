@@ -43,12 +43,6 @@ public class AllBoardService {
         return dao.save(b);
     }
 
-    public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
-    public AllBoard addvote(AllBoard v){
-        v.setTypecd(0);
-        return dao.save(v);
-    }
-
     public AllBoard getByWnum(int wnum){
 
         return dao.findById(wnum).orElse(null);

@@ -135,9 +135,21 @@ public class VoteBoardController {
         VoteBoard voteboard = voteBoardService.getBywnum(wnum);
         voteboard.setViews(voteboard.getViews() + 1);
         voteBoardService.write(voteboard); //조회수 1씩증가
+        long item01result = voteResultService.getCount(voteboard.getItem01());
+        long item02result = voteResultService.getCount(voteboard.getItem02());
+        if (voteboard.getItem03() != null){
+            long item03result = voteResultService.getCount(voteboard.getItem03());
+            map.put("item03result", item03result);
+        }
+        if (voteboard.getItem04() != null){
+            long item04result = voteResultService.getCount(voteboard.getItem04());
+            map.put("item04result", item04result);
+        }
 
         map.put("voteboard", voteBoardService.getBywnum(wnum));
         map.put("votecomment", voteCommentService.getByComment(wnum));
+        map.put("item01result", item01result);
+        map.put("item02result", item02result);
 
 
         return "vote/votedetail";
