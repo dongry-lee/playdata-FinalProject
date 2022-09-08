@@ -45,6 +45,9 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 ## 1차 수정 ERD
 ![새 테이블](https://user-images.githubusercontent.com/89010847/186045427-12e32fa1-600a-416c-8170-7a80cb0f2e8e.PNG)
+## 최종 ERD
+<img width="767" alt="erd" src="https://user-images.githubusercontent.com/89010847/189006658-a09843f3-387b-4c29-b8bd-0a298f757b16.png">
+
 
 
 ## 스프린트
