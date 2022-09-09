@@ -129,7 +129,7 @@
 <%--                                    &lt;%&ndash;총투표수 출력&ndash;%&gt;--%>
 <%--                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>--%>
 
-                                <jsp:include page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>
+<%--                                <jsp:include page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>--%>
 
                                     <input name="num.num" type="hidden" value="${sessionScope.num}">
                                     <input name="wnum" type="hidden" value="${item.wnum}">

@@ -179,7 +179,6 @@
                                 <progress value="20" max="200"></progress>
                                 </c:if>
                                 </c:forEach>
-
                             </div>
                         </div>
                     </div>
