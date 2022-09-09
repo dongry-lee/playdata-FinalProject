@@ -1,5 +1,6 @@
 package com.encore.oais.allboard;
 
+
 import com.encore.oais.comments.Comments;
 import com.encore.oais.comments.CommentsService;
 import com.encore.oais.member.MemService;
@@ -26,8 +27,8 @@ import java.util.Date;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/community")
-public class CommunityController {
+@RequestMapping("/service")
+public class ServiceController {
 
     @Autowired
     private AllBoardService service;
@@ -42,23 +43,24 @@ public class CommunityController {
     private String imgpath;
 
     @RequestMapping("/")
-    public String list(Model model) {
-        ArrayList<AllBoard> list = service.getAllCommunity();
+    public String servicelist(Model model){
+        ArrayList<AllBoard> list = service.getAllService();
         model.addAttribute("list", list);
-        return "community/list";
+        return "service/servicelist";
     }
 
     @GetMapping("/add")
-    public void addForm() {
+    public String serviceaddForm(){
+        return "service/service_add";
     }
 
     @PostMapping("/add")
-    public String add(String title, Member num, String content, MultipartFile img1, MultipartFile img2, MultipartFile img3) {
+    public String add(String title, Member num, String content, MultipartFile img1, MultipartFile img2, MultipartFile img3){
         AllBoard b = new AllBoard();
         b.setTitle(title);
         b.setNum(num);
         b.setContent(content);
-        AllBoard b2 = service.addCommunity(b);
+        AllBoard b2 = service.addService(b);
 
         File dir = new File(imgpath + b2.getWnum());
         if (!dir.exists()) {
@@ -69,7 +71,7 @@ public class CommunityController {
         files.add(img1);
         files.add(img2);
         files.add(img3);
-        String[] paths = {null, null, null};// ���ε� ���� ���纻�� ��� ���� �迭
+        String[] paths = { null, null, null };// ���ε� ���� ���纻�� ��� ���� �迭
         int cnt = 0;
         for (MultipartFile f : files) {
             String fname = f.getOriginalFilename();// ���� ���ϸ�.
@@ -95,28 +97,24 @@ public class CommunityController {
                 b.setImg3(paths[2]);
             }
             // ������ �߰��ߴ� ��ǰ�� �̹��� ��θ� �߰��� ����
-            service.addCommunity(b);
+            service.addService(b);
         }
 
-        return "redirect:/community/";
+        return "redirect:/service/";
     }
 
-
     @GetMapping("/detail")
-    public String detailForm(int wnum, Map m) {
+    public String detailForm(int wnum, Map m){
         AllBoard b = service.getByWnum(wnum);
-        AllBoard c = new AllBoard();
-        c.setWnum(wnum);
-        ArrayList<Comments> comments = c_service.getAll(c);
+        ArrayList<Comments> comments = c_service.getAll(b);
         m.put("b", b);
         m.put("comments", comments);
-        b.setViews(b.getViews() + 1);
         service.addAllBoard(b);
-        return "community/detailForm";
+        return "service/service_detail";
     }
 
     @PostMapping("/detail")
-    public String addComments(int wnum, int num, String content) {
+    public String addComments(int wnum, int num, String content){
         AllBoard b = service.getByWnum(wnum);
         Member m = m_service.getByNum(num);
         Comments c = new Comments();
@@ -124,26 +122,30 @@ public class CommunityController {
         c.setNum(m);
         c.setWnum(b);
         c_service.addComment(c);
-        return "redirect:/community/detail?wnum=" + wnum;
+        service.addAllBoard(b);
+        return "redirect:/service/detail?wnum="+wnum;
     }
 
+    @GetMapping("/comment/delete")
+    public String commentdelete(int cnum, int wnum){
+        c_service.delConmment(cnum);
+        return "redirect:/service/detail?wnum="+wnum;
+    }
 
     @GetMapping("/edit")
-    public String editForm(int wnum, Map m) {
+    public String editForm(int wnum, Map m){
         AllBoard b = service.getByWnum(wnum);
         m.put("b", b);
-        return "community/editForm";
+        return "service/service_edit";
     }
 
     @PostMapping("/edit")
-    public String edit(int wnum, String title, String content,
-                       MultipartFile img1, MultipartFile img2, MultipartFile img3) {
+    public String edit(int wnum, String title, String content, MultipartFile img1, MultipartFile img2, MultipartFile img3){
         AllBoard b = service.getByWnum(wnum);
         b.setTitle(title);
         b.setContent(content);
 
-
-        if (img1 != null) {
+        if (img1!=null) {
             MultipartFile file = img1;
             String fname = file.getOriginalFilename();
 
@@ -170,7 +172,7 @@ public class CommunityController {
                 }
             }
         }
-        if (img2 != null) {
+        if (img2!=null) {
             MultipartFile file = img2;
             String fname = file.getOriginalFilename();
             if (fname != null && !fname.equals("")) {
@@ -193,7 +195,7 @@ public class CommunityController {
                 }
             }
         }
-        if (img3 != null) {
+        if (img3!=null) {
             MultipartFile file = img3;
             String fname = file.getOriginalFilename();
             if (fname != null && !fname.equals("")) {
@@ -217,19 +219,14 @@ public class CommunityController {
             }
         }
         service.addAllBoard(b);
-        return "redirect:/community/detail?wnum=" + wnum;
+        return "redirect:/service/detail?wnum="+wnum;
     }
+
 
     @GetMapping("/delete")
-    public String delete(int wnum) {
+    public String delete(int wnum){
         service.delAllBoard(wnum);
-        return "redirect:/community/";
-    }
-
-    @GetMapping("/comment/delete")
-    public String commentdelete(int cnum, int wnum) {
-        c_service.delConmment(cnum);
-        return "redirect:/community/detail?wnum=" + wnum;
+        return "redirect:/service/";
     }
 
     @GetMapping("/read_img") // �Ķ����� ���� �̹��� ���̳ʸ� ���� �о ��ȯ
@@ -247,5 +244,5 @@ public class CommunityController {
         }
         return result;
     }
-
 }
+

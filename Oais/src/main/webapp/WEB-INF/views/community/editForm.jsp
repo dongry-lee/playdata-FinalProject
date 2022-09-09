@@ -1,7 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: idong-geun
+  Date: 2022/09/02
+  Time: 4:38 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,13 +14,13 @@
     <link href="/css/idea.css" rel="stylesheet">
 
 
-    <title>아이디어게시판 글수정</title>
+    <title>자유게시판 수정 페이지</title>
 </head>
 <body>
 <!-- Header -->
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1 class=""></h1></a>
+        <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search">
@@ -70,30 +75,26 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div class="fg-head"><h2>아이디어 공모하기</h2></div>
+        <div class="fg-head"><h2>자유게시판</h2></div>
         <div class="idea-writeform">
-            <form action="/idea/edit" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
+            <form action="/community/edit" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
                 <div class="vethead" style="display: flex;">
                     <div class="write-info" style="width: 870px;">
                         <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">
                         <input type="text" name="title" value="${b.title}" readonly style="font-size:15px; border:0; width:860px; margin-bottom:30px;"><br>
                         <th>이름</th>
-                        <input type="text" name="name" value="${b.num.name}" readonly style="border: 0;">
+                        <input type="text" value="${b.num.name}" readonly style="border: 0;">
                     </div>
                 </div>
                 <div class="add-content" style="display: flex;">
                     <div class="write-info" style="width: 400px; padding: 50px;">
-                        <th style="display: none"><!--여기안보이게--></th>
-                        <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
                         <textarea class="titlecntarea" name="content" type="text"
                                   style="font-size:15px; border:0; width:auto; margin-bottom:auto; padding: 50px; height:auto; ">"${b.content}"</textarea><br>
                         <%--                                <th>content</th>--%>
                         <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
 
-<%--                        <th>등록일자</th>--%>
-<%--                        <td><input type="text" value="${b.wdate}" readonly></td>--%>
-                        <th>마감일자</th>
-                        <td><input type="text" value="${b.ddate}" readonly></td>
+                        <%--                        <th>등록일자</th>--%>
+                        <%--                        <td><input type="text" value="${b.wdate}" readonly></td>--%>
                     </div>
                     <div class="addimg" style="padding:40px;">
                         <span class="v-title" style=" font-size: 17px; padding: 10px 0px 0px 30px;">이미지 첨부📁</span><br/>
@@ -107,63 +108,58 @@
                         </div>
                     </div>
                 </div>
-                <div class="hashcode">
-                    <div class="write-info" style="width: 647px; height: 49px;">
-                        <th>  hash</th>
-                        <input type="text" name="hash" value="${b.hash}" readonly style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px ">
-                    </div>
-                </div>
-<%--                    <tr>--%>
-<%--                        <th>content</th>--%>
-<%--                        <td><textarea rows="15" cols="20" name="content">"${b.content}"</textarea></td>--%>
-<%--                    </tr>--%>
-<%--                    <tr>--%>
-<%--                        <th>마감일자</th>--%>
-<%--                        <td><input type="date" name="ddate" value="${b.ddate}"></td>--%>
-<%--                    </tr>--%>
-<%--                    <tr>--%>
-<%--                        <th>hash</th>--%>
-<%--                        <td><input type="text" name="hash" value="${b.hash}"></td>--%>
-<%--                    </tr>--%>
 
-<%--                    <tr>--%>
-<%--                        <th>img1</th>--%>
-<%--                        <td><input type="file" name="img1"></td>--%>
-<%--                    </tr>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>content</th>--%>
+                <%--                        <td><textarea rows="15" cols="20" name="content">"${b.content}"</textarea></td>--%>
+                <%--                    </tr>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>마감일자</th>--%>
+                <%--                        <td><input type="date" name="ddate" value="${b.ddate}"></td>--%>
+                <%--                    </tr>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>hash</th>--%>
+                <%--                        <td><input type="text" name="hash" value="${b.hash}"></td>--%>
+                <%--                    </tr>--%>
 
-<%--                    <tr>--%>
-<%--                        <th>img2</th>--%>
-<%--                        <td><input type="file" name="img2"></td>--%>
-<%--                    </tr>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>img1</th>--%>
+                <%--                        <td><input type="file" name="img1"></td>--%>
+                <%--                    </tr>--%>
 
-<%--                    <tr>--%>
-<%--                        <th>img3</th>--%>
-<%--                        <td><input type="file" name="img3"></td>--%>
-<%--                    </tr>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>img2</th>--%>
+                <%--                        <td><input type="file" name="img2"></td>--%>
+                <%--                    </tr>--%>
+
+                <%--                    <tr>--%>
+                <%--                        <th>img3</th>--%>
+                <%--                        <td><input type="file" name="img3"></td>--%>
+                <%--                    </tr>--%>
                 <div class="addbtn-box">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
                                 <button type="submit" class="cancel_button" size="10px">수정</button><!--button type="button"-->
                                  </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                                <button type="button" class="cancel_button" onclick="location.href='/idea/delete?wnum=${b.wnum}'"size="10px">삭제</button><!--button type="button"-->
+                                <button type="button" class="cancel_button" onclick="location.href='/community/delete?wnum=${b.wnum}'"size="10px">삭제</button><!--button type="button"-->
                                  </span>
                 </div>
 
 
-<%--                    <tr>--%>
-<%--                        <th>수정</th>--%>
-<%--                        <td><input value="수정" type="submit"></td>--%>
-<%--                    </tr>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>수정</th>--%>
+                <%--                        <td><input value="수정" type="submit"></td>--%>
+                <%--                    </tr>--%>
 
 
-<%--                    <tr>--%>
-<%--                        <th>삭제</th>--%>
-<%--                        <td><input type="button" value="삭제" onclick="location.href='/idea/delete?wnum=${b.wnum}'"></td>--%>
-<%--                    </tr>--%>
-<%--                </table>--%>
+                <%--                    <tr>--%>
+                <%--                        <th>삭제</th>--%>
+                <%--                        <td><input type="button" value="삭제" onclick="location.href='/idea/delete?wnum=${b.wnum}'"></td>--%>
+                <%--                    </tr>--%>
+                <%--                </table>--%>
             </form>
             <%--  real content end  --%>
-<%--            <h3>Deepocket</h3>--%>
+            <%--            <h3>Deepocket</h3>--%>
         </div>
     </div>
 </div>

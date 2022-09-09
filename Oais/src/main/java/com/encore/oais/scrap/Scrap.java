@@ -22,12 +22,10 @@ public class Scrap {
     @JoinColumn(nullable = false)
     private Member num;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private AllBoard wnum;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private VoteBoard wnum2;
 
 

@@ -79,7 +79,7 @@ $(document).ready(function () {
 
                 // 해시태그가 중복되었는지 확인
                 if (result.length == 0) {
-                    $("#tag-list").append("<li class='tag-item'>"+tagValue+"<span class='del-btn' idx='"+counter+"'>x</span></li>");
+                    $("#tag-list").append("<li class='tag-item'>"+tagValue+"<span class='del-btn' idx='"+counter+"'><img src='/img/xbtn.png'></span></li>");
                     addTag(tagValue);
                     self.val("");
                 } else {
@@ -98,3 +98,4 @@ $(document).ready(function () {
         $(this).parent().remove();
     });
 })
+

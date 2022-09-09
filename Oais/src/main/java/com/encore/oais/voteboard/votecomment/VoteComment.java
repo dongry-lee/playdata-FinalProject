@@ -9,24 +9,30 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class VoteComment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cnum;
+    private int cnum; // 댓글번호
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private VoteBoard wnum;
+    private VoteBoard wnum; //글번호
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(nullable = false)
-    private Member num;
+    private Member num; //회원번호
 
-    private String comment;
+    private String comment; //댓글내용
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<VoteBoard> voteBoards = new ArrayList<>();
 
 }

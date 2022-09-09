@@ -1,5 +1,8 @@
 package com.encore.oais.member;
 
+import com.encore.oais.allboard.AllBoardService;
+import com.encore.oais.comments.CommentsService;
+import com.encore.oais.scrap.ScrapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +29,8 @@ public class MemService {
     }
 
     //탈퇴
-    public void delMember(String mid){
-        dao.deleteByMid(mid);
+    public void delMember(int num){
+        dao.deleteById(num);
     }
 
     public Member getByNum(int num){

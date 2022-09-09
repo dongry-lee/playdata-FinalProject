@@ -12,8 +12,9 @@ import java.util.ArrayList;
 @Repository
 public interface VoteCommentRepository extends JpaRepository<VoteComment,Integer> {
 
-    ArrayList<VoteComment> findByWnum(VoteBoard wnum);
+     ArrayList<VoteComment> findByWnum(VoteBoard wnum);
+//    ArrayList<VoteComment> findByNum(Member num);
+//     ArrayList<VoteComment> deleteByCnum(int cnum);
 
-    ArrayList<VoteComment> findByNum(Member num);
 
 }
