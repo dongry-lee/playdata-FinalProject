@@ -93,20 +93,22 @@
                                     <div class="voteitmrad">
                                     <input type="radio" id="vote1" name="item" value="${item.item01}"/>
                                         <label>${item.item01}</label>
-                                        <progress value="${item.item01}" max="200"></progress>
                                     </div>
                                     <div class="voteitmrad">
                                     <input type="radio" id="vote2" name="item" value="${item.item02}"/>
                                         <label>${item.item02}</label>
-                                        <progress value="${item.item02}" max="200"></progress>
                                     </div>
                                     <c:if test="${item.item03!=null && item.item03!=''}">
+                                    <div class="voteitmrad">
                                         <input type="radio" id="vote3" name="item" value="${item.item03}"/>
                                         <label>${item.item03}</label>
+                                    </div>
                                     </c:if>
                                     <c:if test="${item.item04!=null && item.item04!=''}">
+                                    <div class="voteitmrad">
                                         <input type="radio" id="vote4" name="item" value="${item.item04}"/>
                                         <label>${item.item04}</label>
+                                    </div>
                                     </c:if>
 
                                     <%--로그인안했다면 투표 불가능--%>

@@ -13,9 +13,21 @@
     <title></title>
 </head>
 <body>
-${item01}<progress value="${votecount1}" max="50"></progress>
-${item02}<progress value="${votecount2}" max="50"></progress>
-${item03}<progress value="${votecount3}" max="50"></progress>
-${item04}<progress value="${votecount4}" max="50"></progress>
+<div>
+    ${item01}:
+    <progress value="${votecount1}" max="50"></progress>
+</div>
+<div>
+    ${item02}:
+    <progress value="${votecount2}" max="50"></progress>
+</div>
+<div>
+    ${item03}:
+    <progress value="${votecount3}" max="50"></progress>
+</div>
+<div>
+    ${item04}:
+    <progress value="${votecount4}" max="50"></progress>
+</div>
 </body>
 </html>
