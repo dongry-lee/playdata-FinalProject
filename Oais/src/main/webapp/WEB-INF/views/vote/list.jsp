@@ -154,9 +154,9 @@
                                 </c:if>
                             </div>
                         </div>
-                    </div>
+                    </div></c:forEach>
                 </div>
-                </c:forEach>
+
             </div>
 </body>
 </html>
