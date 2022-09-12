@@ -63,9 +63,9 @@ public class VoteBoard {
 
 
 
-//    private int totalCount;
-//    private int count01;
-//    private int count02;
+    private int totalCount;
+    private int count01;
+    private int count02;
 
 
 
