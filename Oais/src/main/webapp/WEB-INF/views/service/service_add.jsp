@@ -87,7 +87,7 @@
         <div>
             <div>
                 <img src="/img/ois.png">
-                <p>문의 글 작성</p>
+                <p class="ser-allheadt">문의 글 작성</p>
                 <hr>
 
             </div>

@@ -109,12 +109,12 @@
                     <div data-index=4></div>
                 </div>
             </div>
-<%--            <div class="list-button">--%>
-<%--                <span class="list-button-item active"></span>--%>
-<%--                <span class="list-button-item"></span>--%>
-<%--                <span class="list-button-item"></span>--%>
-<%--                <span class="list-button-item"></span>--%>
-<%--            </div>--%>
+            <%--            <div class="list-button">--%>
+            <%--                <span class="list-button-item active"></span>--%>
+            <%--                <span class="list-button-item"></span>--%>
+            <%--                <span class="list-button-item"></span>--%>
+            <%--                <span class="list-button-item"></span>--%>
+            <%--            </div>--%>
 
             <%-- real Content--%>
             <div class="hedtitle">
@@ -147,42 +147,45 @@
 
                 <div class="hotvotebox">
 
-                    <div class="hotvote">
-                        <c:forEach var="hotevotelist" items="${hotVoteListLast}">
-                                <h2>${hotevotelist.title}</h2>
-                                    ${hotevotelist.content}
-                        <div class="vovoto">
-                            <c:if test="${hotevotelist.img1 != null && hotevotelist.img1!=''}">
-                                <img class="hotimg" src="/idea/read_img?fname=${hotevotelist.img1}&wnum=${hotevotelist.wnum}">
-                            </c:if>
-                            <div>
-                                <input type="radio" name="vote">
-                                <span>${hotevotelist.item01}</span>
-                                <progress value="20" max="200"></progress>
-                            </div>
-                            <div>
-                                <input type="radio" name="vote">
-                                <span>${hotevotelist.item02}</span>
-                                <progress value="20" max="200"></progress>
-                            </div>
-                            <div>
-                                <c:if test="${hotevotelist.item03!=null && hotevotelist.item03!=''}">
-                                <input type="radio" name="vote">
-                                <span>${hotevotelist.item03}</span>
-                                <progress value="20" max="200"></progress>
+                    <c:forEach var="hotvotelist" items="${hotVoteListLast}">
+                        <div class="hotvote">
+                            <h2>${hotvotelist.title}</h2>
+                                ${hotvotelist.content}
+                            <div class="vovoto">
+                                <c:if test="${hotvotelist.img1 != null && hotvotelist.img1!=''}">
+                                    <img class="hotimg"
+                                         src="/idea/read_img?fname=${hotvotelist.img1}&wnum=${hotvotelist.wnum}">
                                 </c:if>
-                            </div>
-                            <div>
-                                <c:if test="${hotevotelist.item04!=null && hotevotelist.item04!=''}">
-                                <input type="radio" name="vote">
-                                <span>${hotevotelist.item04}</span>
-                                <progress value="20" max="200"></progress>
-                                </c:if>
-                                </c:forEach>
+                                    <%--                            <div>--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item01}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                            </div>--%>
+                                    <%--                            <div>--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item02}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                            </div>--%>
+                                    <%--                            <div>--%>
+                                    <%--                                <c:if test="${hotevotelist.item03!=null && hotevotelist.item03!=''}">--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item03}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                                </c:if>--%>
+                                    <%--                            </div>--%>
+                                    <%--                            <div>--%>
+                                    <%--                                <c:if test="${hotevotelist.item04!=null && hotevotelist.item04!=''}">--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item04}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                                </c:if>--%>
 
+                                    <%--                            </div>--%>
+                                <jsp:include
+                                        page="/voteboard/count?item01=${hotvotelist.item01}&item02=${hotvotelist.item02}&item03=${hotvotelist.item03}&item04=${hotvotelist.item04}&wnum=${hotvotelist.wnum}"></jsp:include>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>

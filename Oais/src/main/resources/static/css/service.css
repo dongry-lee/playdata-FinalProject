@@ -1,11 +1,17 @@
 input:focus {outline: none;} /* outline 테두리 없애기 */
 textarea:focus {outline: none;} /* outline 테두리 없애기 */
+.ser-allheadt{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
 .ser-ttbox{
     margin-bottom: 20px;
 }
 .ser-title{
     margin-bottom: 15px;
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
 }
 
