@@ -14,7 +14,13 @@
     <link href="/css/idea.css" rel="stylesheet">
     <link href="/css/slide.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+<%--    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">--%>
+
+        <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
@@ -79,7 +85,7 @@
     <!-- End of Sidemenu-->
 
     <!-- Content Wrapper -->
-    <div id="content">
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/community/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
              </span></h2></div>
@@ -87,27 +93,26 @@
             <c:forEach var="b" items="${list}">
                 <div class="idea-box" style="margin-bottom: 20px;">
                     <div class="title-img" style="width: 350px; margin-left: 30px;">
-                        <div class="title" style="font-size: 30px;margin-top:3px; width: 611px;height: 35px;left: 240px;top: 143px;margin-left: 5px;">
-                            <a href="/community/detail?wnum=${b.wnum}">${b.title}</a></div>
+                        <div class="title" style="font-size: 20px;margin-top:3px; width: 611px;height: 28px;left: 240px;top: 143px;margin-left: 5px;margin-top:10px;">
+                            <a href="/community/detail?wnum=${b.wnum}">🖋️ ️${b.title}</a></div>
                                 <div class="section">
                                     <input type="radio" name="slide" id="slide01" checked>
                                     <input type="radio" name="slide" id="slide02">
                                     <input type="radio" name="slide" id="slide03">
-
                                     <div class="slidewrap">
                                         <ul class="slidelist">
                                             <li>
                                                 <a>
                                                     <label for="slide03" class="left"></label><c:if test="${b.img1 != null}">
-                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}"></c:if>
-                                                    <label for="slide02" class="right"></label>
+                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                                                    <label for="slide02" class="right"></label></c:if>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a>
                                                     <label for="slide01" class="left"></label><c:if test="${b.img2 != null}">
-                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img2}&wnum=${b.wnum}"></c:if>
-                                                    <label for="slide03" class="right"></label>
+                                                    <img width="300px" height="200px" src="/community/read_img?fname=${b.img2}&wnum=${b.wnum}">
+                                                    <label for="slide03" class="right"></label></c:if>
                                                 </a>
                                             </li>
                                             <li>
@@ -148,31 +153,33 @@
 <%--                                        <c:if test="${b.img1 == null}">--%>
 <%--                                                <div>이미지가 없습니다.</div>--%>
 <%--                                         </c:if><br>--%>
-                                                <br><p style="font-size: 12px;">조회수:${b.views}</p>
-                                     </div>
+                                                <hr class="bottom-line">
+                        <p style="font-size: 12px;">조회수:${b.views}</p>
+                    </div>
                     <div class="idea-info">
                         <div class="idea-content">
-                            <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div><br>
-                            <div class="realcontent" style="border:1px; width: 484px;height:170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}</div>
+                            <div class="wrote" style="font-size: 15px;margin-top: 27px;">작성자:${b.num.name}</div>
+                             <hr class="bottom-line">
+<%--                            <br>--%>
+                            <div class="realcontent" style="border:1px; width: 484px;height:167px;left: 590px;top: 228px;font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}
+                            </div>
                         </div>
+                        <hr class="bottom-line">
                         <p style="
                                         width: 291px;
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
-                                        font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
+                                         color: #586672;
                                     line-height: 24px;">게시글 작성일:${b.wdate}</p>
-
                     </div>
-
+                </div>
             </c:forEach>
-
     </div>
 </div>
-                                 </div>
 </div>
 </body>
 </html>

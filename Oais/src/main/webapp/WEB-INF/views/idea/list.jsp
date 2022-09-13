@@ -110,6 +110,7 @@
                         <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div>
                         <div class="realcontent" style="border:1px; width:484px; height: 170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}</div>
                     </div>
+                    <hr class="bottom-line">
                     <p style="
                                         width: 291px;
                                         height: 30px;

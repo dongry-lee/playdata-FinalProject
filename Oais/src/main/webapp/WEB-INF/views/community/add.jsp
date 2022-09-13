@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />

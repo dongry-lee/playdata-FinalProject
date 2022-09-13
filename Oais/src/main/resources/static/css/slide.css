@@ -1,3 +1,6 @@
+* {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
 .section input[id="slide01"]{
     display: none;
 }
@@ -28,6 +31,8 @@
 }
 .section .slidelist >li >a img {
     width: 100%;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.25));
+    border-radius: 23px;
 }
 .section .slidelist label {
     position: absolute;
@@ -39,11 +44,11 @@
 }
 .section .slidelist .left {
     left: 0px;
-    background:url('/img/left-arrow.png') center center / 40% no-repeat;
+    background:url('/img/left-arrow.png') center center / 34% no-repeat;
 }
 .section .slidelist .right {
     right: 0px;
-    background:url('/img/right-arrow.png') center center / 40% no-repeat;
+    background:url('/img/right-arrow.png') center center / 34% no-repeat;
 }
 .section [id="slide01"]:checked ~ .slidewrap .slidelist >li {transform:translateX(0%);}
 .section [id="slide02"]:checked ~ .slidewrap .slidelist >li {transform:translateX(-100%);}
