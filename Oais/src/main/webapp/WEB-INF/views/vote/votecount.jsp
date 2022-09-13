@@ -22,14 +22,14 @@
     ${item02}:
     <progress value="${votecount2}" max="50"></progress>
 </div>
-<c:if test="${item03 == ''}">
+<c:if test="${item03 != null}">
 <div>
     ${item03}:
     <progress value="${votecount3}" max="50"></progress>
 </div>
 </c:if>
 
-<c:if test="${item04 == ''}">
+<c:if test="${item04 != null}">
 <div>
     ${item04}:
     <progress value="${votecount4}" max="50"></progress>
