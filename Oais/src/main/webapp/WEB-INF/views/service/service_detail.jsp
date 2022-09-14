@@ -3,7 +3,7 @@
   Created by IntelliJ IDEA.
   User: 27251
   Date: 2022-09-01
-  Time: 오전 11:47
+  Time: ?��?�� 11:47
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,19 +13,21 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/service.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-
         <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
         <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
-    <title>문의 글 상세페이지</title>
+
+    <link href="/css/service_detail.css" rel="stylesheet">
+
+    <title>문의 글 상세 페이지</title>
 </head>
 <body>
 <header>
-    <div class="wrapper"> <!--전체 랩 -->
+    <div class="wrapper"> 
 
         <a href="/"><h1></h1></a>
 
-        <nav> <!-- 메뉴부분 -->
-            <form action="/search" method="get"> <!-- 검색창 -->
+        <nav> 
+            <form action="/search" method="get"> 
                 <div class="search" style="position: absolute;">
                     <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -87,60 +89,61 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content"style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
-        <div>
+        <div class="hdcan">
             <img src="/img/ois.png">
-            <p>작성글 내용</p>
+            <p class="serd-hdtitle">작성글 내용</p>
             <hr>
         </div>
         <div class="serv_detbox">
             <div>
-                <p>${b.num.name}</p>
-                <p>${b.wdate}</p>
                 <p class="cnttit">${b.title}</p>
+                <div class="writ-dat">
+                    <div><p>작성자 : ${b.num.name}</p></div>
+                    <div><p>작성일 : ${b.wdate}</p></div>
+                </div>
+
+
                 <div class="serv-content">
                     ${b.content}
-                <c:if test="${b.img1 != null}">
-                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img1}">
-                </c:if>
-                <c:if test="${b.img2 != null}">
-                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img2}">
-                </c:if>
-                <c:if test="${b.img3 != null}">
-                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img3}">
-                </c:if>
+                    <c:if test="${b.img1 != null}">
+                        <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img1}">
+                    </c:if>
+                    <c:if test="${b.img2 != null}">
+                        <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img2}">
+                    </c:if>
+                    <c:if test="${b.img3 != null}">
+                        <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img3}">
+                    </c:if>
                 </div>
                 <div class="dtilbtn">
                     <c:if test="${sessionScope.id==b.num.mid}">
-                                <a href="/service/edit?wnum=${b.wnum}">수정</a>
-                                <a href="/service/">목록으로</a>
+                        <a href="/service/edit?wnum=${b.wnum}">수정</a>
+                        <a href="/service/">목록으로</a>
                     </c:if>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="댓글을 달아주세요 창">
-        <form action="/service/detail" method="post">
-            <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
-            <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
-            <input type="text" value="${sessionScope.name}" readonly>
-            <input type="text" name="content" placeholder="댓글을 입력해주세요">
-            <input type="submit" value="댓글달기">
-        </form>
-    </div>
-            <div class="달린댓글창" style="margin-left: 15px;" >
+        <div class="cmtchg">
+            <form action="/service/detail" method="post">
+                <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+                <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+                <input type="text" value="${sessionScope.name}" readonly>
+                <input type="text" name="content" placeholder="댓글을 입력해주세요">
+                <input type="submit" value="댓글달기">
+            </form>
+            <div class="달린댓글창" style="margin-left: 15px;">
                 <c:forEach var="c" items="${comments}">
                     <span>${c.num.name}</span>
                     <span>${c.cdate}</span>
                     <span>${c.content}</span>
                     <c:if test="${sessionScope.num == c.num.num}">
-                        <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button"
+                                                                                                  value="삭제"></a></span>
                     </c:if>
-
                 </c:forEach>
-
+            </div>
+        </div>
     </div>
-
 </div>
 </body>
 </html>
