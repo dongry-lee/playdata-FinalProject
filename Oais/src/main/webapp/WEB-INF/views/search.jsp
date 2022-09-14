@@ -23,12 +23,9 @@
 
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
-                <div class="search">
-
-                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-
+                <div class="search" style="position: absolute;">
+                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                    <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
             <c:if test="${sessionScope.num == null}">

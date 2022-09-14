@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 
@@ -21,13 +22,18 @@
     ${item02}:
     <progress value="${votecount2}" max="50"></progress>
 </div>
+<c:if test="${item03 != null}">
 <div>
     ${item03}:
     <progress value="${votecount3}" max="50"></progress>
 </div>
+</c:if>
+
+<c:if test="${item04 != null}">
 <div>
     ${item04}:
     <progress value="${votecount4}" max="50"></progress>
 </div>
+</c:if>
 </body>
 </html>

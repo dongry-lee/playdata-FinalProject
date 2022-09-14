@@ -6,9 +6,13 @@
 
 
     <link href="/css/custom.css" rel="stylesheet">
-    <%-- JS  --%>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>오늘의 아이디어스!</title>
 </head>
 
@@ -20,34 +24,37 @@
 
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
-                <div class="search">
 
-                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            <div class="search" style="position: absolute;">
+                <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px     0px 20px 160px;">
+                <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+<%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
+            </div>
 
-                </div>
             </form>
+         <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
             <c:if test="${sessionScope.num == null}">
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
             </c:if>
-            <div class="button-group" style="display: flex; align-content: space-between;">
+         </div>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px; margin-top:5px;">
                 <c:if test="${sessionScope.num != null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px"
-                                             style="width: auto;">마이페이지</button></a>
+
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px" style="width: auto;">마이페이지</button></a>
              </span>
 
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+
+            <a href="/member/logout"><button type="button" class="logout_button" size="10px">로그아웃</button></a>
              </span>
                 </c:if>
             </div>
@@ -98,7 +105,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content">
+    <div id="content"style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="slidebanner-box">
             <!-- Swiper -->
             <div class="banner-container">

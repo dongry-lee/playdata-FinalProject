@@ -2,7 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+* {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,6 +52,7 @@ table {
 }
 
 a {
+    color: #232726;
     text-decoration: none;
 }
 /* 기본 스타일 제거*/
@@ -173,6 +176,7 @@ a {
 
 .hothotbox{
     display: flex;
+    border: 1px solid #dadce0;
 }
 .hedtitle{
     display: flex;
@@ -182,10 +186,11 @@ a {
     width: 700px;
     height: auto;
     display: flex;
-    background-color: #D4FEF0;
-    margin-left: 10px;
+    background-color: #ffffff;
+    margin-left: 0px;
     padding: 10px;
     border-radius: 10px;
+    border: 10px solid #ecfff9
 }
 .hotidea{
     width: max-content;
@@ -300,12 +305,12 @@ nav. serach > icon {
     margin-top: 17px;
     z-index: 1;
 }
+
 .search > input {
     border: 0;
     background-color: #f0f0f0;
 
-    margin: 20px 480px 20px 160px;
-
+    margin: 20px 0px 20px 160px;
     width: 300px;
     height: 1px;
     border-radius: 8px;
@@ -313,7 +318,15 @@ nav. serach > icon {
     font-size: 13px;
 
 }
-
+.search .button {
+    position : absolute;
+    width: 17px;
+    top: 32px;
+    right: 815px;
+    margin: 0;
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free"
+}
 nav >  button  {
     line-height: 35px;
     color:black;
@@ -329,6 +342,9 @@ nav >  button  {
     margin-top: 20px;
     width: 60px;
 }
+.button-group {
+
+}
 .login_button {
     color: black;
     margin-top: 5px;
@@ -336,8 +352,7 @@ nav >  button  {
     font-size: 11px;
     line-height: 16px;
     font-style: normal;
-    font-family: Inter;
-    font-weight: bold;
+    /*font-weight: bold;*/
     width: auto;
     padding: 10px;
 
@@ -352,7 +367,7 @@ nav >  button  {
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     width: 137px;
     padding: 10px;
 }
@@ -364,7 +379,19 @@ nav >  button  {
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
+    width: 75px;
+    padding: 10px;
+}
+.logout_button {
+    color: black;
+    margin-top: 5px;
+    border:0px; border-radius:12px; background-color: #D4FEF0;
+    font-size: 11px;
+    line-height: 16px;
+    font-style: normal;
+    /*font-family: Inter;*/
+    /*font-weight: bold;*/
     width: 75px;
     padding: 10px;
 }
