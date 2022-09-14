@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 
     <title>아이디어게시판 글수정</title>
 </head>
@@ -15,16 +16,17 @@
 <!-- Header -->
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1 class=""></h1></a>
+        <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <form action="/search" method="get"> <!-- 검색창 -->
-                <div class="search">
-                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
-                </div>
-            </form>
-            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
+<%--            <div class="search"> <!-- 검색창 -->--%>
+                <form action="/search" method="get"> <!-- 검색창 -->
+                    <div class="search" style="position: absolute;">
+                        <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px     0px 20px 160px;">
+                        <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
+                    </div>
+                </form>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
@@ -33,7 +35,6 @@
             <a href="/member/mypage"><button type="button" class="login_button" size="10px"
                                              style="width: 75px;">마이페이지</button></a>
              </span>
-
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button type="button" class="login_button" size="10px" style="width: 64px;">로그아웃</button></a>
              </span>
@@ -56,10 +57,10 @@
             <li class="sidbtn"><a href="/vote" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/community/" class="item">
+            <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/" class="item">
+            <li class="sidbtn"><a href="#" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>

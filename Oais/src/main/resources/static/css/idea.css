@@ -6,7 +6,14 @@
 /*    --container-width: 1140px;*/
 /*    grid-template-columns: minmax(36px, 1fr) min(calc(100% - 72px), var(--container-width)) minmax(0px, calc(1140px - var(--container-width) )) minmax(36px, 1fr);*/
 /*}*/
+* {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 
+}
+.wrapper .content {
+background-color: #f8f9fa;
+
+}
 
 .fg-head > h2{
     font-size: 18px;
@@ -31,7 +38,8 @@
     margin-left: 10px;
     padding: 15px 30px;
     border-radius: 15px;
-    background-color: #d4fef0;
+    border:1px solid #dadce0;
+    background-color: #ECFFF9;
 
     /*position: relative;*/
     /*width: 100%;*/
@@ -67,24 +75,47 @@
 .idea-box{
     display: flex;
     width: 1200px;
-    height: auto;
+    height: 290px;
     border-radius: 20px;
     background-color: #ffffff;
+    border: 1px solid #dadce0;
+    color: #232726;
+}
+.title-img > title {
+    font-size: 20px;
+    margin-top:3px;
+    width: 611px;
+    height: 28px;
+    left: 240px;
+    top: 143px;
+    margin-left: 5px;
+    margin-top:10px;"
 }
 .idea-img > img {
     width: 300px;
     height: 200px;
     border-radius: 10px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.25));
+    border-radius: 23px;
 }
 
 .idea-info{
-    width: 300px;
+    /*width: 300px;*/
+    width: 480px;
     height: 230px;
-    padding: 20px;
+    padding: 10px;
+    margin-left: 25px;
 }
 
 .idea-content{
-    padding: 20px;
+    padding: 0px;
+    /*원래 0 */
+}
+
+.bottom-line {
+    border-width: 0;
+    border-top: 1px solid #dadce0;
 }
 .idea-img{
     width: 300px;
