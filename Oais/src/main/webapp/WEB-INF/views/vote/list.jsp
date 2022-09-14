@@ -73,10 +73,10 @@
             <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/list" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -87,7 +87,7 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content"style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
-        <div class="fg-head">
+        <div class="fg-head" style="font-size: 18px">
             <p>진행중인 아이디어 투표</p>
             <c:if test="${sessionScope.num != null}">
             <a class="addvote" href="/voteboard/write">게시글 작성</a>
