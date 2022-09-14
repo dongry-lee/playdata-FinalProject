@@ -37,7 +37,7 @@
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
             </c:if>
          </div>
@@ -47,13 +47,12 @@
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
 
-                <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px" style="width: auto;">마이페이지</button></a>
+                <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+            <a href="/member/mypage"><button class="mypg_button"><i class="fa-thin fa-user"></i></button>
+            </a>
              </span>
-
                 <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
-
-            <a href="/member/logout"><button type="button" class="logout_button" size="10px">로그아웃</button></a>
+            <a href="/member/logout"><button class="logout_button"><i class="fa-light fa-arrow-right-from-bracket"></i></button></a>
              </span>
                 </c:if>
             </div>
@@ -124,7 +123,7 @@
 
             <%-- real Content--%>
             <div class="hedtitle">
-                <p class="hottitle" style="margin-right: 580px">Hot 아이디어 🔥</p>
+                <p class="hottitle" style="margin-right: 580px">Cool 아이디어☄️</p>
                 <p class="hottitle">Hot 투표🗳️</p>
             </div>
             <div class="hothotbox">
