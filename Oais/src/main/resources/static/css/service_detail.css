@@ -1,0 +1,20 @@
+.hdcan {
+    margin: 10px;
+}
+
+.serd-hdtitle {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
+.cnttit {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.writ-dat {
+    display: flex
+}
+
