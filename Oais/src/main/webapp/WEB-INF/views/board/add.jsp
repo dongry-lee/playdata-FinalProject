@@ -1,32 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-
     <meta charset="UTF-8">
-    <title>자유게시판 글작성</title>
-    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
-
+<title>자유게시판 글작성</title>
 </head>
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="/"><h1 class=""></h1></a>
+        <a href="https://www.naver.com"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
+            <div class="search"> <!-- 검색창 -->
 
-                <form action="/search" method="get"> <!-- 검색창 -->
-                    <div class="search" style="position: absolute;">
-                        <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                        <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </form>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
+                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
+                <input type="text" placeholder="공모/투표/게시판 찾아보기" style=" margin: 20px 480px 20px 160px;">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            </div>
+            <div class="button-group" style="display: flex; align-content: space-between; padding-top: 20px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
@@ -53,13 +46,13 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/voteboard/list" class="item">
+            <li class="sidbtn"><a href="/vote" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/community/" class="item">
+            <li class="sidbtn"><a href="/board/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/" class="item">
+            <li class="sidbtn"><a href="#" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -76,7 +69,7 @@
             <%--            <div class="idea-box">--%>
             <%--                <div class="write-form">--%>
             <%--                <div class="write-info">--%>
-            <form class="addef" action="/community/add" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
+            <form class="addef" action="/idea/add" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
                 <%--                        <table border="1" style="width: 921px;height: 112px; padding: 20px; background-color: #d4fef0; border-radius: 15px; margin-top: 15px;margin-left: 20px;">--%>
                 <div class="vethead" style="display: flex;">
                     <div class="write-info" style="width: 870px;">
@@ -93,9 +86,11 @@
                         <th style="display: none"><!--여기안보이게--></th>
                         <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
                         <textarea class="titlecntarea" name="content" type="text" placeholder="내용을 입력해 주세요."
-                                  style="font-size:15px; border:0; width:465px; margin-bottom:30px; padding: 50px; height:100px; "></textarea><br>
+                                  style="font-size:15px; border:0; width:339px; margin-bottom:20px; padding: 30px; height:88px; "></textarea><br>
                         <%--                                <th>content</th>--%>
                         <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
+                        <th>마감일자</th>
+                        <td><input type="date" name="ddate"></td>
                     </div>
                     <div class="addimg" style="padding:40px;">
                         <span class="v-title" style=" font-size: 17px; padding: 10px 0px 0px 30px;">이미지 첨부📁</span><br/>
@@ -110,12 +105,19 @@
                     </div>
 
                 </div>
+                <div class="hashcode">
+                    <div class="write-info" style="width: 647px; height: 49px;">
+                        <th>  hash</th>
+                        <td><input type="text" name="hash" style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px "></td>
+                    </div>
+                </div>
                 <div class="addbtn-box">
+                    <%--                                <a href="/idea/"><button type="button" class="cancel_button" size="10px" style="width: auto;">취소</button></a>--%>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
                                 <a href=""><input type="submit" class="write_button" size="10px"></a>
                                 </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                                <a href="/community/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
+                                <a href="/idea/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
                                  </span>
 
                     <%--                            <tr>--%>
@@ -124,7 +126,7 @@
                 </div>
 
             </form>
-        </div
+        </div>
     </div>
 </div>
 </div>
@@ -136,55 +138,64 @@
 
 
 
+<%--        <div id="content">--%>
+<%--            &lt;%&ndash;  real content  &ndash;%&gt;--%>
+
+
+<%--                <h3>글작성 폼</h3>--%>
+<%--                <form action="/board/add" method="post" enctype="multipart/form-data">--%>
+
+<%--                    <table border="1">--%>
+<%--                        <tr><th>writer</th><td><input type="text" name="writer" value="${sessionScope.id }"readonly></td></tr>--%>
+<%--                        <tr><th>title</th><td><input type="text" name="title"></td></tr>--%>
+<%--                        <tr><th>content</th><td><textarea rows="15" cols="20" name="content"></textarea></td></tr>--%>
+<%--                        <tr><th>hash</th><td><input type="text" name="hash"></td></tr>--%>
+<%--                        <tr><th>img</th><td><input type="file" name="f"></td></tr>--%>
+<%--                        <tr><th>save</th><td><input type="submit" value="작성"><a href="/board/">취소</a></td></tr>--%>
+
+<%--                    </table>--%>
+
+<%--                </form>--%>
+<%--            --%>
+<%--            &lt;%&ndash;  main content   &ndash;%&gt;--%>
+<%--            <div class="main-content">--%>
+<%--                <div class="totalbox">--%>
+<%--                    <div class="hot-idea">--%>
+<%--                        <div class="ideabox"></div>--%>
+
+<%--                    </div>--%>
+<%--                    <div class="hot-vote">--%>
+<%--                        <div class="vote-box"></div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            &lt;%&ndash;  real content end  &ndash;%&gt;--%>
 
 
 
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
+
+<%--<!-- Bootstrap core JavaScript-->--%>
+<%--&lt;%&ndash;<script src="vendor/jquery/jquery.min.js"></script>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>&ndash;%&gt;--%>
+
+<%--&lt;%&ndash;<!-- Core plugin JavaScript-->&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="vendor/jquery-easing/jquery.easing.min.js"></script>&ndash;%&gt;--%>
+
+<%--&lt;%&ndash;<!-- Custom scripts for all pages-->&ndash;%&gt;--%>
 
 
+<%--&lt;%&ndash;<!-- Page level plugins -->&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="vendor/chart.js/Chart.min.js"></script>&ndash;%&gt;--%>
+
+<%--<!-- Page level custom scripts -->--%>
+<%--&lt;%&ndash;<script src="js/demo/chart-area-demo.js"></script>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<script src="js/demo/chart-pie-demo.js"></script>&ndash;%&gt;--%>
+<%--&lt;%&ndash; JS   &ndash;%&gt;--%>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%--&lt;%&ndash;--%>
-<%--  Created by IntelliJ IDEA.--%>
-<%--  User: idong-geun--%>
-<%--  Date: 2022/08/31--%>
-<%--  Time: 2:24 PM--%>
-<%--  To change this template use File | Settings | File Templates.--%>
-<%--&ndash;%&gt;--%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>자유게시판 글작성</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<form action="/community/add" method="post" enctype="multipart/form-data">--%>
-<%--    <table border="1">--%>
-<%--        <tr><th>title</th><td><input type="text" name="title"></td></tr>--%>
-<%--        <tr><th>name</th><td><input type="text" name="name" value="${sessionScope.name}" readonly></td></tr>--%>
-<%--        <tr><th>여기안보이게</th><td><input type="text" name="num" value="${sessionScope.num}" readonly></td></tr>--%>
-<%--        <tr><th>content</th><td><textarea rows="15" cols="20" name="content" ></textarea></td></tr>--%>
-<%--        <tr><th>이미지1</th><td><input name="img1" type="file"></td></tr>--%>
-<%--        <tr><th>이미지2</th><td><input name="img2" type="file"></td></tr>--%>
-<%--        <tr><th>이미지3</th><td><input name="img3" type="file"></td></tr>--%>
-<%--        <tr><th>취소</th><td><a href="/community/">취소</a></td></tr>--%>
-<%--        <tr><th>글작성</th><td><input type="submit" value="글작성"></td></tr>--%>
-
-<%--    </table>--%>
-<%--</form>--%>
 <%--</body>--%>
+
 <%--</html>--%>
