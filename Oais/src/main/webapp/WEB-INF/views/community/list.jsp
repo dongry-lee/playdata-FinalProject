@@ -176,11 +176,13 @@
                                          color: #586672;
                                     line-height: 24px;">게시글 작성일:${b.wdate}</p>
                     </div>
+
 <%--          <c:if test="${sessionScope.num!=null}">--%>
 <%--                        <div class="scrap button">--%>
 <%--                            <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=community'">스크랩</button>--%>
 <%--                        </div>--%>
 <%--                    </c:if>--%>
+
 
 
                 </div>
