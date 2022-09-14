@@ -118,7 +118,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div><br>
                     <hr class="bottom-line">
                     <p style="font-size: 12px;">조회수:${b.views}</p>
                 </div>
@@ -126,7 +126,7 @@
                         <div class="idea-content">
                                         <div class="wrote" style="font-size: 15px;margin-top: 27px;">작성자:${b.num.name}</div><br>
                             <hr class="bottom-line">
-                                        <div class="realcontent" style="border:1px; width: 484px;height: 167px;left: 590px;top: 228px;font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px;line-height: 24px;">${b.content}
+                                        <div class="realcontent" style="border:1px; width: 484px;height: 166px;left: 590px;top: 228px;font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px;line-height: 24px;">${b.content}
                                         </div>
                                          </div>
                         <hr class="bottom-line">
@@ -144,7 +144,7 @@
 
                       </div><!-- 아이디어 박스 끝 -->
                             </div>
-                            <div class="addbtn-box">
+                            <div class="addbtn-box" style="margin-left: 1000px; margin-bottom: 30px;">
                               <c:if test="${sessionScope.id==b.num.mid}">
                                 <span style="padding: 5px; margin-top: 230px; border-radius:100px; border:1px; border-color: #f0f0f0;">
                                 <a href="/community/edit?wnum=${b.wnum}"><button type="submit" class="cancel_button" size="10px">수정</button></a>
@@ -156,15 +156,18 @@
                               </c:if>
                             </div>
                                     <form action="/community/detail" method="post">
-                                        <div class="detail-comment">
-                                            <h2 class="cmt-tt">댓글 작성</h2>
-                                                <input name="num.num" type="text" value="${sessionScope.num}">
-                                                <input name="wnum.wnum" type="text" value="${b.wnum}">
-                                                <input type="text" value="${sessionScope.name}" readonly>
+                                        <div class="detail-comment" style="border: 1px solid #dadce0;
+                                             background-color: #ffffff;
+                                             padding: 10px;
+                                             border-radius: 10px;">
+                                            <h2 class="cmt-tt" style="color: #232726;">댓글 작성</h2>
+                                                <input name="num.num" type="text" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
+                                                <input name="wnum.wnum" type="text" value="${b.wnum}"style="border: 1px solid #dadce0;">
+                                                <input type="text" value="${sessionScope.name}" readonly style="border: 1px solid #dadce0;">
 
                                             <div class="commentBox">
-                                                <textarea id="writeComment" name="comment" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;"></textarea>
-                                                <button class="cmtbt" type="submit">작성</button>
+                                                <textarea id="writeComment" name="comment" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
+                                                <button class="cmtbt" type="submit"style="background-color: #D4FEF0;border: 0;padding: 3px 9px;border-radius: 6px;">작성</button>
 
 <%--                                                <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>
 <%--                                        <input type="text" name="num" value="${sessionScope.num}" readonly--%>
