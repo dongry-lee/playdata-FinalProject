@@ -5,13 +5,13 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
 
-    <bytecodeTargetLevel target="18" />
+
+    <bytecodeTargetLevel target="8" />
+
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-
       <module name="Oais" options="-parameters" />
-
     </option>
 
   </component>
