@@ -164,21 +164,11 @@
                                 </c:if>
                                 <jsp:include
                                         page="/voteboard/count?item01=${hotvotelist.item01}&item02=${hotvotelist.item02}&item03=${hotvotelist.item03}&item04=${hotvotelist.item04}&wnum=${hotvotelist.wnum}"></jsp:include>
-                    <div class="hotvote">
-                        <c:forEach var="hotevotelist" items="${hotVoteListLast}">
-                                <h2>${hotevotelist.title}</h2>
-                                    ${hotevotelist.content}
-                        <div class="vovoto">
-                            <c:if test="${hotevotelist.img1 != null && hotevotelist.img1!=''}">
-                                <img class="hotimg" src="/idea/read_img?fname=${hotevotelist.img1}&wnum=${hotevotelist.wnum}">
-                            </c:if>
-                            <div>
-                                <input type="radio" name="vote">
-                                <span>${hotevotelist.item01}</span>
-                                <progress value="40" max="200"></progress>
                             </div>
                         </div>
                     </c:forEach>
+
+
                 </div>
             </div>
         </div>
