@@ -123,8 +123,9 @@
 
                             <div>
 <%--                                날짜--%>
+                                <span class="v-title">투표 마감일</span>
                                 <input type="date" name="ddate">
-                                <input type="text" name="num" value="${sessionScope.num}">
+                                <input type="hidden" name="num" value="${sessionScope.num}">
 
                             </div>
                             <%--항목추가 기능 / 나중에 살려보아요--%>

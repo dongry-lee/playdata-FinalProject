@@ -8,11 +8,10 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>오늘의 아이디어스!</title>
 </head>
 
@@ -163,33 +162,20 @@
                                     <img class="hotimg"
                                          src="/idea/read_img?fname=${hotvotelist.img1}&wnum=${hotvotelist.wnum}">
                                 </c:if>
-                                    <%--                            <div>--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item01}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                            </div>--%>
-                                    <%--                            <div>--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item02}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                            </div>--%>
-                                    <%--                            <div>--%>
-                                    <%--                                <c:if test="${hotevotelist.item03!=null && hotevotelist.item03!=''}">--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item03}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                                </c:if>--%>
-                                    <%--                            </div>--%>
-                                    <%--                            <div>--%>
-                                    <%--                                <c:if test="${hotevotelist.item04!=null && hotevotelist.item04!=''}">--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item04}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                                </c:if>--%>
-
-                                    <%--                            </div>--%>
                                 <jsp:include
                                         page="/voteboard/count?item01=${hotvotelist.item01}&item02=${hotvotelist.item02}&item03=${hotvotelist.item03}&item04=${hotvotelist.item04}&wnum=${hotvotelist.wnum}"></jsp:include>
+                    <div class="hotvote">
+                        <c:forEach var="hotevotelist" items="${hotVoteListLast}">
+                                <h2>${hotevotelist.title}</h2>
+                                    ${hotevotelist.content}
+                        <div class="vovoto">
+                            <c:if test="${hotevotelist.img1 != null && hotevotelist.img1!=''}">
+                                <img class="hotimg" src="/idea/read_img?fname=${hotevotelist.img1}&wnum=${hotevotelist.wnum}">
+                            </c:if>
+                            <div>
+                                <input type="radio" name="vote">
+                                <span>${hotevotelist.item01}</span>
+                                <progress value="40" max="200"></progress>
                             </div>
                         </div>
                     </c:forEach>
