@@ -1,6 +1,20 @@
+#content{
+    padding: 20px;
+}
+.ser-hdtitle{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+.ser-head{
+    display: flex;
+}
+.ser-addbtn{
+    margin-left: 1000px;
+}
 .rwd-table {
     margin: auto;
-    min-width: 300px;
+    min-width: 1100px;
     max-width: 100%;
     border-collapse: collapse;
 }

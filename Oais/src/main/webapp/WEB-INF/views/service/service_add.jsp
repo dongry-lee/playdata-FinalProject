@@ -87,34 +87,39 @@
         <div>
             <div>
                 <img src="/img/ois.png">
-                <p>문의 글 작성</p>
+                <p class="ser-allheadt">문의 글 작성</p>
                 <hr>
 
             </div>
             <div class="service_content">
                 <form action="/service/add" method="post" enctype="multipart/form-data">
-                <div>
-                    <span class="ser-title">제목</span>
-                    <input class="ser_tex" name="title" type="text">
-                    <span class="ser-title">멤버num(displauy none해주세용)</span>
-                    <input class="ser_tex" name="num" type="text" value="${sessionScope.num}" readonly>
-                    <span class="ser-title">첨부파일1</span>
-                    <input type="file" name="img1">
-                    <span class="ser-title">첨부파일2</span>
-                    <input type="file" name="img2">
-                    <span class="ser-title">첨부파일3</span>
-                    <input type="file" name="img3">
+                    <div>
+                        <div class="ser-ttbox">
+                            <p class="ser-title">제목</p>
+                            <input class="ser_tex" name="title" type="text">
+                            <span class="ser-title" style="display: none">멤버num(displauy none해주세용)</span>
+                            <input class="ser_tex" name="num" type="text" value="${sessionScope.num}"
+                                   style="display: none" readonly>
+                        </div>
+                        <div class="ser-imgbox">
+                            <p class="ser-title">첨부파일</p>
+                            <div class="imglist">
+                                <input type="file" name="img1">
+                                <input type="file" name="img2">
+                                <input type="file" name="img3">
+                            </div>
+                        </div>
+                        <div class="ser-contbox">
+                            <p class="ser-title">문의 내용</p>
+                            <textarea class="ser-area" name="content" placeholder="문의 할 게시판 내용 등을 상세하게 작성해주세요!">
+                            </textarea>
+                        </div>
 
-                    <span class="ser-title">문의 내용</span>
-                    <textarea name="content">
-
-                    </textarea>
-
-                </div>
-                <div class="service_btnbox">
-                    <button>글 작성</button>
-                    <button>취소</button>
-                </div>
+                    </div>
+                    <div class="service_btnbox">
+                        <button class="addser">글 작성</button>
+                        <button class="cancelser">취소</button>
+                    </div>
 
                 </form>
             </div>

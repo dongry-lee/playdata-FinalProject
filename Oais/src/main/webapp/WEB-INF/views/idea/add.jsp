@@ -119,7 +119,7 @@
                                  </div>
                                 </div>
 
-                            </div>
+                           </div>
                             <div class="hashcode">
                                 <div class="write-info" style="width: 647px; height: 49px;">
                                 <th>  hash</th>
@@ -128,6 +128,7 @@
                             </div>
                             <div class="addbtn-box">
                                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+
                                 <a href=""><input type="submit" class="write_button" size="10px"></a>
                                 </span>
                                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">

@@ -1,12 +1,18 @@
 package com.encore.oais.member;
 
 
+import com.encore.oais.allboard.AllBoard;
+import com.encore.oais.comments.Comments;
+import com.encore.oais.scrap.Scrap;
+import com.encore.oais.voteboard.VoteBoard;
+import com.encore.oais.voteboard.votecomment.VoteComment;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity //테이블
@@ -37,4 +43,20 @@ public class Member {
     @Column(columnDefinition = "boolean default false")
     private boolean socialtype; //소셜, 일반회원(false)
 
+
+    @OneToMany(mappedBy = "num", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<AllBoard> allBoards;
+
+
+    @OneToMany(mappedBy = "num", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Comments> comments;
+
+    @OneToMany(mappedBy = "num", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Scrap> scraps;
+
+    @OneToMany(mappedBy = "num", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<VoteBoard> voteBoards;
+
+    @OneToMany(mappedBy = "num", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<VoteComment> voteComments;
 }

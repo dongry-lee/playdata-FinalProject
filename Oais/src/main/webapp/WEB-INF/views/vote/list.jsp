@@ -66,74 +66,97 @@
     <div id="content">
         <div class="fg-head">
             <p>진행중인 아이디어 투표</p>
+            <c:if test="${sessionScope.num != null}">
             <a class="addvote" href="/voteboard/write">게시글 작성</a>
+            </c:if>
         </div>
         <div class="vote-form">
             <c:forEach var="item" items="${itemlist}">
             <div class="vote-box">
                 <div class="vote-info">
-
-                    <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
-                        ${item.wdate}
-                    <div class="vote-content">
-                            ${item.content}
+                    <div class="vote-cntbox">
+                        <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">${item.title}</a></p>
+                        <div class="vote-content">
+                                ${item.content}
+                        </div>
                     </div>
                     <div class="vote-img">
-                        <img src="/img/catanddog.png">
+                        <c:if test="${item.img1 != null}"><%--삽입한 이미지파일1이 null이 아닐때 이미지출력--%>
+                        <img src="/read_img?fname=${item.img1}&wnum=${item.wnum}"><%--삽입한 이미지파일1 출력--%>
+                        </c:if>
                     </div>
                     <div class="vote-option">
                         <div class="option-select">
                             <div>
                                 <form action="/voteboard/resultpro" method="post">
                                     <input type="hidden" name="wnum" value="${item.wnum}">
-                                    <input type="radio" id="vote1" name="item"
-                                           value="${item.item01}"/><label><span></span>${item.item01}</label>
-                                    <input type="radio" id="vote2" name="item"
-                                           value="${item.item02}"/><label><span></span>${item.item02}</label>
+                                    <div class="voteitmrad">
+                                    <input type="radio" id="vote1" name="item" value="${item.item01}"/>
+                                        <label>${item.item01}</label>
+                                    </div>
+                                    <div class="voteitmrad">
+                                    <input type="radio" id="vote2" name="item" value="${item.item02}"/>
+                                        <label>${item.item02}</label>
+                                    </div>
                                     <c:if test="${item.item03!=null && item.item03!=''}">
-                                        <input type="radio" id="vote3" name="item"
-                                               value="${item.item03}"/><label><span></span>${item.item03}</label>
+                                    <div class="voteitmrad">
+                                        <input type="radio" id="vote3" name="item" value="${item.item03}"/>
+                                        <label>${item.item03}</label>
+                                    </div>
                                     </c:if>
                                     <c:if test="${item.item04!=null && item.item04!=''}">
-                                        <input type="radio" id="vote4" name="item"
-                                               value="${item.item04}"/><label><span></span>${item.item04}</label>
+                                    <div class="voteitmrad">
+                                        <input type="radio" id="vote4" name="item" value="${item.item04}"/>
+                                        <label>${item.item04}</label>
+                                    </div>
                                     </c:if>
+
+                                    <%--로그인안했다면 투표 불가능--%>
+                                    <c:if test="${(sessionScope.domtype==false)}">
                                     <button>투표</button>
-                                </form>
-                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>
-                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>
-                                <c:if test="${item.item03!=null && item.item03!=''}">
-                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>
-                                </c:if>
-                                <c:if test="${item.item04!=null && item.item04!=''}">
-                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>
-                                </c:if>
-                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>
-
-                                <form>
-                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
-                                    <input name="wnum" type="hidden" value="${item.wnum}">
-                                    <c:if test="${(sessionScope.id==item.num.mid)}">
-                                        <button>수정</button>
                                     </c:if>
-                                   </form>
+                                    <span>투표 마감일 : ${item.wdate}</span>
+                                </form>
 
+                                    <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
 
-                                    <form action="/voteboard/delVoteBoard">
+<%--                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>--%>
+<%--                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>--%>
+<%--                                <c:if test="${item.item03!=null && item.item03!=''}">&lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
+<%--                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>--%>
+<%--                                </c:if>--%>
+<%--                                <c:if test="${item.item04!=null && item.item04!=''}">&lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
+<%--                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>--%>
+<%--                                </c:if>--%>
+<%--                                    &lt;%&ndash;총투표수 출력&ndash;%&gt;--%>
+<%--                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>--%>
+
+                                <jsp:include page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>
+
                                     <input name="num.num" type="hidden" value="${sessionScope.num}">
                                     <input name="wnum" type="hidden" value="${item.wnum}">
-                                    <c:if test="${(sessionScope.id==item.num.mid)}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
+                                        <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
+                                    </c:if>
+                                </form>
+                                <form action="/voteboard/delVoteBoard">
+                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                    <input name="wnum" type="hidden" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 삭제버튼을 보여줌--%>
                                         <button>삭제</button>
                                     </c:if>
                                 </form>
+                                    <%--스크랩버튼--%>
+                                <c:if test="${sessionScope.num!=null}">
+                                    <div class="scrap button">
+                                        <button onclick="location.href='/scrap/vote/add?num=${sessionScope.num}&wnum2=${item.wnum}'">스크랩</button>
+                                    </div>
+                                </c:if>
                             </div>
-
                         </div>
-
-
-                    </div>
+                    </div></c:forEach>
                 </div>
-                </c:forEach>
+
             </div>
 </body>
 </html>
