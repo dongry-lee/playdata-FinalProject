@@ -382,4 +382,16 @@ nav >  button  {
     width: 75px;
     padding: 10px;
 }
+.logout_button {
+    color: black;
+    margin-top: 5px;
+    border:0px; border-radius:12px; background-color: #D4FEF0;
+    font-size: 11px;
+    line-height: 16px;
+    font-style: normal;
+    /*font-family: Inter;*/
+    font-weight: bold;
+    width: 75px;
+    padding: 10px;
+}
 /*header*/
