@@ -82,54 +82,64 @@
     <!-- Content -->
     <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판</h2></div>
-        <div class="idea-form"> <!--  idea form vs idea write-from-->
-<%--            <c:if test="${b.img1 != null}">--%>
+
+        <div class="idea-form">
             <div class="idea-box" style="margin-bottom: 20px;">
-                <div class="title-img" style="width: 350px;">
-                  <div class="title" style="font-size: 30px;margin-top:3px; width: 611px;height: 35px;left: 240px;top: 143px;margin-left: 37px;">
-                      <a href="/community/add?wnum=${b.wnum}">${b.title}</a></div>
-                    <c:if test="${b.img1 != null}">
-                    <div class="idea-img" style="width: 300px;
-                                              height: 200px;
-                                              border-radius: 10px;
-                                             padding: 6px;
-                                              margin-left: 30px;
-                                             margin-bottom: 20px;">
-                        <td><img width="300px" height="300px" src="/community/read_img?wnum=${b.wnum}&fname=${b.img1}">
-                        </td>
-                        </c:if>
-                        <c:if test="${b.img2 != null}">
-                        <div class="idea-box">
-                            <div class="idea-img">
-                                <td><img width="300px" height="300px"
-                                         src="/community/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
-                                </c:if>
-                                <c:if test="${b.img3 != null}">
-                                <div class="idea-box">
-                                    <div class="idea-img">
-                                        <td><img width="300px" height="300px"
-                                                 src="/community/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
-                                        </c:if>
-                                        <c:if test="${b.img1 == null}">
-                                            <div>이미지가 없습니다.</div>
-                                        </c:if><br>
-                                        <p style="font-size: 12px;margin-top: 15px;">조회수:${b.views}</p>
-                                    </div>
-                                </div>
+                <div class="title-img" style="width: 350px;margin-left: 30px;">
+                  <div class="title" style="font-size: 20px;margin-top:3px; width: 611px;height: 28px;left: 240px;top: 143px;margin-left: 5px;margin-top:10px;">
+                      <a href="/community/add?wnum=${b.wnum}">🖋️${b.title}</a></div>
+
+                    <div class="section">
+                        <input type="radio" name="slide" id="slide01" checked>
+                        <input type="radio" name="slide" id="slide02">
+                        <input type="radio" name="slide" id="slide03">
+                        <div class="slidewrap">
+                            <ul class="slidelist">
+                                <li>
+                                    <a>
+                                        <label for="slide03" class="left"></label><c:if test="${b.img1 != null}">
+                                        <img width="300px" height="200px" src="/community/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                                        <label for="slide02" class="right"></label></c:if>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <label for="slide01" class="left"></label><c:if test="${b.img2 != null}">
+                                        <img width="300px" height="200px" src="/community/read_img?fname=${b.img2}&wnum=${b.wnum}">
+                                        <label for="slide03" class="right"></label></c:if>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <label for="slide02" class="left"></label><c:if test="${b.img3 != null}">
+                                        <img width="300px" height="200px" src="/community/read_img?fname=${b.img3}&wnum=${b.wnum}"></c:if>
+                                        <label for="slide01" class="right"></label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="bottom-line">
+                    <p style="font-size: 12px;">조회수:${b.views}</p>
+                </div>
                     <div class="idea-info">
                         <div class="idea-content">
-                                        <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div><br>
-                                        <div class="realcontent" style="border:1px; width: 484px;height: 170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px;line-height: 24px;">${b.content}</div>
-                        </div>
+                                        <div class="wrote" style="font-size: 15px;margin-top: 27px;">작성자:${b.num.name}</div><br>
+                            <hr class="bottom-line">
+                                        <div class="realcontent" style="border:1px; width: 484px;height: 167px;left: 590px;top: 228px;font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px;line-height: 24px;">${b.content}
+                                        </div>
+                                         </div>
+                        <hr class="bottom-line">
                                     <p style="
                                         width: 291px;
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
-                                        font-family: 'Inter';
+
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
+                                         color: #586672;
                                         line-height: 24px;">공모 작성일:${b.wdate}</p>
 
                       </div><!-- 아이디어 박스 끝 -->
