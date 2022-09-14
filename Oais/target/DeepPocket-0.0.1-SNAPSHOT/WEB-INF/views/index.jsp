@@ -1,146 +1,196 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
 
 
-    <title>DeePocket</title>
-    <style>
-        *{ font-family: Inter;
+    <link href="/css/custom.css" rel="stylesheet">
+    <%-- JS  --%>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-        }
-
-        /*header*/
-        header {
-            height: 75px;
-            background-color: white;
-            border: 0px solid #253342;
-            box-shadow: 0px 0px 2px 0px black;
-            position: fixed;
-            width: 100%;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-        }
-        h1 {
-            float: left;
-            position: absolute;
-            width: 75px;
-            height: 1px;
-            left: 22px;
-            top: 0px;
-
-            background: url(/img/img.png);
-            background-size: cover;
-            background-position: left;
-            border-radius: 10px;
-            margin: 20px auto 20px auto;
-
-            box-shadow: 0px 0px 0px 0px black;
-            padding: 20px;
-
-        }
-
-
-        nav {
-            list-style: none;
-            display: flex;
-            padding-left: 0;
-            text-decoration: none;
-        }
-        nav. serach > icon {
-            position: absolute;
-            top: 50%;
-            margin-left: 17px;
-            margin-top: 17px;
-            z-index: 1;
-        }
-        .search > input {
-            border: 0;
-            background-color: #f0f0f0;
-
-            margin: 20px 600px 20px 160px;
-
-            width: 300px;
-            height: 1px;
-            border-radius: 8px;
-            padding: 20px 15px;
-            font-size: 13px;
-        }
-        /*nav .menu {float:right;} */
-
-        nav >  button  {
-            line-height: 35px;
-            color:black;
-            padding: 8px 12px;
-            /*display: block;*/
-            /*position: absolute; */
-            list-style: none;
-            border-radius: 100px;
-            font-family: Inter;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 11px;
-            margin-top: 20px;
-            width: 60px;
-        }
-        /* nav .menu .a > button:hover {
-            padding:0 5px;
-            display: block;
-            position: absolute;
-            list-style: none;
-            border-radius: 80px;
-            font-size: 9px;
-            margin-top: 20px;
-            width: 100px;
-        } */
-        .login_button {
-            color: black;
-            margin-top: 5px;
-            border:0px; border-radius:10px; background-color: #D4FEF0; font-family: Inter;font-weight:400;
-            font-size: 11px; line-height: 16px;
-            font-style: normal;
-            width: 70px;
-            padding: 10px;
-
-        }
-    </style>
+    <title>오늘의 아이디어스!</title>
 </head>
+
 <body>
-<header> <!-- 헤더 -->
+<header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1></h1></a>
+
+        <a href="/"><h1></h1></a>
+
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
+            <form action="/search" method="get"> <!-- 검색창 -->
+                <div class="search">
 
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
+                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
+                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+
+                </div>
+            </form>
+            <c:if test="${sessionScope.num == null}">
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
+             </span>
+            </c:if>
+            <div class="button-group" style="display: flex; align-content: space-between;">
+                <c:if test="${sessionScope.num != null}">
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+               <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
+             </span>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/mypage"><button type="button" class="login_button" size="10px"
+                                             style="width: auto;">마이페이지</button></a>
+             </span>
+
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+             </span>
+                </c:if>
             </div>
+            <%--            <c:if test="${sessionScope.num != null}">--%>
+            <%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+            <%--                환영합니다! ${sessionScope.name}님--%>
+            <%--             </span>--%>
+            <%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+            <%--            <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>--%>
+            <%--             </span>--%>
 
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button  type="button" class="login_button" size="10px">로그인</button></a>
-             </span>
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href=""><button  type="button" class="login_button" size="10px">회원가입</button></a>
-             </span>
+            <%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
+            <%--            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>--%>
+            <%--             </span>--%>
+
+            <%--            </c:if>--%>
+
+
         </nav>
-
-
     </div>
 </header>
 
+<!-- Page Wrapper -->
+<div class="wrapper">
+
+    <!-- Sidemenu -->
+    <div class="menu">
+        <ul class="sidemenu">
+            <li class="sidbtn"><a href="/" class="item">
+                <div>홈</div>
+            </a></li>
+            <li class="sidbtn"><a href="/idea/" class="item">
+                <div>아이디어 공모</div>
+            </a></li>
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
+                <div>투표하기</div>
+            </a></li>
+            <li class="sidbtn"><a href="/community/" class="item">
+                <div>자유게시판</div>
+            </a></li>
+            <li class="sidbtn"><a href="/service/" class="item">
+                <div>고객센터</div>
+            </a></li>
+            <br class="hhd">이용약관ㆍ<br/>
+            개인정보처리방침<br/>
+            @2022 Oais
+        </ul>
+    </div>
+    <!-- End of Sidemenu-->
+    <!-- Content -->
+    <div id="content">
+        <div class="slidebanner-box">
+            <!-- Swiper -->
+            <div class="banner-container">
+                <div class="banner">
+                    <div data-index=1></div>
+                    <div data-index=2></div>
+                    <div data-index=3></div>
+                    <div data-index=4></div>
+                </div>
+            </div>
+            <%--            <div class="list-button">--%>
+            <%--                <span class="list-button-item active"></span>--%>
+            <%--                <span class="list-button-item"></span>--%>
+            <%--                <span class="list-button-item"></span>--%>
+            <%--                <span class="list-button-item"></span>--%>
+            <%--            </div>--%>
+
+            <%-- real Content--%>
+            <div class="hedtitle">
+                <p class="hottitle" style="margin-right: 580px">Hot 아이디어 🔥</p>
+                <p class="hottitle">Hot 투표🗳️</p>
+            </div>
+            <div class="hothotbox">
+                <div class="hotidbox">
+                    <c:forEach var="item" items="${hotList}">
+                        <div class="hotidea" onclick="location.href='/idea/detail?wnum=${item.wnum}'">
+                            <c:if test="${item.img1 != null && item.img1!=''}">
+                                <img class="hotimg" src="/idea/read_img?fname=${item.img1}&wnum=${item.wnum}">
+                            </c:if>
+                            <div>
+                                <p href="/idea/detail?wnum=${item.wnum}">${item.title}</p>
+                                <p>아이디어 참여 인원 : ${item.part}</p>
+                                <p>조회수 : ${item.views}</p>
+                                <p>해시태그 : <c:set var="hashtag" value="${fn:split(item.hash,'#')}"/>
+                                    <c:forEach var="hashelement" items="${hashtag}">
+                                        <c:if test="${hashelement != ''}">
+                                            <a href="/search?val=${hashelement}">#${hashelement}</a>
+                                        </c:if>
+                                    </c:forEach>
+
+                                </p>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+
+                <div class="hotvotebox">
+
+                    <c:forEach var="hotvotelist" items="${hotVoteListLast}">
+                        <div class="hotvote">
+                            <h2>${hotvotelist.title}</h2>
+                                ${hotvotelist.content}
+                            <div class="vovoto">
+                                <c:if test="${hotvotelist.img1 != null && hotvotelist.img1!=''}">
+                                    <img class="hotimg"
+                                         src="/idea/read_img?fname=${hotvotelist.img1}&wnum=${hotvotelist.wnum}">
+                                </c:if>
+                                    <%--                            <div>--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item01}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                            </div>--%>
+                                    <%--                            <div>--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item02}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                            </div>--%>
+                                    <%--                            <div>--%>
+                                    <%--                                <c:if test="${hotevotelist.item03!=null && hotevotelist.item03!=''}">--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item03}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                                </c:if>--%>
+                                    <%--                            </div>--%>
+                                    <%--                            <div>--%>
+                                    <%--                                <c:if test="${hotevotelist.item04!=null && hotevotelist.item04!=''}">--%>
+                                    <%--                                <input type="radio" name="vote">--%>
+                                    <%--                                <span>${hotevotelist.item04}</span>--%>
+                                    <%--                                <progress value="20" max="200"></progress>--%>
+                                    <%--                                </c:if>--%>
+
+                                    <%--                            </div>--%>
+                                <jsp:include
+                                        page="/voteboard/count?item01=${hotvotelist.item01}&item02=${hotvotelist.item02}&item03=${hotvotelist.item03}&item04=${hotvotelist.item04}&wnum=${hotvotelist.wnum}"></jsp:include>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
