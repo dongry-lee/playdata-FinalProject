@@ -77,7 +77,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content">
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>아이디어 공모하기</h2>
         </div>
         <div class="idea-writeform">
@@ -119,11 +119,13 @@
                                  </div>
                                 </div>
 
-                           </div>
+
+                            </div>
+
                             <div class="hashcode">
                                 <div class="write-info" style="width: 647px; height: 49px;">
                                 <th>  hash</th>
-                                <td><input type="text" name="hash" style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px "></td>
+                                <td><input type="text" name="hash" laceholder="#으로 태그를 구분해주세요" style="margin-top: 15px; margin-left:10px; width:450px; border: 0; padding:5px "></td>
                                 </div>
                             </div>
                             <div class="addbtn-box">

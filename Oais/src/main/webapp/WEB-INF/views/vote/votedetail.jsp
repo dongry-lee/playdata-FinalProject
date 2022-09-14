@@ -14,6 +14,11 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/vote.css" rel="stylesheet">
     <link href="/css/vote/votedetail.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
         google.charts.load('current', {'packages':['corechart']});
@@ -45,11 +50,9 @@
     <div class="wrapper"> <!--전체 랩 -->
         <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
-            <div class="search"> <!-- 검색창 -->
-
-                <span class="icon"><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i></span>
-                <input type="text" placeholder="공모/투표/게시판 찾아보기">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            <div class="search" style="position: absolute;">
+                <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -89,7 +92,7 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
 
-    <div id="content">
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
             <div class="vote-box">
