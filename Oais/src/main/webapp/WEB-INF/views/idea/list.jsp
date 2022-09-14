@@ -132,8 +132,9 @@
                          style="border:1px; width:484px; height: 167px;left: 590px;top: 228px;;font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}</div>
                 </div>
                 <hr class="bottom-line">
+                <div class="under_context"style="display: flex">
                 <p style="
-                                        width: 291px;
+                                        width: 800px;
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
@@ -143,7 +144,7 @@
                                          color: #586672;
                                     line-height: 24px;">공모 작성일:${b.wdate} 공모 마감일:${b.ddate}</p>
                 <span style="
-                                        width: 290px;
+                                        width: 410px;
                                         height: 30px;
                                          left: 569px;
                                           top: 390px;
@@ -158,11 +159,11 @@
                                 </c:forEach>
                             </p></button></span>
             </div>
-
+            </div>
             <c:if test="${sessionScope.num!=null}">
                 <div class="scrap button">
-                    <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=idea'">스크랩
-                    </button>
+                    <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=idea'"
+                            style="border: 0px; background-color: #ffffff;">⭐</button>
                 </div>
             </c:if>
 
