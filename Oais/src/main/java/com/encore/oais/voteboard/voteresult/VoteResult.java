@@ -1,5 +1,6 @@
 package com.encore.oais.voteboard.voteresult;
 
+import com.encore.oais.member.Member;
 import com.encore.oais.voteboard.VoteBoard;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class VoteResult {
     @ManyToOne
     @JoinColumn(nullable = false)
     public VoteBoard wnum;
+
 
     @Column(nullable = false)
     public String item;

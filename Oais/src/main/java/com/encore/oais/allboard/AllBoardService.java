@@ -43,12 +43,6 @@ public class AllBoardService {
         return dao.save(b);
     }
 
-    public ArrayList<AllBoard> getAllvote() { return dao.findByTypecd(0);}
-    public AllBoard addvote(AllBoard v){
-        v.setTypecd(0);
-        return dao.save(v);
-    }
-
     public AllBoard getByWnum(int wnum){
 
         return dao.findById(wnum).orElse(null);
@@ -58,6 +52,7 @@ public class AllBoardService {
         dao.deleteById(wnum);
     }
 
+
     public ArrayList<AllBoard> getByNum(int m){
         Member member = new Member();
         member.setNum(m);
@@ -66,6 +61,10 @@ public class AllBoardService {
 
     public ArrayList<AllBoard> search(String val){
         return dao.selectVal("%"+val+"%");
+    }
+
+    public ArrayList<AllBoard> searchVote(String val){
+        return dao.selectvoteVal("%"+val+"%");
     }
 //
 //

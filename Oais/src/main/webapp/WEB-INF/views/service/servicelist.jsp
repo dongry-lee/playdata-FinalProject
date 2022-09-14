@@ -86,18 +86,20 @@
   <!-- Content -->
   <div id="content">
     <div>
-        <div>
-            <img src="/img/ois.png">
-            <p>고객센터</p>
-            <hr>
+        <img src="/img/ois.png">
+        <div class="ser-head">
+            <div><p class="ser-hdtitle">고객센터</p></div>
+            <div class="ser-addbtn"><button onclick="location.href='/service/add';">글 작성</button></div>
+
         </div>
-        <div><button onclick="location.href='/service/add';">글 작성</button></div>
+        <hr>
         <div>
             <table class="rwd-table">
                 <tbody>
                 <tr>
                     <th>No.</th>
-                    <th>제목</th>
+                    <th style="width: 500px">제목</th>
+                    <th>작성자</th>
                     <th>작성일</th>
                 </tr>
                 <c:forEach var="service" items="${list}">
@@ -107,6 +109,9 @@
                     </td>
                     <td data-th="Supplier Name">
                         <a href="/service/detail?wnum=${service.wnum}">${service.title}</a>
+                    </td>
+                    <td>
+                        ${service.num.name}
                     </td>
                     <td data-th="Invoice Number">
                         ${service.wdate}
