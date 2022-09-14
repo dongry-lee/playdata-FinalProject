@@ -156,31 +156,6 @@
                                     <img class="hotimg"
                                          src="/idea/read_img?fname=${hotvotelist.img1}&wnum=${hotvotelist.wnum}">
                                 </c:if>
-                                    <%--                            <div>--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item01}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                            </div>--%>
-                                    <%--                            <div>--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item02}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                            </div>--%>
-                                    <%--                            <div>--%>
-                                    <%--                                <c:if test="${hotevotelist.item03!=null && hotevotelist.item03!=''}">--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item03}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                                </c:if>--%>
-                                    <%--                            </div>--%>
-                                    <%--                            <div>--%>
-                                    <%--                                <c:if test="${hotevotelist.item04!=null && hotevotelist.item04!=''}">--%>
-                                    <%--                                <input type="radio" name="vote">--%>
-                                    <%--                                <span>${hotevotelist.item04}</span>--%>
-                                    <%--                                <progress value="20" max="200"></progress>--%>
-                                    <%--                                </c:if>--%>
-
-                                    <%--                            </div>--%>
                                 <jsp:include
                                         page="/voteboard/count?item01=${hotvotelist.item01}&item02=${hotvotelist.item02}&item03=${hotvotelist.item03}&item04=${hotvotelist.item04}&wnum=${hotvotelist.wnum}"></jsp:include>
                             </div>
