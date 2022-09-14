@@ -176,6 +176,7 @@ a {
 
 .hothotbox{
     display: flex;
+    border: 1px solid #dadce0;
 }
 .hedtitle{
     display: flex;
@@ -185,10 +186,11 @@ a {
     width: 700px;
     height: auto;
     display: flex;
-    background-color: #D4FEF0;
-    margin-left: 10px;
+    background-color: #ffffff;
+    margin-left: 0px;
     padding: 10px;
     border-radius: 10px;
+    border: 10px solid #ecfff9
 }
 .hotidea{
     width: max-content;
@@ -350,8 +352,7 @@ nav >  button  {
     font-size: 11px;
     line-height: 16px;
     font-style: normal;
-    font-family: Inter;
-    font-weight: bold;
+    /*font-weight: bold;*/
     width: auto;
     padding: 10px;
 
@@ -366,7 +367,7 @@ nav >  button  {
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     width: 137px;
     padding: 10px;
 }
@@ -378,7 +379,7 @@ nav >  button  {
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     width: 75px;
     padding: 10px;
 }
@@ -390,7 +391,7 @@ nav >  button  {
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     width: 75px;
     padding: 10px;
 }
