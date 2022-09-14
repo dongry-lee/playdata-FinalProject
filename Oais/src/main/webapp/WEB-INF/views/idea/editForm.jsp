@@ -9,6 +9,7 @@
     <link href="/css/idea.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 
     <title>아이디어게시판 글수정</title>
 </head>
@@ -70,7 +71,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content">
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>아이디어 공모하기</h2></div>
         <div class="idea-writeform">
             <form action="/idea/edit" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">
