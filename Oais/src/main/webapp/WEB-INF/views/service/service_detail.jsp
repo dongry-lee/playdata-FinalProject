@@ -12,6 +12,7 @@
     <%-- css --%>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/service.css" rel="stylesheet">
+    <link href="/css/service_detail" rel="stylesheet">
     <title>문의 글 상세페이지</title>
 </head>
 <body>
@@ -84,60 +85,61 @@
     <!-- End of Sidemenu-->
     <!-- Content -->
     <div id="content">
-        <div>
+        <div class="hdcan">
             <img src="/img/ois.png">
-            <p>작성글 내용</p>
+            <p class="serd-hdtitle">작성글 내용</p>
             <hr>
         </div>
         <div class="serv_detbox">
             <div>
-                <p>${b.num.name}</p>
-                <p>${b.wdate}</p>
                 <p class="cnttit">${b.title}</p>
+                <div class="writ-dat">
+                    <div><p>작성자 : ${b.num.name}</p></div>
+                    <div><p>작성일 : ${b.wdate}</p></div>
+                </div>
+
+
                 <div class="serv-content">
                     ${b.content}
-                <c:if test="${b.img1 != null}">
-                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img1}">
-                </c:if>
-                <c:if test="${b.img2 != null}">
-                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img2}">
-                </c:if>
-                <c:if test="${b.img3 != null}">
-                    <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img3}">
-                </c:if>
+                    <c:if test="${b.img1 != null}">
+                        <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img1}">
+                    </c:if>
+                    <c:if test="${b.img2 != null}">
+                        <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img2}">
+                    </c:if>
+                    <c:if test="${b.img3 != null}">
+                        <img width="300px" height="300px" src="/service/read_img?wnum=${b.wnum}&fname=${b.img3}">
+                    </c:if>
                 </div>
                 <div class="dtilbtn">
                     <c:if test="${sessionScope.id==b.num.mid}">
-                                <a href="/service/edit?wnum=${b.wnum}">수정</a>
-                                <a href="/service/">목록으로</a>
+                        <a href="/service/edit?wnum=${b.wnum}">수정</a>
+                        <a href="/service/">목록으로</a>
                     </c:if>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="댓글을 달아주세요 창">
-        <form action="/service/detail" method="post">
-            <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
-            <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
-            <input type="text" value="${sessionScope.name}" readonly>
-            <input type="text" name="content" placeholder="댓글을 입력해주세요">
-            <input type="submit" value="댓글달기">
-        </form>
-    </div>
-            <div class="달린댓글창" style="margin-left: 15px;" >
+        <div class="cmtchg">
+            <form action="/service/detail" method="post">
+                <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+                <input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"><%-- 안보이게 만들어야함 --%>
+                <input type="text" value="${sessionScope.name}" readonly>
+                <input type="text" name="content" placeholder="댓글을 입력해주세요">
+                <input type="submit" value="댓글달기">
+            </form>
+            <div class="달린댓글창" style="margin-left: 15px;">
                 <c:forEach var="c" items="${comments}">
                     <span>${c.num.name}</span>
                     <span>${c.cdate}</span>
                     <span>${c.content}</span>
                     <c:if test="${sessionScope.num == c.num.num}">
-                        <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button"
+                                                                                                  value="삭제"></a></span>
                     </c:if>
-
                 </c:forEach>
-
+            </div>
+        </div>
     </div>
-
 </div>
 </body>
 </html>

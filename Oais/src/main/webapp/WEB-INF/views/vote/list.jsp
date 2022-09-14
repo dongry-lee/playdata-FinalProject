@@ -18,7 +18,7 @@
 
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="https://www.naver.com"><h1></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search">
@@ -50,10 +50,10 @@
             <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/list" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>

@@ -158,7 +158,7 @@
                             <div>
                                 <input type="radio" name="vote">
                                 <span>${hotevotelist.item01}</span>
-                                <progress value="20" max="200"></progress>
+                                <progress value="40" max="200"></progress>
                             </div>
                             <div>
                                 <input type="radio" name="vote">
