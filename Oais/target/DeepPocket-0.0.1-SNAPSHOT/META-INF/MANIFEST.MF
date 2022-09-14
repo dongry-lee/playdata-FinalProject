@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Created-By: IntelliJ IDEA
-Built-By: Playdata
-Build-Jdk: 18.0.2
-Implementation-Title: DeepPocket
-Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: com.encore
-Main-Class: ${start-class}
-

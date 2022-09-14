@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-    <link href="/bootstrap/layout/member/join.css" rel="stylesheet">
+    <link href="/css/join.css" rel="stylesheet">
 
 <title>회원가입</title>
 
@@ -23,12 +23,11 @@
                 if(xhttp.status==200){
                     let resVal = xhttp.responseText;//텍스트 응답
                     let obj = JSON.parse(resVal);//응답 값을 json으로 파싱{flag:true, id:aaa}
-                    let msg = "사용 불가능한 아이디";
+                    let msg = "사용 가능한 아이디";
                     //alert(obj.flag);
                     if(obj.flag){
-                        msg = "사용 가능한 아이디";
-                    }else{
-                        f1.id.value = "";
+                        msg = "사용 불가능한 아이디";
+                        f1.mid.value = "";
                     }
                     let res = document.getElementById("res");
                     res.innerHTML = msg;
@@ -37,7 +36,8 @@
                 }
 
             }
-            let id = f1.id.value;
+            let id = f1.mid.value;
+            console.log(id);
             xhttp.open("GET", "/member/idcheck2?id="+id, true);
             xhttp.send();
         }
@@ -106,11 +106,11 @@
         <form action="/member/join" method="post" type="submit" name="f1">
             <ul>
             <li>
-                <img src=""  alt="로고" class="center-block">
+                <img src="/img/img.png"  alt="로고" class="center-block">
             </li>
             <li>
                 <label><strong>아이디</strong><br>
-                    <input type="text" class="id_b" name="id" id="new_id" minlength=5 maxlength=20 required >
+                    <input type="text" class="id_b" name="mid" id="new_id" minlength=5 maxlength=20 required >
                     <p><spen id= "id_result" >아이디 중복확인</spen></p>
                     <input type="button" value="중복체크" onclick="idcheck()">
                     <span id="res"></span>
@@ -140,12 +140,6 @@
                 <label><strong>전화번호 입력</strong></label><br>
                 <div class="str_phonecan">
                     <input type="text" name="tel" id="phone" required="required">
-                </div>
-            </li>
-            <li>
-                <label><strong>email</strong></label><br>
-                <div class="str_phonecan">
-                    <input type="eamil" name="email" id="email" required="required">
                 </div>
             </li>
 
