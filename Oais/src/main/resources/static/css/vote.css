@@ -39,19 +39,19 @@
 
 .vote-title{
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .fg-head{
     display: flex;
 }
 .fg-head > p {
-    font-size: 30px;
+    font-size: 18px;
     font-weight: bold;
     margin: 20px;
 }
 .vote-info > p {
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .vote-img{

@@ -74,88 +74,91 @@
     <!-- Content -->
     <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>아이디어 공모하기</h2></div>
+
         <div class="idea-form"> <!--  idea form vs idea write-from-->
-            <c:if test="${b.img1 != null}">
-                <div class="idea-box" style="margin-bottom: 20px;">
-                    <div class="title-img" style="width: 350px;">
-                        <div class="title" style="font-size: 30px;width: 611px;height: 35px;left: 240px;top: 143px;margin-left: 37px;margin-top: 3px;">
-                            <a href="/idea/add?wnum=${b.wnum}">${b.title}</a></div>
-                        <div class="idea-img" style="width: 300px;
-                                              height: 200px;
-                                              border-radius: 10px;
-                                             padding: 6px;
-                                              margin-left: 30px;
-                                             margin-bottom: 20px;">
-                        <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img1}"></td>
-                    </c:if>
-                    <c:if test="${b.img2 != null}">
-                        <div class="idea-box">
-                            <div class="idea-img">
-                            <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img2}"></td>
-                    </c:if>
-                    <c:if test="${b.img3 != null}">
-                                <div class="idea-box">
-                                    <div class="idea-img">
-                            <td><img width="300px" height="300px" src="/idea/read_img?wnum=${b.wnum}&fname=${b.img3}"></td>
-                    </c:if>
-                     <c:if test="${b.img1 == null}">
-                                <div>이미지가 없습니다.</div>
-                     </c:if><br>
-                                        <p style="font-size: 12px;margin-top: 15px;">조회수:${b.views}</p>
-                     </div>
-                                </div>
+            <div class="idea-box" style="margin-bottom: 20px;">
+                <div class="title-img" style="width: 350px;margin-left: 30px;">
+                    <div class="title" style="font-size: 20px;margin-top:3px; width: 611px;height: 28px;left: 240px;top: 143px;margin-left: 5px;margin-top:10px;">
+                        <a href="/idea/add?wnum=${b.wnum}">🖋️${b.title}</a></div>
+
+                    <div class="section">
+                        <input type="radio" name="slide" id="slide01" checked>
+                        <input type="radio" name="slide" id="slide02">
+                        <input type="radio" name="slide" id="slide03">
+                        <div class="slidewrap">
+                            <ul class="slidelist">
+                                <li>
+                                    <a>
+                                        <label for="slide03" class="left"></label><c:if test="${b.img1 != null}">
+                                        <img width="300px" height="200px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                                        <label for="slide02" class="right"></label></c:if>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <label for="slide01" class="left"></label><c:if test="${b.img2 != null}">
+                                        <img width="300px" height="200px" src="/idea/read_img?fname=${b.img2}&wnum=${b.wnum}">
+                                        <label for="slide03" class="right"></label></c:if>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <label for="slide02" class="left"></label><c:if test="${b.img3 != null}">
+                                        <img width="300px" height="200px" src="/idea/read_img?fname=${b.img3}&wnum=${b.wnum}"></c:if>
+                                        <label for="slide01" class="right"></label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><br>
+                    <hr class="bottom-line">
+                    <p style="font-size: 12px;">조회수:${b.views}</p>
+                </div>
                      <div class="idea-info">
                        <div class="idea-content">
-                            <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div>
-                            <div class="realcontent" style="border: 1px;
-                            width: 484px;height: 170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px; line-height: 24px;">${b.content}</div>
+                           <div class="wrote" style="font-size: 15px;margin-top: 27px;">작성자:${b.num.name}</div><br>
+                           <hr class="bottom-line">
+                           <div class="realcontent" style="border:1px; width: 484px;height: 166px;left: 590px;top: 228px;font-style: normal;font-weight: 400;font-size: 16px;margin-top:9px;line-height: 24px;">${b.content}
+                           </div>
                        </div>
-                           <p style="
+                         <hr class="bottom-line">
+                         <p style="
                                         width: 291px;
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
-                                        font-family: 'Inter';
+
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
-                                    line-height: 24px;">공모 작성일:${b.wdate} 공모 마감일:${b.ddate}</p>
-                             <span style="
-                                        width: 290px;
-                                        height: 30px;
-                                         left: 569px;
-                                          top: 390px;
-                                         font-family: 'Inter';
-                                        font-style: normal;
-                                         font-weight: 400;
-                                         font-size: 12px;"><button type="submit" class="hashtag" size="10px" style="border-radius:100px; border:1px; border-color:#d9d9d9;">${b.hash}</button></span>
-<%--                             <p>${b.views}</p>--%>
-<%--                             <p>${b.part}</p>--%>
-                </div><!-- 아이디어 박스 끝 -->
+                                         color: #586672;
+                                        line-height: 24px;">공모 작성일:${b.wdate}</p>
+                     </div><!-- 아이디어 박스 끝 -->
                             </div>
-                 <div class="addbtn-box">
+                 <div class="addbtn-box" style="margin-left: 1000px; margin-bottom: 30px;">
                       <c:if test="${sessionScope.id==b.num.mid}">
                             <span style="padding: 5px; margin-top: 230px; border-radius:100px; border:1px; border-color: #f0f0f0;">
                                 <a href="/idea/edit?wnum=${b.wnum}"><button type="submit" class="cancel_button" size="10px" >수정</button></a><!--button type="button"-->
                             </span>
-<%--                          </c:if>--%>
                             <span style="padding: 5px; margin-top: 230px; border-radius:100px;">
                                 <a href="/idea/"><button type="button" class="cancel_button" size="10px">취소</button></a><!--button type="button"-->
                                  </span>
                       </c:if>
                  </div>
                     <form action="/idea/detail" method="post">
-                      <div class="detail-comment">
-                        <h2 class="cmt-tt">댓글 작성</h2>
-
-                             <input name="num.num" type="text" value="${sessionScope.num}">
-                             <input name="wnum.wnum" type="text" value="${b.wnum}">
-                             <input type="text" value="${sessionScope.name}" readonly>
+                      <div class="detail-comment"  style="border: 1px solid #dadce0;
+                                             background-color: #ffffff;
+                                             padding: 10px;
+                                             border-radius: 10px;">
+                        <h2 class="cmt-tt" style="color: #232726;">댓글 작성</h2>
+                          <input name="num.num" type="hidden" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
+                          <input name="wnum.wnum" type="hidden" value="${b.wnum}"style="border: 1px solid #dadce0;">
+                          <input type="text" value="${sessionScope.name}" readonly style="border: 1px solid #dadce0;">
 
                         <div class="commentBox">
                               <textarea id="writeComment" name="comment" maxlength="1000"
-                                placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;"></textarea>
-                              <button class="cmtbt" type="submit">작성</button>
+                                placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
+                              <button class="cmtbt" type="submit"style="background-color: #D4FEF0;border: 0;padding: 3px 9px;border-radius: 6px;">작성</button>
 
                         </div>
                       </div>
