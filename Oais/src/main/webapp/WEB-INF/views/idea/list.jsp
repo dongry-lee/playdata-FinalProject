@@ -89,7 +89,9 @@
     <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
       <div class=" fg-head">
     <h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+        <c:if test="${sessionScope.id != null}">
             <a href="/idea/add"><button type="button" class="login_button" size="10px">글작성</button></a>
+        </c:if>
 </span></h2>
       </div>
 
