@@ -109,10 +109,14 @@
             <!-- Swiper -->
             <div class="banner-container">
                 <div class="banner">
-                    <div data-index=1></div>
-                    <div data-index=2></div>
-                    <div data-index=3></div>
-                    <div data-index=4></div>
+                    <div data-index=1>
+                        <div class="banner-tit">세상의 모든 작은 아이디어를<br>
+                            오아이스에서 나눠보세요</div>
+                        <img class="banerimg" src="/img/img.png">
+                    </div>
+                    <div data-index=2><img style="width: 1367px; height: 300px" src=""></div>
+                    <div data-index=3><img style="width: 1367px; height: 300px" src=""></div>
+                    <div data-index=4><img style="width: 1367px; height: 300px" src=""></div>
                 </div>
             </div>
             <%--            <div class="list-button">--%>
