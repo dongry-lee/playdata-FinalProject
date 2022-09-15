@@ -219,7 +219,12 @@ a {
     padding: 15px 0 15px 0;
 }
 .hotvotebox{
+    display: flex;
     border: 10px solid #ECEDF0;
+}
+.hotvote{
+    margin-right: 20px;
+    padding: 10px;
 }
 
 .vovoto{
@@ -248,7 +253,7 @@ a {
     font-weight: bold;
 }
 .sidbtn:hover{
-    background-color: #d4fef0;
+    background-color: #98cccf;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 

@@ -27,11 +27,13 @@
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">
-                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
-                    <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                    <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
+            <div class="button-group"
+                 style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
                 <c:if test="${sessionScope.num == null}">
                  <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
@@ -41,14 +43,16 @@
              </span>
                 </c:if>
             </div>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
+            <div class="button-group"
+                 style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
                 <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
 
                     <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
-                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i
+                            class="fa-thin fa-user fa-lg"></i></span></button>
             </a>
              </span>
                     <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
@@ -103,6 +107,7 @@
                         <div class="vote-content">
                                 ${item.content}
                         </div>
+                        <span style="font-size: 12px;">투표 마감일 : ${item.wdate}</span>
                     </div>
                     <div class="vote-img">
                         <c:if test="${item.img1 != null}"><%--삽입한 이미지파일1이 null이 아닐때 이미지출력--%>
@@ -134,12 +139,6 @@
                                             <label>${item.item04}</label>
                                         </div>
                                     </c:if>
-
-                                        <%--로그인안했다면 투표 불가능--%>
-                                    <c:if test="${(sessionScope.domtype==false)}">
-                                        <button>투표</button>
-                                    </c:if>
-                                    <span>투표 마감일 : ${item.wdate}</span>
                                 </form>
 
                                     <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
@@ -160,25 +159,33 @@
 
                                 <input name="num.num" type="hidden" value="${sessionScope.num}">
                                 <input name="wnum" type="hidden" value="${item.wnum}">
-                                <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
-                                    <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
-                                </c:if>
-                                </form>
-                                <form action="/voteboard/delVoteBoard">
-                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
-                                    <input name="wnum" type="hidden" value="${item.wnum}">
-                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 삭제버튼을 보여줌--%>
-                                        <button>삭제</button>
+                                <div>
+                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
+                                        <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
                                     </c:if>
-                                </form>
-                                    <%--스크랩버튼--%>
-                                <c:if test="${sessionScope.num!=null}">
-                                    <div class="scrap button">
-                                        <button onclick="location.href='/scrap/vote/add?num=${sessionScope.num}&wnum2=${item.wnum}'">
-                                            스크랩
-                                        </button>
-                                    </div>
-                                </c:if>
+
+                                        <%--로그인안했다면 투표 불가능--%>
+                                    <c:if test="${(sessionScope.domtype==false)}">
+                                        <button>투표</button>
+                                    </c:if>
+                                    </form>
+                                    <form action="/voteboard/delVoteBoard">
+                                        <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                        <input name="wnum" type="hidden" value="${item.wnum}">
+                                        <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 삭제버튼을 보여줌--%>
+                                            <button>삭제</button>
+                                        </c:if>
+                                    </form>
+
+                                        <%--스크랩버튼--%>
+                                    <c:if test="${sessionScope.num!=null}">
+                                        <div class="scrap button">
+                                            <button onclick="location.href='/scrap/vote/add?num=${sessionScope.num}&wnum2=${item.wnum}'">
+                                                스크랩
+                                            </button>
+                                        </div>
+                                    </c:if>
+                                </div>
                             </div>
                         </div>
                     </div>

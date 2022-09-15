@@ -94,7 +94,6 @@
                 <img src="/img/ois.png">
                 <p class="ser-allheadt">문의 글 작성</p>
                 <hr>
-
             </div>
             <div class="service_content">
                 <form action="/service/add" method="post" enctype="multipart/form-data">

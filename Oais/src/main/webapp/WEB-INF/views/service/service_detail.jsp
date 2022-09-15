@@ -13,6 +13,7 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/service.css" rel="stylesheet">
     <link href="/css/service_detail.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
     <title>문의 글 상세페이지</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
         <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
@@ -134,13 +135,18 @@
             </form>
             <div class="달린댓글창" style="margin-left: 15px;">
                 <c:forEach var="c" items="${comments}">
-                    <span>${c.num.name}</span>
-                    <span>${c.cdate}</span>
-                    <span>${c.content}</span>
-                    <c:if test="${sessionScope.num == c.num.num}">
-                <span><a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button"
-                                                                                                  value="삭제"></a></span>
-                    </c:if>
+                    <div>
+                        <span class="tclsname tits">${c.num.name}</span>
+                        <span class="tclsdate tits">${c.cdate}</span>
+                        <span class="tclscnt tits">${c.content}</span>
+                        <c:if test="${sessionScope.num == c.num.num}">
+                            <span>
+                                <a href="/service/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}">
+                                    <input type="button" value="삭제">
+                                </a>
+                            </span>
+                        </c:if>
+                    </div>
                 </c:forEach>
             </div>
         </div>
