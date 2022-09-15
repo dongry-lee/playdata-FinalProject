@@ -88,7 +88,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div>
             <div>
                 <img src="/img/ois.png">
