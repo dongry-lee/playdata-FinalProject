@@ -177,7 +177,7 @@
 
                                             <div class="commentBox">
                                                 <textarea id="writeComment" name="content" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
-                                                <button class="cmtbt" type="submit"style="background-color: #eeeeee;border: 0;padding: 1px 5px;border-radius: 6px;margin-left: 5px;">작성</button>
+                                                <button class="cmtbt" type="submit"style="background-color:#3CA6AD; color:#ffffff; border: 0;padding: 1px 5px;border-radius: 6px;margin-left: 5px;">작성</button>
 
 <%--                                                <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>
 <%--                                        <input type="text" name="num" value="${sessionScope.num}" readonly--%>

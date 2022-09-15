@@ -38,8 +38,6 @@ background-color: #f8f9fa;
     margin-left: 10px;
     padding: 15px 30px;
     border-radius: 15px;
-    /*border:1px solid #dadce0;*/
-    /*background-color: #ECFFF9;*/
 
     /*position: relative;*/
     /*width: 100%;*/
@@ -70,7 +68,7 @@ background-color: #f8f9fa;
     margin-left: 10px;
     padding: 15px 30px;
     border-radius: 15px;
-    background-color: #d4fef0;
+
 }
 .idea-box{
     display: flex;
@@ -125,11 +123,10 @@ background-color: #f8f9fa;
 }
 
 .write-info {
-    width: 870px;
+    width: 550px;
     height: 112px;
-    padding: 10px;
-    background-color: #d4fef0;
-    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid #eeeeee;
     margin-left: 20px;
     margin-top: 15px;
     border-radius: 15px;
@@ -168,10 +165,10 @@ background-color: #f8f9fa;
 /*}*/
 
 .write_button {
-    color: black;
+    color: #ffffff;
     margin-left: 800px;
     margin-top: 5px;
-    border:0px; border-radius:12px; background-color: #D4FEF0;
+    border:0px; border-radius:12px; background-color:#3CA6AD;
     font-size: 11px;
     line-height: 16px;
     font-style: normal;
@@ -181,11 +178,11 @@ background-color: #f8f9fa;
     padding: 7px;
 }
 .cancel_button {
-    color: black;
+    color: #ffffff;
     margin-top: 5px;
     border: 0px;
     border-radius: 12px;
-    background-color: #D4FEF0;
+    background-color:#3CA6AD;
     font-size: 11px;
     line-height: 16px;
     font-style: normal;
