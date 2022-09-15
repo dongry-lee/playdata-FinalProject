@@ -132,11 +132,11 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 ### check in & check out
 
 |날짜||이름|Check In|
-|:--:||:------:|:---:|
-||민서|메인 header 만들기, 아이디어게시판 view html|
-||진웅|메인 sidebar 만들기, 투표게시판 view htm|
-||동근|아이디어게시판 기능 개발,member table 다듬기 |
-||진수|투표게시판 기능 개발 시작|
+|:---:||:------:|:---:|
+||민서|메인 header 만들기, 아이디어게시판 view html||
+||진웅|메인 sidebar 만들기, 투표게시판 view htm||
+||동근|아이디어게시판 기능 개발,member table 다듬기||
+||진수|투표게시판 기능 개발 시작||
 
 
 
