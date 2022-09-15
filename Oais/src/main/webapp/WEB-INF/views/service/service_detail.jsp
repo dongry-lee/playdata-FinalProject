@@ -3,7 +3,7 @@
   Created by IntelliJ IDEA.
   User: 27251
   Date: 2022-09-01
-  Time: ?��?�� 11:47
+  Time: 오전 11:47
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,22 +12,22 @@
     <%-- css --%>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/service.css" rel="stylesheet">
+    <link href="/css/service_detail.css" rel="stylesheet">
+    <title>문의 글 상세페이지</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
         <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
         <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
-
-    <link href="/css/service_detail.css" rel="stylesheet">
 
     <title>문의 글 상세 페이지</title>
 </head>
 <body>
 <header>
-    <div class="wrapper"> 
+    <div class="wrapper"> <!--전체 랩 -->
 
         <a href="/"><h1></h1></a>
 
-        <nav> 
-            <form action="/search" method="get"> 
+        <nav>
+            <form action="/search" method="get">
                 <div class="search" style="position: absolute;">
                     <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -98,7 +98,7 @@
             <div>
                 <p class="cnttit">${b.title}</p>
                 <div class="writ-dat">
-                    <div><p>작성자 : ${b.num.name}</p></div>
+                    <div><p class="servptag">작성자 : ${b.num.name}</p></div>
                     <div><p>작성일 : ${b.wdate}</p></div>
                 </div>
 
