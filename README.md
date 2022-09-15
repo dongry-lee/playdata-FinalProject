@@ -138,23 +138,15 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 ||동근|아이디어게시판 기능 개발,member table 다듬기|
 ||진수|투표게시판 기능 개발 시작|
 
+Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅
 
-
-
-8/23<br>
-check in<br>
-Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
-header 만들기, 아이디어게시판 view html - 민서<br>
-sidebar 만들기, 투표게시판 view html - 진웅<br>
-아이디어 게시판 기능 개발 시작 - 동근<br>
-투표게시판 기능 개발 시작 - 진수<br>
-member table 다듬기  - 동근<br>
 <br>
-check out<br>
-회원가입, 탈퇴, 로그인 수정 / 아이디어게시판 홈화면,글작성 백 개발 - 동근<br>
-side menu 완성 / 메인 페이지 slidebanner 수정중 / 투표게시판 view 제작중 - 진웅<br>
-투표항목 DB설계 / 투표기능 백 개발 및 공부 /JSON으로 작업해보기 - 진수<br>
-header menu 제작중 / 검색창 아이콘 삽입 수정/ 아이콘 연결 오류 해결중 - 민서<br>
+|날짜|이름|Check Out|
+|:------:|:---:|:---|
+|8/23|민서|header menu 제작중 / 검색창 아이콘 삽입 수정/ 아이콘 연결 오류 해결중|
+||진웅|side menu 완성 / 메인 페이지 slidebanner 수정중 / 투표게시판 view 제작중 |
+||동근|회원가입, 탈퇴, 로그인 수정 / 아이디어게시판 홈화면,글작성 백 개발|
+||진수|투표항목 DB설계 / 투표기능 백 개발 및 공부 /JSON으로 작업해보기|
 
 
 8/24<br>
