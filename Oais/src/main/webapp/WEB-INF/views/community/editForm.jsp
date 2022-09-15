@@ -36,7 +36,7 @@
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
                 </c:if>
             <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
