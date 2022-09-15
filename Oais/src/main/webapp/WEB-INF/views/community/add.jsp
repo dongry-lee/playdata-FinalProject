@@ -98,11 +98,11 @@
                     </div>
                 </div>
                 <div class="add-content" style="display: flex;">
-                    <div class="write-info" style="width: 400px; padding: 90px;">
+                    <div class="write-info">
                         <th style="display: none"><!--여기안보이게--></th>
                         <td><input type="text" name="num" value="${sessionScope.num}" readonly style="display: none"></td>
                         <textarea class="titlecntarea" name="content" type="text" placeholder="내용을 입력해 주세요."
-                                  style="font-size:15px; border:0; width:465px; margin-bottom:30px; padding: 50px; height:100px; "></textarea><br>
+                                  style="font-size:15px; border:0; width:465px; margin-bottom:30px; padding: 10px; height:130px; "></textarea><br>
                         <%--                                <th>content</th>--%>
                         <%--                                <td><textarea rows="15" cols="20" name="content"></textarea></td>--%>
                     </div>
