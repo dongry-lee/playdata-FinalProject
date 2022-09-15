@@ -110,13 +110,32 @@
             <div class="banner-container">
                 <div class="banner">
                     <div data-index=1>
-                        <div class="banner-tit">세상의 모든 작은 아이디어를<br>
-                            오아이스에서 나눠보세요</div>
-                        <img class="banerimg" src="/img/img.png">
+                        <div class="combine-banner" style="display: flex">
+                        <div class="banner-tit">세상의 모든 아이디어가 모이는 곳,<br>
+                            오아이스</div>
+                        <img class="banerimg" src="img/—Pngtree—splashed blue water splash water_3845982 (2).png">
+                        </div>
                     </div>
-                    <div data-index=2><img style="width: 1367px; height: 300px" src=""></div>
-                    <div data-index=3><img style="width: 1367px; height: 300px" src=""></div>
-                    <div data-index=4><img style="width: 1367px; height: 300px" src=""></div>
+                    <div data-index=2>
+                        <div class="combine-banner2" style="display: flex">
+                            <div class="banner-tit">작고 소중한 아이디어들을 <br> 많은 사람들과 자유롭게 나누어 보세요
+                                </div>
+                            <img class="banerimg2" src="/img/—Pngtree—25d flat blue business office_7451206.png">
+                        </div>
+                    </div>
+                    <div data-index=3>
+                        <div class="combine-banner3" style="display: flex">
+                            <div class="banner-tit">투표하기 페이지에서 <br> 다양한 아이디어 중 <br> 당신의 픽을 투표해주세요
+                            </div>
+                            <img class="banerimg3" src="/img/—Pngtree—vector flat fresh blue business_7508047.jpg">
+                        </div>
+                    </div>
+                    <div data-index=4>
+                        <div class="combine-banner4" style="display: flex">
+                            <div class="banner-tit">마음에 드는 아이디어글을 <br> 스크랩해서 마이페이지에 모아두고 <br> 언제든 다시 찾아보세요
+                            </div>
+                            <img class="banerimg4" src="/img/—Pngtree—oval water droplet round water_3819695.png">
+                        </div>
                 </div>
             </div>
             <%--            <div class="list-button">--%>
