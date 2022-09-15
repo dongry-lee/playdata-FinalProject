@@ -190,7 +190,7 @@ a {
     margin-left: 0px;
     padding: 10px;
     border-radius: 10px;
-    border: 10px solid #ecfff9
+    border: 10px solid #ECEDF0;
 }
 .hotidea{
     width: max-content;
@@ -205,7 +205,7 @@ a {
     border-radius: 10px;
     width: 300px;
     height: 180px;
-    box-shadow: 3px 3px 5px 0.2px #969696;
+    box-shadow: 0.4px 0.2px 0.2px 0.2px #dadce0;
     margin-bottom: 10px;
 }
 
@@ -215,7 +215,7 @@ a {
     padding: 15px 0 15px 0;
 }
 .hotvotebox{
-
+    border: 10px solid #ECEDF0;
 }
 
 .vovoto{
@@ -348,8 +348,20 @@ nav >  button  {
 .login_button {
     color: black;
     margin-top: 5px;
-    border:0px; border-radius:12px; background-color: #D4FEF0;
-    font-size: 11px;
+    border:0px; border-radius:12px; background-color: #ECEDF0;
+    font-size: 14px;
+    line-height: 16px;
+    font-style: normal;
+    /*font-weight: bold;*/
+    width: auto;
+    padding: 10px;
+
+}
+.join_button {
+    color: #FFFFFF;
+    margin-top: 5px;
+    border:0px; border-radius:12px; background-color: #8695DD;
+    font-size: 14px;
     line-height: 16px;
     font-style: normal;
     /*font-weight: bold;*/
@@ -358,41 +370,56 @@ nav >  button  {
 
 }
 .welcome_button {
-    color: black;
-    margin-top: 5px;
+    color: #586672;
+    margin-top: 7px;
     border:0;
-    border-radius:12px;
-    background-color: #D4FEF0;
-    font-size: 11px;
+    border-radius:8px;
+    background-color: #f0f0f0;
+    font-size: 13px;
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
     /*font-weight: bold;*/
     width: 137px;
-    padding: 10px;
+    padding: 9px;
 }
 .mypg_button {
-    color: black;
-    margin-top: 5px;
-    border:0px; border-radius:12px; background-color: #D4FEF0;
-    font-size: 11px;
+    color: #ffffff;
+    margin-top: 25px;
+    border:0px; border-radius:100px; background-color: #ffffff;
+    font-size: 14px;
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
     /*font-weight: bold;*/
-    width: 75px;
-    padding: 10px;
+    width: auto;
+    padding: 2px;
+    font-weight: 900; font-family: "Font Awesome 6 Free"
 }
+.fa-lg{
+    font-size: 1.35em;
+    line-height: .05em;
+    vertical-align: -0.075em;
+}
+/*.fa-thin fa-user {*/
+/*    font-weight: 900;*/
+/*    font-family: "Font Awesome 6 Free"*/
+/*}*/
 .logout_button {
-    color: black;
-    margin-top: 5px;
-    border:0px; border-radius:12px; background-color: #D4FEF0;
-    font-size: 11px;
+    color: #98cccf;
+    margin-top: 13px;
+    border:0px; border-radius:11px; background-color: #ffffff;
+    font-size: 24px;
     line-height: 16px;
     font-style: normal;
     /*font-family: Inter;*/
     /*font-weight: bold;*/
-    width: 75px;
-    padding: 10px;
+    width: auto;
+    padding: 1px;
+    font-weight: 800; font-family: "Font Awesome 6 Free"
 }
+/*.fa-light fa-arrow-right-from-bracket {*/
+/*    font-weight: 900; font-family: "Font Awesome 6 Free"*/
+/*}*/
+
 /*header*/
