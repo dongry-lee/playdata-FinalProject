@@ -130,7 +130,7 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
  
 
 ### check in & check out
-
+8/23<br>
 |날짜|이름|Check In|
 |:------:|:---:|:---|
 |8/23|민서|메인 header 만들기, 아이디어게시판 view html|
@@ -158,7 +158,6 @@ Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅
 ||진수|투표게시판 틀 만들기 / 투표기능 제작|
 
 
-8/24<br>
 |날짜|이름|Check Out|
 |:------:|:---:|:---|
 |8/24|민서|header menu 완(백그라운드로고 링크삽입, 버튼 중첩 문제 해결, 헤더길이 수정)/사이드 메뉴바와 합체|
