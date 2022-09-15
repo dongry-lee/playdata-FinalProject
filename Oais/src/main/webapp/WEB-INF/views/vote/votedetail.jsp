@@ -14,14 +14,14 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/vote.css" rel="stylesheet">
     <link href="/css/vote/votedetail.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
-        google.charts.load('current', {'packages':['corechart']});
+        google.charts.load('current', {'packages': ['corechart']});
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
@@ -30,7 +30,7 @@
                 ['number', 'Populartiy'],
                 ['${voteboard.item01}', ${item01result}],
                 ['${voteboard.item02}', ${item02result}],
-                ['${voteboard.item03}',  ${item03result}],
+                ['${voteboard.item03}', ${item03result}],
                 ['${voteboard.item04}', ${item04result}]
             ]);
 
@@ -51,42 +51,36 @@
         <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
-
                 <div class="search" style="position: absolute;">
-                <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
-                <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                    <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
             </form>
-<%--            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
-<%--            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>--%>
-<%--             </span>--%>
-<%--            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
-<%--            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>--%>
-<%--             </span>--%>
             <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
                 <c:if test="${sessionScope.num == null}">
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/join"><button type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
                 </c:if>
-                <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
-                    <c:if test="${sessionScope.num != null}">
-               <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+            </div>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
+                <c:if test="${sessionScope.num != null}">
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
 
-                        <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
                     <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
             </a>
              </span>
-                        <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
              </span>
-                    </c:if>
-                </div>
+                </c:if>
+            </div>
         </nav>
     </div>
 </header>
@@ -105,7 +99,7 @@
             <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
-            <li class="sidbtn"><a href="/board/" class="item">
+            <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
             <li class="sidbtn"><a href="/service/list" class="item">
@@ -123,28 +117,52 @@
         <div class="fg-head"><p>진행중인 아이디어 투표</p></div>
         <div class="vote-form">
             <div class="vote-box">
-                <div class="vote-info">
-                    조회수${voteboard.views} , 등록날짜${voteboard.wdate} ,마감날짜${voteboard.ddate}
-                    <p class="vote-title">${voteboard.title}</p> <%--입력한 글제목--%>
-                    <div class="vote-content">
-                        ${voteboard.content} <%--입력한 글내용--%>
+                <div class="vote-infoo">
+                    <div class="vote-title">${voteboard.title}</div>
+                    <%--입력한 글제목--%>
+                    <div class="vote-img">
+                        <c:if test="${voteboard.img1 != null}"> <%--img1이 null이 아니라면 img1출력--%>
+                            <img src="/read_img?fname=${voteboard.img1}&wnum=${voteboard.wnum}">
+                        </c:if>
+                        <c:if test="${voteboard.img2 != null}"> <%--img2이 null이 아니라면 img2출력--%>
+                            <img src="/read_img?fname=${voteboard.img2}&wnum=${voteboard.wnum}">
+                        </c:if>
+                        <c:if test="${voteboard.img3 != null}"> <%--img3이 null이 아니라면 img3출력--%>
+                            <img src="/read_img?fname=${voteboard.img3}&wnum=${voteboard.wnum}">
+                        </c:if>
+                    </div>
+                    <div class="vot-cnlt">조회수 : ${voteboard.views}</div>
+
+                </div>
+                <div>
+                    <div class="vote-content">${voteboard.content} <%--입력한 글내용--%></div>
+                    <div class="wmdate">
+                        <div class="vot-cnlt">등록일 : ${voteboard.wdate}</div>
+                        <div class="vot-cnlt">마감일 : ${voteboard.ddate}</div>
                     </div>
                 </div>
-                <div class="vote-img">
-                    <c:if test="${voteboard.img1 != null}"> <%--img1이 null이 아니라면 img1출력--%>
-                        <img src="/read_img?fname=${voteboard.img1}&wnum=${voteboard.wnum}">
-                    </c:if>
-                    <c:if test="${voteboard.img2 != null}"> <%--img2이 null이 아니라면 img2출력--%>
-                        <img src="/read_img?fname=${voteboard.img2}&wnum=${voteboard.wnum}">
-                    </c:if>
-                    <c:if test="${voteboard.img3 != null}"> <%--img3이 null이 아니라면 img3출력--%>
-                        <img src="/read_img?fname=${voteboard.img3}&wnum=${voteboard.wnum}">
-                    </c:if>
-                </div>
-
                 <div class="vote-option">
                     <div class="option-select">
                         <div>
+
+                            <%-- 투표수 출력 --%>
+                            <%--                            <jsp:include page="/voteboard/count?item=${voteboard.item01}"></jsp:include>--%>
+                            <%--                            <jsp:include page="/voteboard/count?item=${voteboard.item02}"></jsp:include>--%>
+                            <%--                            <c:if test="${voteboard.item03!=null && voteboard.item03!=''}"> &lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
+                            <%--                                <jsp:include page="/voteboard/count?item=${voteboard.item03}"></jsp:include>--%>
+                            <%--                            </c:if>--%>
+                            <%--                            <c:if test="${voteboard.item04!=null && voteboard.item04!=''}"> &lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
+                            <%--                                <jsp:include page="/voteboard/count?item=${voteboard.item04}"></jsp:include>--%>
+                            <%--                            </c:if>--%>
+                            <%--                            &lt;%&ndash;총 투표수 출력&ndash;%&gt;--%>
+                            <%--                            <jsp:include page="/voteboard/totalcount?wnum=${voteboard.wnum}"></jsp:include>--%>
+
+                            <%--                            <span></span>--%>
+                            <%--                            <input type="radio" id="vote1" name="radio"--%>
+                            <%--                                   value="${voteboard.item01}"/><label><span></span>${voteboard.item01}</label>--%>
+                            <%--                            <input type="radio" id="vote2" name="radio"--%>
+                            <%--                                   value="${voteboard.item02}"/><label><span></span>${voteboard.item02}</label>--%>
+                            <div id="piechart" style="width: 300px; height: 200px;"></div>
                             <form action="/voteboard/resultpro2" method="post">
                                 <input type="hidden" name="wnum.wnum" value="${voteboard.wnum}">
                                 <%--라디오버튼옆 투표항목들 출력--%>
@@ -166,24 +184,6 @@
                                     <button>투표</button>
                                 </c:if>
                             </form>
-                            <%-- 투표수 출력 --%>
-<%--                            <jsp:include page="/voteboard/count?item=${voteboard.item01}"></jsp:include>--%>
-<%--                            <jsp:include page="/voteboard/count?item=${voteboard.item02}"></jsp:include>--%>
-<%--                            <c:if test="${voteboard.item03!=null && voteboard.item03!=''}"> &lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
-<%--                                <jsp:include page="/voteboard/count?item=${voteboard.item03}"></jsp:include>--%>
-<%--                            </c:if>--%>
-<%--                            <c:if test="${voteboard.item04!=null && voteboard.item04!=''}"> &lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
-<%--                                <jsp:include page="/voteboard/count?item=${voteboard.item04}"></jsp:include>--%>
-<%--                            </c:if>--%>
-<%--                            &lt;%&ndash;총 투표수 출력&ndash;%&gt;--%>
-<%--                            <jsp:include page="/voteboard/totalcount?wnum=${voteboard.wnum}"></jsp:include>--%>
-
-                            <%--                            <span></span>--%>
-                            <%--                            <input type="radio" id="vote1" name="radio"--%>
-                            <%--                                   value="${voteboard.item01}"/><label><span></span>${voteboard.item01}</label>--%>
-                            <%--                            <input type="radio" id="vote2" name="radio"--%>
-                            <%--                                   value="${voteboard.item02}"/><label><span></span>${voteboard.item02}</label>--%>
-                            <div id="piechart" style="width: 300px; height: 200px;"></div>
                         </div>
                     </div>
                 </div>
@@ -202,29 +202,27 @@
                     </div>
                 </div>
             </form>
-        </div>
-
-
-    </div>
-    <c:forEach var="comment" items="${votecomment}">
-    <div class="commentlist">
-        <div class="cmtRod">
-            <div>
-                <form action="/voteboard/delcomment">
-                    <input name="num.num" type="hidden" value="${sessionScope.num}">
-                    <input name="cnum" type="hidden" value="${comment.cnum}">
-                    <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
-                    <div class="cmt">
-                        <span class="cmtwriter">${comment.num.mid}</span>  <%--댓글작성한 사용자 아이디출력--%>
-                        <c:if test="${(sessionScope.id==comment.num.mid)}"> <%-- 로그인아이디와 글작성자 아이디 같을시 삭제보이게--%>
-                            <button>삭제</button>
-                        </c:if>
+            <c:forEach var="comment" items="${votecomment}">
+            <div class="commentlist">
+                <div class="cmtRod">
+                    <div>
+                        <form action="/voteboard/delcomment">
+                            <input name="num.num" type="hidden" value="${sessionScope.num}">
+                            <input name="cnum" type="hidden" value="${comment.cnum}">
+                            <input name="wnum" type="hidden" value="${comment.wnum.wnum}">
+                            <div class="cmt">
+                                <span class="cmtwriter">${comment.num.mid}</span> <%--댓글작성한 사용자 아이디출력--%>
+                                <c:if test="${(sessionScope.id==comment.num.mid)}"> <%-- 로그인아이디와 글작성자 아이디 같을시 삭제보이게--%>
+                                    <button>삭제</button>
+                                </c:if>
+                            </div>
+                        </form>
+                        <p>${comment.comment}</p> <%-- 입력한 댓글출력--%>
+                        </c:forEach>
                     </div>
-                </form>
-                <p>${comment.comment}</p> <%-- 입력한 댓글출력--%>
-                </c:forEach>
+                    <hr>
+                </div>
             </div>
-            <hr>
         </div>
     </div>
 </div>

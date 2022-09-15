@@ -176,7 +176,7 @@ a {
 
 .hothotbox{
     display: flex;
-    border: 1px solid #dadce0;
+    /*border: 1px solid #dadce0;*/
 }
 .hedtitle{
     display: flex;
