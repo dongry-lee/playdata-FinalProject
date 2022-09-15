@@ -1,5 +1,13 @@
 package com.encore.oais.member;
 
+import com.encore.oais.allboard.AllBoard;
+import com.encore.oais.allboard.AllBoardService;
+import com.encore.oais.comments.Comments;
+import com.encore.oais.comments.CommentsService;
+import com.encore.oais.scrap.Scrap;
+import com.encore.oais.scrap.ScrapService;
+import com.encore.oais.voteboard.VoteBoard;
+import com.encore.oais.voteboard.VoteBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +29,19 @@ public class MemController {
     @Autowired
     private MemService service;
 
+    @Autowired
+    private AllBoardService a_service;
+
+    @Autowired
+    private CommentsService c_service;
+
+    @Autowired
+    private ScrapService s_service;
+
+    @Autowired
+    private VoteBoardService v_service;
+
+
     @GetMapping("/login")
     public String loginForm(){
         return "member/loginForm";
@@ -38,6 +59,7 @@ public class MemController {
             if (m.getPwd().equals(pwd)) {
                 session.setAttribute("id", id);
                 session.setAttribute("name", m.getName());
+                session.setAttribute("num", m.getNum());
                 session.setAttribute("domtype", m.isDomtype());
                 path = "redirect:/";
             } else {
@@ -65,14 +87,7 @@ public class MemController {
         return "redirect:/";
     }
 
-//    @GetMapping("/detail")
-//    public String detail(HttpSession session, Model mm){
-//        String id = (String) session.getAttribute("id");
-//        ArrayList<Member> list = service.getMember(id);
-//        Member m = list.get(0);
-//        mm.addAttribute("m", m);
-//        return "member/detail";
-//    }
+
 
     @GetMapping("/logout")
     public String logout(HttpSession session){
@@ -88,8 +103,8 @@ public class MemController {
 
     @RequestMapping("/out")
     public String out(HttpSession session){
-        String id = (String) session.getAttribute("id");
-        service.delMember(id);
+        int num = (Integer) session.getAttribute("num");
+        service.delMember(num);
         return "redirect:/member/logout";
     }
 
@@ -122,5 +137,40 @@ public class MemController {
     //로그인
     //내정보확인 및 수정
     //로그아웃 / 탈퇴
+
+    @GetMapping("/mypage")
+    public String mypageForm(HttpSession session, Map mm){
+        int num = (int) session.getAttribute("num");
+        Member m = service.getByNum(num);
+        ArrayList<AllBoard> myUploadList = a_service.getByNum(num);
+        ArrayList<VoteBoard> myUploadVoteList = v_service.selectByNum(num);
+        ArrayList<Comments> myPartList = c_service.getByNum(num);
+        ArrayList<Scrap> myScrapList = s_service.getByNum(num);
+        mm.put("m", m);
+        mm.put("myUploadList", myUploadList);
+        mm.put("myPartList", myPartList);
+        mm.put("myScrapList", myScrapList);
+        mm.put("myUploadVoteList", myUploadVoteList);
+        return "member/mypageForm";
+    }
+
+//    @GetMapping("/detail")
+//    public String detail(HttpSession session, Model mm){
+//        String id = (String) session.getAttribute("id");
+//        ArrayList<Member> list = service.getMember(id);
+//        Member m = list.get(0);
+//        mm.addAttribute("m", m);
+//        return "member/detail";
+//    }
+
+    @PostMapping("/mypage")
+    public String edit(HttpSession session, String name){
+        int num = (int) session.getAttribute("num");
+        Member m = service.getByNum(num);
+        m.setName(name);
+        session.setAttribute("name", name);
+        service.editMember(m);
+    return "redirect:/member/mypage";
+    }
 }
 

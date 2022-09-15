@@ -1,0 +1,158 @@
+.voteadd-content{
+    width: 1350px;
+    height: 640px;
+}
+.vote-addform{
+    width: 1280px;
+    height: 530px;
+    margin-left: 10px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 2px solid #d4fef0;
+}
+
+.vote-box{
+    display: flex;
+    width: 1200px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.vote-info{
+    width: 300px;
+    height: 230px;
+    padding: 20px;
+}
+.fg-head > p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px;
+}
+.votetex{
+    margin-right: 10px;
+}
+.vote-content{
+    padding: 20px;
+}
+
+/*spen 제목*/
+.v-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+
+/**/
+
+.votef{
+    position: absolute;
+    background-color: #ffffff;
+    width: inherit;
+    height: inherit;
+    border-radius: 15px;
+}
+/* title */
+.titlebox{
+    border-radius: 15px;
+    /*margin: 20px;*/
+    padding: 20px;
+}
+
+.vottitle{
+    height: 36px;
+    padding: 0px 16px;
+    border-radius: 8px;
+    border: 1px solid #e7e7e7;
+    width: 700px;
+}
+
+.vethead{
+    display: flex;
+}
+/* end - title*/
+
+/* content */
+.add-content{
+    display: flex;
+    border-radius: 15px;
+    /*background-color: #d4fef0;*/
+    width: fit-content;
+    /*padding: 20px;*/
+}
+.contentbox{
+    display: flex;
+    /*background-color: #d4fef0;*/
+    padding: 10px;
+    /*border-radius: 20px;*/
+}
+.addimg{
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+}
+
+.votecntarea{
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    resize: none;
+}
+
+.vote-plus{
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.votelist{
+    margin-right: 10px;
+}
+.voteitem{
+    margin: 10px 0;
+    border: 1px solid #e7e7e7;
+    width: auto;
+    height: 30px;
+}
+.latdate{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e7e7e7;
+}
+textarea:focus{outline: none;} /* outline 테두리 없애기 */
+input:focus {outline: none;} /* outline 테두리 없애기 */
+/* end - content */
+
+/*해시태그*/
+
+.hashcode{
+    /*background-color: #d4fef0;*/
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+}
+
+.tag-item{
+    background-color: #6A8AA6;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 20px;
+}
+#tag-list{
+    display: flex;
+}
+.del-btn > img{
+    width: 10px;
+    height: 10px;
+}
+
+/*end 해시태그*/
+/* submit box */
+.addbox{
+    float: right;
+}
+/* submit box */

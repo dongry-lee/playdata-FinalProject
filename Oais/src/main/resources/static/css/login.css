@@ -1,0 +1,83 @@
+*{
+    margin: auto;
+    padding:0;
+
+}
+
+/* Change the color to your own background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px #d4fef0 inset !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+body{
+    background-color: #eeeeee;
+}
+
+a{
+    text-decoration:none;
+}
+
+.login_form li{
+    list-style: none;
+    display: block;
+
+}
+
+.login_layout{
+
+    border-radius: 12px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width:460px;
+    display: block;
+    /* background-image: url("/img/dadang.jpg"); */
+}
+
+
+.login_form{
+    /* padding: 70px 0; */
+    text-align: center;
+}
+.logbt{
+    border: 0;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    background-color: #8695DD;
+}
+#id, #pw, #repw, #login_bt{
+    margin: 2%;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+
+}
+
+#id, #pw{
+    background-color: #CCD2F0;
+}
+
+.center-block{
+    margin:auto;
+    /* padding: 10%; */
+    width: 52%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 14px;
+}
+
+@media screen and (max-width: 800px){
+    .login_layout{
+        width: auto;
+        height: auto;
+    }
+}

@@ -1,0 +1,92 @@
+/* Style the tab */
+.tabbox{
+    margin: 5px;
+}
+.tab {
+    overflow: hidden;
+    /*border: 1px solid #ccc;*/
+    /*background-color: #f1f1f1;*/
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #d4fef0;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #FFFFFF;
+    border-bottom: 3px solid #000000;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tablinks{
+    width:450px;
+}
+h2{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.myinfo{
+    width: 300px;
+    background-color: #d4fef0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0 20px 20px;
+}
+.infotext{
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+.info-btn{
+    background-color: #98E4B7;
+    border-radius: 10px;
+    border: none;
+    font-size: 11px;
+    padding: 5px;
+}
+input:focus {outline: none;} /* outline 테두리 없애기 */
+
+.upbox{
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+    /*box-shadow: 2px 2px 5px 0px #bbbd;*/
+}
+.mp-uplodimg{
+    width: 290px;
+    height: 230px;
+    border-radius: 20px;
+    box-shadow: 4px 3px 7px 0px #bbbd;
+}
+.mp-upload-hash{
+    background-color: #e7e7e7;
+    display: inline-flex;
+    padding: 10px;
+    border-radius: 20px;
+}
+.uptitle{
+    font-size: 20px;
+}

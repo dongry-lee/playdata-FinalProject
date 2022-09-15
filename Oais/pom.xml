@@ -15,7 +15,7 @@
     <name>DeepPocket</name>
     <description>DeepPocket</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -58,6 +58,11 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
