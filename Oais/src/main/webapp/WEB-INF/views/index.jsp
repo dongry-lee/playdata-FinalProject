@@ -97,10 +97,10 @@
             <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
-            <br class="hhd">이용약관ㆍ<br/>
-            개인정보처리방침<br/>
-            @2022 Oais
         </ul>
+        <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
+            @2022 Oais
+        </div>
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->

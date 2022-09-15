@@ -45,13 +45,13 @@
              </span>
                 </c:if>
             </div>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
                 <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
 
-                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <span style="padding: 3px 13px 13px 13px; margin-top: 0px; border-radius:100px;">
                     <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
             </a>
              </span>
@@ -74,7 +74,7 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote" class="item">
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
             <li class="sidbtn"><a href="/community/" class="item">
@@ -171,12 +171,12 @@
                                              padding: 10px;
                                              border-radius: 10px;">
                                             <h2 class="cmt-tt" style="color: #232726;">댓글 작성</h2>
-                                                <input name="num.num" type="hidden" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
-                                                <input name="wnum.wnum" type="hidden" value="${b.wnum}"style="border: 1px solid #dadce0;">
+                                                <input name="num" type="hidden" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
+                                                <input name="wnum" type="hidden" value="${b.wnum}"style="border: 1px solid #dadce0;">
                                                 <input type="text" value="${sessionScope.name}" readonly style="border: 1px solid #dadce0;">
 
                                             <div class="commentBox">
-                                                <textarea id="writeComment" name="comment" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
+                                                <textarea id="writeComment" name="content" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
                                                 <button class="cmtbt" type="submit"style="background-color: #D4FEF0;border: 0;padding: 3px 9px;border-radius: 6px;">작성</button>
 
 <%--                                                <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>
@@ -191,13 +191,14 @@
                             <div class="idea-box" style="margin-top: 40px;">
                                 <div class="commented" style="margin-left: 15px;">
                                     <c:forEach var="c" items="${comments}">
-                                        <span>${c.num.name}</span>
-                                        <span>${c.cdate}</span>
-                                        <span>${c.content}</span>
-                                        <c:if test="${sessionScope.num == c.num.num}">
-                                            <span><a href="/community/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
-                                        </c:if>
-
+                                        <div>
+                                            <span>${c.num.name}</span>
+                                            <span>${c.cdate}</span>
+                                            <span>${c.content}</span>
+                                            <c:if test="${sessionScope.num == c.num.num}">
+                                                <span><a href="/community/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                                            </c:if>
+                                        </div>
                                     </c:forEach>
                                 </div>
                             </div>

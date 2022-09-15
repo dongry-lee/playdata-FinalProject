@@ -102,7 +102,7 @@
             <li class="sidbtn"><a href="/community/" class="item">
                 <div>자유게시판</div>
             </a></li>
-            <li class="sidbtn"><a href="/service/list" class="item">
+            <li class="sidbtn"><a href="/service/" class="item">
                 <div>고객센터</div>
             </a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
@@ -131,12 +131,15 @@
                             <img src="/read_img?fname=${voteboard.img3}&wnum=${voteboard.wnum}">
                         </c:if>
                     </div>
+                    <hr>
                     <div class="vot-cnlt">조회수 : ${voteboard.views}</div>
 
                 </div>
                 <div>
                     <div class="vote-content">${voteboard.content} <%--입력한 글내용--%></div>
+                    <hr>
                     <div class="wmdate">
+                        <hr>
                         <div class="vot-cnlt">등록일 : ${voteboard.wdate}</div>
                         <div class="vot-cnlt">마감일 : ${voteboard.ddate}</div>
                     </div>
@@ -218,11 +221,11 @@
                             </div>
                         </form>
                         <p>${comment.comment}</p> <%-- 입력한 댓글출력--%>
-                        </c:forEach>
                     </div>
                     <hr>
                 </div>
             </div>
+            </c:forEach>
         </div>
     </div>
 </div>

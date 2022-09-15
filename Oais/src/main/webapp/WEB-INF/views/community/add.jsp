@@ -35,13 +35,13 @@
              </span>
                 </c:if>
             </div>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
                 <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
 
-                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <span style="padding: 3px 13px 13px 13px; margin-top: 0px; border-radius:100px;">
                     <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
             </a>
              </span>
