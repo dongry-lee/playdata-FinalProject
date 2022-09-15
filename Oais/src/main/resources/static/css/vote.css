@@ -40,10 +40,11 @@
 }
 .vot-cnlt{
     font-size: 12px;
+    margin-right: 10px;
 }
 .vote-content{
     /*padding: 20px;*/
-    height: 200px;
+    height: 220px;
     margin-top: 20px;
 }
 .wmdate{
