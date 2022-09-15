@@ -91,8 +91,8 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
-        <div class="fg-head">
+    <div id="content"style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+        <div class="fg-head" style="font-size: 18px">
             <p>진행중인 아이디어 투표</p>
             <c:if test="${sessionScope.num != null}">
                 <a class="addvote" href="/voteboard/write">게시글 작성</a>

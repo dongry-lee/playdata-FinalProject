@@ -16,7 +16,7 @@ input:-webkit-autofill:active {
 }
 
 body{
-    background-color: #F2FFFB;
+    background-color: #eeeeee;
 }
 
 a{
@@ -51,7 +51,7 @@ a{
     outline: 0;
     border: 0;
     color: #fff;
-    background-color: #73cc8e;
+    background-color: #8695DD;
 }
 #id, #pw, #repw, #login_bt{
     margin: 2%;
@@ -63,15 +63,18 @@ a{
 }
 
 #id, #pw{
-    background-color: #D5F5E2;
+    background-color: #CCD2F0;
 }
 
 .center-block{
     margin:auto;
     /* padding: 10%; */
-    width: 60%;
+    width: 52%;
     height: auto;
+    border-radius: 20px;
+    margin-top: 14px;
 }
+
 @media screen and (max-width: 800px){
     .login_layout{
         width: auto;

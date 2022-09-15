@@ -168,6 +168,10 @@ a {
 /* slidebanner */
 
 /* main content */
+.content { *
+    width:1540px;
+
+}
 .totalbox{
     display: flex;
     gap: 24px 64px;

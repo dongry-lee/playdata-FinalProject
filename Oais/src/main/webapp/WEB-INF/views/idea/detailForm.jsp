@@ -21,7 +21,7 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="/"><h1></h1></a>
+        <a href="/"><h1 class=""></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">

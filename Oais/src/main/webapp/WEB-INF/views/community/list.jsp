@@ -39,8 +39,9 @@
                  <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button type="button" class="join_button" size="10px">회원가입</button></a>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
+
              </span>
             </c:if>
             <div class="button-group" style="display: flex; align-content: space-between; margin-left: 130px;margin-top: 5px;position: absolute;">
@@ -87,7 +88,7 @@
     <!-- End of Sidemenu-->
 
     <!-- Content Wrapper -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/community/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
              </span></h2></div>

@@ -33,7 +33,7 @@
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
                 </c:if>
             <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
@@ -81,7 +81,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>아이디어 공모하기</h2></div>
         <div class="idea-writeform">
             <form action="/idea/edit" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">

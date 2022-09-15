@@ -100,7 +100,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="voteadd-content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="voteadd-content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><p>투표 작성하기</p></div>
         <div class="vote-addform">
             <form class="votef" action="/voteboard/writepro" method="post" enctype="multipart/form-data">
