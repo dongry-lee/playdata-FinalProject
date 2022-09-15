@@ -15,6 +15,16 @@
 }
 
 .writ-dat {
-    display: flex
+    display: flex;
+    padding: 10px;
+}
+.servptag{
+    margin-right: 800px;
+}
+.serv-content{
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    width: auto;
+    height: 300px;
 }
 

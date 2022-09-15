@@ -53,6 +53,7 @@
              </span>
                 <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
             <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
+
              </span>
                 </c:if>
             </div>
@@ -151,7 +152,6 @@
                 </div>
 
                 <div class="hotvotebox">
-
                     <c:forEach var="hotvotelist" items="${hotVoteListLast}">
                         <div class="hotvote">
                             <h2>${hotvotelist.title}</h2>
@@ -166,13 +166,10 @@
                             </div>
                         </div>
                     </c:forEach>
-
-
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>

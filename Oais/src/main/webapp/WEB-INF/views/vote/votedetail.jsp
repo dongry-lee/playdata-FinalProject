@@ -192,8 +192,8 @@
                 <div class="detail-comment">
                     <h2 class="cmt-tt">댓글 작성</h2>
 
-                    <input name="num.num" type="text" value="${sessionScope.num}">
-                    <input name="wnum.wnum" type="text" value="${voteboard.wnum}">
+                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                    <input name="wnum.wnum" type="hidden" value="${voteboard.wnum}">
 
                     <div class="commentBox">
                     <textarea id="writeComment" name="comment" maxlength="1000"
