@@ -17,16 +17,15 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="/"><h1 class=""></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
-
                 <form action="/search" method="get"> <!-- 검색창 -->
                     <div class="search" style="position: absolute;">
                         <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
                         <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </form>
-            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
+                <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
                 <c:if test="${sessionScope.num == null}">
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
