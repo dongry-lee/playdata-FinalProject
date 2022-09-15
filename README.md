@@ -314,3 +314,4 @@ check in<br>
 ## 배포
 server - AWS/EC2<br>
 DB - AWS/RDS<br>
+도메인 생성 - GoDaddy
