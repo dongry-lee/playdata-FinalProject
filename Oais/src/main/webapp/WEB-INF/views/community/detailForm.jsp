@@ -27,7 +27,7 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="/"><h1 class=""></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">
@@ -37,16 +37,17 @@
             </form>
             <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
                 <c:if test="${sessionScope.num == null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
                 </c:if>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
+            </div>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
-                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
 
@@ -144,7 +145,7 @@
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
-
+                                        font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;

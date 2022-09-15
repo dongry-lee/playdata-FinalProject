@@ -2,7 +2,8 @@
     /*display: flex;*/
     margin-top: 20px;
     padding: 20px;
-    width: 1200px;
+    width: 1160px;
+    border: 1px solid #e7e7e7;
     height: auto;
     border-radius: 20px;
     background-color: #ffffff;
@@ -10,7 +11,7 @@
 .commentlist{
     margin-top: 20px;
     padding: 20px;
-    width: 1200px;
+    /*width: 1200px;*/
     height: auto;
     border-radius: 20px;
     background-color: #ffffff;
