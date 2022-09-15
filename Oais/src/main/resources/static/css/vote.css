@@ -5,18 +5,18 @@
 
 .vote-form{
     width: auto;
-    height: 660px;
+    /*height: 660px;*/
     margin-left: 10px;
     padding: 15px 30px;
     border-radius: 15px;
-    border:1px solid #dadce0;
-    background-color: #ECFFF9;
+
 }
 
 .vote-box{
     display: flex;
     width: 1200px;
-    height: 250px;
+    height: 290px;
+    margin-bottom: 20px;
     border-radius: 20px;
     background-color: #ffffff;
     border: 1px solid #dadce0;
@@ -29,12 +29,25 @@
     height: 230px;
     padding: 20px;
 }
+.vote-infoo{
+    /*display: flex;*/
+    /*width: 300px;*/
+    height: 230px;
+    padding: 20px;
+}
 .vote-cntbox{
     width: 330px;
 }
+.vot-cnlt{
+    font-size: 12px;
+}
 .vote-content{
     /*padding: 20px;*/
+    height: 200px;
     margin-top: 20px;
+}
+.wmdate{
+    display: flex;
 }
 
 .vote-title{
@@ -69,7 +82,7 @@
     margin: 20px;
     border: 0px;
     border-radius: 12px;
-    background-color: #D4FEF0;
+    background-color: #ECEDF0;
     font-size: 11px;
     font-weight: bold;
     height: max-content;
@@ -77,5 +90,7 @@
 }
 
 .vote-option{
+    margin-top: 20px;
     margin-left: 20px;
+    float: right;
 }

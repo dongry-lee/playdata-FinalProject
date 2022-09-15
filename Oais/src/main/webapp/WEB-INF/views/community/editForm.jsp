@@ -22,25 +22,37 @@
 <!-- Header -->
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="/"><h1 class=""></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">
-                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px     0px 20px 160px;">
+                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
+            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
+                <c:if test="${sessionScope.num == null}">
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
+
+             </span>
+                </c:if>
+            </div>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px"
-                                             >마이페이지</button></a>
+
+                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
+            </a>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="logout_button" size="10px" style="width: 64px;">로그아웃</button></a>
+                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
              </span>
                 </c:if>
             </div>
@@ -74,7 +86,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판</h2></div>
         <div class="idea-writeform">
             <form action="/community/edit" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">

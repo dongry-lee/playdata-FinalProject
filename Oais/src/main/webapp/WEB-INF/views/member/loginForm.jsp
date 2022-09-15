@@ -29,13 +29,10 @@
                 </label>
             </li>
             <li>
-                <button type="submit" class="logbt" id="login_bt" name="login">로그인</button>
+                <button type="submit" class="logbt" id="login_bt" name="login" style="font-size: 15px;">로그인</button>
             </li>
             <li>
-                <a href="/">ID/Password 찾기</a>
                 <a href="/member/join">회원가입</a>
-            </li>
-            <li>
                 <a href="/">메인으로</a>
             </li>
         </ul>

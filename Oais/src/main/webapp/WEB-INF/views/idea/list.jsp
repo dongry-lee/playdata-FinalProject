@@ -32,25 +32,27 @@
                 </div>
             </form>
             <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
-            <c:if test="${sessionScope.num == null}">
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
+                <c:if test="${sessionScope.num == null}">
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
-            </c:if>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
+                </c:if>
+            </div>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px">마이페이지</button></a>
-             </span>
 
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="logout_button" size="10px">로그아웃</button></a>
+                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
+            </a>
+             </span>
+                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
              </span>
                 </c:if>
             </div>
@@ -84,7 +86,7 @@
     </div>
     <!-- End of Sidemenu-->
    <!-- Content Wrapper -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
       <div class=" fg-head">
     <h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/idea/add"><button type="button" class="login_button" size="10px">글작성</button></a>

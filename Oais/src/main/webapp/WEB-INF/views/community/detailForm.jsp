@@ -27,7 +27,7 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-        <a href="/"><h1 class=""></h1></a>
+        <a href="/"><h1></h1></a>
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">
@@ -35,19 +35,29 @@
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
+            <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
+                <c:if test="${sessionScope.num == null}">
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
+             </span>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
+             </span>
+                </c:if>
+            </div>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
-                        <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
-                    </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                     <a href="/member/mypage"><button type="button" class="mypg_button" size="10px"
-                                             >마이페이지</button></a>
-                    </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                    <a href="/member/logout"><button type="button" class="logout_button" size="10px"
-                                             style="width: 64px;">로그아웃</button></a>
-                    </span>
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+               <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
+             </span>
+
+                    <span style="padding: 3px 13px 13px 13px; margin-top: 0px; border-radius:100px;">
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
+            </a>
+             </span>
+                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
+             </span>
                 </c:if>
             </div>
         </nav>
@@ -64,7 +74,7 @@
             <li class="sidbtn"><a href="/idea/" class="item">
                 <div>아이디어 공모</div>
             </a></li>
-            <li class="sidbtn"><a href="/vote" class="item">
+            <li class="sidbtn"><a href="/voteboard/list" class="item">
                 <div>투표하기</div>
             </a></li>
             <li class="sidbtn"><a href="/community/" class="item">
@@ -80,7 +90,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판</h2></div>
 
         <div class="idea-form">
@@ -135,7 +145,7 @@
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
-
+                                        font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
@@ -161,12 +171,12 @@
                                              padding: 10px;
                                              border-radius: 10px;">
                                             <h2 class="cmt-tt" style="color: #232726;">댓글 작성</h2>
-                                                <input name="num.num" type="hidden" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
-                                                <input name="wnum.wnum" type="hidden" value="${b.wnum}"style="border: 1px solid #dadce0;">
+                                                <input name="num" type="hidden" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
+                                                <input name="wnum" type="hidden" value="${b.wnum}"style="border: 1px solid #dadce0;">
                                                 <input type="text" value="${sessionScope.name}" readonly style="border: 1px solid #dadce0;">
 
                                             <div class="commentBox">
-                                                <textarea id="writeComment" name="comment" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
+                                                <textarea id="writeComment" name="content" maxlength="1000" placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
                                                 <button class="cmtbt" type="submit"style="background-color: #D4FEF0;border: 0;padding: 3px 9px;border-radius: 6px;">작성</button>
 
 <%--                                                <input type="text" name="wnum" value="${b.wnum}" readonly style="display: none">&lt;%&ndash; 안보이게 만들어야함 &ndash;%&gt;--%>
@@ -181,13 +191,14 @@
                             <div class="idea-box" style="margin-top: 40px;">
                                 <div class="commented" style="margin-left: 15px;">
                                     <c:forEach var="c" items="${comments}">
-                                        <span>${c.num.name}</span>
-                                        <span>${c.cdate}</span>
-                                        <span>${c.content}</span>
-                                        <c:if test="${sessionScope.num == c.num.num}">
-                                            <span><a href="/community/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
-                                        </c:if>
-
+                                        <div>
+                                            <span>${c.num.name}</span>
+                                            <span>${c.cdate}</span>
+                                            <span>${c.content}</span>
+                                            <c:if test="${sessionScope.num == c.num.num}">
+                                                <span><a href="/community/comment/delete?cnum=${c.cnum}&wnum=${c.wnum.wnum}"><input type="button" value="삭제"></a></span>
+                                            </c:if>
+                                        </div>
                                     </c:forEach>
                                 </div>
                             </div>

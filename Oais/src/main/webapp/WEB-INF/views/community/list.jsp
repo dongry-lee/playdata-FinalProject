@@ -30,29 +30,32 @@
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
                 <div class="search" style="position: absolute;">
-                      <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                      <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                    <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
             <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
-             <c:if test="${sessionScope.num == null}">
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
+                <c:if test="${sessionScope.num == null}">
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
+            <a href="/member/join"><button  type="button" class="join_button" size="10px">회원가입</button></a>
+
              </span>
             </c:if>
             <div class="button-group" style="display: flex; align-content: space-between; margin-left: 130px;margin-top: 5px;position: absolute;">
                 <c:if test="${sessionScope.num != null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px" >마이페이지</button></a>
+
+                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
+            </a>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="logout_button" size="10px">로그아웃</button></a>
+                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
              </span>
                 </c:if>
             </div>
@@ -76,7 +79,7 @@
             <li class="sidbtn"><a href="/" class="item"><div>홈</div></a></li>
             <li class="sidbtn"><a href="/idea/" class="item"><div>아이디어 공모</div></a></li>
             <li class="sidbtn"><a href="/voteboard/list" class="item"><div>투표하기</div></a></li>
-            <li class="sidbtn"><a href="/board/" class="item"><div>자유게시판</div></a></li>
+            <li class="sidbtn"><a href="/community/" class="item"><div>자유게시판</div></a></li>
             <li class="sidbtn"><a href="/service/" class="item"><div>고객센터</div></a></li>
             <div class="hhd">이용약관ㆍ개인정보처리방침<br/>
                 @2022 Oais</div>
@@ -85,7 +88,7 @@
     <!-- End of Sidemenu-->
 
     <!-- Content Wrapper -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/community/add"><button  type="button" class="login_button" size="10px">글작성</button></a>
              </span></h2></div>
