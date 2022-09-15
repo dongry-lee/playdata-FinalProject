@@ -23,6 +23,20 @@
 - IDE: IntelliJ
 - html,css,js
 
+## 배포
+server - AWS/EC2<br>
+DB - AWS/RDS<br>
+도메인 생성 - GoDaddy
+
+## git branch 전략
+git-flow<br>
+- main
+- develop
+- minseomia
+- JS
+- jinwoong
+- dongry
+
 ## 웹 기획
 https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 <img width="552" alt="1 메인화면" src="https://user-images.githubusercontent.com/110527157/186382235-b9b29651-c78a-46f6-bd38-4e96b495aa0b.png">
@@ -311,7 +325,3 @@ check in<br>
 - 진웅: <br>
 
 
-## 배포
-server - AWS/EC2<br>
-DB - AWS/RDS<br>
-도메인 생성 - GoDaddy
