@@ -131,6 +131,15 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 
 ### check in & check out
 
+|이름|체크인 내용|
+|:------:|:---:|
+|민서||header 만들기, 아이디어게시판 view html|
+|테스트1|테스트2|테스트3|
+|테스트1|테스트2|테스트3|
+
+
+
+
 8/23<br>
 check in<br>
 Erd 게시판부분 다시 만들기 - 민서,동근,진수,진웅<br>
