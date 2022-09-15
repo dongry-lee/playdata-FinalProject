@@ -432,3 +432,12 @@ nav >  button  {
 /*}*/
 
 /*header*/
+/*배너 설명*/
+.banner-tit{
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.banerimg{
+
+}
