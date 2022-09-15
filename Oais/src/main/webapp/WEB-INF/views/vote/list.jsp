@@ -139,7 +139,6 @@
                                             <label>${item.item04}</label>
                                         </div>
                                     </c:if>
-                                </form>
 
                                     <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
 
@@ -157,19 +156,20 @@
                                 <jsp:include
                                         page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>
 
-                                <input name="num.num" type="hidden" value="${sessionScope.num}">
-                                <input name="wnum" type="hidden" value="${item.wnum}">
-                                <div>
-                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
-                                        <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
-                                    </c:if>
 
                                         <%--로그인안했다면 투표 불가능--%>
                                     <c:if test="${(sessionScope.domtype==false)}">
                                         <button>투표</button>
                                     </c:if>
                                     </form>
-                                    <form action="/voteboard/delVoteBoard">
+
+                                <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                <input name="wnum" type="hidden" value="${item.wnum}">
+                                <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
+                                    <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
+                                </c:if>
+
+                                <form action="/voteboard/delVoteBoard">
                                         <input name="num.num" type="hidden" value="${sessionScope.num}">
                                         <input name="wnum" type="hidden" value="${item.wnum}">
                                         <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 삭제버튼을 보여줌--%>
@@ -195,3 +195,4 @@
             </c:forEach>
 </body>
 </html>
+
