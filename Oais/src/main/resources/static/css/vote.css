@@ -1,10 +1,16 @@
+* {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+
+}
+
 .vote-form{
     width: auto;
     height: 660px;
     margin-left: 10px;
     padding: 15px 30px;
     border-radius: 15px;
-    background-color: #d4fef0;
+    border:1px solid #dadce0;
+    background-color: #ECFFF9;
 }
 
 .vote-box{
@@ -13,6 +19,8 @@
     height: 250px;
     border-radius: 20px;
     background-color: #ffffff;
+    border: 1px solid #dadce0;
+    color: #232726;
 }
 
 .vote-info{

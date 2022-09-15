@@ -9,6 +9,7 @@
     <link href="/css/idea.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 
     <title>아이디어게시판 글수정</title>
 </head>
@@ -26,17 +27,17 @@
                         <%--                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
                     </div>
                 </form>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px"
-                                             style="width: 75px;">마이페이지</button></a>
+            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px"
+                                             >마이페이지</button></a>
              </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px" style="width: 64px;">로그아웃</button></a>
+            <a href="/member/logout"><button type="button" class="logout_button" size="10px" style="width: 64px;">로그아웃</button></a>
              </span>
                 </c:if>
             </div>
@@ -70,7 +71,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content">
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>아이디어 공모하기</h2></div>
         <div class="idea-writeform">
             <form action="/idea/edit" method="post" enctype="multipart/form-data" style="position: absolute; background-color: #ffffff; width: 980px; height: inherit; border-radius: 15px;">

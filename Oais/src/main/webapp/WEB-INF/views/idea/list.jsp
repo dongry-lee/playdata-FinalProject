@@ -15,6 +15,8 @@
     <link href="/css/slide.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 
 </head>
@@ -38,30 +40,20 @@
             <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
             </c:if>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px; position: absolute;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
                 <c:if test="${sessionScope.num != null}">
                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px"
-                                             style="width: auto;">마이페이지</button></a>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px">마이페이지</button></a>
              </span>
 
-                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button type="button" class="logout_button" size="10px">로그아웃</button></a>
              </span>
                 </c:if>
             </div>
-            <%--            <c:if test="${sessionScope.num != null}">--%>
-            <%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
-            <%--                환영합니다! ${sessionScope.name}님--%>
-            <%--             </span>--%>
-            <%--                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">--%>
-            <%--            <a href="/member/logout"><button  type="button" class="login_button" size="10px">로그아웃</button></a>--%>
-            <%--             </span>--%>
-
-<%--            </c:if>--%>
         </nav>
     </div>
 </header>
@@ -91,111 +83,105 @@
         </ul>
     </div>
     <!-- End of Sidemenu-->
-    <!-- Content Wrapper -->
-    <div id="content">
-        <div class="fg-head">
-            <h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+   <!-- Content Wrapper -->
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+      <div class=" fg-head">
+    <h2>진행중인 아이디어 공모 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/idea/add"><button type="button" class="login_button" size="10px">글작성</button></a>
-             </span></h2>
-        </div>
-        <div class="idea-form">
-            <c:forEach var="b" items="${list}">
-            <div class="idea-box" style="margin-bottom: 20px;">
-                <div class="title-img" style="width: 350px;">
-                    <div class="title" style="font-size: 30px;margin-top:3px; width: 611px;height: 35px;left: 240px;top: 143px;margin-left: 37px;">
-                        <a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></div>
-                    <c:if test="${b.img1 != null}">
-                <div class="idea-img" style="width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    padding: 6px;
-    margin-left: 30px;
-    margin-bottom: 20px;">
-                    <img width="300px" height="300px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
-                    </c:if>
-                    <c:if test="${b.img1 == null}">
-                        <div>이미지가 없습니다.</div>
-                    </c:if><br>
-                    <p style="font-size: 12px;margin-top: 15px;">조회수:${b.views}</p>
-                </div>
-                </div>
-                <div class="idea-info">
-                    <div class="idea-content">
-                        <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div>
-                        <div class="realcontent" style="border:1px; width:484px; height: 170px;left: 590px;top: 228px;font-family: 'Inter';font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}</div>
+</span></h2>
+      </div>
+
+<div class="idea-form">
+    <c:forEach var="b" items="${list}">
+        <div class="idea-box" style="margin-bottom: 20px;">
+            <div class="title-img" style="width: 350px;margin-left: 30px;">
+                <div class="title"
+                     style="font-size: 20px;margin-top:3px; width: 611px;height: 28px;left: 240px;top: 143px;margin-left: 5px;margin-top:10px;">
+                    <a href="/idea/detail?wnum=${b.wnum}">🖋️${b.title}</a></div>
+
+                <div class="section">
+                    <input type="radio" name="slide" id="slide01" checked>
+                    <input type="radio" name="slide" id="slide02">
+                    <input type="radio" name="slide" id="slide03">
+                    <div class="slidewrap">
+                        <ul class="slidelist">
+                            <li>
+                                <a>
+                                    <label for="slide03" class="left"></label><c:if test="${b.img1 != null}">
+                                    <img width="300px" height="200px"
+                                         src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
+                                    <label for="slide02" class="right"></label></c:if>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <label for="slide01" class="left"></label><c:if test="${b.img2 != null}">
+                                    <img width="300px" height="200px"
+                                         src="/idea/read_img?fname=${b.img2}&wnum=${b.wnum}">
+                                    <label for="slide03" class="right"></label></c:if>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <label for="slide02" class="left"></label><c:if test="${b.img3 != null}">
+                                    <img width="300px" height="200px"
+                                         src="/idea/read_img?fname=${b.img3}&wnum=${b.wnum}"></c:if>
+                                    <label for="slide01" class="right"></label>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+                <hr class="bottom-line">
+                <p style="font-size: 12px;">조회수:${b.views}</p>
+            </div>
+            <div class="idea-info">
+                <div class="idea-content">
+                    <div class="wrote" style="font-size: 20px;margin-top: 27px;">작성자:${b.num.name}</div>
                     <hr class="bottom-line">
-                    <p style="
-                                        width: 291px;
+                    <div class="realcontent"
+                         style="border:1px; width:484px; height: 167px;left: 590px;top: 228px;;font-style: normal;font-weight: 400;font-size: 16px;line-height: 24px;margin-top:9px;">${b.content}</div>
+                </div>
+                <hr class="bottom-line">
+                <div class="under_context"style="display: flex">
+                <p style="
+                                        width: 800px;
                                         height: 30px;
                                          left: 570px;
                                         top: 360px;
-                                        font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
                                          font-size: 13px;
+                                         color: #586672;
                                     line-height: 24px;">공모 작성일:${b.wdate} 공모 마감일:${b.ddate}</p>
-                        <span style="
-                                        width: 290px;
+                <span style="
+                                        width: 410px;
                                         height: 30px;
                                          left: 569px;
                                           top: 390px;
                                          font-family: 'Inter';
                                         font-style: normal;
                                          font-weight: 400;
-                                         font-size: 12px;"><button type="submit" class="hashtag" size="10px" style="border-radius:100px; border:1px; border-color:#d9d9d9;">
-                            <p><c:set var="hashtag" value="${fn:split(b.hash,'#')}"/>
-                                <c:forEach var="hashelement" items="${hashtag}">
-                                <a href="/search?val=${hashelement}">#${hashelement}</a>
-                                 </c:forEach>
-                            </p></button></span>
-                </div>
-
-                <c:if test="${sessionScope.num!=null}">
-                <div class="scrap button">
-                    <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=idea'">스크랩</button>
-                </div>
-                </c:if>
-            <c:forEach var="b" items="${list}">
-                <div class="idea-box">
-                    <div class="idea-img">
-                        <c:if test="${b.img1 != null}">
-                            <img width="300px" height="300px" src="/idea/read_img?fname=${b.img1}&wnum=${b.wnum}">
-                        </c:if>
-                        <c:if test="${b.img1 == null}">
-                            <div>이미지가 없습니다.</div>
-                        </c:if>
-                    </div>
-                    <div class="idea-info">
-                        <div class="idea-content">
-                            <h2><a href="/idea/detail?wnum=${b.wnum}">${b.title}</a></h2>
-                            <p>${b.num.name}</p>
-                            <p>${b.content}</p>
+                                         font-size: 12px;"><button type="submit" class="hashtag" size="10px"
+                                                                   style="border-radius:100px; border:1px; border-color:#d9d9d9;">
                             <p><c:set var="hashtag" value="${fn:split(b.hash,'#')}"/>
                                 <c:forEach var="hashelement" items="${hashtag}">
                                     <a href="/search?val=${hashelement}">#${hashelement}</a>
                                 </c:forEach>
-                            </p>
-                            <p>${b.wdate}</p>
-                            <p>${b.ddate}</p>
-                            <p>${b.views}</p>
-                            <p>${b.part}</p>
-                        </div>
-                    </div>
-                    <c:if test="${sessionScope.num!=null}">
-                        <div class="scrap button">
-                            <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=idea'">
-                                스크랩
-                            </button>
-                        </div>
-                    </c:if>
-
+                            </p></button></span>
+            </div>
+            </div>
+            <c:if test="${sessionScope.num!=null}">
+                <div class="scrap button">
+                    <button onclick="location.href='/scrap/add?num=${sessionScope.num}&wnum=${b.wnum}&page=idea'"
+                            style="border: 0px; background-color: #ffffff;">⭐</button>
                 </div>
-
-                </c:forEach>
-            </c:forEach>
+            </c:if>
         </div>
-    </div>
+
+    </c:forEach>
+</div>
+</div>
 </div>
 </body>
 </html>

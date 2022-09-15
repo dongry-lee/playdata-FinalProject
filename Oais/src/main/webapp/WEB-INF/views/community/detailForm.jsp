@@ -14,9 +14,12 @@
     <meta charset="UTF-8">
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/idea.css" rel="stylesheet">
+    <link href="/css/slide.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
     <title>자유게시판 글 상세페이지</title>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 
 
@@ -32,17 +35,17 @@
                     <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 940px;margin-top: 17px;">
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px;">
                 <c:if test="${sessionScope.num != null}">
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
                         <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
                     </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                     <a href="/member/mypage"><button type="button" class="login_button" size="10px"
-                                             style="width: 75px;">마이페이지</button></a>
+                     <a href="/member/mypage"><button type="button" class="mypg_button" size="10px"
+                                             >마이페이지</button></a>
                     </span>
                     <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                    <a href="/member/logout"><button type="button" class="login_button" size="10px"
+                    <a href="/member/logout"><button type="button" class="logout_button" size="10px"
                                              style="width: 64px;">로그아웃</button></a>
                     </span>
                 </c:if>
@@ -77,7 +80,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content">
+    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>자유게시판</h2></div>
         <div class="idea-form"> <!--  idea form vs idea write-from-->
 <%--            <c:if test="${b.img1 != null}">--%>

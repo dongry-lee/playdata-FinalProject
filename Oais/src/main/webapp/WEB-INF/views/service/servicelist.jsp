@@ -13,7 +13,12 @@
     <%-- css --%>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/servicelist.css" rel="stylesheet">
-    <title>고객센터</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+        <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+        <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
+        <title>고객센터</title>
 </head>
 <body>
 <header>
@@ -23,35 +28,34 @@
 
     <nav> <!-- 메뉴부분 -->
         <form action="/search" method="get"> <!-- 검색창 -->
-            <div class="search">
-                <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+            <div class="search" style="position: absolute;">
+                <input type="text" name="val" placeholder= "공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </form>
-      <c:if test="${sessionScope.num == null}">
+        <div class="button-group" style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
+            <c:if test="${sessionScope.num == null}">
             <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
+            <a href="/member/login"><button  type="button" class="login_button" size="10px">로그인</button></a>
              </span>
-        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
+            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button  type="button" class="login_button" size="10px">회원가입</button></a>
              </span>
-      </c:if>
-      <c:if test="${sessionScope.num != null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                환영합니다! ${sessionScope.name}님
+            </c:if>
+            <div class="button-group" style="display: flex; align-content: space-between;margin-left: 130px;margin-top: 5px; position: absolute;">
+                <c:if test="${sessionScope.num != null}">
+                <span style="padding: 5px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+               <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>
-             </span>
-
-        <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/mypage"><button type="button" class="mypg_button" size="10px">마이페이지</button></a>
              </span>
 
-      </c:if>
-
-
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button type="button" class="logout_button" size="10px">로그아웃</button></a>
+             </span>
+                </c:if>
+            </div>
     </nav>
   </div>
 </header>
@@ -84,7 +88,7 @@
   </div>
   <!-- End of Sidemenu-->
   <!-- Content -->
-  <div id="content">
+  <div id="content"style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
     <div>
         <img src="/img/ois.png">
         <div class="ser-head">
