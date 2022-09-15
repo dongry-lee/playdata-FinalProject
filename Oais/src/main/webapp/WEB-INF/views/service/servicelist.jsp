@@ -94,7 +94,9 @@
         <img src="/img/ois.png">
         <div class="ser-head">
             <div><p class="ser-hdtitle">고객센터</p></div>
+            <c:if test="${sessionScope.id != null}">
             <div class="ser-addbtn"><button onclick="location.href='/service/add';">글 작성</button></div>
+            </c:if>
 
         </div>
         <hr>
@@ -123,7 +125,6 @@
                     </td>
                 </tr>
                     </c:forEach>
-
                 </tbody>
             </table>
         </div>
