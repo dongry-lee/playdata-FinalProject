@@ -15,6 +15,10 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/mypage.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 <%--  JS  --%>
     <script src="/js/mypage.js"></script>
     <title>마이페이지</title>
