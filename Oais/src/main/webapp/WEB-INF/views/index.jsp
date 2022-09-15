@@ -48,11 +48,11 @@
              </span>
 
                 <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
-            <a href="/member/mypage"><button class="mypg_button"><i class="fa-thin fa-user"></i></button>
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i class="fa-thin fa-user fa-lg"></i></span></button>
             </a>
              </span>
                 <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button class="logout_button"><i class="fa-light fa-arrow-right-from-bracket"></i></button></a>
+            <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
              </span>
                 </c:if>
             </div>
