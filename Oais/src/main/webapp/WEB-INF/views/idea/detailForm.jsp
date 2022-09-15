@@ -151,8 +151,8 @@
                                              padding: 10px;
                                              border-radius: 10px;">
                         <h2 class="cmt-tt" style="color: #232726;">댓글 작성</h2>
-                          <input name="num.num" type="text" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
-                          <input name="wnum.wnum" type="text" value="${b.wnum}"style="border: 1px solid #dadce0;">
+                          <input name="num.num" type="hidden" value="${sessionScope.num}" style="border: 1px solid #dadce0;">
+                          <input name="wnum.wnum" type="hidden" value="${b.wnum}"style="border: 1px solid #dadce0;">
                           <input type="text" value="${sessionScope.name}" readonly style="border: 1px solid #dadce0;">
 
                         <div class="commentBox">
