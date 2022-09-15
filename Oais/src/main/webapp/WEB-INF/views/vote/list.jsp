@@ -104,7 +104,7 @@
                 <div class="vote-info">
                     <div class="vote-cntbox">
                         <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">🖋️${item.title}</a></p>
-                        <div class="vote-content">
+                        <div class="vote-contentt">
                                 ${item.content}
                         </div>
                         <span style="font-size: 12px;">투표 마감일 : ${item.wdate}</span>
