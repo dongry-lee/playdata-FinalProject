@@ -83,7 +83,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content" style="background-color: #f8f9fa;font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head"><h2>아이디어 공모하기</h2></div>
 
         <div class="idea-form"> <!--  idea form vs idea write-from-->
@@ -169,7 +169,7 @@
                         <div class="commentBox">
                               <textarea id="writeComment" name="content" maxlength="1000"
                                 placeholder="주제와 무관한 댓글, 타인의 권리를 침해하거나 명예를 훼손하는 게시물은 별도의 통보 없이 삭제 또는 제제를 받을 수 있습니다." style="width: 834px;height: 40px;border: 1px solid #dadce0;"></textarea>
-                              <button class="cmtbt" type="submit"style="background-color: #D4FEF0;border: 0;padding: 3px 9px;border-radius: 6px;">작성</button>
+                              <button class="cmtbt" type="submit"style="background-color: #eeeeee;border: 0;padding: 1px 5px;border-radius: 6px; margin-left: 5px;">작성</button>
 
                         </div>
                       </div>
