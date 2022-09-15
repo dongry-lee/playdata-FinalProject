@@ -309,3 +309,8 @@ check in<br>
 - 진수: <br>
 - 민서: <br>
 - 진웅: <br>
+
+
+## 배포
+server - AWS/EC2<br>
+DB - AWS/RDS<br>
