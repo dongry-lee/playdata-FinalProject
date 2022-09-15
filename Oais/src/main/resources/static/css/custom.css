@@ -274,7 +274,7 @@ header {
     left: 0;
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: sticky;
 }
 h1 {
     float: left;
