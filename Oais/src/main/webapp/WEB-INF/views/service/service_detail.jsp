@@ -12,7 +12,7 @@
     <%-- css --%>
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/service.css" rel="stylesheet">
-    <link href="/css/service_detail" rel="stylesheet">
+    <link href="/css/service_detail.css" rel="stylesheet">
     <title>문의 글 상세페이지</title>
 </head>
 <body>
@@ -94,7 +94,7 @@
             <div>
                 <p class="cnttit">${b.title}</p>
                 <div class="writ-dat">
-                    <div><p>작성자 : ${b.num.name}</p></div>
+                    <div><p class="servptag">작성자 : ${b.num.name}</p></div>
                     <div><p>작성일 : ${b.wdate}</p></div>
                 </div>
 
