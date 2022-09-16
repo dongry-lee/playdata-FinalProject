@@ -138,6 +138,7 @@
                         </div>
                 </div>
             </div>
+            </div>
             <%--            <div class="list-button">--%>
             <%--                <span class="list-button-item active"></span>--%>
             <%--                <span class="list-button-item"></span>--%>
@@ -146,6 +147,7 @@
             <%--            </div>--%>
 
             <%-- real Content--%>
+        </div>
             <div class="hedtitle">
                 <p class="hottitle" style="margin-right: 580px">Cool 아이디어☄️</p>
                 <p class="hottitle">Hot 투표🗳️</p>
@@ -190,10 +192,8 @@
                         </div>
                     </c:forEach>
                 </div>
-                </div>
             </div>
-        </div>
-    </div>
+            </div>
 </div>
 </body>
 
