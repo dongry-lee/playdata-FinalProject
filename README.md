@@ -19,7 +19,7 @@
 
 - 운영체제:   window10, macOS<br>
 - DB:         MySQL<br>
-- framework:  spring boot<br>
+- framework:  spring boot(JPA, JSP)<br>
 - IDE: IntelliJ
 - html,css,js
 
