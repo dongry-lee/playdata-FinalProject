@@ -91,7 +91,7 @@
     </div>
     <!-- End of Sidemenu-->
     <!-- Content -->
-    <div id="content"style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
+    <div id="content" style="background-color: #f8f9fa; width:1540px; font-family:'Spoqa Han Sans Neo', 'sans-serif';">
         <div class="fg-head" style="font-size: 18px">
             <p>진행중인 아이디어 투표</p>
             <c:if test="${sessionScope.num != null}">
@@ -104,7 +104,7 @@
                 <div class="vote-info">
                     <div class="vote-cntbox">
                         <p class="vote-title"><a href="/voteboard/detail?wnum=${item.wnum}">🖋️${item.title}</a></p>
-                        <div class="vote-content">
+                        <div class="vote-contentt">
                                 ${item.content}
                         </div>
                         <span style="font-size: 12px;">투표 마감일 : ${item.wdate}</span>
@@ -139,59 +139,60 @@
                                             <label>${item.item04}</label>
                                         </div>
                                     </c:if>
-                                </form>
 
-                                    <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
+                                        <%--라디오버튼 누르고 투표시 투표항목 투표수 출력--%>
 
-                                    <%--                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>--%>
-                                    <%--                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>--%>
-                                    <%--                                <c:if test="${item.item03!=null && item.item03!=''}">&lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
-                                    <%--                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>--%>
-                                    <%--                                </c:if>--%>
-                                    <%--                                <c:if test="${item.item04!=null && item.item04!=''}">&lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
-                                    <%--                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>--%>
-                                    <%--                                </c:if>--%>
-                                    <%--                                    &lt;%&ndash;총투표수 출력&ndash;%&gt;--%>
-                                    <%--                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>--%>
+                                        <%--                                <jsp:include page="/voteboard/count?item=${item.item01}"></jsp:include>--%>
+                                        <%--                                <jsp:include page="/voteboard/count?item=${item.item02}"></jsp:include>--%>
+                                        <%--                                <c:if test="${item.item03!=null && item.item03!=''}">&lt;%&ndash;투표항목3이 null or 공백이 아니라면 투표항목3 투표수 출력&ndash;%&gt;--%>
+                                        <%--                                    <jsp:include page="/voteboard/count?item=${item.item03}"></jsp:include>--%>
+                                        <%--                                </c:if>--%>
+                                        <%--                                <c:if test="${item.item04!=null && item.item04!=''}">&lt;%&ndash;투표항목4가 null or 공백이 아니라면 투표항목4 투표수 출력&ndash;%&gt;--%>
+                                        <%--                                    <jsp:include page="/voteboard/count?item=${item.item04}"></jsp:include>--%>
+                                        <%--                                </c:if>--%>
+                                        <%--                                    &lt;%&ndash;총투표수 출력&ndash;%&gt;--%>
+                                        <%--                                <jsp:include page="/voteboard/totalcount?wnum=${item.wnum}"></jsp:include>--%>
 
-                                <jsp:include
-                                        page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>
+                                    <jsp:include
+                                            page="/voteboard/count?item01=${item.item01}&item02=${item.item02}&item03=${item.item03}&item04=${item.item04}&wnum=${item.wnum}"></jsp:include>
 
-                                <input name="num.num" type="hidden" value="${sessionScope.num}">
-                                <input name="wnum" type="hidden" value="${item.wnum}">
-                                <div>
-                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
-                                        <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
-                                    </c:if>
 
                                         <%--로그인안했다면 투표 불가능--%>
                                     <c:if test="${(sessionScope.domtype==false)}">
                                         <button>투표</button>
                                     </c:if>
-                                    </form>
-                                    <form action="/voteboard/delVoteBoard">
-                                        <input name="num.num" type="hidden" value="${sessionScope.num}">
-                                        <input name="wnum" type="hidden" value="${item.wnum}">
-                                        <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 삭제버튼을 보여줌--%>
-                                            <button>삭제</button>
-                                        </c:if>
-                                    </form>
+                                </form>
 
-                                        <%--스크랩버튼--%>
-                                    <c:if test="${sessionScope.num!=null}">
-                                        <div class="scrap button">
-                                            <button onclick="location.href='/scrap/vote/add?num=${sessionScope.num}&wnum2=${item.wnum}'">
-                                                스크랩
-                                            </button>
-                                        </div>
+                                <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                <input name="wnum" type="hidden" value="${item.wnum}">
+                                <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 수정버튼을 보여줌--%>
+                                    <button onclick="location.href='/voteboard/edit?wnum=${item.wnum}'">수정</button>
+                                </c:if>
+
+                                <form action="/voteboard/delVoteBoard">
+                                    <input name="num.num" type="hidden" value="${sessionScope.num}">
+                                    <input name="wnum" type="hidden" value="${item.wnum}">
+                                    <c:if test="${(sessionScope.id==item.num.mid)}"> <%--글작성자 num과 로그인중num이 같을때만 삭제버튼을 보여줌--%>
+                                        <button>삭제</button>
                                     </c:if>
-                                </div>
+                                </form>
+
+                                    <%--스크랩버튼--%>
+                                <c:if test="${sessionScope.num!=null}">
+                                    <div class="scrap button">
+                                        <button onclick="location.href='/scrap/vote/add?num=${sessionScope.num}&wnum2=${item.wnum}'">
+                                            스크랩
+                                        </button>
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             </c:forEach>
+        </div>
+
 </body>
 </html>
+

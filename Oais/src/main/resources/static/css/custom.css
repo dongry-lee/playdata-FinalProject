@@ -432,3 +432,34 @@ nav >  button  {
 /*}*/
 
 /*header*/
+/*배너 설명*/
+.banner-tit{
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    width: 500px;
+    margin-top: 90px;
+    margin-left: 200px;
+}
+.banerimg{
+    width: 350px;
+    margin-left: 70px;
+    height: 300px;
+}
+.banerimg2{
+    width: 350px;
+    margin-left: 100px;
+    height: 300px;
+}
+.banerimg3{
+    width: 450px;
+    margin-left: 100px;
+    height: 250px;
+    margin-top: 25px;
+}
+.banerimg4{
+    width: 200px;
+    margin-left: 200px;
+    height: 250px;
+    margin-top: 20px;
+}

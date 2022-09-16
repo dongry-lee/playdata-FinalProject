@@ -1,6 +1,7 @@
 package com.encore.oais.voteboard;
 
 import com.encore.oais.member.Member;
+import com.encore.oais.scrap.Scrap;
 import com.encore.oais.voteboard.votecomment.VoteComment;
 import com.encore.oais.voteboard.voteresult.VoteResult;
 import lombok.*;
@@ -76,5 +77,8 @@ public class VoteBoard {
 
     @OneToMany(mappedBy = "wnum", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<VoteResult> voteResults;
+
+    @OneToMany(mappedBy = "wnum", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Scrap> scrap;
 
 }

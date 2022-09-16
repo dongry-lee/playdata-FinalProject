@@ -15,6 +15,10 @@
     <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/mypage.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/0fa6845915.js" crossorigin="anonymous"></script>
 <%--  JS  --%>
     <script src="/js/mypage.js"></script>
     <title>마이페이지</title>
@@ -22,38 +26,43 @@
 <body>
 <header>
     <div class="wrapper"> <!--전체 랩 -->
-
         <a href="/"><h1></h1></a>
-
         <nav> <!-- 메뉴부분 -->
             <form action="/search" method="get"> <!-- 검색창 -->
-                <div class="search">
-                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기">
-                    <button><i class="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"></i>검색</button>
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/3917/3917061.png"> -->
+                <div class="search" style="position: absolute;">
+                    <input type="text" name="val" placeholder="공모/투표/게시판 찾아보기" style="margin: 20px 0px 20px 160px;">
+                    <button style="border: 0;border-radius: 6px; padding: 5px; width: 0px; margin-left: -28px;"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <c:if test="${sessionScope.num == null}">
-            <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <div class="button-group"
+                 style="display: flex; align-content: space-between; margin-left: 1100px; position: absolute;">
+                <c:if test="${sessionScope.num == null}">
+                 <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
             <a href="/member/login"><button type="button" class="login_button" size="10px">로그인</button></a>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/join"><button type="button" class="login_button" size="10px">회원가입</button></a>
+                    <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/join"><button type="button" class="join_button" size="10px">회원가입</button></a>
              </span>
-            </c:if>
-            <c:if test="${sessionScope.num != null}">
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-                환영합니다! ${sessionScope.name}님
+                </c:if>
+            </div>
+            <div class="button-group"
+                 style="display: flex; align-content: space-between;margin-left: 1100px;margin-top: 5px; position: absolute;">
+                <c:if test="${sessionScope.num != null}">
+                <span style="padding: 0px; margin-top: 15px; border-radius:100px;"><!-- 버튼 -->
+               <button type="button" class="welcome_button" size="10px">환영합니다! ${sessionScope.name}님</button>
              </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/mypage"><button type="button" class="login_button" size="10px">마이페이지</button></a>
-             </span>
-                <span style="padding: 5px; margin-top: 15px; border-radius:100px;">
-            <a href="/member/logout"><button type="button" class="login_button" size="10px">로그아웃</button></a>
-             </span>
-            </c:if>
 
-
+                    <span style="padding: 13px; margin-top: 0px; border-radius:100px;">
+                    <a href="/member/mypage"><button class="mypg_button"><span style="color:#3CA6AD"><i
+                            class="fa-thin fa-user fa-lg"></i></span></button>
+            </a>
+             </span>
+                    <span style="padding: 0px; margin-top: 15px; border-radius:100px;">
+            <a href="/member/logout"><button class="logout_button"><i class="fa-thin fa-door-open"></i></button></a>
+             </span>
+                </c:if>
+            </div>
         </nav>
     </div>
 </header>
