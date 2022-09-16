@@ -124,9 +124,9 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 9/16(금요일) 스프린트4 회고 <br>
 
   - 동근: <br>
-  - 진수:br>
-  - 진웅:<br>
-  - 민서:<br>
+  - 진수: <br>
+  - 진웅: <br>
+  - 민서: <br>
 
 ### check in & check out
 8/23<br>
