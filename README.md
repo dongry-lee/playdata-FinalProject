@@ -124,7 +124,7 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
 9/16(금요일) 스프린트4 회고 <br>
 
   - 동근: <br>
-  - 진수: <br>
+  - 진수: 발표자료는 여유를 두고 더 빨리 준비를해야한다는걸 느꼇다,AWS를 다루면서 좋은 경험을 얻은것같다<br>
   - 진웅: <br>
   - 민서: <br>
 
