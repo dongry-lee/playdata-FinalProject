@@ -121,6 +121,12 @@ https://www.figma.com/file/2k5LM7vJIgZkTaAPUKbmDj/Oais?node-id=6%3A70
   - 진웅:마지막주인데 연휴가 너무 길었다,, 스프린트 1,2 에서 있었던 문제점들이 아주 없진 않았지만 점차 나아지면서 하나 둘 개선되는것이 좋았다.<br>
   - 민서:<br>
 
+9/16(금요일) 스프린트4 회고 <br>
+
+  - 동근: <br>
+  - 진수:br>
+  - 진웅:<br>
+  - 민서:<br>
 
 ### check in & check out
 8/23<br>
